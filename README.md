@@ -46,6 +46,8 @@ src/predict_baselines.py   registry that lets src/run_system.py see the baseline
 src/run_system.py          run a predictor over a test set -> results/<system>[__<testset>].json (metrics + per-item)
 src/evaluate.py            compare results files: bootstrap CIs, cost per correct answer, headline chart
 src/analyze_errors.py      mistake classes, per-tag accuracy, contact sheets, paired comparison
+src/predict_closed.py      closed frontier baseline (Claude Opus 5.5 via Anthropic SDK); see docs/closed-model-runbook.md
+app.py                     Gradio demo: upload an image, see every system's answer side by side
 src/modal_serve.py         vLLM OpenAI-compatible server for the base model + any LoRA in a Modal volume
 src/modal_train.py         LoRA SFT fallback on Modal (PEFT, language-model layers only, vLLM-loadable)
 data/                      manifests {val,test_synthetic,test_drugs,test_real_uspto,test_handdrawn}_{384,640}.json are
@@ -53,8 +55,8 @@ data/                      manifests {val,test_synthetic,test_drugs,test_real_us
 results/                   results/<system>.json and cost_log.md are committed; results/raw/ logs are not
 ```
 
-Still to come: closed-model predictors (OpenAI/Anthropic/Gemini, if used), the routed system, and `app.py`
-(demo UI).
+Still to come: the routed system (tuned first, escalate to the frontier model on disagreement) and the final
+training runs.
 
 ## Shared contracts
 
@@ -92,6 +94,17 @@ uv run modal app stop chemvision-vllm                    # hard stop when done
 
 `src/run_system.py` records GPU wall-clock for the run times the hourly rate, and records time to the
 first answer separately so cold start can be included or excluded explicitly.
+
+## Demo app
+
+```bash
+.venv/bin/python app.py      # http://127.0.0.1:7860
+```
+
+Upload a drawing or pick one of the example images from the test sets, tick the systems to run, and see each
+system's SMILES, its RDKit redraw, validity, match against the ground truth, latency, and cost. Systems whose
+credentials are not in `.env` show as "not configured". Warm the Modal endpoint before a live demo: the first
+request can take minutes.
 
 ## Fireworks notes
 
