@@ -1,0 +1,228 @@
+{
+  "summary": {
+    "system": "tuned",
+    "n": 10,
+    "exact_match": 0.0,
+    "valid_rate": 0.9,
+    "mean_latency_s": 3.485683183115907,
+    "mean_tokens_in": 175.0,
+    "mean_tokens_out": 55.4,
+    "first_answer_s": 6.0102370829554275,
+    "wall_s": 35.05370020796545,
+    "gpu_hours": 0.00973713894665707,
+    "usd": 0.018987420945981284,
+    "gpu_usd_per_hour": 1.95
+  },
+  "items": [
+    {
+      "image_path": "data/images/smoke/test_000.png",
+      "truth": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+      "predict": {
+        "smiles": "CC1C(C(=O)O)CC1C(=O)NCc1ccc2ccccc2c1",
+        "latency_s": 5.945873292046599,
+        "tokens_in": 175,
+        "tokens_out": 28,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1C(C(=O)O)CC1C(=O)NCc1ccc2ccccc2c1",
+        "pred_smiles": "CC1C(C(=O)O)CC1C(=O)NCc1ccc2ccccc2c1",
+        "pred_canonical": "CC1C(C(=O)O)CC1C(=O)NCc1ccc2ccccc2c1",
+        "truth_canonical": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.3389830508474576
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_001.png",
+      "truth": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+      "predict": {
+        "smiles": "CCCC(C)N(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)",
+        "latency_s": 7.833453750004992,
+        "tokens_in": 175,
+        "tokens_out": 150,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CCCC(C)N(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)",
+        "pred_smiles": "CCCC(C)N(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)",
+        "pred_canonical": "CCCC(C)N(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)C(C)CC",
+        "truth_canonical": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13333333333333333
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_002.png",
+      "truth": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+      "predict": {
+        "smiles": "CCc1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C",
+        "latency_s": 8.073661542031914,
+        "tokens_in": 175,
+        "tokens_out": 150,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CCc1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C",
+        "pred_smiles": "CCc1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C",
+        "pred_canonical": "CCc1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C(=O)NCC(C)c1ccccc1C",
+        "truth_canonical": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.17647058823529413
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_003.png",
+      "truth": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+      "predict": {
+        "smiles": "CCOc1cc(C(F)(F)F)ccc1C(=O)NCC(N)C1CCN(C)CC1",
+        "latency_s": 1.7787205410422757,
+        "tokens_in": 175,
+        "tokens_out": 31,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CCOc1cc(C(F)(F)F)ccc1C(=O)NCC(N)C1CCN(C)CC1",
+        "pred_smiles": "CCOc1cc(C(F)(F)F)ccc1C(=O)NCC(N)C1CCN(C)CC1",
+        "pred_canonical": "CCOc1cc(C(F)(F)F)ccc1C(=O)NCC(N)C1CCN(C)CC1",
+        "truth_canonical": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.17073170731707318
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_004.png",
+      "truth": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+      "predict": {
+        "smiles": "C1CCSC1C(=O)NNC(C)C(=O)C1CC(F)CC1C1CC1",
+        "latency_s": 1.815973374992609,
+        "tokens_in": 175,
+        "tokens_out": 31,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1CCSC1C(=O)NNC(C)C(=O)C1CC(F)CC1C1CC1",
+        "pred_smiles": "C1CCSC1C(=O)NNC(C)C(=O)C1CC(F)CC1C1CC1",
+        "pred_canonical": "CC(NNC(=O)C1CCCS1)C(=O)C1CC(F)CC1C1CC1",
+        "truth_canonical": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1643835616438356
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_005.png",
+      "truth": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+      "predict": {
+        "smiles": "CC(=O)N(C)c1ccccc1C(=O)Nc1ccccc1C",
+        "latency_s": 1.5566481250571087,
+        "tokens_in": 175,
+        "tokens_out": 25,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(=O)N(C)c1ccccc1C(=O)Nc1ccccc1C",
+        "pred_smiles": "CC(=O)N(C)c1ccccc1C(=O)Nc1ccccc1C",
+        "pred_canonical": "CC(=O)N(C)c1ccccc1C(=O)Nc1ccccc1C",
+        "truth_canonical": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.19736842105263158
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_006.png",
+      "truth": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+      "predict": {
+        "smiles": "CC(Cc1ccc2c(c1)OCC2O)NCC(C)(O)C(=O)c1ccccc1OC(C)=O",
+        "latency_s": 2.0046599159250036,
+        "tokens_in": 175,
+        "tokens_out": 35,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(Cc1ccc2c(c1)OCC2O)NCC(C)(O)C(=O)c1ccccc1OC(C)=O",
+        "pred_smiles": "CC(Cc1ccc2c(c1)OCC2O)NCC(C)(O)C(=O)c1ccccc1OC(C)=O",
+        "pred_canonical": "CC(=O)Oc1ccccc1C(=O)C(C)(O)CNC(C)Cc1ccc2c(c1)OCC2O",
+        "truth_canonical": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.18478260869565216
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_007.png",
+      "truth": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+      "predict": {
+        "smiles": "CNC(=O)C1CCN(C(=O)C2CCc3c2c2ccccc2c2ccccc32)CC1",
+        "latency_s": 2.1849975410150364,
+        "tokens_in": 175,
+        "tokens_out": 37,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CNC(=O)C1CCN(C(=O)C2CCc3c2c2ccccc2c2ccccc32)CC1",
+        "pred_smiles": "CNC(=O)C1CCN(C(=O)C2CCc3c2c2ccccc2c2ccccc32)CC1",
+        "pred_canonical": "CNC(=O)C1CCN(C(=O)C2CCc3c2c2ccccc2c2ccccc32)CC1",
+        "truth_canonical": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13924050632911392
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_008.png",
+      "truth": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+      "predict": {
+        "smiles": "CCc1ccc([N+](=O)[O-])c([NH+]CCCCc1c[nH]c1=O)c1C=CNC1=O",
+        "latency_s": 2.094269208027981,
+        "tokens_in": 175,
+        "tokens_out": 39,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CCc1ccc([N+](=O)[O-])c([NH+]CCCCc1c[nH]c1=O)c1C=CNC1=O",
+        "pred_smiles": "CCc1ccc([N+](=O)[O-])c([NH+]CCCCc1c[nH]c1=O)c1C=CNC1=O",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_009.png",
+      "truth": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+      "predict": {
+        "smiles": "CC(C)(C)C(=O)CSc1cc2ccccc2nc1SCC(C)(C)C",
+        "latency_s": 1.5685745410155505,
+        "tokens_in": 175,
+        "tokens_out": 28,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)(C)C(=O)CSc1cc2ccccc2nc1SCC(C)(C)C",
+        "pred_smiles": "CC(C)(C)C(=O)CSc1cc2ccccc2nc1SCC(C)(C)C",
+        "pred_canonical": "CC(C)(C)CSc1nc2ccccc2cc1SCC(=O)C(C)(C)C",
+        "truth_canonical": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.234375
+      }
+    }
+  ]
+}
