@@ -88,6 +88,16 @@ def predict(image_path: str) -> dict:
     latency = time.perf_counter() - t0
 
     text = "".join(b.text for b in resp.content if b.type == "text").strip()
+    # usage.output_tokens includes thinking. Count the visible answer separately (count_tokens is free)
+    # so reasoning tokens and their cost can be reported on their own line.
+    answer_tokens = 0
+    if text:
+        try:
+            answer_tokens = client.messages.count_tokens(
+                model=model, messages=[{"role": "assistant", "content": text}]
+            ).input_tokens
+        except anthropic.APIError:
+            answer_tokens = 0
     fallback_ran = any(getattr(e, "type", None) == "fallback_message" for e in (resp.usage.iterations or []))
     refused = resp.stop_reason == "refusal"
     return {
@@ -95,6 +105,9 @@ def predict(image_path: str) -> dict:
         "latency_s": latency,
         "tokens_in": resp.usage.input_tokens,
         "tokens_out": resp.usage.output_tokens,  # includes thinking tokens
+        "answer_tokens": answer_tokens,
+        "reasoning_tokens": max(resp.usage.output_tokens - answer_tokens, 0),
+        "reasoning_usd": max(resp.usage.output_tokens - answer_tokens, 0) * PRICES.get(resp.model, PRICES[DEFAULT_MODEL])[1] / 1e6,
         "attempts": 1,
         "escalated": False,
         "usd": _cost(resp.model, resp.usage),
