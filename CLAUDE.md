@@ -17,10 +17,11 @@ Two people (and their agents) work on this repo at the same time. Every agent, i
 
 ## Ownership (two-person plan)
 
-- **Person A — platform and training (nicolewongbiz):** Fireworks account, tuning jobs, deployments, Modal serving, cost log. Owns `src/predict.py`, `src/run_system.py`, `src/modal_serve.py`, `smoke/`, `results/`.
-- **Person B — data and eval:** owns `data/`, `src/render.py`, `src/build_dataset.py`, `src/validate.py`, `src/evaluate.py`, `app.py`.
-- Message the owner before changing their files. Only Person A creates or deletes Fireworks deployments or Modal GPU apps.
-- Shared contracts (don't change without telling the other person): `data/train.jsonl` (Fireworks VLM SFT format), `data/test_*.json` (`[{"image_path", "smiles"}]`), `predict(image_path) -> {smiles, latency_s, tokens_in, tokens_out, attempts, escalated}`, and `results/<system>.json` (`{"summary": {...}, "items": [...]}`).
+- **Person A — data and training (nicolewongbiz):** Modal GPUs (auto-stop), Fireworks account/deployment, dataset (`src/make_dataset.py`, `data/`), training (`src/modal_train.py`), serving (`src/modal_serve.py`), open-model predictors in `src/predict.py`, `src/run_system.py`, `smoke/`, learning curve, ablations, repetition-loop fix.
+- **Person B — baselines and comparison (friend):** closed-model API keys and spend, closed-model and MolScribe predictors, `src/evaluate.py`, charts, `app.py`, real-world test set, FINAL_COMPARISON.
+- Message the owner before changing their files. Paid resources have one owner: A owns Modal GPUs and any Fireworks deployment; B owns closed-model API spend.
+- Frozen files: once A shares `data/test_synthetic_*.json`, `data/val_*.json`, `data/test_drugs_*.json`, nobody edits them; if one must change, tell the other and rerun every system that used it.
+- Shared contracts (don't change without telling the other person): train/val/test manifests `[{"image_path", "smiles", "smiles_nostereo", "tags"}]` (labels are canonical *isomeric* SMILES), `data/train_*.jsonl` (Fireworks VLM SFT format, `--export-jsonl`), `predict(image_path) -> {smiles, latency_s, tokens_in, tokens_out, attempts, escalated}`, and `results/<system>.json` (`{"summary": {...}, "items": [...]}`).
 
 ## Compute: prefer the local Mac when it's cheap and safe
 

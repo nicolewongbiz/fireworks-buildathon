@@ -1,7 +1,6 @@
 """Build the scaled molecule-image -> SMILES dataset (train / val / test / drugs) at 384 and 640 px.
 
-DRAFT by Person A, handed to Person B (data owner), who may adopt, change, or replace it. It ran once
-successfully on 2026-11-01 (190 s on 6 cores); see data/dataset_report.json for the numbers.
+Owned by Person A (data and training). About 3 min on 6 cores; see data/dataset_report.json.
 
   uv run python -m src.make_dataset                  # full build (10k train, 200 val, 500 test, drugs)
   uv run python -m src.make_dataset --export-jsonl   # also write Fireworks VLM SFT JSONL for train/val
@@ -167,9 +166,7 @@ def render(smiles: str, path: Path, res: int, style: dict) -> None:
 
 def render_job(job: tuple[str, str, int, str]) -> None:
     smiles, rel_path, res, style_key = job
-    p = ROOT / rel_path
-    if not p.exists():
-        render(smiles, p, res, style_for(style_key))
+    render(smiles, ROOT / rel_path, res, style_for(style_key))  # always overwrite: ids can map to new molecules
 
 
 # ---------- drugs ----------
@@ -234,7 +231,9 @@ def main() -> None:
         if m is None or len(Chem.GetMolFrags(m)) != 1 or not (MIN_HEAVY <= heavy_atoms(m) <= 50):
             continue
         drugs.append({"name": row["name"], "cid": row["cid"], "smiles": can(m), "smiles_nostereo": can(m, False)})
-    drugs = drugs[:100]
+    # Keep every P-containing drug (rare in ZINC), then fill to 100 in list order.
+    has_p = [d for d in drugs if "P" in d["smiles"] or "p" in d["smiles"]]
+    drugs = has_p + [d for d in drugs if d not in has_p][: 100 - len(has_p)]
     drug_keys = {d["smiles_nostereo"] for d in drugs}
 
     seen: set[str] = set()
