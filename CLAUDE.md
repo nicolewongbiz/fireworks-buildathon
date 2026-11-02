@@ -22,9 +22,15 @@ Run locally:
 - Unit tests.
 
 Use Fireworks for:
-- Fine-tuning (LoRA/SFT) — too slow and hot to do on the laptop.
-- Large models (e.g. the 235B comparison model) and anything that doesn't fit in ~16 GB.
-- The official benchmark runs, so base/large/tuned numbers come from the same platform.
+- Fine-tuning (LoRA/SFT) — too slow and hot to do on the laptop. Muse Glimmer 30B LoRA SFT is free via UI / Serverless Training API until 2026-11-30; always pass an explicit LoRA rank (omitted rank = full-parameter = paid).
+- The official benchmark runs, if hackathon rules require Fireworks serving.
+
+Use Modal (workspace `nicolewongbiz`, ~$200 credit) for GPU inference that Fireworks would only offer as a dedicated deployment (e.g. Muse Glimmer 30B, which is not on Fireworks serverless):
+- Modal bills per second and costs nothing idle; a Fireworks H200 deployment is $8/hr and bills while it is up.
+- Download model weights into a Modal Volume from a CPU-only function, never inside a GPU container.
+- Always set a container `timeout` and `scaledown_window` so nothing idles on a GPU, and confirm `modal app list` shows nothing running when done.
+
+Any paid run (Fireworks deployment, non-free tuning job, Modal GPU job) needs the user's approval with an estimated cost first.
 
 Keep the laptop healthy:
 - Cap parallel workers at ~6 (`multiprocessing`/`concurrent.futures`), leaving cores for the OS and the other agent.
