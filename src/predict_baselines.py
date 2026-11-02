@@ -6,6 +6,7 @@ systems; a genuine bug inside a module still raises.
 
   large_kimi, large_qwen, large_glm   src/predict_fireworks.py  (Fireworks serverless; needs FIREWORKS_API_KEY)
   molscribe                            src/predict_molscribe.py  (needs .venv-molscribe; see that module)
+  closed_opus                          src/predict_closed.py     (Claude Opus 5.5 via Anthropic API; needs ANTHROPIC_API_KEY)
 """
 from __future__ import annotations
 
@@ -14,7 +15,7 @@ import importlib
 SYSTEMS: dict = {}
 UNAVAILABLE: dict[str, str] = {}
 
-for _mod in ("src.predict_fireworks", "src.predict_molscribe"):
+for _mod in ("src.predict_fireworks", "src.predict_molscribe", "src.predict_closed"):
     try:
         SYSTEMS |= importlib.import_module(_mod).SYSTEMS
     except ModuleNotFoundError as e:  # the module itself or one of its optional deps is absent
