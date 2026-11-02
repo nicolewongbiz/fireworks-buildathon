@@ -4,11 +4,14 @@ Person A owns this. Usage:
   uv run modal run src/modal_serve.py::download_model   # one-time, CPU only, caches weights
   modal volume put chemvision-loras <local_lora_dir> /<lora_name>   # optional, adds a LoRA
   uv run modal deploy src/modal_serve.py                # endpoint; scales to zero when idle
+  SERVE_LORAS=a,b uv run modal deploy src/modal_serve.py   # serve only adapters a and b (fair comparisons)
   uv run modal app stop chemvision-vllm                 # hard stop when done
 
 Requests need `Authorization: Bearer $MODAL_VLLM_API_KEY` (Modal secret `chemvision-vllm-key`).
 Model names: "base" for the untuned model, and each LoRA's directory name in the volume.
 """
+import os
+
 import modal
 
 MODEL_NAME = "Qwen/Qwen3.5-9B"  # Fireworks `qwen3p5-9b`; Qwen3-VL-8B is not trainable on Fireworks
@@ -21,7 +24,9 @@ vllm_image = (
     modal.Image.from_registry("nvidia/cuda:12.9.0-devel-ubuntu22.04", add_python="3.12")
     .entrypoint([])
     .uv_pip_install("vllm==0.21.0")
-    .env({"HF_XET_HIGH_PERFORMANCE": "1"})
+    # SERVE_LORAS (comma-separated adapter dir names) is read at deploy time and baked into the image env,
+    # so one session serves exactly the adapters being compared. Empty = every adapter in the volume.
+    .env({"HF_XET_HIGH_PERFORMANCE": "1", "SERVE_LORAS": os.environ.get("SERVE_LORAS", "")})
 )
 download_image = modal.Image.debian_slim(python_version="3.12").uv_pip_install("huggingface_hub[hf_xet]")
 
@@ -65,6 +70,12 @@ class Server:
         from pathlib import Path
 
         loras = sorted(p for p in Path("/loras").iterdir() if (p / "adapter_config.json").exists())
+        wanted = [w for w in os.environ.get("SERVE_LORAS", "").split(",") if w]
+        if wanted:
+            missing = set(wanted) - {p.name for p in loras}
+            if missing:
+                raise RuntimeError(f"SERVE_LORAS names adapters not in the volume: {sorted(missing)}")
+            loras = [p for p in loras if p.name in wanted]
         cmd = [
             "vllm", "serve", MODEL_NAME,
             "--revision", MODEL_REVISION,
