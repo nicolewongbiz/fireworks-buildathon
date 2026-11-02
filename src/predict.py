@@ -40,7 +40,8 @@ def _image_message(image_path: str) -> list[dict]:
     ]
 
 
-def _chat(client: OpenAI, model: str, image_path: str, escalated: bool = False) -> dict:
+def _chat(client: OpenAI, model: str, image_path: str, escalated: bool = False,
+          thinking: bool = False, max_tokens: int = MAX_TOKENS) -> dict:
     messages = _image_message(image_path)
     # Modal servers return 503 while a container is cold-starting; wait rather than fail.
     for _ in range(90):
@@ -50,9 +51,9 @@ def _chat(client: OpenAI, model: str, image_path: str, escalated: bool = False) 
                 model=model,
                 messages=messages,
                 temperature=0,
-                max_tokens=MAX_TOKENS,
-                # Qwen3.5 thinks by default; we want a bare SMILES.
-                extra_body={"chat_template_kwargs": {"enable_thinking": False}},
+                max_tokens=max_tokens,
+                # Qwen3.5 thinks by default; we want a bare SMILES (thinking=True only for the strawman check).
+                extra_body={"chat_template_kwargs": {"enable_thinking": thinking}},
             )
             latency = time.perf_counter() - t0
             break
@@ -62,8 +63,11 @@ def _chat(client: OpenAI, model: str, image_path: str, escalated: bool = False) 
             time.sleep(10)
     else:
         raise TimeoutError(f"{model} endpoint stayed unavailable")
+    text = resp.choices[0].message.content or ""
+    if "</think>" in text:  # thinking mode: keep only the final answer after the reasoning block
+        text = text.split("</think>")[-1]
     return {
-        "smiles": resp.choices[0].message.content,
+        "smiles": text,
         "latency_s": latency,
         "tokens_in": resp.usage.prompt_tokens,
         "tokens_out": resp.usage.completion_tokens,
@@ -80,4 +84,11 @@ def predict_tuned(image_path: str, lora: str = "smoke") -> dict:
     return _chat(_modal_client(), lora, image_path)
 
 
-SYSTEMS = {"untuned": predict_untuned, "tuned": predict_tuned}
+def predict_untuned_thinking(image_path: str) -> dict:
+    """Strawman check: untuned model with thinking on and a 1,024-token budget (reasoning counted as output)."""
+    return _chat(_modal_client(), "base", image_path, thinking=True, max_tokens=THINKING_MAX_TOKENS)
+
+
+THINKING_MAX_TOKENS = 1024
+SYSTEMS = {"untuned": predict_untuned, "tuned": predict_tuned, "untuned_thinking": predict_untuned_thinking}
+SYSTEM_CAPS = {"untuned_thinking": THINKING_MAX_TOKENS}  # loop-rate cap per system; default MAX_TOKENS

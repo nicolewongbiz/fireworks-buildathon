@@ -22,7 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from pathlib import Path
 
-from src.predict import MAX_TOKENS, SYSTEMS
+from src.predict import MAX_TOKENS, SYSTEM_CAPS, SYSTEMS
 
 try:  # Person B's closed-model / MolScribe predictors, same predict() contract
     from src.predict_baselines import SYSTEMS as BASELINE_SYSTEMS
@@ -52,6 +52,7 @@ def main() -> None:
         predict = SYSTEMS[args.system]
     else:
         ap.error(f"unknown system {args.system!r}")
+    cap = SYSTEM_CAPS.get(args.system, MAX_TOKENS)
     t_start = time.perf_counter()
     first_answer_s = None
     rows = []
@@ -66,7 +67,7 @@ def main() -> None:
         exact_stereo = m.valid and canonicalize(m.pred_smiles, strip_stereo=False) == canonicalize(it["smiles"], strip_stereo=False)
         print(f"{'OK ' if m.exact else 'BAD'} valid={m.valid} {out['latency_s']:.2f}s {out['smiles']!r}")
         return {"image_path": it["image_path"], "truth": it["smiles"], "tags": it.get("tags"), "predict": out,
-                "match": asdict(m) | {"exact_stereo": exact_stereo, "hit_cap": out["tokens_out"] >= MAX_TOKENS}}
+                "match": asdict(m) | {"exact_stereo": exact_stereo, "hit_cap": out["tokens_out"] >= cap}}
 
     if args.workers > 1:
         # Warm the server with one request first so the cold start is not counted against every worker.
@@ -80,6 +81,14 @@ def main() -> None:
     n = len(rows)
     lat = sorted(r["predict"]["latency_s"] for r in rows)
     gpu_hours = wall_s / 3600
+    tok_usd = lambda rs: (sum(r["predict"]["tokens_in"] for r in rs) * args.usd_per_mtok_in  # noqa: E731
+                          + sum(r["predict"]["tokens_out"] for r in rs) * args.usd_per_mtok_out) / 1e6
+    # Steady state = everything after the first answer, so cold start is reported once, separately.
+    steady_s = wall_s - first_answer_s
+    images_per_s = (n - 1) / steady_s if n > 1 and steady_s > 0 else None
+    steady_usd_per_1k = (
+        (args.gpu_usd_per_hour / 3600 / images_per_s * 1000 if images_per_s else 0.0) + tok_usd(rows) / n * 1000
+    )
     summary = {
         "system": args.system,
         "n": n,
@@ -88,7 +97,7 @@ def main() -> None:
         "valid_rate": sum(r["match"]["valid"] for r in rows) / n,
         "mean_tanimoto": sum(r["match"]["tanimoto"] for r in rows) / n,
         "loop_rate": sum(r["match"]["hit_cap"] for r in rows) / n,  # outputs that hit max_tokens
-        "max_tokens": MAX_TOKENS,
+        "max_tokens": cap,
         "mean_latency_s": sum(r["predict"]["latency_s"] for r in rows) / n,
         "median_latency_s": statistics.median(lat),
         "p95_latency_s": lat[min(n - 1, math.ceil(0.95 * n) - 1)],
@@ -97,11 +106,13 @@ def main() -> None:
         "first_answer_s": first_answer_s,
         "wall_s": wall_s,
         "gpu_hours": gpu_hours,
-        "usd": gpu_hours * args.gpu_usd_per_hour
-        + (sum(r["predict"]["tokens_in"] for r in rows) * args.usd_per_mtok_in
-           + sum(r["predict"]["tokens_out"] for r in rows) * args.usd_per_mtok_out) / 1e6,
+        "usd": gpu_hours * args.gpu_usd_per_hour + tok_usd(rows),  # whole run, incl. cold start
         "gpu_usd_per_hour": args.gpu_usd_per_hour,
-        "workers": args.workers,
+        "workers": args.workers,  # concurrency the throughput/cost below was measured at
+        "cold_start_s": first_answer_s,  # time to first answer (container start for GPU servers)
+        "cold_start_usd": first_answer_s / 3600 * args.gpu_usd_per_hour,
+        "steady_images_per_s": images_per_s,
+        "steady_usd_per_1k_images": steady_usd_per_1k,  # excludes cold start
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps({"summary": summary, "items": rows}, indent=2))

@@ -1,0 +1,1037 @@
+[
+ {
+  "image_path": "data/images/640/test/00000.png",
+  "smiles": "CN(C[C@@H]1CCCO1)C(=O)c1cccc(CSc2nccn2C)c1",
+  "smiles_nostereo": "CN(CC1CCCO1)C(=O)c1cccc(CSc2nccn2C)c1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00001.png",
+  "smiles": "Cc1c(CNC(=O)c2cn(CC[C@H]3CCCCN3)nn2)cnn1C",
+  "smiles_nostereo": "Cc1c(CNC(=O)c2cn(CCC3CCCCN3)nn2)cnn1C",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00002.png",
+  "smiles": "O=C(N/C(=C/c1cccs1)c1nc2ccccc2[nH]1)c1ccccc1",
+  "smiles_nostereo": "O=C(NC(=Cc1cccs1)c1nc2ccccc2[nH]1)c1ccccc1",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 1,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00003.png",
+  "smiles": "O=C1CCCN1C1CCN(S(=O)(=O)CC2CCC2)CC1",
+  "smiles_nostereo": "O=C1CCCN1C1CCN(S(=O)(=O)CC2CCC2)CC1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00004.png",
+  "smiles": "CC1(C)[C@]2(C(=O)[O-])CC[C@@]1(C)C(=O)C2",
+  "smiles_nostereo": "CC12CCC(C(=O)[O-])(CC1=O)C2(C)C",
+  "tags": {
+   "heavy_atoms": 14,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 1,
+   "elements": [
+    "C",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00005.png",
+  "smiles": "COCCN(CCOC)C(=O)[C@]12CC[C@](C)(C(=O)[C@H]1Br)C2(C)C",
+  "smiles_nostereo": "COCCN(CCOC)C(=O)C12CCC(C)(C(=O)C1Br)C2(C)C",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 2,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "Br",
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00006.png",
+  "smiles": "CC(C)CNS(=O)(=O)C[C@@]12CC[C@@H](CC1=O)C2(C)C",
+  "smiles_nostereo": "CC(C)CNS(=O)(=O)CC12CCC(CC1=O)C2(C)C",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00007.png",
+  "smiles": "C[C@H](NC(=O)Cc1cccc2ccccc12)C(=O)N1CCOCC1",
+  "smiles_nostereo": "CC(NC(=O)Cc1cccc2ccccc12)C(=O)N1CCOCC1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00008.png",
+  "smiles": "COc1ccc(S(=O)(=O)N2CCC(OCc3ccc(F)cc3)CC2)cc1C",
+  "smiles_nostereo": "COc1ccc(S(=O)(=O)N2CCC(OCc3ccc(F)cc3)CC2)cc1C",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00009.png",
+  "smiles": "Cc1ccc(OCC(=O)Nc2cc(-c3ccccc3)no2)cc1",
+  "smiles_nostereo": "Cc1ccc(OCC(=O)Nc2cc(-c3ccccc3)no2)cc1",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00010.png",
+  "smiles": "Cc1c(C(=O)N2CCc3sccc3[C@@H]2c2cccs2)oc2ccc(F)cc12",
+  "smiles_nostereo": "Cc1c(C(=O)N2CCc3sccc3C2c2cccs2)oc2ccc(F)cc12",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 5,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00011.png",
+  "smiles": "O=C(c1ccc(F)cc1)[C@H]1CC[NH+]2CCCC[C@@H]2C1.[Br-]",
+  "smiles_nostereo": "O=C(c1ccc(F)cc1)C1CC[NH+]2CCCCC2C1.[Br-]",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 3,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "Br",
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 2,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00012.png",
+  "smiles": "Cc1noc(C)c1CCC(=O)Nc1ccc(-c2cn3ccccc3n2)cc1",
+  "smiles_nostereo": "Cc1noc(C)c1CCC(=O)Nc1ccc(-c2cn3ccccc3n2)cc1",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00013.png",
+  "smiles": "CCOc1ccc(F)c(C(=O)N2CCN(C)c3ccc(F)cc32)c1F",
+  "smiles_nostereo": "CCOc1ccc(F)c(C(=O)N2CCN(C)c3ccc(F)cc32)c1F",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00014.png",
+  "smiles": "Cc1ncn(C[C@H](C)[NH2+]CCC[NH+]2C[C@@H](C)C[C@H](C)C2)c1C",
+  "smiles_nostereo": "Cc1ncn(CC(C)[NH2+]CCC[NH+]2CC(C)CC(C)C2)c1C",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 2,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00015.png",
+  "smiles": "C[C@@H]1CCC[C@H](C)N1C(=O)C1CCC(NC(=O)C2CCCC2)CC1",
+  "smiles_nostereo": "CC1CCCC(C)N1C(=O)C1CCC(NC(=O)C2CCCC2)CC1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00016.png",
+  "smiles": "CCN(Cc1cnn(C)c1)C(=O)CCNC(=O)NC1CCCCC1",
+  "smiles_nostereo": "CCN(Cc1cnn(C)c1)C(=O)CCNC(=O)NC1CCCCC1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00017.png",
+  "smiles": "CC(C)=CCOc1cccc(C(=O)NC2C[C@H]3CCC[C@@H](C2)N3C)c1",
+  "smiles_nostereo": "CC(C)=CCOc1cccc(C(=O)NC2CC3CCCC(C2)N3C)c1",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 3,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00018.png",
+  "smiles": "CC(C)(C)CC(=O)NC1CCCCCCC1",
+  "smiles_nostereo": "CC(C)(C)CC(=O)NC1CCCCCCC1",
+  "tags": {
+   "heavy_atoms": 16,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00019.png",
+  "smiles": "CCCN[C@@H]1CCCCCC[C@H]1S[C@@H](C)CCO",
+  "smiles_nostereo": "CCCNC1CCCCCCC1SC(C)CCO",
+  "tags": {
+   "heavy_atoms": 18,
+   "rings": 1,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00020.png",
+  "smiles": "Cc1ccc(-n2ccnc2)c(C(=O)N2CCN(C(=O)[C@@H]3C[C@@H]3C)CC2)c1",
+  "smiles_nostereo": "Cc1ccc(-n2ccnc2)c(C(=O)N2CCN(C(=O)C3CC3C)CC2)c1",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 4,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00021.png",
+  "smiles": "CC1(C)C(=O)Nc2ccccc2N1C(=O)COC(=O)c1cccnc1Cl",
+  "smiles_nostereo": "CC1(C)C(=O)Nc2ccccc2N1C(=O)COC(=O)c1cccnc1Cl",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00022.png",
+  "smiles": "O=C(CSCc1ccc(Cl)s1)N1CCC[C@@H](c2nnc3ccccn23)C1",
+  "smiles_nostereo": "O=C(CSCc1ccc(Cl)s1)N1CCCC(c2nnc3ccccn23)C1",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 4,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00023.png",
+  "smiles": "COC(=O)c1ccc(N2CCN(C(=O)Cc3ccsc3)CC2)cc1",
+  "smiles_nostereo": "COC(=O)c1ccc(N2CCN(C(=O)Cc3ccsc3)CC2)cc1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00024.png",
+  "smiles": "Fc1ccc(OC2CCN(c3ncccn3)CC2)cc1",
+  "smiles_nostereo": "Fc1ccc(OC2CCN(c3ncccn3)CC2)cc1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00025.png",
+  "smiles": "O=C(COC(=O)CNC(=O)c1ccc(Cl)c(Cl)c1)Nc1cccnc1Cl",
+  "smiles_nostereo": "O=C(COC(=O)CNC(=O)c1ccc(Cl)c(Cl)c1)Nc1cccnc1Cl",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00026.png",
+  "smiles": "COc1ccc(-n2c(CN3CCC(C#N)CC3)nc3ccccc32)cc1",
+  "smiles_nostereo": "COc1ccc(-n2c(CN3CCC(C#N)CC3)nc3ccccc32)cc1",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00027.png",
+  "smiles": "C[C@@H]1C[NH+]2CCC[C@@H]2CN1C(=O)Cc1ccc(C[NH3+])cc1",
+  "smiles_nostereo": "CC1C[NH+]2CCCC2CN1C(=O)Cc1ccc(C[NH3+])cc1",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 3,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00028.png",
+  "smiles": "Fc1cccc(CNc2ncc(-c3cnccn3)c(-c3cccs3)n2)c1",
+  "smiles_nostereo": "Fc1cccc(CNc2ncc(-c3cnccn3)c(-c3cccs3)n2)c1",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00029.png",
+  "smiles": "CSc1ccc([C@@H](C)[NH2+]C[C@@H]2CN(C)CCO2)cc1.[Cl-]",
+  "smiles_nostereo": "CSc1ccc(C(C)[NH2+]CC2CN(C)CCO2)cc1.[Cl-]",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 2,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00030.png",
+  "smiles": "Cc1cc(Cl)cc(C)c1C[NH2+][C@@H](C)[C@H]1CN(C)CCO1.[Cl-]",
+  "smiles_nostereo": "Cc1cc(Cl)cc(C)c1C[NH2+]C(C)C1CN(C)CCO1.[Cl-]",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 2,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00031.png",
+  "smiles": "CCc1cc(C(=O)Nc2ccc(F)c(Cl)c2)no1",
+  "smiles_nostereo": "CCc1cc(C(=O)Nc2ccc(F)c(Cl)c2)no1",
+  "tags": {
+   "heavy_atoms": 18,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00032.png",
+  "smiles": "Cc1cccc(NC(=O)c2noc(C)c2C)c1C",
+  "smiles_nostereo": "Cc1cccc(NC(=O)c2noc(C)c2C)c1C",
+  "tags": {
+   "heavy_atoms": 18,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00033.png",
+  "smiles": "CC[C@H](NC(=O)C[C@H](O)c1ccc(Cl)cc1)c1nccs1",
+  "smiles_nostereo": "CCC(NC(=O)CC(O)c1ccc(Cl)cc1)c1nccs1",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00034.png",
+  "smiles": "CCc1cnc(CN(C)C(=O)CCc2ccc(C)cc2)s1",
+  "smiles_nostereo": "CCc1cnc(CN(C)C(=O)CCc2ccc(C)cc2)s1",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00035.png",
+  "smiles": "Cc1ccc(S(=O)(=O)N(C)c2ccc(C(=O)N3C[C@@H](C)O[C@H](C)C3)cc2)cc1",
+  "smiles_nostereo": "Cc1ccc(S(=O)(=O)N(C)c2ccc(C(=O)N3CC(C)OC(C)C3)cc2)cc1",
+  "tags": {
+   "heavy_atoms": 28,
+   "rings": 3,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00036.png",
+  "smiles": "C=C1NC(=O)N[C@H](c2ccc(N(C)C)cc2)C(O)=C1OCC",
+  "smiles_nostereo": "C=C1NC(=O)NC(c2ccc(N(C)C)cc2)C(O)=C1OCC",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00037.png",
+  "smiles": "COc1ccccc1NC(=O)NCCOc1ccccc1OC",
+  "smiles_nostereo": "COc1ccccc1NC(=O)NCCOc1ccccc1OC",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00038.png",
+  "smiles": "CN(CCOc1ccccc1)C(=O)Nc1ccc([S@@](C)=O)c(F)c1",
+  "smiles_nostereo": "CN(CCOc1ccccc1)C(=O)Nc1ccc(S(C)=O)c(F)c1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00039.png",
+  "smiles": "CC(C)(C)c1cnc(CSc2nnc(C3CC3)n2C2CC2)o1",
+  "smiles_nostereo": "CC(C)(C)c1cnc(CSc2nnc(C3CC3)n2C2CC2)o1",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00040.png",
+  "smiles": "COCCN1CC2(CCC1=O)CCN(Cc1nc(C(N)=O)no1)CC2",
+  "smiles_nostereo": "COCCN1CC2(CCC1=O)CCN(Cc1nc(C(N)=O)no1)CC2",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00041.png",
+  "smiles": "CCN1CC2(CCC1=O)CCN(Cc1nc(C(F)(F)F)no1)CC2",
+  "smiles_nostereo": "CCN1CC2(CCC1=O)CCN(Cc1nc(C(F)(F)F)no1)CC2",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00042.png",
+  "smiles": "O=C1CCC(C(=O)Nc2ccc(N3CCCCC3)c(S(=O)(=O)Nc3ccc(Cl)cc3)c2)=NN1",
+  "smiles_nostereo": "O=C1CCC(C(=O)Nc2ccc(N3CCCCC3)c(S(=O)(=O)Nc3ccc(Cl)cc3)c2)=NN1",
+  "tags": {
+   "heavy_atoms": 33,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00043.png",
+  "smiles": "O=C(CCn1ccc(=O)[nH]c1=O)Nc1ccc2c(c1)CCC(=O)N2",
+  "smiles_nostereo": "O=C(CCn1ccc(=O)[nH]c1=O)Nc1ccc2c(c1)CCC(=O)N2",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00044.png",
+  "smiles": "CCOc1ccc2ncc(C#N)c(N3CCC(C(=O)Nc4cccc(C)c4)CC3)c2c1",
+  "smiles_nostereo": "CCOc1ccc2ncc(C#N)c(N3CCC(C(=O)Nc4cccc(C)c4)CC3)c2c1",
+  "tags": {
+   "heavy_atoms": 31,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00045.png",
+  "smiles": "CCc1ccsc1CNc1ncnc2c1CCC2",
+  "smiles_nostereo": "CCc1ccsc1CNc1ncnc2c1CCC2",
+  "tags": {
+   "heavy_atoms": 18,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00046.png",
+  "smiles": "Cc1ccc(NC(=O)C[C@@H](C(=O)O)N2CCOCC2)cc1",
+  "smiles_nostereo": "Cc1ccc(NC(=O)CC(C(=O)O)N2CCOCC2)cc1",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00047.png",
+  "smiles": "NC(=O)[C@H]1COCCN1CCC(=O)Nc1ccccc1",
+  "smiles_nostereo": "NC(=O)C1COCCN1CCC(=O)Nc1ccccc1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00048.png",
+  "smiles": "Cc1sc(NC(=O)C[C@@H]2CCCCO2)c(C(=O)O)c1C",
+  "smiles_nostereo": "Cc1sc(NC(=O)CC2CCCCO2)c(C(=O)O)c1C",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  }
+ },
+ {
+  "image_path": "data/images/640/test/00049.png",
+  "smiles": "Cc1ccc(-c2nnc(C3CCN(Cc4ccc5ncccc5c4)CC3)o2)s1",
+  "smiles_nostereo": "Cc1ccc(-c2nnc(C3CCN(Cc4ccc5ncccc5c4)CC3)o2)s1",
+  "tags": {
+   "heavy_atoms": 28,
+   "rings": 5,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  }
+ }
+]
