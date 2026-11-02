@@ -67,6 +67,8 @@ def _chat(client: OpenAI, model: str, image_path: str, escalated: bool = False,
     text = resp.choices[0].message.content or ""
     if "</think>" in text:  # thinking mode: keep only the final answer after the reasoning block
         text = text.split("</think>")[-1]
+    elif thinking:
+        text = None  # reasoning never finished within the budget: no answer (don't mine the reasoning for SMILES)
     return {
         "smiles": text,
         "latency_s": latency,
