@@ -8,6 +8,7 @@ systems; a genuine bug inside a module still raises.
   molscribe                            src/predict_molscribe.py  (needs .venv-molscribe; see that module)
   closed_opus                          src/predict_closed.py     (Claude Opus 5.5 via Anthropic API; needs ANTHROPIC_API_KEY)
   harness, routed                      src/predict_routed.py     (tuned + vote; routed escalates to Kimi K3 on disagreement)
+  hybrid                               src/predict_hybrid.py     (Kimi K3 skeleton + tuned stereo fixer, RDKit guard; needs FIXER_LORA)
 """
 from __future__ import annotations
 
@@ -16,7 +17,7 @@ import importlib
 SYSTEMS: dict = {}
 UNAVAILABLE: dict[str, str] = {}
 
-for _mod in ("src.predict_fireworks", "src.predict_molscribe", "src.predict_closed", "src.predict_routed"):
+for _mod in ("src.predict_fireworks", "src.predict_molscribe", "src.predict_closed", "src.predict_routed", "src.predict_hybrid"):
     try:
         SYSTEMS |= importlib.import_module(_mod).SYSTEMS
     except ModuleNotFoundError as e:  # the module itself or one of its optional deps is absent
