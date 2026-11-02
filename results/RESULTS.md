@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-01 22:50 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-01 23:05 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -103,6 +103,27 @@ What this tells us:
   start for 35 s of inference. Keep the server warm across the whole eval window tomorrow and report
   steady-state cost per image separately from the fixed start-up cost.
 
+## Changes after the smoke runs that affect comparability
+
+Commit `57f43b5` and the dataset build changed the scoring and the generation settings. Numbers above were
+produced before these changes; do not compare them directly with later runs.
+
+- **Token cap is now 108, down from 150.** That is 1.5x the longest label in the real dataset (72 Qwen3.5
+  tokens, from `data/dataset_report.json`). Both smoke runs used 150.
+- **Exact match is now stereo-aware.** Labels in the real dataset are canonical isomeric SMILES, so a
+  prediction must get wedge-bond and double-bond geometry right to count. `exact_match_nostereo` is
+  reported alongside as the stereo-agnostic number. For the smoke files the two are identical because the
+  smoke labels had no stereo.
+- **New summary keys** in `results/<system>.json`: `exact_match_nostereo`, `mean_tanimoto`, `loop_rate`
+  (share of outputs that hit the cap), `median_latency_s`, `p95_latency_s`, `max_tokens`. Each item gains
+  `match.exact_stereo`, `match.hit_cap`, and difficulty `tags`.
+- **Real dataset is built** (`src/make_dataset.py`, seed 20261102): 10,000 train / 200 val / 500 synthetic
+  test / 100 PubChem drugs, rendered at 384 and 640 px, Bemis-Murcko scaffold split. Leakage checks
+  passed: zero shared canonical SMILES (with and without stereo) and zero shared scaffolds across splits.
+  Manifests: `data/{train,val,test_synthetic,test_drugs}_{384,640}.json`.
+- **Roles revised:** Person A (nicolewongbiz) owns data and training; Person B owns baselines, closed-model
+  and MolScribe predictors, `src/evaluate.py`, charts, the app, and the final comparison. See `CLAUDE.md`.
+
 ## Blockers and open items
 
 1. **Fireworks dataset upload disabled** on the account. Exact error, from the dataset upload-endpoint
@@ -120,8 +141,8 @@ What this tells us:
    serverless vision models confirmed tonight, with Qwen3.8-Max as a third. Qwen3-VL-235B and Llama 4
    Maverick are on-demand only. Note Qwen3.5-9B itself is on-demand only on Fireworks, so the untuned 9B
    baseline needs a dedicated GPU there too (or Modal).
-4. **Real dataset not built yet.** Tonight used a 50-molecule throwaway set. `src/render.py` and
-   `src/build_dataset.py` (scaffold split, leakage check) are still owed by the data/eval owner.
+4. **Real dataset built** (see above). Still owed: `src/evaluate.py` and the exact-match vs cost chart,
+   closed-model and MolScribe baseline predictors, and `app.py` (Person B).
 5. **Pre-work rules.** Confirm with organizers whether code written tonight is allowed.
 
 ## Spend

@@ -36,18 +36,18 @@ and the same `predict()` contract, so the swap back to Fireworks is a model-ID c
 
 ```
 smoke/make_smoke_data.py   50-molecule throwaway set (40 train / 10 test) for the platform smoke test
+src/make_dataset.py        real dataset: ZINC + PubChem drugs, scaffold split, leakage checks, 384/640 px renders
 src/validate.py            RDKit parse, canonicalize, extract SMILES from free text, score one prediction
 src/predict.py             one predict(image_path) per system; OpenAI-compatible chat with image data URI
 src/run_system.py          run a predictor over a test set -> results/<system>.json (metrics + per-item)
 src/modal_serve.py         vLLM OpenAI-compatible server for the base model + any LoRA in a Modal volume
 src/modal_train.py         LoRA SFT fallback on Modal (PEFT, language-model layers only, vLLM-loadable)
-data/                      gitignored: raw SMILES source, rendered images, train.jsonl, test_*.json
+data/                      gitignored: raw sources, rendered images, manifests {train,val,test_synthetic,test_drugs}_{384,640}.json
 results/                   results/<system>.json and cost_log.md are committed; results/raw/ logs are not
 ```
 
-Still to come from the data/eval owner: `src/render.py` (randomized renderer), `src/build_dataset.py`
-(filter, scaffold split, leakage check), `src/evaluate.py` (cross-system metrics and the
-exact-match vs cost chart), and `app.py` (demo UI).
+Still to come from the baselines/comparison owner: closed-model and MolScribe predictors, `src/evaluate.py`
+(cross-system metrics and the exact-match vs cost chart), and `app.py` (demo UI).
 
 ## Shared contracts
 
@@ -55,9 +55,12 @@ exact-match vs cost chart), and `app.py` (demo UI).
   part with the fixed prompt and an `image_url` part whose URL is a `data:image/png;base64,...` URI. The
   assistant turn is the canonical SMILES only. This is the Fireworks VLM SFT format; `modal_train.py`
   reads the same file.
-- `data/test_*.json`: `[{"image_path": "...", "smiles": "<canonical>"}]`.
+- `data/test_*.json`: `[{"image_path": "...", "smiles": "<canonical isomeric SMILES>", ...}]`; items may carry
+  difficulty `tags`.
 - `predict(image_path) -> {"smiles", "latency_s", "tokens_in", "tokens_out", "attempts", "escalated"}`.
-- `results/<system>.json`: `{"summary": {...}, "items": [...]}`, written by `src/run_system.py`.
+- `results/<system>.json`: `{"summary": {...}, "items": [...]}`, written by `src/run_system.py`. Summary
+  includes stereo-aware `exact_match`, `exact_match_nostereo`, `valid_rate`, `mean_tanimoto`, `loop_rate`,
+  `median_latency_s`, `p95_latency_s`, `max_tokens` (108), and GPU cost fields.
 
 ## Setup
 

@@ -25,13 +25,14 @@ modest temperature, canonicalize, and if all three agree accept the answer; othe
 large model. Agreement is the only confidence signal an open model gives us for free, and it catches
 wrong-but-valid answers. Keep the retry loop as a one-line fallback for parse failures only.
 
-## 3. Stereochemistry has to be stripped on both sides
+## 3. Stereochemistry: decided, keep it but report both numbers
 
-ZINC SMILES carry `@`, `/`, `\` marks. A flat 2D rendering without wedge bonds cannot show them, so a
-model that reads the picture correctly still gets scored wrong if the label keeps stereo. The validator
-strips stereo from both prediction and truth. The renderer should also strip stereo from the molecule
-before drawing so no wedges appear. If we want stereo as a stretch, that is a separate experiment with
-wedged renderings and stereo-preserving labels.
+Decision taken on 1 Nov (commit `57f43b5`): labels keep stereo (canonical isomeric SMILES), RDKit draws
+wedge bonds for the chiral centres, and the headline exact match is stereo-aware. The stereo-agnostic
+number (`exact_match_nostereo`) is reported next to it. Original concern, still valid as a risk: 63% of
+ZINC molecules carry stereo marks, and small VLMs read wedge direction poorly, so expect the stereo-aware
+number to sit well below the stereo-agnostic one. If the gap is large, say so in the pitch rather than
+switching metrics after the fact.
 
 ## 4. Do not hand-label the real-world set
 
