@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-02 00:45 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-02 01:00 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -212,7 +212,9 @@ Source: `results/molscribe__test_real_uspto_384.json` (200 USPTO patent scans, r
 MolScribe scores 89.0% stereo-aware, 92.0% stereo-agnostic, 96.5% valid, mean Tanimoto 0.95.
 Its published USPTO accuracy is higher at native resolution, so some of the drop is the 384 px downscale
 of scans that are often 800 px wide or more; the 640 px manifests exist for that comparison. The
-hand-drawn result is pending.
+hand-drawn set (`results/molscribe__test_handdrawn_384.json`, 200 DECIMER photos) is much harder even for
+the specialist: 11.5% stereo-aware, 14.5% stereo-agnostic, 76.0% valid, mean Tanimoto 0.33.
+Report hand-drawn as a stretch set only.
 
 ## Changes after the smoke runs that affect comparability
 

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-02T07:27:39+00:00",
+  "generated_utc": "2026-11-02T07:34:35+00:00",
   "headline_metric": "exact",
   "bootstrap": {
     "resamples": 1000,
@@ -10,6 +10,57 @@
   "price_in": {},
   "price_out": {},
   "systems": [
+    {
+      "system": "molscribe",
+      "testset": "test_handdrawn_384",
+      "path": "results/molscribe__test_handdrawn_384.json",
+      "n": 200,
+      "exact": 0.115,
+      "exact_ci": [
+        0.075,
+        0.16
+      ],
+      "exact_n": 23,
+      "exact_nostereo": 0.145,
+      "exact_nostereo_ci": [
+        0.095,
+        0.19
+      ],
+      "exact_nostereo_n": 29,
+      "valid": 0.76,
+      "valid_ci": [
+        0.7,
+        0.82
+      ],
+      "mean_tanimoto": 0.32898339176077507,
+      "loop_rate": 0.0,
+      "median_latency_s": 0.7726871460326947,
+      "p95_latency_s": 1.2464325000764802,
+      "mean_latency_s": 2.0879088716529077,
+      "tokens_in_total": 0,
+      "tokens_out_total": 0,
+      "escalation_rate": 0.0,
+      "usd": 0.0,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 8.825970666017383,
+      "wall_s": 425.4213862500619,
+      "max_tokens": null,
+      "headline_metric": "exact",
+      "headline_rate": 0.115,
+      "headline_n": 23,
+      "cost_per_correct": 0.0,
+      "cost_per_image": 0.0,
+      "notes": [],
+      "headline_ci": [
+        0.075,
+        0.16
+      ],
+      "metric_key": "exact_stereo",
+      "label": "molscribe \u00b7 test_handdrawn_384"
+    },
     {
       "system": "molscribe",
       "testset": "test_real_uspto_384",
@@ -541,6 +592,10 @@
   ],
   "by_tag": {
     "heavy_atoms<=20": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        21,
+        183
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         28,
         31
@@ -559,6 +614,10 @@
       ]
     },
     "heavy_atoms 21-30": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        2,
+        17
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         60,
         67
@@ -577,6 +636,7 @@
       ]
     },
     "heavy_atoms 31-40": {
+      "molscribe \u00b7 test_handdrawn_384": null,
       "molscribe \u00b7 test_real_uspto_384": [
         74,
         80
@@ -595,6 +655,7 @@
       ]
     },
     "heavy_atoms>40": {
+      "molscribe \u00b7 test_handdrawn_384": null,
       "molscribe \u00b7 test_real_uspto_384": [
         16,
         22
@@ -604,6 +665,10 @@
       "untuned \u00b7 test_synthetic_384": null
     },
     "rings=0": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        6,
+        88
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         4,
         5
@@ -613,6 +678,10 @@
       "untuned \u00b7 test_synthetic_384": null
     },
     "rings=1": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        10,
+        61
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         20,
         22
@@ -631,6 +700,10 @@
       ]
     },
     "rings=2": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        4,
+        33
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         20,
         23
@@ -649,6 +722,10 @@
       ]
     },
     "rings=3": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        2,
+        10
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         41,
         54
@@ -667,6 +744,10 @@
       ]
     },
     "rings>=4": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        1,
+        8
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         93,
         96
@@ -685,6 +766,10 @@
       ]
     },
     "stereocenters=0": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        17,
+        157
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         147,
         156
@@ -703,6 +788,10 @@
       ]
     },
     "stereocenters 1-2": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        5,
+        31
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         17,
         21
@@ -721,6 +810,10 @@
       ]
     },
     "stereocenters>=3": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        1,
+        12
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         14,
         23
@@ -739,6 +832,10 @@
       ]
     },
     "no E/Z bonds": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        22,
+        183
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         161,
         178
@@ -757,6 +854,10 @@
       ]
     },
     "E/Z bonds": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        1,
+        17
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         17,
         22
@@ -775,6 +876,10 @@
       ]
     },
     "charged": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        4,
+        26
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         6,
         6
@@ -793,6 +898,10 @@
       ]
     },
     "neutral": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        19,
+        174
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         172,
         194
@@ -811,6 +920,10 @@
       ]
     },
     "single fragment": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        23,
+        200
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         177,
         197
@@ -829,6 +942,7 @@
       ]
     },
     "multi-fragment": {
+      "molscribe \u00b7 test_handdrawn_384": null,
       "molscribe \u00b7 test_real_uspto_384": [
         1,
         3
@@ -847,6 +961,10 @@
       ]
     },
     "elements: CNO only": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        6,
+        47
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         78,
         89
@@ -865,6 +983,10 @@
       ]
     },
     "elements: beyond CNO": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        17,
+        153
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         100,
         111
@@ -883,6 +1005,10 @@
       ]
     },
     "not bridged": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        22,
+        191
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         175,
         197
@@ -901,6 +1027,10 @@
       ]
     },
     "bridged": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        1,
+        9
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         3,
         3
@@ -919,6 +1049,10 @@
       ]
     },
     "not fused": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        20,
+        177
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         102,
         120
@@ -937,6 +1071,10 @@
       ]
     },
     "fused": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        3,
+        23
+      ],
       "molscribe \u00b7 test_real_uspto_384": [
         76,
         80
