@@ -13,6 +13,7 @@ Systems come from src/predict.py (open models, Person A) plus the optional src/p
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import math
 import statistics
@@ -35,7 +36,7 @@ from src.validate import canonicalize, score
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("system", choices=SYSTEMS)
+    ap.add_argument("system", help=f"one of {sorted(SYSTEMS)}, or tuned:<lora_run_name> for any adapter on the server")
     ap.add_argument("test_set")
     ap.add_argument("--out", required=True)
     ap.add_argument("--gpu-usd-per-hour", type=float, required=True, help="0 for API models")
@@ -45,7 +46,12 @@ def main() -> None:
     args = ap.parse_args()
 
     items = json.loads(Path(args.test_set).read_text())
-    predict = SYSTEMS[args.system]
+    if args.system.startswith("tuned:"):
+        predict = functools.partial(SYSTEMS["tuned"], lora=args.system.split(":", 1)[1])
+    elif args.system in SYSTEMS:
+        predict = SYSTEMS[args.system]
+    else:
+        ap.error(f"unknown system {args.system!r}")
     t_start = time.perf_counter()
     first_answer_s = None
     rows = []

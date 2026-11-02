@@ -26,3 +26,12 @@ Billing actuals for the 21:00 and 22:00 PT hours (closed), from
 
 Estimates in the rows above were within a few cents of these actuals. Runs after 23:00 PT (the n=500
 cycle) are logged by their owner below and will show in the next closed hour.
+
+### Phase 3 (Person A), 2026-11-01 from 23:00 PT; estimates from container time, replace with billed actuals when the hour closes
+
+| When (PT) | Run | Platform / GPU | Container time | Cost (USD) | Notes |
+|---|---|---|---|---|---|
+| 22:59–23:06 | upload 384 px images (164 MB) to volume `chemvision-data` | Modal volume | — | ~0.00 | |
+| 23:08–23:09 | `dry_384` training check (64 ex, 5 steps) | Modal 1× L40S ($1.95/hr) | ~1.2 min | est 0.04 | 1.65 s/step at batch 8 |
+| 23:09–23:17 | `n500_r384_lang_e3` LoRA SFT (500 ex × 3 epochs) | Modal 1× L40S | 6.7 min | est 0.22 | 189 steps, ~5.5 ex/s |
+| 23:09–23:17 | `untuned` eval, 500 test images, 8 workers | Modal 1× L40S (vLLM) | ~7.5 min incl. 201 s cold start + ~1.5 min idle | est 0.24 | app stopped manually |
