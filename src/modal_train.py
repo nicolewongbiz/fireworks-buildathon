@@ -383,6 +383,7 @@ def train(train_rows: list[list[str]], val_rows: list[list[str]], cfg: dict) -> 
     train_s, t_window, steps_window = 0.0, time.time(), 0
     grad_check = None
     done = False
+    epoch_ckpts: list[dict] = []
     for epoch in range(cfg["epochs"]):
         for i, batch in enumerate(train_loader):
             batch = to_cuda(batch)
@@ -429,6 +430,17 @@ def train(train_rows: list[list[str]], val_rows: list[list[str]], cfg: dict) -> 
                 run_nll, run_tok, steps_window, t_window = 0.0, 0, 0, time.time()
             if done:
                 break
+        if step == steps_per_epoch * (epoch + 1):  # epoch completed (not cut short by --max-steps)
+            # Per-epoch checkpoint, saved as its own top-level adapter dir so vLLM can serve each one.
+            last = history[-1]
+            val_ep = last["val_loss"] if last["step"] == step else (evaluate() if val_rows else None)
+            ep_dir = run_dir.with_name(f"{run_dir.name}_ep{epoch + 1}")
+            if ep_dir.exists():
+                shutil.rmtree(ep_dir)
+            model.save_pretrained(ep_dir)
+            lora_vol.commit()
+            epoch_ckpts.append({"epoch": epoch + 1, "step": step, "val_loss": val_ep, "dir": ep_dir.name})
+            print(f"epoch {epoch + 1} checkpoint {ep_dir.name}: val loss {val_ep}", flush=True)
         if done:
             break
     if history[-1]["step"] != step:  # loop ended without a final eval (should not happen)
@@ -444,7 +456,12 @@ def train(train_rows: list[list[str]], val_rows: list[list[str]], cfg: dict) -> 
         "train_size": len(train_rows), "val_size": len(val_rows), "seed": seed,
         "load_s": round(load_s, 1), "train_s": round(train_s, 1), "eval_s": round(eval_s, 1),
         "final_val_loss": history[-1]["val_loss"], "batching_check": batching, "grad_norms_step1": grad_check,
+        "epoch_checkpoints": epoch_ckpts,
+        # Checkpoint choice uses validation loss only; the test set is never consulted.
+        "selected_checkpoint": min((c for c in epoch_ckpts if c["val_loss"] is not None),
+                                   key=lambda c: c["val_loss"], default={"dir": None})["dir"],
     }
+    print("selected checkpoint (lowest val loss):", summary["selected_checkpoint"], flush=True)
     (run_dir / "train_config.json").write_text(json.dumps({**cfg, "lora": module_report}, indent=1))
     (run_dir / "history.json").write_text(json.dumps({"summary": summary, "history": history}, indent=1))
     lora_vol.commit()
