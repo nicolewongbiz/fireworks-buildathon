@@ -121,6 +121,11 @@ produced before these changes; do not compare them directly with later runs.
   test / 100 PubChem drugs, rendered at 384 and 640 px, Bemis-Murcko scaffold split. Leakage checks
   passed: zero shared canonical SMILES (with and without stereo) and zero shared scaffolds across splits.
   Manifests: `data/{train,val,test_synthetic,test_drugs}_{384,640}.json`.
+- **Real-world test sets built** (`src/make_real_test.py`, seed 20261102): 200 USPTO patent scans
+  (`data/test_real_uspto_{384,640}.json`, 61 with stereo, 10 to 51 heavy atoms) and 200 DECIMER hand-drawn
+  photos (`data/test_handdrawn_{384,640}.json`, 57 with stereo, small odd molecules). Both have zero
+  overlap with the training set on stereo-aware and stereo-stripped SMILES. These replace the
+  hand-labelled set the spec planned.
 - **Roles revised:** Person A (nicolewongbiz) owns data and training; Person B owns baselines, closed-model
   and MolScribe predictors, `src/evaluate.py`, charts, the app, and the final comparison. See `CLAUDE.md`.
 
