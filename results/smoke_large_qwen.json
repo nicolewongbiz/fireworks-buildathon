@@ -1,0 +1,324 @@
+{
+  "summary": {
+    "system": "large_qwen",
+    "model": "accounts/fireworks/models/qwen3p8-max",
+    "thinking_flag": "reasoning_effort=none",
+    "n": 10,
+    "exact_match": 0.2,
+    "exact_match_nostereo": 0.2,
+    "valid_rate": 0.8,
+    "mean_tanimoto": 0.3876826976229961,
+    "loop_rate": 0.8,
+    "max_tokens": 108,
+    "mean_latency_s": 1.2402604667819106,
+    "median_latency_s": 1.3075968750054017,
+    "p95_latency_s": 1.6871892919298261,
+    "mean_tokens_in": 174.0,
+    "mean_tokens_out": 93.9,
+    "total_tokens_in": 1740,
+    "total_tokens_out": 939,
+    "first_answer_s": 1.4351962079526857,
+    "wall_s": 12.497696375008672,
+    "gpu_hours": 0.0,
+    "gpu_usd_per_hour": 0.0,
+    "usd_per_mtok_in": 2.0,
+    "usd_per_mtok_out": 6.0,
+    "usd": 0.009114,
+    "usd_per_image": 0.0009114,
+    "retries": 0,
+    "reasoning_leaked": 0,
+    "workers": 1
+  },
+  "items": [
+    {
+      "image_path": "data/images/smoke/test_000.png",
+      "truth": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+      "tags": null,
+      "predict": {
+        "smiles": "Analyzing the image:\n\n- There's a cyclopentane ring with substituents.\n- One ring carbon bears a carboxylate group (C(=O)[O-]).\n- Adjacent ring carbon: gem-dimethyl (two CH3 groups, i.e., C(CH3)2).\n- Next ring carbon: a methyl group and a C(=O)NHCc1ccccc1 (N-benzyl amide) group.\n\nLet me number the ring: C1",
+        "latency_s": 1.4338576250011101,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "Analyzing the image:\n\n- There's a cyclopentane ring with substituents.\n- One ring carbon bears a carboxylate group (C(=O)[O-]).\n- Adjacent ring carbon: gem-dimethyl (two CH3 groups, i.e., C(CH3)2).\n- Next ring carbon: a methyl group and a C(=O)NHCc1ccccc1 (N-benzyl amide) group.\n\nLet me number the ring: C1",
+        "pred_smiles": "C(=O)NHCc1ccccc1",
+        "pred_canonical": null,
+        "truth_canonical": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_001.png",
+      "truth": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+      "tags": null,
+      "predict": {
+        "smiles": "Analyzing the structure:\n\n- Ethyl ester: CCOC(=O)...\n- Chain: C(=O)OCC... wait, let me trace it: ethyl ester CCOC(=O)CH2CH(CH3)CH2NH...\n- Then NH-C(=O)-N(C)-cyclohexyl ring with a methyl at the 4-position.\n\nTracing the image: on the right side: ethyl group (CH3-CH2-) bonded to O, bonded",
+        "latency_s": 1.3683420419692993,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "Analyzing the structure:\n\n- Ethyl ester: CCOC(=O)...\n- Chain: C(=O)OCC... wait, let me trace it: ethyl ester CCOC(=O)CH2CH(CH3)CH2NH...\n- Then NH-C(=O)-N(C)-cyclohexyl ring with a methyl at the 4-position.\n\nTracing the image: on the right side: ethyl group (CH3-CH2-) bonded to O, bonded",
+        "pred_smiles": "O",
+        "pred_canonical": "O",
+        "truth_canonical": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_002.png",
+      "truth": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+      "tags": null,
+      "predict": {
+        "smiles": "NC1CCC(CNC(=O)c2ccc(Oc3ccc(C(C)=O)cc3)cc2)N1\n\nWait, let me look carefully. Image: on the left, an acetyl group (CH3-C(=O)-) attached to a benzene ring; that ring is connected via an ether O to another benzene ring (para); that ring has a C(=O)NH- (amide); NH-CH2- attached to a pyrrolidine ring carbon (position",
+        "latency_s": 1.3554524580249563,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "NC1CCC(CNC(=O)c2ccc(Oc3ccc(C(C)=O)cc3)cc2)N1\n\nWait, let me look carefully. Image: on the left, an acetyl group (CH3-C(=O)-) attached to a benzene ring; that ring is connected via an ether O to another benzene ring (para); that ring has a C(=O)NH- (amide); NH-CH2- attached to a pyrrolidine ring carbon (position",
+        "pred_smiles": "NC1CCC(CNC(=O)c2ccc(Oc3ccc(C(C)=O)cc3)cc2)N1",
+        "pred_canonical": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CCC(N)N3)cc2)cc1",
+        "truth_canonical": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.5555555555555556,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_003.png",
+      "truth": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+      "tags": null,
+      "predict": {
+        "smiles": "COc1cc(OC)c(NC(=O)NC2CCCC[NH2+]C2)cc1F\n\nWait, let me check the piperidine ring: the nitrogen has a methyl group and a plus charge, with an H shown ([NH+] with methyl). The ring: C2 (ring carbon attached to NH) ... ring positions: the carbon bearing the exocyclic NH is position 4? Let me look: the ring is drawn as a hexagon with N at the right vertex. The",
+        "latency_s": 1.6871892919298261,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "COc1cc(OC)c(NC(=O)NC2CCCC[NH2+]C2)cc1F\n\nWait, let me check the piperidine ring: the nitrogen has a methyl group and a plus charge, with an H shown ([NH+] with methyl). The ring: C2 (ring carbon attached to NH) ... ring positions: the carbon bearing the exocyclic NH is position 4? Let me look: the ring is drawn as a hexagon with N at the right vertex. The",
+        "pred_smiles": "COc1cc(OC)c(NC(=O)NC2CCCC[NH2+]C2)cc1F",
+        "pred_canonical": "COc1cc(OC)c(NC(=O)NC2CCCC[NH2+]C2)cc1F",
+        "truth_canonical": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.6296296296296297,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_004.png",
+      "truth": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+      "tags": null,
+      "predict": {
+        "smiles": "Analyzing the image:\n\n- Left: a six-membered ring containing sulfur (thiane, tetrahydrothiopyran), with an exocyclic double bond at the 4-position: C(=CH-...).\n- The exocyclic double bond connects to a CH=, which is bonded to C(=O)-, i.e., an \u03b1,\u03b2-unsaturated amide: C(=O)N(H)-.\n- The N is bonded to a CH(CH3) group, which",
+        "latency_s": 1.4439847499597818,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "Analyzing the image:\n\n- Left: a six-membered ring containing sulfur (thiane, tetrahydrothiopyran), with an exocyclic double bond at the 4-position: C(=CH-...).\n- The exocyclic double bond connects to a CH=, which is bonded to C(=O)-, i.e., an \u03b1,\u03b2-unsaturated amide: C(=O)N(H)-.\n- The N is bonded to a CH(CH3) group, which",
+        "pred_smiles": "N",
+        "pred_canonical": "N",
+        "truth_canonical": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_005.png",
+      "truth": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+      "tags": null,
+      "predict": {
+        "smiles": "Nc1ccccc1C(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1\n\nWait, let me look carefully.\n\nImage: There's a 2,6-dimethylphenyl group (benzene ring with two methyls at positions 2 and 6), bonded to NH (amide N-H). The NH is bonded to C(=O) (carbonyl with O). The carbonyl carbon is bonded to CH(CH3",
+        "latency_s": 1.259741291985847,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "Nc1ccccc1C(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1\n\nWait, let me look carefully.\n\nImage: There's a 2,6-dimethylphenyl group (benzene ring with two methyls at positions 2 and 6), bonded to NH (amide N-H). The NH is bonded to C(=O) (carbonyl with O). The carbonyl carbon is bonded to CH(CH3",
+        "pred_smiles": "Nc1ccccc1C(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "pred_canonical": "CC(Sc1nc2ccccc2c(=O)n1Cc1ccco1)C(=O)c1ccccc1N",
+        "truth_canonical": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.6716417910447762,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_006.png",
+      "truth": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+      "tags": null,
+      "predict": {
+        "smiles": "Analyzing the image: there's a cyclobutane ring, and one of its carbons bears two substituents: (1) a sulfonyl group bonded to a para-tolyl (4-methylphenyl) ring, and (2) a carbonyl (C=O) connected to an N-H amide, which is further bonded to a CH(CH3) group connected to a benzene ring fused with a methylenedioxy group (1,3-benzodioxole, i.e",
+        "latency_s": 1.2574619579827413,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "Analyzing the image: there's a cyclobutane ring, and one of its carbons bears two substituents: (1) a sulfonyl group bonded to a para-tolyl (4-methylphenyl) ring, and (2) a carbonyl (C=O) connected to an N-H amide, which is further bonded to a CH(CH3) group connected to a benzene ring fused with a methylenedioxy group (1,3-benzodioxole, i.e",
+        "pred_smiles": "(4-methylphenyl)",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_007.png",
+      "truth": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+      "tags": null,
+      "predict": {
+        "smiles": "Analyzing the image: there's a 4-fluorophenyl group bonded to a quaternary carbon bearing a hydroxyl group, and that carbon is part of a piperidine ring. The piperidine nitrogen is protonated (N+) and is connected to a CH2 chain, which links to an amide N-H, then to C=O, then to a CH2, and finally to a 2-chlorophenyl ring.\n\nTracing it out:\n- 4-fl",
+        "latency_s": 1.0670460840919986,
+        "tokens_in": 174,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000996,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "length",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "Analyzing the image: there's a 4-fluorophenyl group bonded to a quaternary carbon bearing a hydroxyl group, and that carbon is part of a piperidine ring. The piperidine nitrogen is protonated (N+) and is connected to a CH2 chain, which links to an amide N-H, then to C=O, then to a CH2, and finally to a 2-chlorophenyl ring.\n\nTracing it out:\n- 4-fl",
+        "pred_smiles": "C=O",
+        "pred_canonical": "C=O",
+        "truth_canonical": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.02,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_008.png",
+      "truth": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+      "tags": null,
+      "predict": {
+        "smiles": "O=C1NC(CCCNc2ccc(C)cc2[N+](=O)[O-])=NN1\n\nCCc1ccc(NCCCc2n[nH]c(=O)[nH]2)cc1",
+        "latency_s": 0.8014821249525994,
+        "tokens_in": 174,
+        "tokens_out": 52,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.00066,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "stop",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "O=C1NC(CCCNc2ccc(C)cc2[N+](=O)[O-])=NN1\n\nCCc1ccc(NCCCc2n[nH]c(=O)[nH]2)cc1",
+        "pred_smiles": "O=C1NC(CCCNc2ccc(C)cc2[N+](=O)[O-])=NN1",
+        "pred_canonical": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "truth_canonical": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_009.png",
+      "truth": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+      "tags": null,
+      "predict": {
+        "smiles": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "latency_s": 0.728047041920945,
+        "tokens_in": 174,
+        "tokens_out": 23,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 0.000486,
+        "model": "accounts/fireworks/models/qwen3p8-max",
+        "thinking_flag": "reasoning_effort=none",
+        "finish_reason": "stop",
+        "reasoning_chars": 0
+      },
+      "match": {
+        "pred_raw": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "pred_smiles": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "pred_canonical": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "truth_canonical": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    }
+  ]
+}

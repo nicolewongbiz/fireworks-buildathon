@@ -9,7 +9,7 @@ Actual costs from `modal billing report --show-resources` and Fireworks billing,
 | 2026-11-01 22:01–22:06 | `smoke_untuned` baseline, 10 images | Modal 1× L40S ($1.95/hr) | ~4.4 min billed so far | 0.144 GPU + 0.006 CPU/mem (partial hour) | cold start 250 s (image build + load + profiling); plus up to 5 min idle before scale-down, est +0.16 |
 | 2026-11-01 22:09–22:12 | `smoke` LoRA SFT, 40 images, 3 epochs | Modal 1× L40S ($1.95/hr) | 2.4 min | est 0.08 GPU | train 99 s; adapter saved to `chemvision-loras:/smoke`; container exited, no idle |
 | 2026-11-01 22:12–22:17 | `smoke_tuned` eval, 10 images, LoRA `smoke` | Modal 1× L40S ($1.95/hr) | ~4.2 min | est 0.14 GPU | cold start 217 s (image cached); app stopped right after, no idle tail |
-| 2026-11-01 23:20–23:35 | Serverless smoke: Kimi K3 + GLM-5.3-Flash, 10 images each + ~9 probe calls | Fireworks serverless | — | 0.014 (token-priced, computed from usage) | Kimi 8/10 exact; GLM thinking-only, no usable output |
+| 2026-11-01 23:20–23:50 | Serverless smoke: Kimi K3, Qwen3.8-Max, GLM-5.3-Flash, 10 images each + ~9 probe calls | Fireworks serverless | — | 0.023 (token-priced, computed from usage) | Kimi 8/10 exact; Qwen writes reasoning into answer; GLM thinking-only |
 | 2026-11-01 | Fireworks dataset upload / SFT | Fireworks | — | 0.00 | blocked: dataset uploads disabled on account |
 
 Running total: $0.58 billed through 23:00 PT (table below); add the rows after 23:00 PT as their hours close. `chemvision-vllm` stopped at 22:18 PT; redeploy with `uv run modal deploy src/modal_serve.py`.
