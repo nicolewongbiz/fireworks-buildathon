@@ -6,6 +6,7 @@ Endpoints come from env (.env): MODAL_VLLM_URL + MODAL_VLLM_API_KEY for the Moda
 from __future__ import annotations
 
 import base64
+import json
 import mimetypes
 import os
 import time
@@ -80,8 +81,25 @@ def predict_untuned(image_path: str) -> dict:
     return _chat(_modal_client(), "base", image_path)
 
 
-def predict_tuned(image_path: str, lora: str = "smoke") -> dict:
-    return _chat(_modal_client(), lora, image_path)
+def best_tuned_checkpoint() -> str:
+    """TUNED_LORA env var, else the checkpoint with the highest validation exact match in results/selection.json
+    (written by src.learning_curve; chosen on validation only). Fails loudly rather than silently serving an
+    old adapter."""
+    if os.environ.get("TUNED_LORA"):
+        return os.environ["TUNED_LORA"]
+    sel_file = Path(__file__).resolve().parents[1] / "results/selection.json"
+    if not sel_file.exists():
+        raise RuntimeError("set TUNED_LORA or run `uv run python -m src.learning_curve` to write results/selection.json")
+    best = None
+    for run in json.loads(sel_file.read_text()).values():
+        chosen = next(c for c in run["candidates"] if c["ckpt"] == run["selected"])
+        if best is None or chosen["val_exact"] > best["val_exact"]:
+            best = chosen
+    return best["ckpt"]
+
+
+def predict_tuned(image_path: str, lora: str | None = None) -> dict:
+    return _chat(_modal_client(), lora or best_tuned_checkpoint(), image_path)
 
 
 def predict_untuned_thinking(image_path: str) -> dict:
