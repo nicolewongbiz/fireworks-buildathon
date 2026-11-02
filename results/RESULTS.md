@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-01 22:15 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-01 22:30 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -68,8 +68,38 @@ Run on 40 training images (`data/smoke_train.jsonl`), one L40S:
 The loss drop on 40 images says the labels are wired correctly (only the assistant turn is trained on,
 confirmed by decoding example 0), not that the model learned the task. Scaling linearly, 5,000 images for
 3 epochs is about 3.3 GPU-hours on one L40S (about $7); batching more than one example per step should
-cut that. The next step is `run_system tuned` on the 10 smoke images to confirm vLLM loads the adapter
-and that outputs change; that has not been run yet.
+cut that. The adapter was then served and evaluated; see the next section.
+
+## Smoke test: tuned adapter served by vLLM on the same 10 images
+
+Source: `results/smoke_tuned.json`. vLLM loaded the adapter from the volume at startup
+(`Loaded new LoRA adapter: name 'smoke'` in the server log) and served it as model `smoke` next to `base`.
+The server was already warm, so this run's wall time excludes cold start; the untuned run's does not.
+
+| Metric | Untuned | Tuned (40 images, 3 epochs) |
+|---|---|---|
+| Exact match | 0 / 10 | 0 / 10 |
+| Valid SMILES | 7 / 10 | 9 / 10 |
+| Mean Tanimoto over valid outputs | 0.17 (max 0.26) | 0.19 (max 0.34) |
+| Outputs with stereo tags | 7 / 10 | 0 / 10 |
+| Outputs hitting the 150-token cap | 3 / 10 | 2 / 10 |
+| Mean output tokens | 81 | 55 |
+| Mean latency per image (warm) | 3.7 s | 3.5 s |
+| GPU time billed for the run | 4.7 min incl. 250 s cold start, $0.15 | 35 s warm, $0.02 |
+
+What this tells us:
+
+- **The full loop works end to end on Modal:** JSONL in the Fireworks VLM SFT format, LoRA training,
+  adapter in a volume, vLLM serving base and adapter from one GPU, OpenAI-compatible client, RDKit scoring.
+  That was tonight's goal. The swap to Fireworks, if uploads are re-enabled, is a model-ID change.
+- **40 training images are enough to see the adapter take effect, not to learn the task.** The tuned model
+  stopped emitting stereo tags (its labels have none), answers got shorter and more often valid, and
+  Tanimoto nudged up. Exact match stayed at zero, as expected at this data size.
+- **Two of ten outputs still loop until the token cap**, now as valid periodic SMILES rather than invalid
+  stereo spam. A repetition penalty or a lower cap would bound the cost; more training data should remove
+  the behaviour. Track the cap-hit rate as a side metric.
+- **Cost accounting must separate cold start from steady state.** The untuned run paid 250 s of cold start,
+  the tuned run paid none. The runner records time to first answer separately for this reason.
 
 ## Blockers and open items
 

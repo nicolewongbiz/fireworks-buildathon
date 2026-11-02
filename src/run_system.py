@@ -1,7 +1,9 @@
 """Run one predictor over a test set and write results/<system>.json.
 
   uv run python -m src.run_system untuned data/smoke_test.json --out results/smoke_untuned.json \
-      --gpu-usd-per-hour 1.95
+      --gpu-usd-per-hour 1.95 [--workers 8]
+
+`--workers` runs requests concurrently (default 1). Per-item latency is still measured per request.
 
 Cost is GPU wall-clock for the run times the hourly rate; cold start is recorded separately
 (time to the first answer) so it can be added or excluded explicitly.
@@ -11,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from pathlib import Path
 
@@ -24,6 +27,7 @@ def main() -> None:
     ap.add_argument("test_set")
     ap.add_argument("--out", required=True)
     ap.add_argument("--gpu-usd-per-hour", type=float, required=True)
+    ap.add_argument("--workers", type=int, default=1, help="concurrent requests (default 1)")
     args = ap.parse_args()
 
     items = json.loads(Path(args.test_set).read_text())
@@ -31,13 +35,23 @@ def main() -> None:
     t_start = time.perf_counter()
     first_answer_s = None
     rows = []
-    for it in items:
+
+    def run_one(it: dict) -> dict:
+        nonlocal first_answer_s
         out = predict(it["image_path"])
         if first_answer_s is None:
             first_answer_s = time.perf_counter() - t_start
         m = score(out["smiles"] or "", it["smiles"])
-        rows.append({"image_path": it["image_path"], "truth": it["smiles"], "predict": out, "match": asdict(m)})
         print(f"{'OK ' if m.exact else 'BAD'} valid={m.valid} {out['latency_s']:.2f}s {out['smiles']!r}")
+        return {"image_path": it["image_path"], "truth": it["smiles"], "predict": out, "match": asdict(m)}
+
+    if args.workers > 1:
+        # Warm the server with one request first so the cold start is not counted against every worker.
+        rows.append(run_one(items[0]))
+        with ThreadPoolExecutor(max_workers=args.workers) as ex:
+            rows.extend(ex.map(run_one, items[1:]))
+    else:
+        rows.extend(run_one(it) for it in items)
     wall_s = time.perf_counter() - t_start
 
     n = len(rows)
@@ -55,6 +69,7 @@ def main() -> None:
         "gpu_hours": gpu_hours,
         "usd": gpu_hours * args.gpu_usd_per_hour,
         "gpu_usd_per_hour": args.gpu_usd_per_hour,
+        "workers": args.workers,
     }
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps({"summary": summary, "items": rows}, indent=2))
