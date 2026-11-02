@@ -39,6 +39,8 @@ Use Modal (workspace `nicolewongbiz`, ~$200 credit) for GPU inference that Firew
 
 Any paid run (Fireworks deployment, non-free tuning job, Modal GPU job) needs the user's approval with an estimated cost first.
 
+`firectl` blocks mutating commands (dataset/job/deployment create, delete, etc.) when run by an AI agent on this account. Don't work around it via the REST API: hand the exact command to the human to run. Read-only `firectl ... get/list` is fine. The block message echoes `--api-key` in plain text, so prefer commands that don't pass the key inline.
+
 Keep the laptop healthy:
 - Cap parallel workers at ~6 (`multiprocessing`/`concurrent.futures`), leaving cores for the OS and the other agent.
 - Process big datasets in chunks/streams; don't load all images into RAM.
