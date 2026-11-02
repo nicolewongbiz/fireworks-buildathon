@@ -1,0 +1,29 @@
+{
+  "n2000_r384_lang_e3": {
+    "selected": "n2000_r384_lang_e3_ep3",
+    "rule": "max val exact (stereo-aware); ties: min val loss, then earlier epoch",
+    "candidates": [
+      {
+        "ckpt": "n2000_r384_lang_e3_ep1",
+        "epoch": 1,
+        "val_exact": 0.12,
+        "val_exact_nostereo": 0.185,
+        "val_loss": 0.22419700405619808
+      },
+      {
+        "ckpt": "n2000_r384_lang_e3_ep2",
+        "epoch": 2,
+        "val_exact": 0.25,
+        "val_exact_nostereo": 0.33,
+        "val_loss": 0.16940466895926964
+      },
+      {
+        "ckpt": "n2000_r384_lang_e3_ep3",
+        "epoch": 3,
+        "val_exact": 0.27,
+        "val_exact_nostereo": 0.37,
+        "val_loss": 0.16438535229598145
+      }
+    ]
+  }
+}

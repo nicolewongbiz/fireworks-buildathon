@@ -1,0 +1,1964 @@
+{
+  "summary": {
+    "system": "untuned",
+    "n": 50,
+    "exact_match": 0.0,
+    "exact_match_nostereo": 0.0,
+    "valid_rate": 0.78,
+    "mean_tanimoto": 0.15306641030707765,
+    "loop_rate": 0.18,
+    "max_tokens": 108,
+    "mean_latency_s": 2.0597104974254035,
+    "median_latency_s": 1.9035743129788898,
+    "p95_latency_s": 3.675324250012636,
+    "mean_tokens_in": 175.0,
+    "mean_tokens_out": 58.18,
+    "first_answer_s": 1.6182189580285922,
+    "wall_s": 15.84748320793733,
+    "gpu_hours": 0.00440207866887148,
+    "usd": 0.008584053404299387,
+    "gpu_usd_per_hour": 1.95,
+    "workers": 8,
+    "cold_start_s": 1.6182189580285922,
+    "cold_start_usd": 0.0008765352689321541,
+    "steady_images_per_s": 3.4436074233644423,
+    "steady_usd_per_1k_images": 0.1572962884768823
+  },
+  "items": [
+    {
+      "image_path": "data/images/384/test/00000.png",
+      "truth": "CN(C[C@@H]1CCCO1)C(=O)c1cccc(CSc2nccn2C)c1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CN1C=C(CN(C2=CC(=C(C(=C2)CC(=O)N(C3CCOC3)C)C)C)C1)N(C)C",
+        "latency_s": 1.5292223750147969,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CN1C=C(CN(C2=CC(=C(C(=C2)CC(=O)N(C3CCOC3)C)C)C)C1)N(C)C",
+        "pred_smiles": "CN1C=C(CN(C2=CC(=C(C(=C2)CC(=O)N(C3CCOC3)C)C)C)C1)N(C)C",
+        "pred_canonical": "Cc1cc(N2CC(N(C)C)=CN(C)C2)cc(CC(=O)N(C)C2CCOC2)c1C",
+        "truth_canonical": "CN(CC1CCCO1)C(=O)c1cccc(CSc2nccn2C)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.22826086956521738,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00001.png",
+      "truth": "Cc1c(CNC(=O)c2cn(CC[C@H]3CCCCN3)nn2)cnn1C",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]2CN=C(N=C2)NCC3=NC(=O)N(C3)C)C(=O)N1C",
+        "latency_s": 1.8755522089777514,
+        "tokens_in": 175,
+        "tokens_out": 43,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]2CN=C(N=C2)NCC3=NC(=O)N(C3)C)C(=O)N1C",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]2CN=C(N=C2)NCC3=NC(=O)N(C3)C)C(=O)N1C",
+        "pred_canonical": "CC1CN(CC2C=NC(NCC3=NC(=O)N(C)C3)=NC2)C(=O)N1C",
+        "truth_canonical": "Cc1c(CNC(=O)c2cn(CCC3CCCCN3)nn2)cnn1C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.15217391304347827,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00002.png",
+      "truth": "O=C(N/C(=C/c1cccs1)c1nc2ccccc2[nH]1)c1ccccc1",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 1,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C1=CC(=O)C=C1)[C@@H](C[C@@H](C1=CC=C(C=C1)C(=O)O)[C@@H](C(=O)O)C(=O)O)C(=O)O",
+        "latency_s": 2.2190338750369847,
+        "tokens_in": 175,
+        "tokens_out": 67,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C1=CC(=O)C=C1)[C@@H](C[C@@H](C1=CC=C(C=C1)C(=O)O)[C@@H](C(=O)O)C(=O)O)C(=O)O",
+        "pred_smiles": "C[C@@H](C1=CC(=O)C=C1)[C@@H](C[C@@H](C1=CC=C(C=C1)C(=O)O)[C@@H](C(=O)O)C(=O)O)C(=O)O",
+        "pred_canonical": "CC(C1=CC(=O)C=C1)C(CC(c1ccc(C(=O)O)cc1)C(C(=O)O)C(=O)O)C(=O)O",
+        "truth_canonical": "O=C(NC(=Cc1cccs1)c1nc2ccccc2[nH]1)c1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10526315789473684,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00003.png",
+      "truth": "O=C1CCCN1C1CCN(S(=O)(=O)CC2CCC2)CC1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "O=S1(=O)CCN(CC1)C1CCC(CC1)N(C)C(=O)C1CC1=O",
+        "latency_s": 1.4515908330213279,
+        "tokens_in": 175,
+        "tokens_out": 33,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "O=S1(=O)CCN(CC1)C1CCC(CC1)N(C)C(=O)C1CC1=O",
+        "pred_smiles": "O=S1(=O)CCN(CC1)C1CCC(CC1)N(C)C(=O)C1CC1=O",
+        "pred_canonical": "CN(C(=O)C1CC1=O)C1CCC(N2CCS(=O)(=O)CC2)CC1",
+        "truth_canonical": "O=C1CCCN1C1CCN(S(=O)(=O)CC2CCC2)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14516129032258066,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00004.png",
+      "truth": "CC1(C)[C@]2(C(=O)[O-])CC[C@@]1(C)C(=O)C2",
+      "tags": {
+        "heavy_atoms": 14,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 1,
+        "elements": [
+          "C",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C[C@H](C)C(=O)OC)C(=O)OC)C(=O)OC",
+        "latency_s": 1.7980795830953866,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C[C@H](C)C(=O)OC)C(=O)OC)C(=O)OC",
+        "pred_smiles": "C[C@@H](C[C@@H](C[C@H](C)C(=O)OC)C(=O)OC)C(=O)OC",
+        "pred_canonical": "COC(=O)C(C)CC(CC(C)C(=O)OC)C(=O)OC",
+        "truth_canonical": "CC12CCC(C(=O)[O-])(CC1=O)C2(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09523809523809523,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00005.png",
+      "truth": "COCCN(CCOC)C(=O)[C@]12CC[C@](C)(C(=O)[C@H]1Br)C2(C)C",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 2,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "Br",
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "COCC(COC)N(C=O)C1(C(=O)C2C1CC2Br)C\n",
+        "latency_s": 1.3707892500096932,
+        "tokens_in": 175,
+        "tokens_out": 28,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "COCC(COC)N(C=O)C1(C(=O)C2C1CC2Br)C\n",
+        "pred_smiles": "COCC(COC)N(C=O)C1(C(=O)C2C1CC2Br)C",
+        "pred_canonical": "COCC(COC)N(C=O)C1(C)C(=O)C2C(Br)CC21",
+        "truth_canonical": "COCCN(CCOC)C(=O)C12CCC(C)(C(=O)C1Br)C2(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2786885245901639,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00006.png",
+      "truth": "CC(C)CNS(=O)(=O)C[C@@]12CC[C@@H](CC1=O)C2(C)C",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1CC2(C1)C(C2)(O)C(=O)Nc3nc(C(=O)N4C(=O)CNC4=O)cs3",
+        "latency_s": 2.0861500840401277,
+        "tokens_in": 175,
+        "tokens_out": 43,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1CC2(C1)C(C2)(O)C(=O)Nc3nc(C(=O)N4C(=O)CNC4=O)cs3",
+        "pred_smiles": "CC1CC2(C1)C(C2)(O)C(=O)Nc3nc(C(=O)N4C(=O)CNC4=O)cs3",
+        "pred_canonical": "CC1CC2(C1)CC2(O)C(=O)Nc1nc(C(=O)N2C(=O)CNC2=O)cs1",
+        "truth_canonical": "CC(C)CNS(=O)(=O)CC12CCC(CC1=O)C2(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.12658227848101267,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00007.png",
+      "truth": "C[C@H](NC(=O)Cc1cccc2ccccc12)C(=O)N1CCOCC1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@H](C1=CC=CC2=C1C=CC=C2)N)N(C)C(=O)C1CCN(CC1)C",
+        "latency_s": 2.2134437919594347,
+        "tokens_in": 175,
+        "tokens_out": 44,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@H](C1=CC=CC2=C1C=CC=C2)N)N(C)C(=O)C1CCN(CC1)C",
+        "pred_smiles": "C[C@@H](C[C@H](C1=CC=CC2=C1C=CC=C2)N)N(C)C(=O)C1CCN(CC1)C",
+        "pred_canonical": "CC(CC(N)c1cccc2ccccc12)N(C)C(=O)C1CCN(C)CC1",
+        "truth_canonical": "CC(NC(=O)Cc1cccc2ccccc12)C(=O)N1CCOCC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.29577464788732394,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00008.png",
+      "truth": "COc1ccc(S(=O)(=O)N2CCC(OCc3ccc(F)cc3)CC2)cc1C",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]1O)C(=O)O[C@@H]2[C@@H](C[C@@H](C[C@@H]2O)C(=O)O[C@H]3C[C@H](C[C@H](C3)O)C(=O)O[C@H]4C[C@@H](C[C@@H](C4)O)C(=O)",
+        "latency_s": 4.01681787497364,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]1O)C(=O)O[C@@H]2[C@@H](C[C@@H](C[C@@H]2O)C(=O)O[C@H]3C[C@H](C[C@H](C3)O)C(=O)O[C@H]4C[C@@H](C[C@@H](C4)O)C(=O)",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]1O)C(=O)O[C@@H]2[C@@H](C[C@@H](C[C@@H]2O)C(=O)O[C@H]3C[C@H](C[C@H](C3)O)C(=O)O[C@H]4C[C@@H](C[C@@H](C4)O)C(=O)",
+        "pred_canonical": null,
+        "truth_canonical": "COc1ccc(S(=O)(=O)N2CCC(OCc3ccc(F)cc3)CC2)cc1C",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00009.png",
+      "truth": "Cc1ccc(OCC(=O)Nc2cc(-c3ccccc3)no2)cc1",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C1=CC=C2C(=C1)C(C2)C1=CN=C(C1)C1=CN=CC1OC1=CC=C2C(=C1)O",
+        "latency_s": 1.478076666011475,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1=CC=C2C(=C1)C(C2)C1=CN=C(C1)C1=CN=CC1OC1=CC=C2C(=C1)O",
+        "pred_smiles": "C1=CC=C2C(=C1)C(C2)C1=CN=C(C1)C1=CN=CC1OC1=CC=C2C(=C1)O",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(OCC(=O)Nc2cc(-c3ccccc3)no2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00010.png",
+      "truth": "Cc1c(C(=O)N2CCc3sccc3[C@@H]2c2cccs2)oc2ccc(F)cc12",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 5,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CSC1CC2CC(C1)C1(C2)CN(C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)",
+        "latency_s": 3.403774125035852,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CSC1CC2CC(C1)C1(C2)CN(C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)",
+        "pred_smiles": "CSC1CC2CC(C1)C1(C2)CN(C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)C1=CC=C(C=C1)",
+        "pred_canonical": "CSC1CC2CC(C1)C1(C2)CN(c2ccc(-c3ccc(-c4ccc(-c5ccc(-c6ccc(-c7ccc(-c8ccc(-c9ccc(-c%10ccc(-c%11ccccc%11)cc%10)cc9)cc8)cc7)cc6)cc5)cc4)cc3)cc2)C1",
+        "truth_canonical": "Cc1c(C(=O)N2CCc3sccc3C2c2cccs2)oc2ccc(F)cc12",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09090909090909091,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00011.png",
+      "truth": "O=C(c1ccc(F)cc1)[C@H]1CC[NH+]2CCCC[C@@H]2C1.[Br-]",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 3,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "Br",
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 2,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1(CN(C2CCN(C3CCN(C4CCN(C5CCN(C6CCN(C7CCN(C8CCN(C9CCN(C10CCN(C11CCN(C12CCN(C13CCN(C14CCN(C15CCN(C16CCN(C17CCN(C18CCN(C19CCN(C20CCN(C21CCN(C22CCN(C23CCN(C2",
+        "latency_s": 3.2974081250140443,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(CN(C2CCN(C3CCN(C4CCN(C5CCN(C6CCN(C7CCN(C8CCN(C9CCN(C10CCN(C11CCN(C12CCN(C13CCN(C14CCN(C15CCN(C16CCN(C17CCN(C18CCN(C19CCN(C20CCN(C21CCN(C22CCN(C23CCN(C2",
+        "pred_smiles": "CC1(CN(C2CCN(C3CCN(C4CCN(C5CCN(C6CCN(C7CCN(C8CCN(C9CCN(C10CCN(C11CCN(C12CCN(C13CCN(C14CCN(C15CCN(C16CCN(C17CCN(C18CCN(C19CCN(C20CCN(C21CCN(C22CCN(C23CCN(C2",
+        "pred_canonical": null,
+        "truth_canonical": "O=C(c1ccc(F)cc1)C1CC[NH+]2CCCCC2C1.[Br-]",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00012.png",
+      "truth": "Cc1noc(C)c1CCC(=O)Nc1ccc(-c2cn3ccccc3n2)cc1",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN=C(O[C@@H]2[C@@H](O)O[C@@H](C[C@@H]3C[C@@H](C[C@@H]3O)O2)[C@H](C)O1)[C@H](C)O[C@@H]4C[C@@H](C[C@@H]4O)O1",
+        "latency_s": 2.519998750067316,
+        "tokens_in": 175,
+        "tokens_out": 84,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN=C(O[C@@H]2[C@@H](O)O[C@@H](C[C@@H]3C[C@@H](C[C@@H]3O)O2)[C@H](C)O1)[C@H](C)O[C@@H]4C[C@@H](C[C@@H]4O)O1",
+        "pred_smiles": "C[C@@H]1CN=C(O[C@@H]2[C@@H](O)O[C@@H](C[C@@H]3C[C@@H](C[C@@H]3O)O2)[C@H](C)O1)[C@H](C)O[C@@H]4C[C@@H](C[C@@H]4O)O1",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1noc(C)c1CCC(=O)Nc1ccc(-c2cn3ccccc3n2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00013.png",
+      "truth": "CCOc1ccc(F)c(C(=O)N2CCN(C)c3ccc(F)cc32)c1F",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1(CN(C2=C1C=CC(=O)C2=O)C(=O)C1=CC=CC(=O)C1)C(=O)N1C(=O)C2=CC=CC(=O)C2C1=O",
+        "latency_s": 2.0076445000013337,
+        "tokens_in": 175,
+        "tokens_out": 67,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(CN(C2=C1C=CC(=O)C2=O)C(=O)C1=CC=CC(=O)C1)C(=O)N1C(=O)C2=CC=CC(=O)C2C1=O",
+        "pred_smiles": "CC1(CN(C2=C1C=CC(=O)C2=O)C(=O)C1=CC=CC(=O)C1)C(=O)N1C(=O)C2=CC=CC(=O)C2C1=O",
+        "pred_canonical": "CC1(C(=O)N2C(=O)C3=CC=CC(=O)C3C2=O)CN(C(=O)C2=CC=CC(=O)C2)C2=C1C=CC(=O)C2=O",
+        "truth_canonical": "CCOc1ccc(F)c(C(=O)N2CCN(C)c3ccc(F)cc32)c1F",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.12903225806451613,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00014.png",
+      "truth": "Cc1ncn(C[C@H](C)[NH2+]CCC[NH+]2C[C@@H](C)C[C@H](C)C2)c1C",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 2,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CC[C@@H](C)N[C@H]1CC[C@H](N)C[C@@H]1CN=C(C)N(C1=O)C\n",
+        "latency_s": 1.352273374912329,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CC[C@@H](C)N[C@H]1CC[C@H](N)C[C@@H]1CN=C(C)N(C1=O)C\n",
+        "pred_smiles": "C[C@@H]1CC[C@@H](C)N[C@H]1CC[C@H](N)C[C@@H]1CN=C(C)N(C1=O)C",
+        "pred_canonical": "CC1=NCC(CC(N)CCC2NC(C)CCC2C)C(=O)N1C",
+        "truth_canonical": "Cc1ncn(CC(C)[NH2+]CCC[NH+]2CC(C)CC(C)C2)c1C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1518987341772152,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00015.png",
+      "truth": "C[C@@H]1CCC[C@H](C)N1C(=O)C1CCC(NC(=O)C2CCCC2)CC1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "[C@@H]1CN=C[C@@H](N=C2C[C@@H]3C[C@@H](C[C@H]3N=C2)[C@H](O)O)[C@H]1N=C(C)O",
+        "latency_s": 1.6128183329710737,
+        "tokens_in": 175,
+        "tokens_out": 54,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "[C@@H]1CN=C[C@@H](N=C2C[C@@H]3C[C@@H](C[C@H]3N=C2)[C@H](O)O)[C@H]1N=C(C)O",
+        "pred_smiles": "[C@@H]1CN=C[C@@H](N=C2C[C@@H]3C[C@@H](C[C@H]3N=C2)[C@H](O)O)[C@H]1N=C(C)O",
+        "pred_canonical": "CC(O)=NC1[CH]CN=CC1N=C1C=NC2CC(C(O)O)CC2C1",
+        "truth_canonical": "CC1CCCC(C)N1C(=O)C1CCC(NC(=O)C2CCCC2)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.06666666666666667,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00016.png",
+      "truth": "CCN(Cc1cnn(C)c1)C(=O)CCNC(=O)NC1CCCCC1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1(CN(C2CCCCC2)C(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(",
+        "latency_s": 3.3211726669687778,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(CN(C2CCCCC2)C(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(",
+        "pred_smiles": "CC1(CN(C2CCCCC2)C(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(",
+        "pred_canonical": null,
+        "truth_canonical": "CCN(Cc1cnn(C)c1)C(=O)CCNC(=O)NC1CCCCC1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00017.png",
+      "truth": "CC(C)=CCOc1cccc(C(=O)NC2C[C@H]3CCC[C@@H](C2)N3C)c1",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 3,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C[C@@H](C[C@@H]3O)N2C(=O)[C@@H](C)NC(=O)[C@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C",
+        "latency_s": 3.675324250012636,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C[C@@H](C[C@@H]3O)N2C(=O)[C@@H](C)NC(=O)[C@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C[C@@H](C[C@@H]3O)N2C(=O)[C@@H](C)NC(=O)[C@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C",
+        "pred_canonical": null,
+        "truth_canonical": "CC(C)=CCOc1cccc(C(=O)NC2CC3CCCC(C2)N3C)c1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00018.png",
+      "truth": "CC(C)(C)CC(=O)NC1CCCCCCC1",
+      "tags": {
+        "heavy_atoms": 16,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C1CC2CCCCC2C1C3=CC(=C(N3)OC4CC(C)(C)CN4C)C",
+        "latency_s": 1.0768067500321195,
+        "tokens_in": 175,
+        "tokens_out": 32,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1CC2CCCCC2C1C3=CC(=C(N3)OC4CC(C)(C)CN4C)C",
+        "pred_smiles": "C1CC2CCCCC2C1C3=CC(=C(N3)OC4CC(C)(C)CN4C)C",
+        "pred_canonical": "Cc1cc(C2CCC3CCCCC32)[nH]c1OC1CC(C)(C)CN1C",
+        "truth_canonical": "CC(C)(C)CC(=O)NC1CCCCCCC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09230769230769231,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00019.png",
+      "truth": "CCCN[C@@H]1CCCCCC[C@H]1S[C@@H](C)CCO",
+      "tags": {
+        "heavy_atoms": 18,
+        "rings": 1,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CCCC[C@@H](C1)[C@@H](C)N[C@@H](C)CNC(=O)[C@@H](C)N",
+        "latency_s": 1.3734821249963716,
+        "tokens_in": 175,
+        "tokens_out": 41,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CCCC[C@@H](C1)[C@@H](C)N[C@@H](C)CNC(=O)[C@@H](C)N",
+        "pred_smiles": "C[C@@H]1CCCC[C@@H](C1)[C@@H](C)N[C@@H](C)CNC(=O)[C@@H](C)N",
+        "pred_canonical": "CC1CCCCC(C(C)NC(C)CNC(=O)C(C)N)C1",
+        "truth_canonical": "CCCNC1CCCCCCC1SC(C)CCO",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1774193548387097,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00020.png",
+      "truth": "Cc1ccc(-n2ccnc2)c(C(=O)N2CCN(C(=O)[C@@H]3C[C@@H]3C)CC2)c1",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 4,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1(CN(C2=NC(C3=CN=CN3)C(=O)C2)CC1)C(=O)NC(CO)C1(C)CC1\n",
+        "latency_s": 1.3928252089535818,
+        "tokens_in": 175,
+        "tokens_out": 44,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(CN(C2=NC(C3=CN=CN3)C(=O)C2)CC1)C(=O)NC(CO)C1(C)CC1\n",
+        "pred_smiles": "CC1(CN(C2=NC(C3=CN=CN3)C(=O)C2)CC1)C(=O)NC(CO)C1(C)CC1",
+        "pred_canonical": "CC1(C(=O)NC(CO)C2(C)CC2)CCN(C2=NC(c3cnc[nH]3)C(=O)C2)C1",
+        "truth_canonical": "Cc1ccc(-n2ccnc2)c(C(=O)N2CCN(C(=O)C3CC3C)CC2)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13978494623655913,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00021.png",
+      "truth": "CC1(C)C(=O)Nc2ccccc2N1C(=O)COC(=O)c1cccnc1Cl",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1(C(=O)N(C2=CC=CC(=C2)N1)C(=O)OCc3ccc(Cl)nc3)C",
+        "latency_s": 1.2902299580164254,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(C(=O)N(C2=CC=CC(=C2)N1)C(=O)OCc3ccc(Cl)nc3)C",
+        "pred_smiles": "CC1(C(=O)N(C2=CC=CC(=C2)N1)C(=O)OCc3ccc(Cl)nc3)C",
+        "pred_canonical": "CC1(C)Nc2cccc(c2)N(C(=O)OCc2ccc(Cl)nc2)C1=O",
+        "truth_canonical": "CC1(C)C(=O)Nc2ccccc2N1C(=O)COC(=O)c1cccnc1Cl",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2625,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00022.png",
+      "truth": "O=C(CSCc1ccc(Cl)s1)N1CCC[C@@H](c2nnc3ccccn23)C1",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 4,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C1=CC(=C(C=C1)C)C2=NC(=NC(=N2)C3=NC4=NC(=C(C=C4)C)C(=N3)N)N5C=NC(=C5)C6=CC=CS6",
+        "latency_s": 2.478636375046335,
+        "tokens_in": 175,
+        "tokens_out": 67,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1=CC(=C(C=C1)C)C2=NC(=NC(=N2)C3=NC4=NC(=C(C=C4)C)C(=N3)N)N5C=NC(=C5)C6=CC=CS6",
+        "pred_smiles": "C1=CC(=C(C=C1)C)C2=NC(=NC(=N2)C3=NC4=NC(=C(C=C4)C)C(=N3)N)N5C=NC(=C5)C6=CC=CS6",
+        "pred_canonical": "Cc1ccccc1-c1nc(C2=Nc3ccc(C)c(n3)C(N)=N2)nc(-n2cnc(-c3cccs3)c2)n1",
+        "truth_canonical": "O=C(CSCc1ccc(Cl)s1)N1CCCC(c2nnc3ccccn23)C1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08571428571428572,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00023.png",
+      "truth": "COC(=O)c1ccc(N2CCN(C(=O)Cc3ccsc3)CC2)cc1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@@H](O)[C@H]1C[C@@H](N1)[C@@H](N)C[C@@H](N)[C@@H](O)[C@H](O)C",
+        "latency_s": 1.9102994590066373,
+        "tokens_in": 175,
+        "tokens_out": 53,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@@H](O)[C@H]1C[C@@H](N1)[C@@H](N)C[C@@H](N)[C@@H](O)[C@H](O)C",
+        "pred_smiles": "C[C@@H](O)[C@@H](O)[C@H]1C[C@@H](N1)[C@@H](N)C[C@@H](N)[C@@H](O)[C@H](O)C",
+        "pred_canonical": "CC(O)C(O)C(N)CC(N)C1CC(C(O)C(C)O)N1",
+        "truth_canonical": "COC(=O)c1ccc(N2CCN(C(=O)Cc3ccsc3)CC2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.07352941176470588,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00024.png",
+      "truth": "Fc1ccc(OC2CCN(c3ncccn3)CC2)cc1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "Nc1ccc(CN2CCc3ccccc3C2)cc1",
+        "latency_s": 0.7845184169709682,
+        "tokens_in": 175,
+        "tokens_out": 19,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Nc1ccc(CN2CCc3ccccc3C2)cc1",
+        "pred_smiles": "Nc1ccc(CN2CCc3ccccc3C2)cc1",
+        "pred_canonical": "Nc1ccc(CN2CCc3ccccc3C2)cc1",
+        "truth_canonical": "Fc1ccc(OC2CCN(c3ncccn3)CC2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14545454545454545,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00025.png",
+      "truth": "O=C(COC(=O)CNC(=O)c1ccc(Cl)c(Cl)c1)Nc1cccnc1Cl",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "Clc1ccc(C(=O)NCC(=O)OCC(=O)Nc2c(Cl)cccn2)cc1Cl",
+        "latency_s": 1.3735358329722658,
+        "tokens_in": 175,
+        "tokens_out": 35,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Clc1ccc(C(=O)NCC(=O)OCC(=O)Nc2c(Cl)cccn2)cc1Cl",
+        "pred_smiles": "Clc1ccc(C(=O)NCC(=O)OCC(=O)Nc2c(Cl)cccn2)cc1Cl",
+        "pred_canonical": "O=C(COC(=O)CNC(=O)c1ccc(Cl)c(Cl)c1)Nc1ncccc1Cl",
+        "truth_canonical": "O=C(COC(=O)CNC(=O)c1ccc(Cl)c(Cl)c1)Nc1cccnc1Cl",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.7592592592592593,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00026.png",
+      "truth": "COc1ccc(-n2c(CN3CCC(C#N)CC3)nc3ccccc32)cc1",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](NC(=O)[C@@H]1N=C(N)C[C@H]1NC(=O)[C@@H](N)CC(=O)O)C(=O)N[C@@H](CCC(N)=O)C(=O)O",
+        "latency_s": 2.4844480000901967,
+        "tokens_in": 175,
+        "tokens_out": 65,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](NC(=O)[C@@H]1N=C(N)C[C@H]1NC(=O)[C@@H](N)CC(=O)O)C(=O)N[C@@H](CCC(N)=O)C(=O)O",
+        "pred_smiles": "C[C@@H](NC(=O)[C@@H]1N=C(N)C[C@H]1NC(=O)[C@@H](N)CC(=O)O)C(=O)N[C@@H](CCC(N)=O)C(=O)O",
+        "pred_canonical": "CC(NC(=O)C1N=C(N)CC1NC(=O)C(N)CC(=O)O)C(=O)NC(CCC(N)=O)C(=O)O",
+        "truth_canonical": "COc1ccc(-n2c(CN3CCC(C#N)CC3)nc3ccccc32)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.061855670103092786,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00027.png",
+      "truth": "C[C@@H]1C[NH+]2CCC[C@@H]2CN1C(=O)Cc1ccc(C[NH3+])cc1",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 3,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@]1(CN=C2C[C@@H]3C[C@@H](C3)N2C(=O)C[C@H]2[C@@H]3CC=CC[C@@H]3[C@H](C2)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H",
+        "latency_s": 4.106200332986191,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@]1(CN=C2C[C@@H]3C[C@@H](C3)N2C(=O)C[C@H]2[C@@H]3CC=CC[C@@H]3[C@H](C2)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H",
+        "pred_smiles": "C[C@@]1(CN=C2C[C@@H]3C[C@@H](C3)N2C(=O)C[C@H]2[C@@H]3CC=CC[C@@H]3[C@H](C2)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H](C)NC(=O)[C@@H",
+        "pred_canonical": null,
+        "truth_canonical": "CC1C[NH+]2CCCC2CN1C(=O)Cc1ccc(C[NH3+])cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00028.png",
+      "truth": "Fc1cccc(CNc2ncc(-c3cnccn3)c(-c3cccs3)n2)c1",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C(C)(F)Cc1ccc(Cc2nc3ccccc3[nH]2)cc1",
+        "latency_s": 1.1087185409851372,
+        "tokens_in": 175,
+        "tokens_out": 24,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C(C)(F)Cc1ccc(Cc2nc3ccccc3[nH]2)cc1",
+        "pred_smiles": "C(C)(F)Cc1ccc(Cc2nc3ccccc3[nH]2)cc1",
+        "pred_canonical": "CC(F)Cc1ccc(Cc2nc3ccccc3[nH]2)cc1",
+        "truth_canonical": "Fc1cccc(CNc2ncc(-c3cnccn3)c(-c3cccs3)n2)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.11688311688311688,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00029.png",
+      "truth": "CSc1ccc([C@@H](C)[NH2+]C[C@@H]2CN(C)CCO2)cc1.[Cl-]",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 2,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CN1CC[C@@H](c2ccc(SC)cc2)[C@H](C)[C@@H]1O[C@@H]2CCN(C)CC2\n",
+        "latency_s": 1.807178792078048,
+        "tokens_in": 175,
+        "tokens_out": 40,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CN1CC[C@@H](c2ccc(SC)cc2)[C@H](C)[C@@H]1O[C@@H]2CCN(C)CC2\n",
+        "pred_smiles": "CN1CC[C@@H](c2ccc(SC)cc2)[C@H](C)[C@@H]1O[C@@H]2CCN(C)CC2",
+        "pred_canonical": "CSc1ccc(C2CCN(C)C(OC3CCN(C)CC3)C2C)cc1",
+        "truth_canonical": "CSc1ccc(C(C)[NH2+]CC2CN(C)CCO2)cc1.[Cl-]",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.26153846153846155,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00030.png",
+      "truth": "Cc1cc(Cl)cc(C)c1C[NH2+][C@@H](C)[C@H]1CN(C)CCO1.[Cl-]",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 2,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CN(C[C@@H]1CN(C[C@@H]1O)C)C[C@H](N)Cc1c(Cl)ccc(C)c1\n",
+        "latency_s": 1.4671989160124213,
+        "tokens_in": 175,
+        "tokens_out": 36,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CN(C[C@@H]1CN(C[C@@H]1O)C)C[C@H](N)Cc1c(Cl)ccc(C)c1\n",
+        "pred_smiles": "CN(C[C@@H]1CN(C[C@@H]1O)C)C[C@H](N)Cc1c(Cl)ccc(C)c1",
+        "pred_canonical": "Cc1ccc(Cl)c(CC(N)CN(C)CC2CN(C)CC2O)c1",
+        "truth_canonical": "Cc1cc(Cl)cc(C)c1C[NH2+]C(C)C1CN(C)CCO1.[Cl-]",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.20270270270270271,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00031.png",
+      "truth": "CCc1cc(C(=O)Nc2ccc(F)c(Cl)c2)no1",
+      "tags": {
+        "heavy_atoms": 18,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C[C@@H](C1=CC(=O)N(C1)C(=O)O)C)C(=O)O)C(=O)O",
+        "latency_s": 1.8968491669511423,
+        "tokens_in": 175,
+        "tokens_out": 50,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C[C@@H](C1=CC(=O)N(C1)C(=O)O)C)C(=O)O)C(=O)O",
+        "pred_smiles": "C[C@@H](C[C@@H](C[C@@H](C1=CC(=O)N(C1)C(=O)O)C)C(=O)O)C(=O)O",
+        "pred_canonical": "CC(CC(CC(C)C1=CC(=O)N(C(=O)O)C1)C(=O)O)C(=O)O",
+        "truth_canonical": "CCc1cc(C(=O)Nc2ccc(F)c(Cl)c2)no1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.11764705882352941,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00032.png",
+      "truth": "Cc1cccc(NC(=O)c2noc(C)c2C)c1C",
+      "tags": {
+        "heavy_atoms": 18,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]2C[C@@H](C1)CN2C(=O)[C@@H]3C[C@@H](N4CCOCC4)[C@H]3C(=O)O)C(=O)O",
+        "latency_s": 2.3066431659972295,
+        "tokens_in": 175,
+        "tokens_out": 64,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]2C[C@@H](C1)CN2C(=O)[C@@H]3C[C@@H](N4CCOCC4)[C@H]3C(=O)O)C(=O)O",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]2C[C@@H](C1)CN2C(=O)[C@@H]3C[C@@H](N4CCOCC4)[C@H]3C(=O)O)C(=O)O",
+        "pred_canonical": "CC1CC2CC(CN(C(=O)O)C1)N(C(=O)C1CC(N3CCOCC3)C1C(=O)O)C2",
+        "truth_canonical": "Cc1cccc(NC(=O)c2noc(C)c2C)c1C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.06493506493506493,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00033.png",
+      "truth": "CC[C@H](NC(=O)C[C@H](O)c1ccc(Cl)cc1)c1nccs1",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC[C@H](NC(=O)[C@@H](O)C[C@H](O)c1ccc(Cl)cc1)c1ccnc2sccc12",
+        "latency_s": 1.5263783329864964,
+        "tokens_in": 175,
+        "tokens_out": 39,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC[C@H](NC(=O)[C@@H](O)C[C@H](O)c1ccc(Cl)cc1)c1ccnc2sccc12",
+        "pred_smiles": "CC[C@H](NC(=O)[C@@H](O)C[C@H](O)c1ccc(Cl)cc1)c1ccnc2sccc12",
+        "pred_canonical": "CCC(NC(=O)C(O)CC(O)c1ccc(Cl)cc1)c1ccnc2sccc12",
+        "truth_canonical": "CCC(NC(=O)CC(O)c1ccc(Cl)cc1)c1nccs1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.5079365079365079,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00034.png",
+      "truth": "CCc1cnc(CN(C)C(=O)CCc2ccc(C)cc2)s1",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1=CN=C(CN2C(=O)C[C@@H](C2)CN3C(=O)C[C@@H](C3)C4=CC=CC=C4)C=C1",
+        "latency_s": 1.845522666000761,
+        "tokens_in": 175,
+        "tokens_out": 49,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CN=C(CN2C(=O)C[C@@H](C2)CN3C(=O)C[C@@H](C3)C4=CC=CC=C4)C=C1",
+        "pred_smiles": "CC1=CN=C(CN2C(=O)C[C@@H](C2)CN3C(=O)C[C@@H](C3)C4=CC=CC=C4)C=C1",
+        "pred_canonical": "Cc1ccc(CN2CC(CN3CC(c4ccccc4)CC3=O)CC2=O)nc1",
+        "truth_canonical": "CCc1cnc(CN(C)C(=O)CCc2ccc(C)cc2)s1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.17105263157894737,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00035.png",
+      "truth": "Cc1ccc(S(=O)(=O)N(C)c2ccc(C(=O)N3C[C@@H](C)O[C@H](C)C3)cc2)cc1",
+      "tags": {
+        "heavy_atoms": 28,
+        "rings": 3,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C(=O)c2ccc(N(C)S(=O)(=O)c3ccc(C)cc3)cc2)CC[C@H](O1)C\n",
+        "latency_s": 1.9309570000041276,
+        "tokens_in": 175,
+        "tokens_out": 46,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C(=O)c2ccc(N(C)S(=O)(=O)c3ccc(C)cc3)cc2)CC[C@H](O1)C\n",
+        "pred_smiles": "C[C@@H]1CN(C(=O)c2ccc(N(C)S(=O)(=O)c3ccc(C)cc3)cc2)CC[C@H](O1)C",
+        "pred_canonical": "Cc1ccc(S(=O)(=O)N(C)c2ccc(C(=O)N3CCC(C)OC(C)C3)cc2)cc1",
+        "truth_canonical": "Cc1ccc(S(=O)(=O)N(C)c2ccc(C(=O)N3CC(C)OC(C)C3)cc2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.8571428571428571,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00036.png",
+      "truth": "C=C1NC(=O)N[C@H](c2ccc(N(C)C)cc2)C(O)=C1OCC",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "COCC1=C(O)C(c2cccc(N(C)C)c2)NC(=O)NC(=C)N1",
+        "latency_s": 1.226546582998708,
+        "tokens_in": 175,
+        "tokens_out": 30,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "COCC1=C(O)C(c2cccc(N(C)C)c2)NC(=O)NC(=C)N1",
+        "pred_smiles": "COCC1=C(O)C(c2cccc(N(C)C)c2)NC(=O)NC(=C)N1",
+        "pred_canonical": "C=C1NC(=O)NC(c2cccc(N(C)C)c2)C(O)=C(COC)N1",
+        "truth_canonical": "C=C1NC(=O)NC(c2ccc(N(C)C)cc2)C(O)=C1OCC",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.46774193548387094,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00037.png",
+      "truth": "COc1ccccc1NC(=O)NCCOc1ccccc1OC",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "OCC1=CC=CC(OC[C@@H](CN)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@H](Cc2ccccc2)C(=O)O)/C1=N",
+        "latency_s": 2.397385666030459,
+        "tokens_in": 175,
+        "tokens_out": 59,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OCC1=CC=CC(OC[C@@H](CN)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@H](Cc2ccccc2)C(=O)O)/C1=N",
+        "pred_smiles": "OCC1=CC=CC(OC[C@@H](CN)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@H](Cc2ccccc2)C(=O)O)/C1=N",
+        "pred_canonical": "N=C1C(CO)=CC=CC1OCC(CN)C(=O)NC(CC(=O)O)C(=O)NC(Cc1ccccc1)C(=O)O",
+        "truth_canonical": "COc1ccccc1NC(=O)NCCOc1ccccc1OC",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14634146341463414,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00038.png",
+      "truth": "CN(CCOc1ccccc1)C(=O)Nc1ccc([S@@](C)=O)c(F)c1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C(F)C1=C(C=CN1)N(C)C(=O)C1=CN=C(C2=CC=CC=C2)N1C1=CC=CC=C1",
+        "latency_s": 1.8935184170259163,
+        "tokens_in": 175,
+        "tokens_out": 44,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C(F)C1=C(C=CN1)N(C)C(=O)C1=CN=C(C2=CC=CC=C2)N1C1=CC=CC=C1",
+        "pred_smiles": "C(F)C1=C(C=CN1)N(C)C(=O)C1=CN=C(C2=CC=CC=C2)N1C1=CC=CC=C1",
+        "pred_canonical": "CN(C(=O)c1cnc(-c2ccccc2)n1-c1ccccc1)c1cc[nH]c1CF",
+        "truth_canonical": "CN(CCOc1ccccc1)C(=O)Nc1ccc(S(C)=O)c(F)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1875,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00039.png",
+      "truth": "CC(C)(C)c1cnc(CSc2nnc(C3CC3)n2C2CC2)o1",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CCn1cnc(S(=O)(=O)Nc2cncnc3c2ncn3C)c1",
+        "latency_s": 1.43782495893538,
+        "tokens_in": 175,
+        "tokens_out": 29,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CCn1cnc(S(=O)(=O)Nc2cncnc3c2ncn3C)c1",
+        "pred_smiles": "CCn1cnc(S(=O)(=O)Nc2cncnc3c2ncn3C)c1",
+        "pred_canonical": null,
+        "truth_canonical": "CC(C)(C)c1cnc(CSc2nnc(C3CC3)n2C2CC2)o1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00040.png",
+      "truth": "COCCN1CC2(CCC1=O)CCN(Cc1nc(C(N)=O)no1)CC2",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CO[C@@H]1CN2C[C@@H]3C[C@H](N(C[C@H]3C2)C(=O)N[C@@H](C(=O)N)C(N)=O)C[C@H]1C(=O)O",
+        "latency_s": 2.461720083025284,
+        "tokens_in": 175,
+        "tokens_out": 64,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CO[C@@H]1CN2C[C@@H]3C[C@H](N(C[C@H]3C2)C(=O)N[C@@H](C(=O)N)C(N)=O)C[C@H]1C(=O)O",
+        "pred_smiles": "CO[C@@H]1CN2C[C@@H]3C[C@H](N(C[C@H]3C2)C(=O)N[C@@H](C(=O)N)C(N)=O)C[C@H]1C(=O)O",
+        "pred_canonical": "COC1CN2CC3CC(CC1C(=O)O)N(C(=O)NC(C(N)=O)C(N)=O)CC3C2",
+        "truth_canonical": "COCCN1CC2(CCC1=O)CCN(Cc1nc(C(N)=O)no1)CC2",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.125,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00041.png",
+      "truth": "CCN1CC2(CCC1=O)CCN(Cc1nc(C(F)(F)F)no1)CC2",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "latency_s": 3.5113551249960437,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_canonical": null,
+        "truth_canonical": "CCN1CC2(CCC1=O)CCN(Cc1nc(C(F)(F)F)no1)CC2",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00042.png",
+      "truth": "O=C1CCC(C(=O)Nc2ccc(N3CCCCC3)c(S(=O)(=O)Nc3ccc(Cl)cc3)c2)=NN1",
+      "tags": {
+        "heavy_atoms": 33,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](NC(=O)[C@H](Cc1ccccc1)NC(=O)CNC(=O)[C@@H](N)Cc1ccccc1)[C@H](O)CC(=O)O",
+        "latency_s": 2.0383685409324244,
+        "tokens_in": 175,
+        "tokens_out": 56,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](NC(=O)[C@H](Cc1ccccc1)NC(=O)CNC(=O)[C@@H](N)Cc1ccccc1)[C@H](O)CC(=O)O",
+        "pred_smiles": "C[C@@H](NC(=O)[C@H](Cc1ccccc1)NC(=O)CNC(=O)[C@@H](N)Cc1ccccc1)[C@H](O)CC(=O)O",
+        "pred_canonical": "CC(NC(=O)C(Cc1ccccc1)NC(=O)CNC(=O)C(N)Cc1ccccc1)C(O)CC(=O)O",
+        "truth_canonical": "O=C1CCC(C(=O)Nc2ccc(N3CCCCC3)c(S(=O)(=O)Nc3ccc(Cl)cc3)c2)=NN1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10869565217391304,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00043.png",
+      "truth": "O=C(CCn1ccc(=O)[nH]c1=O)Nc1ccc2c(c1)CCC(=O)N2",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C)N(C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H",
+        "latency_s": 3.248101165983826,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C)N(C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H",
+        "pred_smiles": "C[C@@H](C[C@@H](C)N(C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H",
+        "pred_canonical": null,
+        "truth_canonical": "O=C(CCn1ccc(=O)[nH]c1=O)Nc1ccc2c(c1)CCC(=O)N2",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00044.png",
+      "truth": "CCOc1ccc2ncc(C#N)c(N3CCC(C(=O)Nc4cccc(C)c4)CC3)c2c1",
+      "tags": {
+        "heavy_atoms": 31,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "[C@@H]1[C@@H](O)C[C@@H](N1)[C@@H]2[C@@H](C[C@H]3C=CC(=C(N3)N)N)N=C2CN[C@H]4C[C@H](O)C[C@H]4N",
+        "latency_s": 2.3128395000239834,
+        "tokens_in": 175,
+        "tokens_out": 71,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "[C@@H]1[C@@H](O)C[C@@H](N1)[C@@H]2[C@@H](C[C@H]3C=CC(=C(N3)N)N)N=C2CN[C@H]4C[C@H](O)C[C@H]4N",
+        "pred_smiles": "[C@@H]1[C@@H](O)C[C@@H](N1)[C@@H]2[C@@H](C[C@H]3C=CC(=C(N3)N)N)N=C2CN[C@H]4C[C@H](O)C[C@H]4N",
+        "pred_canonical": "NC1=C(N)NC(CC2N=C(CNC3CC(O)CC3N)C2C2CC(O)[CH]N2)C=C1",
+        "truth_canonical": "CCOc1ccc2ncc(C#N)c(N3CCC(C(=O)Nc4cccc(C)c4)CC3)c2c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08181818181818182,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00045.png",
+      "truth": "CCc1ccsc1CNc1ncnc2c1CCC2",
+      "tags": {
+        "heavy_atoms": 18,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=CN=C(CN2C=C(C3=CC=NC=C3)C(=C2)N)C1c1ccccc1\n",
+        "latency_s": 1.1739536670502275,
+        "tokens_in": 175,
+        "tokens_out": 36,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CN=C(CN2C=C(C3=CC=NC=C3)C(=C2)N)C1c1ccccc1\n",
+        "pred_smiles": "CC1=CN=C(CN2C=C(C3=CC=NC=C3)C(=C2)N)C1c1ccccc1",
+        "pred_canonical": "CC1=CN=C(Cn2cc(N)c(-c3ccncc3)c2)C1c1ccccc1",
+        "truth_canonical": "CCc1ccsc1CNc1ncnc2c1CCC2",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1038961038961039,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00046.png",
+      "truth": "Cc1ccc(NC(=O)C[C@@H](C(=O)O)N2CCOCC2)cc1",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H](C1)C(=O)N[C@@H](C(=O)O)C(=O)N[C@H](C(=O)O)C[C@@H](C(=O)O)C)C(=O)O",
+        "latency_s": 2.078833291074261,
+        "tokens_in": 175,
+        "tokens_out": 70,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H](C1)C(=O)N[C@@H](C(=O)O)C(=O)N[C@H](C(=O)O)C[C@@H](C(=O)O)C)C(=O)O",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H](C1)C(=O)N[C@@H](C(=O)O)C(=O)N[C@H](C(=O)O)C[C@@H](C(=O)O)C)C(=O)O",
+        "pred_canonical": "CC1CC(C(=O)NC(C(=O)O)C(=O)NC(CC(C)C(=O)O)C(=O)O)CN(C(=O)O)C1",
+        "truth_canonical": "Cc1ccc(NC(=O)CC(C(=O)O)N2CCOCC2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.16666666666666666,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00047.png",
+      "truth": "NC(=O)[C@H]1COCCN1CCC(=O)Nc1ccccc1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](NC(=O)[C@@H](Cc1ccccc1)NC(=O)[C@H](Cc2ccccc2)NC(=O)[C@H](C)NC(=O)[C@@H](N)CC(O)=O)C(=O)O",
+        "latency_s": 2.0615018329117447,
+        "tokens_in": 175,
+        "tokens_out": 69,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](NC(=O)[C@@H](Cc1ccccc1)NC(=O)[C@H](Cc2ccccc2)NC(=O)[C@H](C)NC(=O)[C@@H](N)CC(O)=O)C(=O)O",
+        "pred_smiles": "C[C@@H](NC(=O)[C@@H](Cc1ccccc1)NC(=O)[C@H](Cc2ccccc2)NC(=O)[C@H](C)NC(=O)[C@@H](N)CC(O)=O)C(=O)O",
+        "pred_canonical": "CC(NC(=O)C(Cc1ccccc1)NC(=O)C(Cc1ccccc1)NC(=O)C(C)NC(=O)C(N)CC(=O)O)C(=O)O",
+        "truth_canonical": "NC(=O)C1COCCN1CCC(=O)Nc1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.16901408450704225,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00048.png",
+      "truth": "Cc1sc(NC(=O)C[C@@H]2CCCCO2)c(C(=O)O)c1C",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "OC(C(=O)O)C1=NC(=C(C1)C#N)C#CC1CCCCC1O",
+        "latency_s": 0.9758102080086246,
+        "tokens_in": 175,
+        "tokens_out": 31,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OC(C(=O)O)C1=NC(=C(C1)C#N)C#CC1CCCCC1O",
+        "pred_smiles": "OC(C(=O)O)C1=NC(=C(C1)C#N)C#CC1CCCCC1O",
+        "pred_canonical": "N#CC1=C(C#CC2CCCCC2O)N=C(C(O)C(=O)O)C1",
+        "truth_canonical": "Cc1sc(NC(=O)CC2CCCCO2)c(C(=O)O)c1C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13333333333333333,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/test/00049.png",
+      "truth": "Cc1ccc(-c2nnc(C3CCN(Cc4ccc5ncccc5c4)CC3)o2)s1",
+      "tags": {
+        "heavy_atoms": 28,
+        "rings": 5,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "latency_s": 2.778166125062853,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(-c2nnc(C3CCN(Cc4ccc5ncccc5c4)CC3)o2)s1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    }
+  ]
+}
