@@ -11,7 +11,7 @@ Actual costs from `modal billing report --show-resources` and Fireworks billing,
 | 2026-11-01 22:12–22:17 | `smoke_tuned` eval, 10 images, LoRA `smoke` | Modal 1× L40S ($1.95/hr) | ~4.2 min | est 0.14 GPU | cold start 217 s (image cached); app stopped right after, no idle tail |
 | 2026-11-01 | Fireworks dataset upload / SFT | Fireworks | — | 0.00 | blocked: dataset uploads disabled on account |
 
-Running total: est ~$0.40 incl. the baseline's idle tail (replace with billed numbers after 23:00 PT). `chemvision-vllm` stopped at 22:18 PT; redeploy with `uv run modal deploy src/modal_serve.py`.
+Running total: $0.58 billed through 23:00 PT (table below); add the rows after 23:00 PT as their hours close. `chemvision-vllm` stopped at 22:18 PT; redeploy with `uv run modal deploy src/modal_serve.py`.
 
 Billing actuals for the 21:00 and 22:00 PT hours (closed), from
 `modal billing report --start 2026-11-01 --resolution h --show-resources --tz local` at 23:04 PT:
