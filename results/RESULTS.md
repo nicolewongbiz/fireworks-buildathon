@@ -140,6 +140,24 @@ What this tells us:
 - **Serverless spend is negligible next to GPU time.** 500 images on Kimi K3 is about $0.65; on the whole
   synthetic plus real-world sets (about 1,300 images at two sizes) well under $5.
 
+## Reference: MolScribe, a purpose-built OCSR model, on the same 10 images
+
+Source: `results/smoke_molscribe.json`, `src/predict_molscribe.py` (MIT-licensed MolScribe, Swin-base
+checkpoint, runs on the laptop CPU in its own `.venv-molscribe`; install recipe in the module docstring).
+
+| Metric | MolScribe (CPU, 4 threads) |
+|---|---|
+| Exact match | 10 / 10 |
+| Valid | 10 / 10 |
+| Latency per image | 0.9 s median, 1.1 s p95 (laptop CPU, not comparable to GPU or API latency) |
+| Cost | $0 (local) |
+
+Clean RDKit renders are MolScribe's home turf, so 100% is the expected ceiling and the number the tuned
+VLM should be measured against on synthetic data. The interesting comparison is on the patent-scan and
+hand-drawn sets, where MolScribe's published accuracy is around 90% on patents and much lower on hand
+drawings. Run it with `.venv-molscribe/bin/python -m src.predict_molscribe <manifest> --out results/<name>.json`;
+the shared runner lists `molscribe` but can only call it from that interpreter.
+
 ## Changes after the smoke runs that affect comparability
 
 Commit `57f43b5` and the dataset build changed the scoring and the generation settings. Numbers above were

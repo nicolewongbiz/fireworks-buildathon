@@ -1,0 +1,279 @@
+{
+  "summary": {
+    "system": "molscribe",
+    "n": 10,
+    "exact_match": 1.0,
+    "exact_match_nostereo": 1.0,
+    "valid_rate": 1.0,
+    "mean_tanimoto": 1.0,
+    "loop_rate": 0.0,
+    "max_tokens": null,
+    "mean_latency_s": 0.9392105499049649,
+    "median_latency_s": 0.9408058955450542,
+    "p95_latency_s": 1.0571497079217806,
+    "mean_tokens_in": 0.0,
+    "mean_tokens_out": 0.0,
+    "first_answer_s": 8.38208037498407,
+    "model_load_s": 7.467390791978687,
+    "wall_s": 20.07051141699776,
+    "gpu_hours": 0.0,
+    "usd": 0.0,
+    "gpu_usd_per_hour": 0.0,
+    "workers": 1,
+    "device": "cpu",
+    "threads": 4,
+    "checkpoint": "data/raw/molscribe_ckpt/swin_base_char_aux_1m.pth"
+  },
+  "items": [
+    {
+      "image_path": "data/images/smoke/test_000.png",
+      "truth": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+      "tags": null,
+      "predict": {
+        "smiles": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "latency_s": 0.9146812499966472,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8844151527260957
+      },
+      "match": {
+        "pred_raw": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "pred_smiles": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "pred_canonical": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "truth_canonical": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_001.png",
+      "truth": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+      "tags": null,
+      "predict": {
+        "smiles": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "latency_s": 0.7667123340070248,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8835949194128502
+      },
+      "match": {
+        "pred_raw": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "pred_smiles": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "pred_canonical": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "truth_canonical": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_002.png",
+      "truth": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+      "tags": null,
+      "predict": {
+        "smiles": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "latency_s": 1.0461538749514148,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8928397707509886
+      },
+      "match": {
+        "pred_raw": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "pred_smiles": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "pred_canonical": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "truth_canonical": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_003.png",
+      "truth": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+      "tags": null,
+      "predict": {
+        "smiles": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "latency_s": 0.8838561660377309,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.9099070432867098
+      },
+      "match": {
+        "pred_raw": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "pred_smiles": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "pred_canonical": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "truth_canonical": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_004.png",
+      "truth": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+      "tags": null,
+      "predict": {
+        "smiles": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "latency_s": 0.7996674590976909,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8927727737032922
+      },
+      "match": {
+        "pred_raw": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "pred_smiles": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "pred_canonical": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "truth_canonical": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_005.png",
+      "truth": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+      "tags": null,
+      "predict": {
+        "smiles": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "latency_s": 1.0571497079217806,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8797997610953864
+      },
+      "match": {
+        "pred_raw": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "pred_smiles": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "pred_canonical": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "truth_canonical": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_006.png",
+      "truth": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+      "tags": null,
+      "predict": {
+        "smiles": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "latency_s": 1.03066933399532,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8684664011435645
+      },
+      "match": {
+        "pred_raw": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "pred_smiles": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "pred_canonical": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "truth_canonical": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_007.png",
+      "truth": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+      "tags": null,
+      "predict": {
+        "smiles": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "latency_s": 0.913996540941298,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8825907160571682
+      },
+      "match": {
+        "pred_raw": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "pred_smiles": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "pred_canonical": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "truth_canonical": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_008.png",
+      "truth": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+      "tags": null,
+      "predict": {
+        "smiles": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "latency_s": 0.9669305410934612,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.8765295162175138
+      },
+      "match": {
+        "pred_raw": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "pred_smiles": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "pred_canonical": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "truth_canonical": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_009.png",
+      "truth": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+      "tags": null,
+      "predict": {
+        "smiles": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "latency_s": 1.0122882910072803,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "attempts": 1,
+        "escalated": false,
+        "confidence": 0.851633936562083
+      },
+      "match": {
+        "pred_raw": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "pred_smiles": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "pred_canonical": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "truth_canonical": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": true,
+        "hit_cap": false
+      }
+    }
+  ]
+}
