@@ -1,6 +1,6 @@
 # System comparison
 
-Generated 2026-11-02 07:20 UTC by `src/evaluate.py` from 7 results file(s). All metrics recomputed from per-item records; brackets are bootstrap 95% CIs (1000 resamples, seed 0). Headline exact match is stereo-aware; cost per correct uses it.
+Generated 2026-11-02 07:21 UTC by `src/evaluate.py` from 7 results file(s). All metrics recomputed from per-item records; brackets are bootstrap 95% CIs (1000 resamples, seed 0). Headline exact match is stereo-aware; cost per correct uses it.
 
 | System | Test set | n | Exact (stereo) | Exact (no stereo) | Valid | Mean Tanimoto | Loop rate | Latency p50 / p95 | USD | Cost / correct | Cost / image |
 |---|---|---:|---|---|---|---:|---:|---|---:|---:|---:|
@@ -10,9 +10,9 @@ Generated 2026-11-02 07:20 UTC by `src/evaluate.py` from 7 results file(s). All 
 | smoke_molscribe * | smoke | 10 | 100.0% [100.0, 100.0] | 100.0% [100.0, 100.0] | 100.0% [100.0, 100.0] | 1.000 | 0.0% | 0.94s / 1.06s | $0.0000 | $0.0000 | $0.0000 |
 | smoke_tuned * | smoke | 10 | 0.0% [0.0, 0.0] | 0.0% [0.0, 0.0] | 90.0% [70.0, 100.0] | 0.174 | n/a | 2.05s / 8.07s | $0.0190 | inf (0 correct) | $0.0019 |
 | smoke_untuned * | smoke | 10 | 0.0% [0.0, 0.0] | 0.0% [0.0, 0.0] | 70.0% [40.0, 90.0] | 0.122 | n/a | 2.87s / 7.55s | $0.15 | inf (0 correct) | $0.0151 |
-| untuned_test384 | 384/test | 500 | 0.0% [0.0, 0.0] | 0.0% [0.0, 0.0] | 67.0% [63.0, 71.4] | 0.109 | 19.2% | 2.20s / 4.00s | $0.19 | inf (0 correct) | $0.0004 |
+| untuned | test_synthetic_384 | 500 | 0.0% [0.0, 0.0] | 0.0% [0.0, 0.0] | 67.0% [63.0, 71.4] | 0.109 | 19.2% | 2.20s / 4.00s | $0.19 | inf (0 correct) | $0.0004 |
 
-Cost source per system: smoke_large_glm · smoke: summary.usd; smoke_large_kimi · smoke: summary.usd; smoke_large_qwen · smoke: summary.usd; smoke_molscribe · smoke: summary.usd; smoke_tuned · smoke: summary.usd; smoke_untuned · smoke: summary.usd; untuned_test384 · 384/test: summary.usd.
+Cost source per system: smoke_large_glm · smoke: summary.usd; smoke_large_kimi · smoke: summary.usd; smoke_large_qwen · smoke: summary.usd; smoke_molscribe · smoke: summary.usd; smoke_tuned · smoke: summary.usd; smoke_untuned · smoke: summary.usd; untuned · test_synthetic_384: summary.usd.
 
 ## Notes (* in the table)
 
@@ -40,7 +40,7 @@ Dark-surface variants: chart_exact_vs_cost_dark.png, chart_exact_by_testset_dark
 
 Tags from the test manifest (`make_dataset.py` difficulty attributes are bucketed; list tags used as is). Cell = exact % (hits/n).
 
-| Tag | untuned_test384 · 384/test |
+| Tag | untuned · test_synthetic_384 |
 |---|---|
 | heavy_atoms<=20 | 0.0% (0/110) |
 | heavy_atoms 21-30 | 0.0% (0/366) |

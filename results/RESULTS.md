@@ -160,7 +160,7 @@ the shared runner lists `molscribe` but can only call it from that interpreter.
 
 ## First full-size number: untuned Qwen3.5-9B on the 500-image synthetic test set
 
-Source: `results/untuned_test384.json` (run by the other session on Modal, L40S, max_tokens 108).
+Source: `results/untuned__test_synthetic_384.json` (run by the other session on Modal, L40S, max_tokens 108).
 
 | Metric | Untuned 9B, 500 images at 384 px |
 |---|---|
