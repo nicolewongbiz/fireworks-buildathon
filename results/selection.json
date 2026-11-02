@@ -25,5 +25,86 @@
         "val_loss": 0.16438535229598145
       }
     ]
+  },
+  "n5000_r384_lang_e3": {
+    "selected": "n5000_r384_lang_e3_ep3",
+    "rule": "max val exact (stereo-aware); ties: min val loss, then earlier epoch",
+    "candidates": [
+      {
+        "ckpt": "n5000_r384_lang_e3_ep1",
+        "epoch": 1,
+        "val_exact": 0.21,
+        "val_exact_nostereo": 0.315,
+        "val_loss": 0.1786681720147908
+      },
+      {
+        "ckpt": "n5000_r384_lang_e3_ep2",
+        "epoch": 2,
+        "val_exact": 0.335,
+        "val_exact_nostereo": 0.52,
+        "val_loss": 0.10823138207598597
+      },
+      {
+        "ckpt": "n5000_r384_lang_e3_ep3",
+        "epoch": 3,
+        "val_exact": 0.405,
+        "val_exact_nostereo": 0.585,
+        "val_loss": 0.10684665039391333
+      }
+    ]
+  },
+  "n2000_r384_merger_e3": {
+    "selected": "n2000_r384_merger_e3_ep3",
+    "rule": "max val exact (stereo-aware); ties: min val loss, then earlier epoch",
+    "candidates": [
+      {
+        "ckpt": "n2000_r384_merger_e3_ep1",
+        "epoch": 1,
+        "val_exact": 0.185,
+        "val_exact_nostereo": 0.245,
+        "val_loss": 0.20960124956922807
+      },
+      {
+        "ckpt": "n2000_r384_merger_e3_ep2",
+        "epoch": 2,
+        "val_exact": 0.23,
+        "val_exact_nostereo": 0.335,
+        "val_loss": 0.15950883159163612
+      },
+      {
+        "ckpt": "n2000_r384_merger_e3_ep3",
+        "epoch": 3,
+        "val_exact": 0.275,
+        "val_exact_nostereo": 0.39,
+        "val_loss": 0.15590160830011626
+      }
+    ]
+  },
+  "n2000_r640_lang_e3": {
+    "selected": "n2000_r640_lang_e3_ep3",
+    "rule": "max val exact (stereo-aware); ties: min val loss, then earlier epoch",
+    "candidates": [
+      {
+        "ckpt": "n2000_r640_lang_e3_ep1",
+        "epoch": 1,
+        "val_exact": 0.085,
+        "val_exact_nostereo": 0.165,
+        "val_loss": 0.25482613667154413
+      },
+      {
+        "ckpt": "n2000_r640_lang_e3_ep2",
+        "epoch": 2,
+        "val_exact": 0.25,
+        "val_exact_nostereo": 0.365,
+        "val_loss": 0.1699328994865155
+      },
+      {
+        "ckpt": "n2000_r640_lang_e3_ep3",
+        "epoch": 3,
+        "val_exact": 0.285,
+        "val_exact_nostereo": 0.375,
+        "val_loss": 0.1536864754826107
+      }
+    ]
   }
 }

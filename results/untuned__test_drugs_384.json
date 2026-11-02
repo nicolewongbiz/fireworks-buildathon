@@ -1,0 +1,3871 @@
+{
+  "summary": {
+    "system": "untuned",
+    "n": 100,
+    "exact_match": 0.0,
+    "exact_match_nostereo": 0.01,
+    "valid_rate": 0.73,
+    "mean_tanimoto": 0.11881783177853969,
+    "loop_rate": 0.2,
+    "max_tokens": 108,
+    "mean_latency_s": 1.7038200762949418,
+    "median_latency_s": 1.556635125540197,
+    "p95_latency_s": 2.798899875022471,
+    "mean_tokens_in": 175.0,
+    "mean_tokens_out": 61.95,
+    "first_answer_s": 2.3091344999847934,
+    "wall_s": 24.693034500000067,
+    "gpu_hours": 0.006859176250000019,
+    "usd": 0.013375393687500037,
+    "gpu_usd_per_hour": 1.95,
+    "workers": 8,
+    "cold_start_s": 2.3091344999847934,
+    "cold_start_usd": 0.001250781187491763,
+    "steady_images_per_s": 4.422821760280042,
+    "steady_usd_per_1k_images": 0.1224708333334169
+  },
+  "items": [
+    {
+      "image_path": "data/images/384/drugs/00000.png",
+      "truth": "CC(C)OC(=O)[C@H](C)N[P@](=O)(OC[C@H]1O[C@@H](n2ccc(=O)[nH]c2=O)[C@](C)(F)[C@@H]1O)Oc1ccccc1",
+      "tags": {
+        "heavy_atoms": 36,
+        "rings": 3,
+        "stereocenters": 6,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "P"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](F)[C@@H](O1)[C@@H]2OC[C@@H](C2)N1C=CC(=O)N(C1=O)COP(=O)(OC[C@@H]1C=CC(=CC1)OC)N[C@@H](C(=O)OC(C)C)C(C)=O",
+        "latency_s": 2.226500125019811,
+        "tokens_in": 175,
+        "tokens_out": 89,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](F)[C@@H](O1)[C@@H]2OC[C@@H](C2)N1C=CC(=O)N(C1=O)COP(=O)(OC[C@@H]1C=CC(=CC1)OC)N[C@@H](C(=O)OC(C)C)C(C)=O",
+        "pred_smiles": "C[C@@H]1[C@@H](F)[C@@H](O1)[C@@H]2OC[C@@H](C2)N1C=CC(=O)N(C1=O)COP(=O)(OC[C@@H]1C=CC(=CC1)OC)N[C@@H](C(=O)OC(C)C)C(C)=O",
+        "pred_canonical": "COC1=CCC(COP(=O)(NC(C(C)=O)C(=O)OC(C)C)OCn2c(=O)ccn(C3COC(C4OC(C)C4F)C3)c2=O)C=C1",
+        "truth_canonical": "CC(C)OC(=O)C(C)NP(=O)(OCC1OC(n2ccc(=O)[nH]c2=O)C(C)(F)C1O)Oc1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2966101694915254,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00001.png",
+      "truth": "O=P1(N(CCCl)CCCl)NCCCO1",
+      "tags": {
+        "heavy_atoms": 14,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "P"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "ClCCN1CCN(C2=CC(=O)OP3(CCNCc3)O2)CC1\n",
+        "latency_s": 0.8370831250213087,
+        "tokens_in": 175,
+        "tokens_out": 28,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "ClCCN1CCN(C2=CC(=O)OP3(CCNCc3)O2)CC1\n",
+        "pred_smiles": "ClCCN1CCN(C2=CC(=O)OP3(CCNCc3)O2)CC1",
+        "pred_canonical": "O=C1C=C(N2CCN(CCCl)CC2)O[PH]2(CCNCC2)O1",
+        "truth_canonical": "O=P1(N(CCCl)CCCl)NCCCO1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.15517241379310345,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00002.png",
+      "truth": "NCCCC(O)(P(=O)(O)O)P(=O)(O)O",
+      "tags": {
+        "heavy_atoms": 14,
+        "rings": 0,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "P"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "OC(O)P(=O)(OP(O)(O)OP(O)(O)O)OP(=O)(O)OP(=O)(O)OCCN",
+        "latency_s": 1.884480083012022,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OC(O)P(=O)(OP(O)(O)OP(O)(O)O)OP(=O)(O)OP(=O)(O)OCCN",
+        "pred_smiles": "OC(O)P(=O)(OP(O)(O)OP(O)(O)O)OP(=O)(O)OP(=O)(O)OCCN",
+        "pred_canonical": "NCCOP(=O)(O)OP(=O)(O)OP(=O)(O[PH](O)(O)O[PH](O)(O)O)C(O)O",
+        "truth_canonical": "NCCCC(O)(P(=O)(O)O)P(=O)(O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1875,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00003.png",
+      "truth": "CC(C)OC(=O)OCOP(=O)(CO[C@H](C)Cn1cnc2c(N)ncnc21)OCOC(=O)OC(C)C",
+      "tags": {
+        "heavy_atoms": 35,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "P"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC(C)OC(=O)COCCOP(=O)(OC[C@@H]1C[C@@H](Cn2cnc3c(N)ncnc32)O1)OC[C@@H](C(=C)C(C)C)O",
+        "latency_s": 2.2412185829598457,
+        "tokens_in": 175,
+        "tokens_out": 60,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)OC(=O)COCCOP(=O)(OC[C@@H]1C[C@@H](Cn2cnc3c(N)ncnc32)O1)OC[C@@H](C(=C)C(C)C)O",
+        "pred_smiles": "CC(C)OC(=O)COCCOP(=O)(OC[C@@H]1C[C@@H](Cn2cnc3c(N)ncnc32)O1)OC[C@@H](C(=C)C(C)C)O",
+        "pred_canonical": "C=C(C(C)C)C(O)COP(=O)(OCCOCC(=O)OC(C)C)OCC1CC(Cn2cnc3c(N)ncnc32)O1",
+        "truth_canonical": "CC(C)OC(=O)OCOP(=O)(COC(C)Cn1cnc2c(N)ncnc21)OCOC(=O)OC(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.3763440860215054,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00004.png",
+      "truth": "O=P1(NCCCl)OCCCN1CCCl",
+      "tags": {
+        "heavy_atoms": 14,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "P"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "O=C1C[C@@H](CN(C2=NCCN2)[C@@H](C)CN)C[C@@H](O1)CN(C)C",
+        "latency_s": 1.4939146660035476,
+        "tokens_in": 175,
+        "tokens_out": 37,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "O=C1C[C@@H](CN(C2=NCCN2)[C@@H](C)CN)C[C@@H](O1)CN(C)C",
+        "pred_smiles": "O=C1C[C@@H](CN(C2=NCCN2)[C@@H](C)CN)C[C@@H](O1)CN(C)C",
+        "pred_canonical": "CC(CN)N(CC1CC(=O)OC(CN(C)C)C1)C1=NCCN1",
+        "truth_canonical": "O=P1(NCCCl)OCCCN1CCCl",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.05405405405405406,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00005.png",
+      "truth": "CCC(=O)O[C@@H](O[P@](=O)(CCCCc1ccccc1)CC(=O)N1C[C@H](C2CCCCC2)C[C@H]1C(=O)O)C(C)C",
+      "tags": {
+        "heavy_atoms": 39,
+        "rings": 3,
+        "stereocenters": 4,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "P"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "latency_s": 1.447009207913652,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "pred_smiles": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "pred_canonical": "Cc1ccccc1-c1ccc(-c2ccccc2)c(-c2ccccc2)c1",
+        "truth_canonical": "CCC(=O)OC(OP(=O)(CCCCc1ccccc1)CC(=O)N1CC(C2CCCCC2)CC1C(=O)O)C(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08536585365853659,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00006.png",
+      "truth": "CC(=O)Oc1ccccc1C(=O)O",
+      "tags": {
+        "heavy_atoms": 13,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "COc1cc(C(=O)O)c(C(=O)O)cc1",
+        "latency_s": 1.086394333979115,
+        "tokens_in": 175,
+        "tokens_out": 21,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "COc1cc(C(=O)O)c(C(=O)O)cc1",
+        "pred_smiles": "COc1cc(C(=O)O)c(C(=O)O)cc1",
+        "pred_canonical": "COc1ccc(C(=O)O)c(C(=O)O)c1",
+        "truth_canonical": "CC(=O)Oc1ccccc1C(=O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.34285714285714286,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00007.png",
+      "truth": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+      "tags": {
+        "heavy_atoms": 15,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@@H](O)[C@H]1CC[C@@H]2CC[C@H]1[C@H]2C",
+        "latency_s": 1.8137731670867652,
+        "tokens_in": 175,
+        "tokens_out": 37,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@@H](O)[C@H]1CC[C@@H]2CC[C@H]1[C@H]2C",
+        "pred_smiles": "C[C@@H](O)[C@@H](O)[C@H]1CC[C@@H]2CC[C@H]1[C@H]2C",
+        "pred_canonical": "CC(O)C(O)C1CCC2CCC1C2C",
+        "truth_canonical": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08888888888888889,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00008.png",
+      "truth": "CC(=O)Nc1ccc(O)cc1",
+      "tags": {
+        "heavy_atoms": 11,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C1=CC(=CC=C1N(C)C2=CC=CC=C2)C3=CC=CC=C3",
+        "latency_s": 1.4695734590059146,
+        "tokens_in": 175,
+        "tokens_out": 30,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1=CC(=CC=C1N(C)C2=CC=CC=C2)C3=CC=CC=C3",
+        "pred_smiles": "C1=CC(=CC=C1N(C)C2=CC=CC=C2)C3=CC=CC=C3",
+        "pred_canonical": "CN(c1ccccc1)c1ccc(-c2ccccc2)cc1",
+        "truth_canonical": "CC(=O)Nc1ccc(O)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.11428571428571428,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00009.png",
+      "truth": "COc1ccc2cc([C@H](C)C(=O)O)ccc2c1",
+      "tags": {
+        "heavy_atoms": 17,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=CC2=C(C=C1)C(=C(C2)C(=C(C(=C(C(=C1C(=CC(=C1)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C",
+        "latency_s": 2.87200579198543,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CC2=C(C=C1)C(=C(C2)C(=C(C(=C(C(=C1C(=CC(=C1)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C",
+        "pred_smiles": "CC1=CC2=C(C=C1)C(=C(C2)C(=C(C(=C(C(=C1C(=CC(=C1)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C)C",
+        "pred_canonical": null,
+        "truth_canonical": "COc1ccc2cc(C(C)C(=O)O)ccc2c1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00010.png",
+      "truth": "O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H](C2=CC(=O)N(C2)C(=O)NC(=O)C3=CC=CC=C3)O1)NC(=O)C4=CC=CC=C4",
+        "latency_s": 1.65803170891013,
+        "tokens_in": 175,
+        "tokens_out": 63,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H](C2=CC(=O)N(C2)C(=O)NC(=O)C3=CC=CC=C3)O1)NC(=O)C4=CC=CC=C4",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H](C2=CC(=O)N(C2)C(=O)NC(=O)C3=CC=CC=C3)O1)NC(=O)C4=CC=CC=C4",
+        "pred_canonical": "CC1OC(C2=CC(=O)N(C(=O)NC(=O)c3ccccc3)C2)CC1NC(=O)c1ccccc1",
+        "truth_canonical": "O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14285714285714285,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00011.png",
+      "truth": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1=CC(=O)C2=C(C1)C=NN2C1=CC=CC(=C1)S(=O)(=O)NCC(F)(F)F",
+        "latency_s": 1.2519630839815363,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CC(=O)C2=C(C1)C=NN2C1=CC=CC(=C1)S(=O)(=O)NCC(F)(F)F",
+        "pred_smiles": "CC1=CC(=O)C2=C(C1)C=NN2C1=CC=CC(=C1)S(=O)(=O)NCC(F)(F)F",
+        "pred_canonical": "CC1=CC(=O)c2c(cnn2-c2cccc(S(=O)(=O)NCC(F)(F)F)c2)C1",
+        "truth_canonical": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.22666666666666666,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00012.png",
+      "truth": "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)O",
+      "tags": {
+        "heavy_atoms": 41,
+        "rings": 4,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "latency_s": 1.1844421250279993,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "pred_smiles": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "pred_canonical": "Cc1ccccc1-c1ccc(-c2ccccc2)c(-c2ccccc2)c1",
+        "truth_canonical": "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC(O)CC(O)CC(=O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.15714285714285714,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00013.png",
+      "truth": "CCC(C)(C)C(=O)O[C@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CC[C@@H]3C[C@@H](O)CC(=O)O3)[C@H]21",
+      "tags": {
+        "heavy_atoms": 30,
+        "rings": 3,
+        "stereocenters": 7,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](O)[C@@H](O)[C@@H](O)[C@H](O)[C@@H]1O[C@H]1[C@H](O)[C@H](O)[C@@H](O)[C@@H](O)[C@H](O)[C@H]1O[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@",
+        "latency_s": 2.759577832999639,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](O)[C@@H](O)[C@@H](O)[C@H](O)[C@@H]1O[C@H]1[C@H](O)[C@H](O)[C@@H](O)[C@@H](O)[C@H](O)[C@H]1O[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@",
+        "pred_smiles": "C[C@@H]1[C@@H](O)[C@@H](O)[C@@H](O)[C@H](O)[C@@H]1O[C@H]1[C@H](O)[C@H](O)[C@@H](O)[C@@H](O)[C@H](O)[C@H]1O[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@",
+        "pred_canonical": null,
+        "truth_canonical": "CCC(C)(C)C(=O)OC1CC(C)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00014.png",
+      "truth": "CC(C)c1nc(N(C)S(C)(=O)=O)nc(-c2ccc(F)cc2)c1/C=C/[C@@H](O)C[C@@H](O)CC(=O)O",
+      "tags": {
+        "heavy_atoms": 33,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 1,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)C(C1=CN=C(NC(C)S(=O)(=O)C)N=C1C1=CC=CC(F)=C1)C(C)C(O)C(O)C(=O)O",
+        "latency_s": 1.4606211250647902,
+        "tokens_in": 175,
+        "tokens_out": 53,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)C(C1=CN=C(NC(C)S(=O)(=O)C)N=C1C1=CC=CC(F)=C1)C(C)C(O)C(O)C(=O)O",
+        "pred_smiles": "CC(C)C(C1=CN=C(NC(C)S(=O)(=O)C)N=C1C1=CC=CC(F)=C1)C(C)C(O)C(O)C(=O)O",
+        "pred_canonical": "CC(C)C(c1cnc(NC(C)S(C)(=O)=O)nc1-c1cccc(F)c1)C(C)C(O)C(O)C(=O)O",
+        "truth_canonical": "CC(C)c1nc(N(C)S(C)(=O)=O)nc(-c2ccc(F)cc2)c1C=CC(O)CC(O)CC(=O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2391304347826087,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00015.png",
+      "truth": "NCCCC[C@H](N[C@@H](CCc1ccccc1)C(=O)O)C(=O)N1CCC[C@H]1C(=O)O",
+      "tags": {
+        "heavy_atoms": 29,
+        "rings": 2,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "NCc1cc(C(=O)O)c(C(=O)O)cn1C(=O)c1cc(C(=O)O)on1",
+        "latency_s": 1.0412762919440866,
+        "tokens_in": 175,
+        "tokens_out": 37,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "NCc1cc(C(=O)O)c(C(=O)O)cn1C(=O)c1cc(C(=O)O)on1",
+        "pred_smiles": "NCc1cc(C(=O)O)c(C(=O)O)cn1C(=O)c1cc(C(=O)O)on1",
+        "pred_canonical": null,
+        "truth_canonical": "NCCCCC(NC(CCc1ccccc1)C(=O)O)C(=O)N1CCCC1C(=O)O",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00016.png",
+      "truth": "CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1CCC[C@H]1C(=O)O",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 2,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "latency_s": 2.7708608750253916,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_canonical": null,
+        "truth_canonical": "CCOC(=O)C(CCc1ccccc1)NC(C)C(=O)N1CCCC1C(=O)O",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00017.png",
+      "truth": "CCCCc1nc(Cl)c(CO)n1Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1",
+      "tags": {
+        "heavy_atoms": 30,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]2CN(C[C@@H](C2)O)C[C@@H]3CN(C[C@@H](C3)O)C[C@@H]4CN(C[C@@H](C4)O)C[C@@H]5CN(C[C@@H](C5)O)C[C@@H]6CN(C[C@@H](C6)O)C[C@@H]7CN(C[C@@H](C7)O",
+        "latency_s": 2.773943749954924,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]2CN(C[C@@H](C2)O)C[C@@H]3CN(C[C@@H](C3)O)C[C@@H]4CN(C[C@@H](C4)O)C[C@@H]5CN(C[C@@H](C5)O)C[C@@H]6CN(C[C@@H](C6)O)C[C@@H]7CN(C[C@@H](C7)O",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]2CN(C[C@@H](C2)O)C[C@@H]3CN(C[C@@H](C3)O)C[C@@H]4CN(C[C@@H](C4)O)C[C@@H]5CN(C[C@@H](C5)O)C[C@@H]6CN(C[C@@H](C6)O)C[C@@H]7CN(C[C@@H](C7)O",
+        "pred_canonical": null,
+        "truth_canonical": "CCCCc1nc(Cl)c(CO)n1Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00018.png",
+      "truth": "CCCCC(=O)N(Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1)[C@H](C(=O)O)C(C)C",
+      "tags": {
+        "heavy_atoms": 32,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)(C[C@@H](C(=O)O)C[C@H](O)C(=O)O[C@@H]1C[C@@H](C2=CC=CN2C2=CC=CC2)N1)C",
+        "latency_s": 1.5283930000150576,
+        "tokens_in": 175,
+        "tokens_out": 58,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)(C[C@@H](C(=O)O)C[C@H](O)C(=O)O[C@@H]1C[C@@H](C2=CC=CN2C2=CC=CC2)N1)C",
+        "pred_smiles": "CC(C)(C[C@@H](C(=O)O)C[C@H](O)C(=O)O[C@@H]1C[C@@H](C2=CC=CN2C2=CC=CC2)N1)C",
+        "pred_canonical": "CC(C)(C)CC(CC(O)C(=O)OC1CC(c2cccn2C2=CC=CC2)N1)C(=O)O",
+        "truth_canonical": "CCCCC(=O)N(Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1)C(C(=O)O)C(C)C",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13402061855670103,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00019.png",
+      "truth": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OC)C1c1ccccc1Cl",
+      "tags": {
+        "heavy_atoms": 28,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C=C[C@@H](C3)C[C@@H]2[C@H]1CNC(=O)[C@@H](N)CC(N)=O)NC(=O)[C@@H](N)CC(N)=O",
+        "latency_s": 2.0046286660945043,
+        "tokens_in": 175,
+        "tokens_out": 74,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C=C[C@@H](C3)C[C@@H]2[C@H]1CNC(=O)[C@@H](N)CC(N)=O)NC(=O)[C@@H](N)CC(N)=O",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C=C[C@@H](C3)C[C@@H]2[C@H]1CNC(=O)[C@@H](N)CC(N)=O)NC(=O)[C@@H](N)CC(N)=O",
+        "pred_canonical": "CC1C(NC(=O)C(N)CC(N)=O)CC2C3C=CC(C3)CC2C1CNC(=O)C(N)CC(N)=O",
+        "truth_canonical": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OC)C1c1ccccc1Cl",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.0989010989010989,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00020.png",
+      "truth": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H]1[C@@H](C[C@@H]2C[C@@H]3C[C@@H](C[C@@H]3[C@H](C2)O)O)O[C@H]1O)O",
+        "latency_s": 1.5552446669898927,
+        "tokens_in": 175,
+        "tokens_out": 59,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H]1[C@@H](C[C@@H]2C[C@@H]3C[C@@H](C[C@@H]3[C@H](C2)O)O)O[C@H]1O)O",
+        "pred_smiles": "C[C@@H](C[C@@H]1[C@@H](C[C@@H]2C[C@@H]3C[C@@H](C[C@@H]3[C@H](C2)O)O)O[C@H]1O)O",
+        "pred_canonical": "CC(O)CC1C(O)OC1CC1CC(O)C2CC(O)CC2C1",
+        "truth_canonical": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.0410958904109589,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00021.png",
+      "truth": "COCCc1ccc(OCC(O)CNC(C)C)cc1",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)C[C@@H](C)C[C@H](C)C[C@@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)",
+        "latency_s": 2.728722041938454,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)C[C@@H](C)C[C@H](C)C[C@@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)",
+        "pred_smiles": "CC(C)C[C@@H](C)C[C@H](C)C[C@@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)C[C@H](C)",
+        "pred_canonical": "C[CH]CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)C",
+        "truth_canonical": "COCCc1ccc(OCC(O)CNC(C)C)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00022.png",
+      "truth": "CC(C)NCC(O)COc1cccc2ccccc12",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC(C)NCCC(O)COc1cccc2ccccc12",
+        "latency_s": 0.5233485830249265,
+        "tokens_in": 175,
+        "tokens_out": 17,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)NCCC(O)COc1cccc2ccccc12",
+        "pred_smiles": "CC(C)NCCC(O)COc1cccc2ccccc12",
+        "pred_canonical": "CC(C)NCCC(O)COc1cccc2ccccc12",
+        "truth_canonical": "CC(C)NCC(O)COc1cccc2ccccc12",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.7560975609756098,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00023.png",
+      "truth": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O[C@@H]1C[C@@H](O)C[C@@H](O1)O[C@@H]2C[C@@H](O)C[C@@H](O)[C@H]2NC(=O)[C@@H](C)NC(=O)[C@@H](N)CC(O)=O)C(=O)N[C@@H](CC(C)C)C(=O)O",
+        "latency_s": 2.6142372909234837,
+        "tokens_in": 175,
+        "tokens_out": 100,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O[C@@H]1C[C@@H](O)C[C@@H](O1)O[C@@H]2C[C@@H](O)C[C@@H](O)[C@H]2NC(=O)[C@@H](C)NC(=O)[C@@H](N)CC(O)=O)C(=O)N[C@@H](CC(C)C)C(=O)O",
+        "pred_smiles": "C[C@@H](O[C@@H]1C[C@@H](O)C[C@@H](O1)O[C@@H]2C[C@@H](O)C[C@@H](O)[C@H]2NC(=O)[C@@H](C)NC(=O)[C@@H](N)CC(O)=O)C(=O)N[C@@H](CC(C)C)C(=O)O",
+        "pred_canonical": "CC(C)CC(NC(=O)C(C)OC1CC(O)CC(OC2CC(O)CC(O)C2NC(=O)C(C)NC(=O)C(N)CC(=O)O)O1)C(=O)O",
+        "truth_canonical": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1111111111111111,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00024.png",
+      "truth": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12",
+      "tags": {
+        "heavy_atoms": 30,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H](C1)O)C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "latency_s": 2.7871417079586536,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H](C1)O)C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H](C1)O)C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_canonical": null,
+        "truth_canonical": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00025.png",
+      "truth": "CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=C(C=CC(=C1)O)C2C(=C(C(=O)C2)OC)C3=CC(=CC(=C3)O)C(C)(C)O",
+        "latency_s": 1.3731180829927325,
+        "tokens_in": 175,
+        "tokens_out": 50,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(C=CC(=C1)O)C2C(=C(C(=O)C2)OC)C3=CC(=CC(=C3)O)C(C)(C)O",
+        "pred_smiles": "CC1=C(C=CC(=C1)O)C2C(=C(C(=O)C2)OC)C3=CC(=CC(=C3)O)C(C)(C)O",
+        "pred_canonical": "COC1=C(c2cc(O)cc(C(C)(C)O)c2)C(c2ccc(O)cc2C)CC1=O",
+        "truth_canonical": "CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14864864864864866,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00026.png",
+      "truth": "COC(=O)[C@H](c1ccccc1Cl)N1CCc2sccc2C1",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]1O)C(=O)O)C[C@@H](O[C@H]2C[C@@H](C[C@@H](C[C@H]2O)C(=O)O)C(=O)O)C(=O)O",
+        "latency_s": 2.031821541953832,
+        "tokens_in": 175,
+        "tokens_out": 80,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]1O)C(=O)O)C[C@@H](O[C@H]2C[C@@H](C[C@@H](C[C@H]2O)C(=O)O)C(=O)O)C(=O)O",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]1O)C(=O)O)C[C@@H](O[C@H]2C[C@@H](C[C@@H](C[C@H]2O)C(=O)O)C(=O)O)C(=O)O",
+        "pred_canonical": "CC1C(O)CC(C(=O)O)CC1CC(OC1CC(C(=O)O)CC(C(=O)O)CC1O)C(=O)O",
+        "truth_canonical": "COC(=O)C(c1ccccc1Cl)N1CCc2sccc2C1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10666666666666667,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00027.png",
+      "truth": "COc1ccc(-n2nc(C(N)=O)c3c2C(=O)N(c2ccc(N4CCCCC4=O)cc2)CC3)cc1",
+      "tags": {
+        "heavy_atoms": 34,
+        "rings": 5,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=CC(=O)N(CC2=CC(=O)N(CC3=CC(=O)N(CC4=CC(=O)N(CC5=CC(=O)N(CC6=CC(=O)N(CC7=CC(=O)N(CC8=CC(=O)N(CC9=CC(=O)N(CC10=CC(=O)N(CC11=CC(=O)N(CC12=CC(=",
+        "latency_s": 2.759209416923113,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CC(=O)N(CC2=CC(=O)N(CC3=CC(=O)N(CC4=CC(=O)N(CC5=CC(=O)N(CC6=CC(=O)N(CC7=CC(=O)N(CC8=CC(=O)N(CC9=CC(=O)N(CC10=CC(=O)N(CC11=CC(=O)N(CC12=CC(=",
+        "pred_smiles": "CC1=CC(=O)N(CC2=CC(=O)N(CC3=CC(=O)N(CC4=CC(=O)N(CC5=CC(=O)N(CC6=CC(=O)N(CC7=CC(=O)N(CC8=CC(=O)N(CC9=CC(=O)N(CC10=CC(=O)N(CC11=CC(=O)N(CC12=CC(=",
+        "pred_canonical": null,
+        "truth_canonical": "COc1ccc(-n2nc(C(N)=O)c3c2C(=O)N(c2ccc(N4CCCCC4=O)cc2)CC3)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00028.png",
+      "truth": "O=C(NC[C@H]1CN(c2ccc(N3CCOCC3=O)cc2)C(=O)O1)c1ccc(Cl)s1",
+      "tags": {
+        "heavy_atoms": 29,
+        "rings": 4,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "Clc1cc(Cl)c(Cl)cc1CNC(=O)C1CC(=O)N(C(=O)C2=CC(=CC=C2)NC(=O)C2=CC=CC(=C2)NC(=O)OC)C1=O",
+        "latency_s": 1.8394462920259684,
+        "tokens_in": 175,
+        "tokens_out": 67,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Clc1cc(Cl)c(Cl)cc1CNC(=O)C1CC(=O)N(C(=O)C2=CC(=CC=C2)NC(=O)C2=CC=CC(=C2)NC(=O)OC)C1=O",
+        "pred_smiles": "Clc1cc(Cl)c(Cl)cc1CNC(=O)C1CC(=O)N(C(=O)C2=CC(=CC=C2)NC(=O)C2=CC=CC(=C2)NC(=O)OC)C1=O",
+        "pred_canonical": "COC(=O)Nc1cccc(C(=O)Nc2cccc(C(=O)N3C(=O)CC(C(=O)NCc4cc(Cl)c(Cl)cc4Cl)C3=O)c2)c1",
+        "truth_canonical": "O=C(NCC1CN(c2ccc(N3CCOCC3=O)cc2)C(=O)O1)c1ccc(Cl)s1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.18947368421052632,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00029.png",
+      "truth": "COc1ccc2nc(S(=O)Cc3ncc(C)c(OC)c3C)[nH]c2c1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=C(C[C@@H]2[C@@H](C1)O[C@@H]3[C@@H](C2)C[C@@H](C3)O)O",
+        "latency_s": 1.1034502090187743,
+        "tokens_in": 175,
+        "tokens_out": 41,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(C[C@@H]2[C@@H](C1)O[C@@H]3[C@@H](C2)C[C@@H](C3)O)O",
+        "pred_smiles": "CC1=C(C[C@@H]2[C@@H](C1)O[C@@H]3[C@@H](C2)C[C@@H](C3)O)O",
+        "pred_canonical": "CC1=C(O)CC2CC3CC(O)CC3OC2C1",
+        "truth_canonical": "COc1ccc2nc(S(=O)Cc3ncc(C)c(OC)c3C)[nH]c2c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.05405405405405406,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00030.png",
+      "truth": "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "Nc1nc(NC(=O)C2=NC3=C(C=CC=C3)N=C2)cs1",
+        "latency_s": 0.8163204590091482,
+        "tokens_in": 175,
+        "tokens_out": 29,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Nc1nc(NC(=O)C2=NC3=C(C=CC=C3)N=C2)cs1",
+        "pred_smiles": "Nc1nc(NC(=O)C2=NC3=C(C=CC=C3)N=C2)cs1",
+        "pred_canonical": "Nc1nc(NC(=O)c2cnc3ccccc3n2)cs1",
+        "truth_canonical": "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14473684210526316,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00031.png",
+      "truth": "NC(N)=Nc1nc(CSCC/C(N)=N/S(N)(=O)=O)cs1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 1,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "NC(N)=Nc1nc(CSCC/C=C(\\N)S(=O)(=O)N)cs1",
+        "latency_s": 0.8437484171008691,
+        "tokens_in": 175,
+        "tokens_out": 28,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "NC(N)=Nc1nc(CSCC/C=C(\\N)S(=O)(=O)N)cs1",
+        "pred_smiles": "NC(N)=Nc1nc(CSCC/C=C(\\N)S(=O)(=O)N)cs1",
+        "pred_canonical": "NC(=CCCSCc1csc(N=C(N)N)n1)S(N)(=O)=O",
+        "truth_canonical": "NC(N)=Nc1nc(CSCCC(N)=NS(N)(=O)=O)cs1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.6346153846153846,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00032.png",
+      "truth": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]1[C@@H](C2)C(=O)[C@@H](O)[C@@H](O)[C@H]3C[C@@H](C3)O)O",
+        "latency_s": 1.6821159590035677,
+        "tokens_in": 175,
+        "tokens_out": 62,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]1[C@@H](C2)C(=O)[C@@H](O)[C@@H](O)[C@H]3C[C@@H](C3)O)O",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]1[C@@H](C2)C(=O)[C@@H](O)[C@@H](O)[C@H]3C[C@@H](C3)O)O",
+        "pred_canonical": "CC1C(O)CC2CC(C(=O)C(O)C(O)C3CC(O)C3)C21",
+        "truth_canonical": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.0759493670886076,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00033.png",
+      "truth": "O=C(O)COCCN1CCN(C(c2ccccc2)c2ccc(Cl)cc2)CC1",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](C(=O)O)[C@@H](O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@",
+        "latency_s": 2.798899875022471,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C(=O)O)[C@@H](O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@",
+        "pred_smiles": "C[C@@H](C(=O)O)[C@@H](O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@H](C(=O)O)[C@@",
+        "pred_canonical": null,
+        "truth_canonical": "O=C(O)COCCN1CCN(C(c2ccccc2)c2ccc(Cl)cc2)CC1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00034.png",
+      "truth": "CC(C)(C(=O)O)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c3ccccc3)CC2)cc1",
+      "tags": {
+        "heavy_atoms": 37,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O",
+        "latency_s": 2.79539283295162,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O",
+        "pred_smiles": "C[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H](O)[C@@H](O",
+        "pred_canonical": null,
+        "truth_canonical": "CC(C)(C(=O)O)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c3ccccc3)CC2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00035.png",
+      "truth": "CN(C)CCOC(c1ccccc1)c1ccccc1",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C(CN(C)C)COC1=C(C2=CC=CC=C2)C3=CC=CC=C3C1",
+        "latency_s": 1.041948041995056,
+        "tokens_in": 175,
+        "tokens_out": 31,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C(CN(C)C)COC1=C(C2=CC=CC=C2)C3=CC=CC=C3C1",
+        "pred_smiles": "C(CN(C)C)COC1=C(C2=CC=CC=C2)C3=CC=CC=C3C1",
+        "pred_canonical": "CN(C)CCCOC1=C(c2ccccc2)c2ccccc2C1",
+        "truth_canonical": "CN(C)CCOC(c1ccccc1)c1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.32608695652173914,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00036.png",
+      "truth": "CN[C@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)c2ccccc21",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 3,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@H]1C[C@@H](C[C@@H](C1)C[C@H]2C[C@H](C[C@@H](C2)C)N)N",
+        "latency_s": 1.2978100839536637,
+        "tokens_in": 175,
+        "tokens_out": 44,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@H]1C[C@@H](C[C@@H](C1)C[C@H]2C[C@H](C[C@@H](C2)C)N)N",
+        "pred_smiles": "C[C@H]1C[C@@H](C[C@@H](C1)C[C@H]2C[C@H](C[C@@H](C2)C)N)N",
+        "pred_canonical": "CC1CC(N)CC(CC2CC(C)CC(N)C2)C1",
+        "truth_canonical": "CNC1CCC(c2ccc(Cl)c(Cl)c2)c2ccccc21",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.06,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00037.png",
+      "truth": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)(C)C1=CC(=O)N(C2=CC=CC=C2)C(=O)N1CCNC(=O)C1=CC=CC=C1",
+        "latency_s": 1.320822833920829,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)(C)C1=CC(=O)N(C2=CC=CC=C2)C(=O)N1CCNC(=O)C1=CC=CC=C1",
+        "pred_smiles": "CC(C)(C)C1=CC(=O)N(C2=CC=CC=C2)C(=O)N1CCNC(=O)C1=CC=CC=C1",
+        "pred_canonical": "CC(C)(C)c1cc(=O)n(-c2ccccc2)c(=O)n1CCNC(=O)c1ccccc1",
+        "truth_canonical": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.19402985074626866,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00038.png",
+      "truth": "Fc1ccc([C@@H]2CCNC[C@H]2COc2ccc3c(c2)OCO3)cc1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 4,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C1=CC(=C(C=C1)C2=CC(=CC=C2)OC3=CC=CC=C3OC4=CC=CC=C4)O",
+        "latency_s": 1.0825855830917135,
+        "tokens_in": 175,
+        "tokens_out": 40,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1=CC(=C(C=C1)C2=CC(=CC=C2)OC3=CC=CC=C3OC4=CC=CC=C4)O",
+        "pred_smiles": "C1=CC(=C(C=C1)C2=CC(=CC=C2)OC3=CC=CC=C3OC4=CC=CC=C4)O",
+        "pred_canonical": "Oc1ccccc1-c1cccc(Oc2ccccc2Oc2ccccc2)c1",
+        "truth_canonical": "Fc1ccc(C2CCNCC2COc2ccc3c(c2)OCO3)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10144927536231885,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00039.png",
+      "truth": "CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@]1(CN2C[C@@H]3C[C@@H](C2)[C@H]3C[C@@H]1C)N=C(N)N",
+        "latency_s": 1.156014124979265,
+        "tokens_in": 175,
+        "tokens_out": 41,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@]1(CN2C[C@@H]3C[C@@H](C2)[C@H]3C[C@@H]1C)N=C(N)N",
+        "pred_smiles": "C[C@@]1(CN2C[C@@H]3C[C@@H](C2)[C@H]3C[C@@H]1C)N=C(N)N",
+        "pred_canonical": "CC1CC2C3CC2CN(C3)CC1(C)N=C(N)N",
+        "truth_canonical": "CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.039473684210526314,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00040.png",
+      "truth": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@H]1C[C@@H](C[C@@H]1C[C@@H]2C=CC(=O)N2C[C@@H]3C[C@H](C(=O)N3C)C)C",
+        "latency_s": 1.7139561249641702,
+        "tokens_in": 175,
+        "tokens_out": 62,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@H]1C[C@@H](C[C@@H]1C[C@@H]2C=CC(=O)N2C[C@@H]3C[C@H](C(=O)N3C)C)C",
+        "pred_smiles": "C[C@@H](O)[C@H]1C[C@@H](C[C@@H]1C[C@@H]2C=CC(=O)N2C[C@@H]3C[C@H](C(=O)N3C)C)C",
+        "pred_canonical": "CC1CC(CC2C=CC(=O)N2CC2CC(C)C(=O)N2C)C(C(C)O)C1",
+        "truth_canonical": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10526315789473684,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00041.png",
+      "truth": "CNCC[C@H](Oc1cccc2ccccc12)c1cccs1",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C1CCN(CC1)C[C@@H](C2=CC=CN=C2)C(=O)N3CCC[C@H]3C)NC(=O)C4=CC=CN=C4",
+        "latency_s": 1.5496242499211803,
+        "tokens_in": 175,
+        "tokens_out": 55,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C1CCN(CC1)C[C@@H](C2=CC=CN=C2)C(=O)N3CCC[C@H]3C)NC(=O)C4=CC=CN=C4",
+        "pred_smiles": "C[C@@H](C1CCN(CC1)C[C@@H](C2=CC=CN=C2)C(=O)N3CCC[C@H]3C)NC(=O)C4=CC=CN=C4",
+        "pred_canonical": "CC(NC(=O)c1cccnc1)C1CCN(CC(C(=O)N2CCCC2C)c2cccnc2)CC1",
+        "truth_canonical": "CNCCC(Oc1cccc2ccccc12)c1cccs1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08791208791208792,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00042.png",
+      "truth": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+      "tags": {
+        "heavy_atoms": 16,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)(C)N[C@@H](C)C[C@H](C1=CC(=C(C=C1)C)O)O",
+        "latency_s": 1.0012737499782816,
+        "tokens_in": 175,
+        "tokens_out": 34,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)(C)N[C@@H](C)C[C@H](C1=CC(=C(C=C1)C)O)O",
+        "pred_smiles": "CC(C)(C)N[C@@H](C)C[C@H](C1=CC(=C(C=C1)C)O)O",
+        "pred_canonical": "Cc1ccc(C(O)CC(C)NC(C)(C)C)cc1O",
+        "truth_canonical": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2692307692307692,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00043.png",
+      "truth": "CN1CCN2c3ncccc3Cc3ccccc3C2C1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C1=CN=C2C(=C1)C3=C(C=NC4=C3C=CC=C4)C5=C(C=CC=C5)N2",
+        "latency_s": 1.0958304170053452,
+        "tokens_in": 175,
+        "tokens_out": 39,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C1=CN=C2C(=C1)C3=C(C=NC4=C3C=CC=C4)C5=C(C=CC=C5)N2",
+        "pred_smiles": "C1=CN=C2C(=C1)C3=C(C=NC4=C3C=CC=C4)C5=C(C=CC=C5)N2",
+        "pred_canonical": "c1ccc2c(c1)Nc1ncccc1-c1c-2cnc2ccccc12",
+        "truth_canonical": "CN1CCN2c3ncccc3Cc3ccccc3C2C1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.15873015873015872,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00044.png",
+      "truth": "O=c1n(CCCN2CCN(c3cccc(Cl)c3)CC2)nc2ccccn12",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC(C)C(C(=O)OC)C(C)C(=O)OC",
+        "latency_s": 0.6683410840341821,
+        "tokens_in": 175,
+        "tokens_out": 21,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)C(C(=O)OC)C(C)C(=O)OC",
+        "pred_smiles": "CC(C)C(C(=O)OC)C(C)C(=O)OC",
+        "pred_canonical": "COC(=O)C(C)C(C(=O)OC)C(C)C",
+        "truth_canonical": "O=c1n(CCCN2CCN(c3cccc(Cl)c3)CC2)nc2ccccn12",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.015384615384615385,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00045.png",
+      "truth": "CN(C)CCC=C1c2ccccc2CCc2ccccc21",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C[C@@H](C[C@@H]3O2)O1)O[C@@H]1[C@@H](C[C@@H](C[C@H]1O)O)N(C)C(=O)[C@H](C)NC(=O)CNC(=O)[C@@H](N)CC(N)=O",
+        "latency_s": 2.601503249956295,
+        "tokens_in": 175,
+        "tokens_out": 99,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C[C@@H](C[C@@H]3O2)O1)O[C@@H]1[C@@H](C[C@@H](C[C@H]1O)O)N(C)C(=O)[C@H](C)NC(=O)CNC(=O)[C@@H](N)CC(N)=O",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]3C[C@@H](C[C@@H]3O2)O1)O[C@@H]1[C@@H](C[C@@H](C[C@H]1O)O)N(C)C(=O)[C@H](C)NC(=O)CNC(=O)[C@@H](N)CC(N)=O",
+        "pred_canonical": "CC(NC(=O)CNC(=O)C(N)CC(N)=O)C(=O)N(C)C1CC(O)CC(O)C1OC1CC2OC3CC(CC32)OC1C",
+        "truth_canonical": "CN(C)CCC=C1c2ccccc2CCc2ccccc21",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.053763440860215055,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00046.png",
+      "truth": "CN1C(=O)CN=C(c2ccccc2)c2cc(Cl)ccc21",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=C(CN2C(=O)C3=C(C(=O)C=C3C)C2=O)C=C(C1)NC1=CC=C(C=C1)NC1=CC=C(C=C1)N1C(=O)C2=C(C(=O)C=C2C)C1=O",
+        "latency_s": 2.002952415961772,
+        "tokens_in": 175,
+        "tokens_out": 77,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(CN2C(=O)C3=C(C(=O)C=C3C)C2=O)C=C(C1)NC1=CC=C(C=C1)NC1=CC=C(C=C1)N1C(=O)C2=C(C(=O)C=C2C)C1=O",
+        "pred_smiles": "CC1=C(CN2C(=O)C3=C(C(=O)C=C3C)C2=O)C=C(C1)NC1=CC=C(C=C1)NC1=CC=C(C=C1)N1C(=O)C2=C(C(=O)C=C2C)C1=O",
+        "pred_canonical": "CC1=C(Cn2c(=O)c3c(C)cc(=O)c=3c2=O)C=C(Nc2ccc(Nc3ccc(-n4c(=O)c5c(C)cc(=O)c=5c4=O)cc3)cc2)C1",
+        "truth_canonical": "CN1C(=O)CN=C(c2ccccc2)c2cc(Cl)ccc21",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13157894736842105,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00047.png",
+      "truth": "Cc1nnc2n1-c1ccc(Cl)cc1C(c1ccccc1)=NC2",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CNc1ccc2c(c1)c1cc3n(ccc4c5nccnc5c5ccccc5n34)cc1c2C\n",
+        "latency_s": 1.0955265000229701,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CNc1ccc2c(c1)c1cc3n(ccc4c5nccnc5c5ccccc5n34)cc1c2C\n",
+        "pred_smiles": "CNc1ccc2c(c1)c1cc3n(ccc4c5nccnc5c5ccccc5n34)cc1c2C",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1nnc2n1-c1ccc(Cl)cc1C(c1ccccc1)=NC2",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00048.png",
+      "truth": "O=C1Nc2ccc(Cl)cc2C(c2ccccc2Cl)=NC1O",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "O[C@@H]1[C@@H](O)[C@@H](N)C[C@@H]2[C@@H]1[C@@H](N)C[C@H]3[C@H]2CC=C4C(=CC[C@@H](Cl)C4)C3(C)C\n",
+        "latency_s": 1.8414926250698045,
+        "tokens_in": 175,
+        "tokens_out": 69,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "O[C@@H]1[C@@H](O)[C@@H](N)C[C@@H]2[C@@H]1[C@@H](N)C[C@H]3[C@H]2CC=C4C(=CC[C@@H](Cl)C4)C3(C)C\n",
+        "pred_smiles": "O[C@@H]1[C@@H](O)[C@@H](N)C[C@@H]2[C@@H]1[C@@H](N)C[C@H]3[C@H]2CC=C4C(=CC[C@@H](Cl)C4)C3(C)C",
+        "pred_canonical": "CC1(C)C2=CCC(Cl)CC2=CCC2C3CC(N)C(O)C(O)C3C(N)CC21",
+        "truth_canonical": "O=C1Nc2ccc(Cl)cc2C(c2ccccc2Cl)=NC1O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09090909090909091,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00049.png",
+      "truth": "Cc1ccc(-c2nc3ccc(C)cn3c2CC(=O)N(C)C)cc1",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C1=CC(=O)C[C@@H]1C[C@@H]1C[C@@H](C1)C(=O)C1=CC=CN1)C1=CC=CC=C1",
+        "latency_s": 1.4487927909940481,
+        "tokens_in": 175,
+        "tokens_out": 55,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C1=CC(=O)C[C@@H]1C[C@@H]1C[C@@H](C1)C(=O)C1=CC=CN1)C1=CC=CC=C1",
+        "pred_smiles": "C[C@@H](C1=CC(=O)C[C@@H]1C[C@@H]1C[C@@H](C1)C(=O)C1=CC=CN1)C1=CC=CC=C1",
+        "pred_canonical": "CC(C1=CC(=O)CC1CC1CC(C(=O)c2ccc[nH]2)C1)c1ccccc1",
+        "truth_canonical": "Cc1ccc(-c2nc3ccc(C)cn3c2CC(=O)N(C)C)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09876543209876543,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00050.png",
+      "truth": "OCCOCCN1CCN(C2=Nc3ccccc3Sc3ccccc32)CC1",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C(CN1C(=O)C(=O)N(C1=O)C2=CC=CC=C2)CN3C(=O)C(=O)N(C3=O)CC(=O)O",
+        "latency_s": 1.4286011250223964,
+        "tokens_in": 175,
+        "tokens_out": 54,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C(CN1C(=O)C(=O)N(C1=O)C2=CC=CC=C2)CN3C(=O)C(=O)N(C3=O)CC(=O)O",
+        "pred_smiles": "C(CN1C(=O)C(=O)N(C1=O)C2=CC=CC=C2)CN3C(=O)C(=O)N(C3=O)CC(=O)O",
+        "pred_canonical": "O=C(O)CN1C(=O)C(=O)N(CCCN2C(=O)C(=O)N(c3ccccc3)C2=O)C1=O",
+        "truth_canonical": "OCCOCCN1CCN(C2=Nc3ccccc3Sc3ccccc32)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.14492753623188406,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00051.png",
+      "truth": "Cc1cc2c(s1)Nc1ccccc1N=C2N1CCN(C)CC1",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=CC(=S)NC2C(=C1)C1=CN(CN(C2)CC2CCN(CC2)C)C1=NC3=CC=CC=C3\n",
+        "latency_s": 1.24039312498644,
+        "tokens_in": 175,
+        "tokens_out": 47,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CC(=S)NC2C(=C1)C1=CN(CN(C2)CC2CCN(CC2)C)C1=NC3=CC=CC=C3\n",
+        "pred_smiles": "CC1=CC(=S)NC2C(=C1)C1=CN(CN(C2)CC2CCN(CC2)C)C1=NC3=CC=CC=C3",
+        "pred_canonical": "CC1=CC(=S)NC2CN(CC3CCN(C)CC3)CN3C=C(C2=C1)C3=Nc1ccccc1",
+        "truth_canonical": "Cc1cc2c(s1)Nc1ccccc1N=C2N1CCN(C)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.16091954022988506,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00052.png",
+      "truth": "Cc1nc2n(c(=O)c1CCN1CCC(c3noc4cc(F)ccc34)CC1)CCCC2",
+      "tags": {
+        "heavy_atoms": 30,
+        "rings": 5,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN=C[C@@H](C[C@@H]2CN=C[C@@H](C[C@@H]3CN=C[C@@H](C[C@@H]4CN=C[C@@H](C[C@@H]5CN=C[C@@H](C[C@@H]6CN=C[C@@H](C[C@@H]7CN=C[C@@H](C[C@@H]8CN=C[C@@H](C[C@@H]9CN=C[C@@H](",
+        "latency_s": 2.8046017079614103,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN=C[C@@H](C[C@@H]2CN=C[C@@H](C[C@@H]3CN=C[C@@H](C[C@@H]4CN=C[C@@H](C[C@@H]5CN=C[C@@H](C[C@@H]6CN=C[C@@H](C[C@@H]7CN=C[C@@H](C[C@@H]8CN=C[C@@H](C[C@@H]9CN=C[C@@H](",
+        "pred_smiles": "C[C@@H]1CN=C[C@@H](C[C@@H]2CN=C[C@@H](C[C@@H]3CN=C[C@@H](C[C@@H]4CN=C[C@@H](C[C@@H]5CN=C[C@@H](C[C@@H]6CN=C[C@@H](C[C@@H]7CN=C[C@@H](C[C@@H]8CN=C[C@@H](C[C@@H]9CN=C[C@@H](",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1nc2n(c(=O)c1CCN1CCC(c3noc4cc(F)ccc34)CC1)CCCC2",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00053.png",
+      "truth": "O=C1CCc2ccc(OCCCCN3CCN(c4cccc(Cl)c4Cl)CC3)cc2N1",
+      "tags": {
+        "heavy_atoms": 30,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@@H](C)C[C@H]1C[C@@H](O)C[C@@H]2C[C@@H](C[C@H]12)OC[C@@H]1C[C@@H](C[C@H]1OC)C[C@H](C)O",
+        "latency_s": 1.9219264589482918,
+        "tokens_in": 175,
+        "tokens_out": 73,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@@H](C)C[C@H]1C[C@@H](O)C[C@@H]2C[C@@H](C[C@H]12)OC[C@@H]1C[C@@H](C[C@H]1OC)C[C@H](C)O",
+        "pred_smiles": "C[C@@H](O)[C@@H](C)C[C@H]1C[C@@H](O)C[C@@H]2C[C@@H](C[C@H]12)OC[C@@H]1C[C@@H](C[C@H]1OC)C[C@H](C)O",
+        "pred_canonical": "COC1CC(CC(C)O)CC1COC1CC2CC(O)CC(CC(C)C(C)O)C2C1",
+        "truth_canonical": "O=C1CCc2ccc(OCCCCN3CCN(c4cccc(Cl)c4Cl)CC3)cc2N1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.041237113402061855,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00054.png",
+      "truth": "O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1(CN(C1)C(=O)C2=CN=CN=2)CNC(=O)C3=CN=C(N=C3)Nc4cc(Cl)on4",
+        "latency_s": 1.326447332976386,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(CN(C1)C(=O)C2=CN=CN=2)CNC(=O)C3=CN=C(N=C3)Nc4cc(Cl)on4",
+        "pred_smiles": "CC1(CN(C1)C(=O)C2=CN=CN=2)CNC(=O)C3=CN=C(N=C3)Nc4cc(Cl)on4",
+        "pred_canonical": null,
+        "truth_canonical": "O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00055.png",
+      "truth": "CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "Clc1cc2c(cc1Cl)C1C(CN(C2)C2=CN(CC3CN(C)CCN3)CCc4cc(Cl)ccc41)NCC2",
+        "latency_s": 1.326763499993831,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Clc1cc2c(cc1Cl)C1C(CN(C2)C2=CN(CC3CN(C)CCN3)CCc4cc(Cl)ccc41)NCC2",
+        "pred_smiles": "Clc1cc2c(cc1Cl)C1C(CN(C2)C2=CN(CC3CN(C)CCN3)CCc4cc(Cl)ccc41)NCC2",
+        "pred_canonical": "CN1CCNC(CN2C=C3CCNC4CN3Cc3cc(Cl)c(Cl)cc3C4c3ccc(Cl)cc3CC2)C1",
+        "truth_canonical": "CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2261904761904762,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00056.png",
+      "truth": "Nc1nnc(-c2cccc(Cl)c2Cl)c(N)n1",
+      "tags": {
+        "heavy_atoms": 16,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "Nc1nc(N)c2cc(Cl)c(Cl)cc2n1",
+        "latency_s": 0.5906637500738725,
+        "tokens_in": 175,
+        "tokens_out": 17,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Nc1nc(N)c2cc(Cl)c(Cl)cc2n1",
+        "pred_smiles": "Nc1nc(N)c2cc(Cl)c(Cl)cc2n1",
+        "pred_canonical": "Nc1nc(N)c2cc(Cl)c(Cl)cc2n1",
+        "truth_canonical": "Nc1nnc(-c2cccc(Cl)c2Cl)c(N)n1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.3,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00057.png",
+      "truth": "NC(=O)N1c2ccccc2C=Cc2ccccc21",
+      "tags": {
+        "heavy_atoms": 18,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]2[C@@H]3C=C[C@H](C3)C[C@@H]2[C@@H]4C=CC(=O)N4C)C)C1",
+        "latency_s": 1.7582682500360534,
+        "tokens_in": 175,
+        "tokens_out": 62,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]2[C@@H]3C=C[C@H](C3)C[C@@H]2[C@@H]4C=CC(=O)N4C)C)C1",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H](C[C@@H]2[C@@H]3C=C[C@H](C3)C[C@@H]2[C@@H]4C=CC(=O)N4C)C)C1",
+        "pred_canonical": "CC(CC1CC1C)CC1C2C=CC(C2)CC1C1C=CC(=O)N1C",
+        "truth_canonical": "NC(=O)N1c2ccccc2C=Cc2ccccc21",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.07936507936507936,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00058.png",
+      "truth": "CC[C@@H](C(N)=O)N1CCCC1=O",
+      "tags": {
+        "heavy_atoms": 12,
+        "rings": 1,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@H]1CN(C[C@@H]1C(=O)O)C(=O)N",
+        "latency_s": 0.7935239169746637,
+        "tokens_in": 175,
+        "tokens_out": 27,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@H]1CN(C[C@@H]1C(=O)O)C(=O)N",
+        "pred_smiles": "C[C@H]1CN(C[C@@H]1C(=O)O)C(=O)N",
+        "pred_canonical": "CC1CN(C(N)=O)CC1C(=O)O",
+        "truth_canonical": "CCC(C(N)=O)N1CCCC1=O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.18181818181818182,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00059.png",
+      "truth": "NCC1(CC(=O)O)CCCCC1",
+      "tags": {
+        "heavy_atoms": 12,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H](C1)C2=CC=CN2)C(=O)NC",
+        "latency_s": 0.9211095840437338,
+        "tokens_in": 175,
+        "tokens_out": 33,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H](C1)C2=CC=CN2)C(=O)NC",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H](C1)C2=CC=CN2)C(=O)NC",
+        "pred_canonical": "CNC(=O)C1CC(c2ccc[nH]2)CC1C",
+        "truth_canonical": "NCC1(CC(=O)O)CCCCC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09615384615384616,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00060.png",
+      "truth": "CC(C)C[C@H](CN)CC(=O)O",
+      "tags": {
+        "heavy_atoms": 11,
+        "rings": 0,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)[C@H]1CNCC(O)(CO)C1N\n",
+        "latency_s": 0.6469598331023008,
+        "tokens_in": 175,
+        "tokens_out": 19,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)[C@H]1CNCC(O)(CO)C1N\n",
+        "pred_smiles": "CC(C)[C@H]1CNCC(O)(CO)C1N",
+        "pred_canonical": "CC(C)C1CNCC(O)(CO)C1N",
+        "truth_canonical": "CC(C)CC(CN)CC(=O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.13333333333333333,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00061.png",
+      "truth": "CC1(C)O[C@@H]2[C@@H](CO[C@@]3(COS(N)(=O)=O)OC(C)(C)O[C@@H]23)O1",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 3,
+        "stereocenters": 4,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@]1(C)[C@@H](O[C@@H]2[C@@H](C[C@@H](O)C[C@H](O)[C@H](O)[C@H]2O)O)[C@@H](O)C[C@@H](O)[C@@H]1O[C@]1(C)[C@@H](O)C[C@@](C)(O)[C@@H](O)[C@H]1OP(=O)(O)OS",
+        "latency_s": 2.8548652089666575,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@]1(C)[C@@H](O[C@@H]2[C@@H](C[C@@H](O)C[C@H](O)[C@H](O)[C@H]2O)O)[C@@H](O)C[C@@H](O)[C@@H]1O[C@]1(C)[C@@H](O)C[C@@](C)(O)[C@@H](O)[C@H]1OP(=O)(O)OS",
+        "pred_smiles": "C[C@@]1(C)[C@@H](O[C@@H]2[C@@H](C[C@@H](O)C[C@H](O)[C@H](O)[C@H]2O)O)[C@@H](O)C[C@@H](O)[C@@H]1O[C@]1(C)[C@@H](O)C[C@@](C)(O)[C@@H](O)[C@H]1OP(=O)(O)OS",
+        "pred_canonical": "CC1(O)CC(O)C(C)(OC2C(O)CC(O)C(OC3C(O)CC(O)CC(O)C(O)C3O)C2(C)C)C(OP(=O)(O)OS)C1O",
+        "truth_canonical": "CC1(C)OC2COC3(COS(N)(=O)=O)OC(C)(C)OC3C2O1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09195402298850575,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00062.png",
+      "truth": "O=C1NC(=O)C(c2ccccc2)(c2ccccc2)N1",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "O=C1NC(=O)N(C2=CC=CC=C2)C1C1=CC=CC=C1C1=CC=CC=C1",
+        "latency_s": 1.1213756670476869,
+        "tokens_in": 175,
+        "tokens_out": 37,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "O=C1NC(=O)N(C2=CC=CC=C2)C1C1=CC=CC=C1C1=CC=CC=C1",
+        "pred_smiles": "O=C1NC(=O)N(C2=CC=CC=C2)C1C1=CC=CC=C1C1=CC=CC=C1",
+        "pred_canonical": "O=C1NC(=O)N(c2ccccc2)C1c1ccccc1-c1ccccc1",
+        "truth_canonical": "O=C1NC(=O)C(c2ccccc2)(c2ccccc2)N1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.22727272727272727,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00063.png",
+      "truth": "COc1cc2c(cc1OC)C(=O)C(CC1CCN(Cc3ccccc3)CC1)C2",
+      "tags": {
+        "heavy_atoms": 28,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H]1C[C@@H](C[C@@H]1[C@H]1C[C@@H](C[C@@H]1O)C)O)[C@@H]1O[C@H]2CC[C@@H]1[C@@H]2C",
+        "latency_s": 2.1197622501058504,
+        "tokens_in": 175,
+        "tokens_out": 68,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H]1C[C@@H](C[C@@H]1[C@H]1C[C@@H](C[C@@H]1O)C)O)[C@@H]1O[C@H]2CC[C@@H]1[C@@H]2C",
+        "pred_smiles": "C[C@@H](C[C@@H]1C[C@@H](C[C@@H]1[C@H]1C[C@@H](C[C@@H]1O)C)O)[C@@H]1O[C@H]2CC[C@@H]1[C@@H]2C",
+        "pred_canonical": "CC1CC(O)C(C2CC(O)CC2CC(C)C2OC3CCC2C3C)C1",
+        "truth_canonical": "COc1cc2c(cc1OC)C(=O)C(CC1CCN(Cc3ccccc3)CC1)C2",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.07228915662650602,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00064.png",
+      "truth": "CC12CC3CC(C)(C1)CC(N)(C3)C2",
+      "tags": {
+        "heavy_atoms": 13,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]1CC2)C1(C)CC[C@@H](C1)CN2C=CC[C@H]2C",
+        "latency_s": 1.3840120000531897,
+        "tokens_in": 175,
+        "tokens_out": 48,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]1CC2)C1(C)CC[C@@H](C1)CN2C=CC[C@H]2C",
+        "pred_smiles": "C[C@@H]1[C@@H](C[C@@H]2[C@@H]1CC2)C1(C)CC[C@@H](C1)CN2C=CC[C@H]2C",
+        "pred_canonical": "CC1C2CCC2CC1C1(C)CCC(CN2C=CCC2C)C1",
+        "truth_canonical": "CC12CC3CC(C)(C1)CC(N)(C3)C2",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10714285714285714,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00065.png",
+      "truth": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O",
+      "tags": {
+        "heavy_atoms": 14,
+        "rings": 1,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "NC(C(=O)O)Cc1ccc(O)c(O)c1",
+        "latency_s": 0.5732141659827903,
+        "tokens_in": 175,
+        "tokens_out": 17,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "NC(C(=O)O)Cc1ccc(O)c(O)c1",
+        "pred_smiles": "NC(C(=O)O)Cc1ccc(O)c(O)c1",
+        "pred_canonical": "NC(Cc1ccc(O)c(O)c1)C(=O)O",
+        "truth_canonical": "NC(Cc1ccc(O)c(O)c1)C(=O)O",
+        "valid": true,
+        "exact": true,
+        "tanimoto": 1.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00066.png",
+      "truth": "CNS(=O)(=O)Cc1ccc2[nH]cc(CCN(C)C)c2c1",
+      "tags": {
+        "heavy_atoms": 20,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]2[C@@H]1c1cncnc1C[C@@H](C2)CN1CCN(CC1)C)C[C@@H](O)[C@H](O)[C@@H](O)[C@@H](O)[C@H]1O[C@@H](C1)O",
+        "latency_s": 2.0569244580110535,
+        "tokens_in": 175,
+        "tokens_out": 81,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]2[C@@H]1c1cncnc1C[C@@H](C2)CN1CCN(CC1)C)C[C@@H](O)[C@H](O)[C@@H](O)[C@@H](O)[C@H]1O[C@@H](C1)O",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]2[C@@H]1c1cncnc1C[C@@H](C2)CN1CCN(CC1)C)C[C@@H](O)[C@H](O)[C@@H](O)[C@@H](O)[C@H]1O[C@@H](C1)O",
+        "pred_canonical": "CC1CN(CC(O)C(O)C(O)C(O)C2CC(O)O2)CC2CC(CN3CCN(C)CC3)Cc3ncncc3C12",
+        "truth_canonical": "CNS(=O)(=O)Cc1ccc2[nH]cc(CCN(C)C)c2c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.038461538461538464,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00067.png",
+      "truth": "CN1CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 5,
+        "stereocenters": 5,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "OCC1=CC2=C(C=C1)C3=C(C2)C4=C(C3)C(=C(C4)O)C(C)(O)C5=C(C6=C(C5)NC(=C6)C)O",
+        "latency_s": 1.7524897499242797,
+        "tokens_in": 175,
+        "tokens_out": 56,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OCC1=CC2=C(C=C1)C3=C(C2)C4=C(C3)C(=C(C4)O)C(C)(O)C5=C(C6=C(C5)NC(=C6)C)O",
+        "pred_smiles": "OCC1=CC2=C(C=C1)C3=C(C2)C4=C(C3)C(=C(C4)O)C(C)(O)C5=C(C6=C(C5)NC(=C6)C)O",
+        "pred_canonical": "Cc1cc2c([nH]1)CC(C(C)(O)C1=C(O)CC3=C1CC1=C3Cc3cc(CO)ccc31)=C2O",
+        "truth_canonical": "CN1CCC23c4c5ccc(O)c4OC2C(O)C=CC3C1C5",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.11235955056179775,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00068.png",
+      "truth": "COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 5,
+        "stereocenters": 5,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CN(C[C@@H]1[C@@H]2[C@@H](C[C@@H]3[C@H]4[C@H](C[C@@H](C3)O)O[C@@H]4CC=C(C)C)[C@H]2O)C[C@H]1O",
+        "latency_s": 1.76503208396025,
+        "tokens_in": 175,
+        "tokens_out": 68,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CN(C[C@@H]1[C@@H]2[C@@H](C[C@@H]3[C@H]4[C@H](C[C@@H](C3)O)O[C@@H]4CC=C(C)C)[C@H]2O)C[C@H]1O",
+        "pred_smiles": "CN(C[C@@H]1[C@@H]2[C@@H](C[C@@H]3[C@H]4[C@H](C[C@@H](C3)O)O[C@@H]4CC=C(C)C)[C@H]2O)C[C@H]1O",
+        "pred_canonical": "CC(C)=CCC1OC2CC(O)CC(CC3C(O)C3C3CN(C)CC3O)C12",
+        "truth_canonical": "COc1ccc2c3c1OC1C(O)C=CC4C(C2)N(C)CCC341",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.10344827586206896,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00069.png",
+      "truth": "COc1ccc2c3c1O[C@H]1C(=O)CC[C@@]4(O)[C@@H](C2)N(C)CC[C@]314",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 5,
+        "stereocenters": 4,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "O[C@@H]1[C@@H](O)C2=C1C1=C(C=CC(=C1)O)C2[C@@H]1C(=O)[C@@H]2[C@@H]1[C@@H](O)C(=O)O",
+        "latency_s": 1.6529416249832138,
+        "tokens_in": 175,
+        "tokens_out": 64,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "O[C@@H]1[C@@H](O)C2=C1C1=C(C=CC(=C1)O)C2[C@@H]1C(=O)[C@@H]2[C@@H]1[C@@H](O)C(=O)O",
+        "pred_smiles": "O[C@@H]1[C@@H](O)C2=C1C1=C(C=CC(=C1)O)C2[C@@H]1C(=O)[C@@H]2[C@@H]1[C@@H](O)C(=O)O",
+        "pred_canonical": null,
+        "truth_canonical": "COc1ccc2c3c1OC1C(=O)CCC4(O)C(C2)N(C)CCC314",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00070.png",
+      "truth": "COc1cccc([C@@]2(O)CCCC[C@@H]2CN(C)C)c1",
+      "tags": {
+        "heavy_atoms": 19,
+        "rings": 2,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]2[C@@H]1c1cccc(c1)C1=CC=CN1)C[C@@H](C)N2c1ccccc1O",
+        "latency_s": 1.3242470829281956,
+        "tokens_in": 175,
+        "tokens_out": 48,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]2[C@@H]1c1cccc(c1)C1=CC=CN1)C[C@@H](C)N2c1ccccc1O",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]2[C@@H]1c1cccc(c1)C1=CC=CN1)C[C@@H](C)N2c1ccccc1O",
+        "pred_canonical": "CC1CN2CC(C)N(c3ccccc3O)C(C2)C1c1cccc(-c2ccc[nH]2)c1",
+        "truth_canonical": "COc1cccc(C2(O)CCCCC2CN(C)C)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.12048192771084337,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00071.png",
+      "truth": "CCC(=O)N(c1ccccc1)C1CCN(CCc2ccccc2)CC1",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@@H](C1=CC=CC=C1)[C@H](N)C[C@@H](N)C[C@H](C1=CC=CC=C1)C[C@@H](C1=CC=CC=C1)C[C@H](N)C[C@@H](N)C[C@H](C1=CC=CC=C1)C[C@@H](C1=CC=CC=C1)C[C@H](",
+        "latency_s": 2.8018257500370964,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@@H](C1=CC=CC=C1)[C@H](N)C[C@@H](N)C[C@H](C1=CC=CC=C1)C[C@@H](C1=CC=CC=C1)C[C@H](N)C[C@@H](N)C[C@H](C1=CC=CC=C1)C[C@@H](C1=CC=CC=C1)C[C@H](",
+        "pred_smiles": "C[C@@H](O)[C@@H](C1=CC=CC=C1)[C@H](N)C[C@@H](N)C[C@H](C1=CC=CC=C1)C[C@@H](C1=CC=CC=C1)C[C@H](N)C[C@@H](N)C[C@H](C1=CC=CC=C1)C[C@@H](C1=CC=CC=C1)C[C@H](",
+        "pred_canonical": null,
+        "truth_canonical": "CCC(=O)N(c1ccccc1)C1CCN(CCc2ccccc2)CC1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00072.png",
+      "truth": "C=CCN1CC[C@]23c4c5ccc(O)c4O[C@H]2C(=O)CC[C@@]3(O)[C@H]1C5",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 5,
+        "stereocenters": 4,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@]1(C[C@@H](C)[C@@H]2[C@@H]1C[C@@]3(C)[C@@H]2CC[C@]4(C)[C@@H]3CC[C@H]4C)C",
+        "latency_s": 1.585598540958017,
+        "tokens_in": 175,
+        "tokens_out": 56,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@]1(C[C@@H](C)[C@@H]2[C@@H]1C[C@@]3(C)[C@@H]2CC[C@]4(C)[C@@H]3CC[C@H]4C)C",
+        "pred_smiles": "C[C@@]1(C[C@@H](C)[C@@H]2[C@@H]1C[C@@]3(C)[C@@H]2CC[C@]4(C)[C@@H]3CC[C@H]4C)C",
+        "pred_canonical": "CC1CC(C)(C)C2CC3(C)C(CCC4(C)C(C)CCC43)C12",
+        "truth_canonical": "C=CCN1CCC23c4c5ccc(O)c4OC2C(=O)CCC3(O)C1C5",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.04938271604938271,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00073.png",
+      "truth": "CO[C@]12CC[C@@]3(C[C@@H]1[C@](C)(O)C(C)(C)C)[C@H]1Cc4ccc(O)c5c4[C@@]3(CCN1CC1CC1)[C@H]2O5",
+      "tags": {
+        "heavy_atoms": 34,
+        "rings": 8,
+        "stereocenters": 7,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": true,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CO[C@@H]1[C@@H](O)[C@@H](C)[C@@H](O)[C@@H]2[C@@H]3C(=O)C[C@H]4[C@H](O)[C@@H](C)[C@@H](O)[C@@H]5[C@@H]6C(=O)C[C@H]7[C@H](O)[C@@H](C)[C@@H](O)[C@@H]8[C",
+        "latency_s": 2.7868434169795364,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CO[C@@H]1[C@@H](O)[C@@H](C)[C@@H](O)[C@@H]2[C@@H]3C(=O)C[C@H]4[C@H](O)[C@@H](C)[C@@H](O)[C@@H]5[C@@H]6C(=O)C[C@H]7[C@H](O)[C@@H](C)[C@@H](O)[C@@H]8[C",
+        "pred_smiles": "CO[C@@H]1[C@@H](O)[C@@H](C)[C@@H](O)[C@@H]2[C@@H]3C(=O)C[C@H]4[C@H](O)[C@@H](C)[C@@H](O)[C@@H]5[C@@H]6C(=O)C[C@H]7[C@H](O)[C@@H](C)[C@@H](O)[C@@H]8[C",
+        "pred_canonical": null,
+        "truth_canonical": "COC12CCC3(CC1C(C)(O)C(C)(C)C)C1Cc4ccc(O)c5c4C3(CCN1CC1CC1)C2O5",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00074.png",
+      "truth": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](CN(C)C)[C@@H](C[C@@H](C)C1=CC=CC=C1)[C@H]1CC=CC=C1",
+        "latency_s": 1.1729468340054154,
+        "tokens_in": 175,
+        "tokens_out": 41,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](CN(C)C)[C@@H](C[C@@H](C)C1=CC=CC=C1)[C@H]1CC=CC=C1",
+        "pred_smiles": "C[C@@H](CN(C)C)[C@@H](C[C@@H](C)C1=CC=CC=C1)[C@H]1CC=CC=C1",
+        "pred_canonical": "CC(CC(C(C)CN(C)C)C1C=CC=CC1)c1ccccc1",
+        "truth_canonical": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.2033898305084746,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00075.png",
+      "truth": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+      "tags": {
+        "heavy_atoms": 14,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN=C2[C@@H](C[C@@H](C1)O)N=C3[C@@H]2N=C(N3)C",
+        "latency_s": 1.0682831249432638,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN=C2[C@@H](C[C@@H](C1)O)N=C3[C@@H]2N=C(N3)C",
+        "pred_smiles": "C[C@@H]1CN=C2[C@@H](C[C@@H](C1)O)N=C3[C@@H]2N=C(N3)C",
+        "pred_canonical": "CC1=NC2C(=NC3CC(O)CC(C)CN=C32)N1",
+        "truth_canonical": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.05172413793103448,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00076.png",
+      "truth": "CN1CCC[C@H]1c1cccnc1",
+      "tags": {
+        "heavy_atoms": 12,
+        "rings": 2,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]1c2cccc[nH]2)C#N",
+        "latency_s": 0.7572126659797505,
+        "tokens_in": 175,
+        "tokens_out": 25,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]1c2cccc[nH]2)C#N",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]1c2cccc[nH]2)C#N",
+        "pred_canonical": null,
+        "truth_canonical": "CN1CCCC1c1cccnc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00077.png",
+      "truth": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+      "tags": {
+        "heavy_atoms": 33,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H](C1)C(=O)N[C@@H](Cc2c[nH]cn2)C(=O)N[C@@H](Cc3c[nH]cn3)C(=O)N[C@@H](Cc4c[nH]cn4)C(=O)N[C@@H](Cc5c[nH]cn5)C(=O)N[C@@H](Cc6c[nH]cn",
+        "latency_s": 2.786624915897846,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H](C1)C(=O)N[C@@H](Cc2c[nH]cn2)C(=O)N[C@@H](Cc3c[nH]cn3)C(=O)N[C@@H](Cc4c[nH]cn4)C(=O)N[C@@H](Cc5c[nH]cn5)C(=O)N[C@@H](Cc6c[nH]cn",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H](C1)C(=O)N[C@@H](Cc2c[nH]cn2)C(=O)N[C@@H](Cc3c[nH]cn3)C(=O)N[C@@H](Cc4c[nH]cn4)C(=O)N[C@@H](Cc5c[nH]cn5)C(=O)N[C@@H](Cc6c[nH]cn",
+        "pred_canonical": null,
+        "truth_canonical": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00078.png",
+      "truth": "CN1CC(=O)N2[C@H](c3ccc4c(c3)OCO4)c3[nH]c4ccccc4c3C[C@@H]2C1=O",
+      "tags": {
+        "heavy_atoms": 29,
+        "rings": 6,
+        "stereocenters": 2,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@H]1CN=C[C@@H](C(=O)O)[C@@H](C(=O)O)[C@H]1n1c2ccccc2cc(c2ccccc21)[C@@H]1CC[C@@H](C(=O)O)[C@H](C(=O)O)[C@H]1c1ccccc1\n",
+        "latency_s": 2.279709624941461,
+        "tokens_in": 175,
+        "tokens_out": 90,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@H]1CN=C[C@@H](C(=O)O)[C@@H](C(=O)O)[C@H]1n1c2ccccc2cc(c2ccccc21)[C@@H]1CC[C@@H](C(=O)O)[C@H](C(=O)O)[C@H]1c1ccccc1\n",
+        "pred_smiles": "C[C@H]1CN=C[C@@H](C(=O)O)[C@@H](C(=O)O)[C@H]1n1c2ccccc2cc(c2ccccc21)[C@@H]1CC[C@@H](C(=O)O)[C@H](C(=O)O)[C@H]1c1ccccc1",
+        "pred_canonical": "CC1CN=CC(C(=O)O)C(C(=O)O)C1N1c2ccccc2C=C(C2CCC(C(=O)O)C(C(=O)O)C2c2ccccc2)c2ccccc21",
+        "truth_canonical": "CN1CC(=O)N2C(Cc3c([nH]c4ccccc34)C2c2ccc3c(c2)OCO3)C1=O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.11428571428571428,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00079.png",
+      "truth": "CC(C)(C)NC(=O)[C@H]1CC[C@H]2[C@@H]3CC[C@H]4NC(=O)C=C[C@]4(C)[C@H]3CC[C@]12C",
+      "tags": {
+        "heavy_atoms": 27,
+        "rings": 4,
+        "stereocenters": 7,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC(C)(C[C@@H]1CN=C1[C@@H]2C[C@@]34C[C@@H](C2)[C@@H]3[C@@H]5C[C@H](C6=CC=CC=C6)[C@H]5[C@H]7C[C@@H](C4)[C@@H]7N=C5C=CC=C5[C@@H]6N=C6C=CC=C6)C",
+        "latency_s": 2.7206686249701306,
+        "tokens_in": 175,
+        "tokens_out": 102,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)(C[C@@H]1CN=C1[C@@H]2C[C@@]34C[C@@H](C2)[C@@H]3[C@@H]5C[C@H](C6=CC=CC=C6)[C@H]5[C@H]7C[C@@H](C4)[C@@H]7N=C5C=CC=C5[C@@H]6N=C6C=CC=C6)C",
+        "pred_smiles": "CC(C)(C[C@@H]1CN=C1[C@@H]2C[C@@]34C[C@@H](C2)[C@@H]3[C@@H]5C[C@H](C6=CC=CC=C6)[C@H]5[C@H]7C[C@@H](C4)[C@@H]7N=C5C=CC=C5[C@@H]6N=C6C=CC=C6)C",
+        "pred_canonical": null,
+        "truth_canonical": "CC(C)(C)NC(=O)C1CCC2C3CCC4NC(=O)C=CC4(C)C3CCC12C",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00080.png",
+      "truth": "CC/C(=C(\\c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
+      "tags": {
+        "heavy_atoms": 28,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 1,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "latency_s": 1.0582949160598218,
+        "tokens_in": 175,
+        "tokens_out": 38,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "pred_smiles": "CC1=C(C=CC=C1)C1=CC(=C(C=C1)C1=CC=CC=C1)C1=CC=CC=C1",
+        "pred_canonical": "Cc1ccccc1-c1ccc(-c2ccccc2)c(-c2ccccc2)c1",
+        "truth_canonical": "CCC(=C(c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1568627450980392,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00081.png",
+      "truth": "N#Cc1ccc(C(c2ccc(C#N)cc2)n2cncn2)cc1",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](CN1C(=O)C[C@@H](C1)[C@@H]1C[C@@H](C(=O)N1)[C@H]1C[C@H](CN1)C(=O)O)[C@H](C(=O)O)C(=O)O",
+        "latency_s": 1.9849924999289215,
+        "tokens_in": 175,
+        "tokens_out": 76,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](CN1C(=O)C[C@@H](C1)[C@@H]1C[C@@H](C(=O)N1)[C@H]1C[C@H](CN1)C(=O)O)[C@H](C(=O)O)C(=O)O",
+        "pred_smiles": "C[C@@H](CN1C(=O)C[C@@H](C1)[C@@H]1C[C@@H](C(=O)N1)[C@H]1C[C@H](CN1)C(=O)O)[C@H](C(=O)O)C(=O)O",
+        "pred_canonical": "CC(CN1CC(C2CC(C3CC(C(=O)O)CN3)C(=O)N2)CC1=O)C(C(=O)O)C(=O)O",
+        "truth_canonical": "N#Cc1ccc(C(c2ccc(C#N)cc2)n2cncn2)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.038461538461538464,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00082.png",
+      "truth": "CC(C)(C#N)c1cc(Cn2cncn2)cc(C(C)(C)C#N)c1",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC(C)(C[C@@H]1C[C@@H](C2=NC(=O)CNC2=O)C[C@H]1C1=CC=NC(=O)NC1=O)C",
+        "latency_s": 1.3645881250267848,
+        "tokens_in": 175,
+        "tokens_out": 51,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC(C)(C[C@@H]1C[C@@H](C2=NC(=O)CNC2=O)C[C@H]1C1=CC=NC(=O)NC1=O)C",
+        "pred_smiles": "CC(C)(C[C@@H]1C[C@@H](C2=NC(=O)CNC2=O)C[C@H]1C1=CC=NC(=O)NC1=O)C",
+        "pred_canonical": "CC(C)(C)CC1CC(C2=NC(=O)CNC2=O)CC1c1ccnc(=O)[nH]c1=O",
+        "truth_canonical": "CC(C)(C#N)c1cc(Cn2cncn2)cc(C(C)(C)C#N)c1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.09090909090909091,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00083.png",
+      "truth": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+      "tags": {
+        "heavy_atoms": 37,
+        "rings": 5,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "latency_s": 2.7510496249888092,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_smiles": "C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@H](C[C@@",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00084.png",
+      "truth": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+      "tags": {
+        "heavy_atoms": 31,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "Cl",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H](NC(=O)[C@@H](NC(=O)[C@H](Cc1ccccc1)C(=O)N[C@@H](Cc2ccccc2)C(=O)N[C@@H](Cc3ccccc3)C(=O)N[C@@H](Cc4ccccc4)C(=O)N[C@@H](Cc5ccccc5)C(=O)N[C@@H](Cc6ccccc6",
+        "latency_s": 2.786771500017494,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](NC(=O)[C@@H](NC(=O)[C@H](Cc1ccccc1)C(=O)N[C@@H](Cc2ccccc2)C(=O)N[C@@H](Cc3ccccc3)C(=O)N[C@@H](Cc4ccccc4)C(=O)N[C@@H](Cc5ccccc5)C(=O)N[C@@H](Cc6ccccc6",
+        "pred_smiles": "C[C@@H](NC(=O)[C@@H](NC(=O)[C@H](Cc1ccccc1)C(=O)N[C@@H](Cc2ccccc2)C(=O)N[C@@H](Cc3ccccc3)C(=O)N[C@@H](Cc4ccccc4)C(=O)N[C@@H](Cc5ccccc5)C(=O)N[C@@H](Cc6ccccc6",
+        "pred_canonical": null,
+        "truth_canonical": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00085.png",
+      "truth": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+      "tags": {
+        "heavy_atoms": 29,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1=CC(=O)C2=C(C1=O)C(=O)C3=C2C(=O)C4=C3C(=O)C5=C4C(=O)C6=C5C(=O)C7=C6C(=O)C8=C7C(=O)C9=C8C(=O)C%10=C9C(=O)C%11=C%10C(=O)",
+        "latency_s": 2.8040409999666736,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=CC(=O)C2=C(C1=O)C(=O)C3=C2C(=O)C4=C3C(=O)C5=C4C(=O)C6=C5C(=O)C7=C6C(=O)C8=C7C(=O)C9=C8C(=O)C%10=C9C(=O)C%11=C%10C(=O)",
+        "pred_smiles": "CC1=CC(=O)C2=C(C1=O)C(=O)C3=C2C(=O)C4=C3C(=O)C5=C4C(=O)C6=C5C(=O)C7=C6C(=O)C8=C7C(=O)C9=C8C(=O)C%10=C9C(=O)C%11=C%10C(=O)",
+        "pred_canonical": null,
+        "truth_canonical": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00086.png",
+      "truth": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)N[C@@H](CCC(=O)O)C(=O)O)cc1",
+      "tags": {
+        "heavy_atoms": 33,
+        "rings": 3,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "Nc1nc(Nc2ccccc2C(=O)O)c(C(=O)O)nc1C(=O)O",
+        "latency_s": 1.0000222079688683,
+        "tokens_in": 175,
+        "tokens_out": 33,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "Nc1nc(Nc2ccccc2C(=O)O)c(C(=O)O)nc1C(=O)O",
+        "pred_smiles": "Nc1nc(Nc2ccccc2C(=O)O)c(C(=O)O)nc1C(=O)O",
+        "pred_canonical": "Nc1nc(Nc2ccccc2C(=O)O)c(C(=O)O)nc1C(=O)O",
+        "truth_canonical": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)NC(CCC(=O)O)C(=O)O)cc1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1794871794871795,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00087.png",
+      "truth": "O=C(O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 4,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN(C[C@@H]2[C@@H]1C[C@@H](C2)N=C3C[C@@H](C3)N4CCNCC4)C(=O)O",
+        "latency_s": 1.3751255830284208,
+        "tokens_in": 175,
+        "tokens_out": 51,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN(C[C@@H]2[C@@H]1C[C@@H](C2)N=C3C[C@@H](C3)N4CCNCC4)C(=O)O",
+        "pred_smiles": "C[C@@H]1CN(C[C@@H]2[C@@H]1C[C@@H](C2)N=C3C[C@@H](C3)N4CCNCC4)C(=O)O",
+        "pred_canonical": "CC1CN(C(=O)O)CC2CC(N=C3CC(N4CCNCC4)C3)CC12",
+        "truth_canonical": "O=C(O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.22972972972972974,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00088.png",
+      "truth": "C[C@H]1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23",
+      "tags": {
+        "heavy_atoms": 26,
+        "rings": 4,
+        "stereocenters": 1,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@H]1CN=C[C@@H](N2C[C@@H]3[C@@H](C[C@@H](N4C[C@@H](C[C@@H]4N)C)C3)C[C@@H]2N)C1",
+        "latency_s": 1.6125070839188993,
+        "tokens_in": 175,
+        "tokens_out": 60,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H]1CN=C[C@@H](N2C[C@@H]3[C@@H](C[C@@H](N4C[C@@H](C[C@@H]4N)C)C3)C[C@@H]2N)C1",
+        "pred_smiles": "C[C@@H]1CN=C[C@@H](N2C[C@@H]3[C@@H](C[C@@H](N4C[C@@H](C[C@@H]4N)C)C3)C[C@@H]2N)C1",
+        "pred_canonical": "CC1CN=CC(N2CC3CC(N4CC(C)CC4N)CC3CC2N)C1",
+        "truth_canonical": "CC1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.08536585365853659,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00089.png",
+      "truth": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(=O)O",
+      "tags": {
+        "heavy_atoms": 25,
+        "rings": 3,
+        "stereocenters": 4,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "OC(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)",
+        "latency_s": 2.770356292021461,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OC(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)",
+        "pred_smiles": "OC(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)",
+        "pred_canonical": "OCC(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)C(O)O",
+        "truth_canonical": "CC1(C)SC2C(NC(=O)C(N)c3ccc(O)cc3)C(=O)N2C1C(=O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.03333333333333333,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00090.png",
+      "truth": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(=O)O",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 4,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "OC1=CC(=O)N2C(=O)SC3(C2=O)CC(C3)NC(=O)C1(O)C1=CC=CC=C1N",
+        "latency_s": 1.1916017920011654,
+        "tokens_in": 175,
+        "tokens_out": 45,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OC1=CC(=O)N2C(=O)SC3(C2=O)CC(C3)NC(=O)C1(O)C1=CC=CC=C1N",
+        "pred_smiles": "OC1=CC(=O)N2C(=O)SC3(C2=O)CC(C3)NC(=O)C1(O)C1=CC=CC=C1N",
+        "pred_canonical": "Nc1ccccc1C1(O)C(=O)NC2CC3(C2)SC(=O)N(C(=O)C=C1O)C3=O",
+        "truth_canonical": "CC1(C)SC2C(NC(=O)C(N)c3ccccc3)C(=O)N2C1C(=O)O",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.16049382716049382,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00091.png",
+      "truth": "CC1(C)S[C@@H]2[C@H](NC(=O)Cc3ccccc3)C(=O)N2[C@H]1C(=O)O",
+      "tags": {
+        "heavy_atoms": 23,
+        "rings": 3,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "C[C@@]1(C[C@@H](C2=NC(=O)N(C(=O)C2)C(=O)O)C(=O)O)[C@@H]1c1ccc(C(=O)O)cc1",
+        "latency_s": 1.558025584090501,
+        "tokens_in": 175,
+        "tokens_out": 59,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@]1(C[C@@H](C2=NC(=O)N(C(=O)C2)C(=O)O)C(=O)O)[C@@H]1c1ccc(C(=O)O)cc1",
+        "pred_smiles": "C[C@@]1(C[C@@H](C2=NC(=O)N(C(=O)C2)C(=O)O)C(=O)O)[C@@H]1c1ccc(C(=O)O)cc1",
+        "pred_canonical": null,
+        "truth_canonical": "CC1(C)SC2C(NC(=O)Cc3ccccc3)C(=O)N2C1C(=O)O",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00092.png",
+      "truth": "CC1=C(C(=O)O)N2C(=O)[C@@H](NC(=O)[C@H](N)c3ccccc3)[C@H]2SC1",
+      "tags": {
+        "heavy_atoms": 24,
+        "rings": 3,
+        "stereocenters": 3,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "NC(=O)[C@@H]1[C@@H](C(=O)N2C(=O)[C@@H](C(=O)O)C[C@@H]2SC)C(=O)N1C[C@H](C)C(=O)O",
+        "latency_s": 1.7695855000056326,
+        "tokens_in": 175,
+        "tokens_out": 66,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "NC(=O)[C@@H]1[C@@H](C(=O)N2C(=O)[C@@H](C(=O)O)C[C@@H]2SC)C(=O)N1C[C@H](C)C(=O)O",
+        "pred_smiles": "NC(=O)[C@@H]1[C@@H](C(=O)N2C(=O)[C@@H](C(=O)O)C[C@@H]2SC)C(=O)N1C[C@H](C)C(=O)O",
+        "pred_canonical": "CSC1CC(C(=O)O)C(=O)N1C(=O)C1C(=O)N(CC(C)C(=O)O)C1C(N)=O",
+        "truth_canonical": "CC1=C(C(=O)O)N2C(=O)C(NC(=O)C(N)c3ccccc3)C2SC1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.1728395061728395,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00093.png",
+      "truth": "C[C@H]1c2cccc(O)c2C(O)=C2C(=O)[C@]3(O)C(O)=C(C(N)=O)C(=O)[C@@H](N(C)C)[C@@H]3[C@@H](O)[C@@H]21",
+      "tags": {
+        "heavy_atoms": 32,
+        "rings": 4,
+        "stereocenters": 6,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "O=C1C(=O)C2=C(C(=O)C3=C(C(=O)C4=C(C(=O)C5=CC=CC5(O)C4=CC3=O)[C@@H](C(=O)O)[C@H](O)[C@@H](C(=O)O)[C@H]2O)O1)C(C)(C)N(C)C1=O",
+        "latency_s": 2.480192207964137,
+        "tokens_in": 175,
+        "tokens_out": 100,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "O=C1C(=O)C2=C(C(=O)C3=C(C(=O)C4=C(C(=O)C5=CC=CC5(O)C4=CC3=O)[C@@H](C(=O)O)[C@H](O)[C@@H](C(=O)O)[C@H]2O)O1)C(C)(C)N(C)C1=O",
+        "pred_smiles": "O=C1C(=O)C2=C(C(=O)C3=C(C(=O)C4=C(C(=O)C5=CC=CC5(O)C4=CC3=O)[C@@H](C(=O)O)[C@H](O)[C@@H](C(=O)O)[C@H]2O)O1)C(C)(C)N(C)C1=O",
+        "pred_canonical": null,
+        "truth_canonical": "CC1c2cccc(O)c2C(O)=C2C(=O)C3(O)C(O)=C(C(N)=O)C(=O)C(N(C)C)C3C(O)C21",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00094.png",
+      "truth": "CN(C)[C@@H]1C(=O)C(C(N)=O)=C(O)[C@@]2(O)C(=O)C3=C(O)c4c(O)cccc4[C@@](C)(O)[C@H]3C[C@@H]12",
+      "tags": {
+        "heavy_atoms": 32,
+        "rings": 4,
+        "stereocenters": 5,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "CC1(CN(C2=C(C(=C(C(=C2O)O)O)O)O)C(=O)O)C(=O)OC(C(=O)O)C(=O)OC(C(=O)O)C(=O)OC(C(=O)O)C(=O)O)C(=O)O",
+        "latency_s": 2.1830594170605764,
+        "tokens_in": 175,
+        "tokens_out": 86,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1(CN(C2=C(C(=C(C(=C2O)O)O)O)O)C(=O)O)C(=O)OC(C(=O)O)C(=O)OC(C(=O)O)C(=O)OC(C(=O)O)C(=O)O)C(=O)O",
+        "pred_smiles": "CC1(CN(C2=C(C(=C(C(=C2O)O)O)O)O)C(=O)O)C(=O)OC(C(=O)O)C(=O)OC(C(=O)O)C(=O)OC(C(=O)O)C(=O)O)C(=O)O",
+        "pred_canonical": null,
+        "truth_canonical": "CN(C)C1C(=O)C(C(N)=O)=C(O)C2(O)C(=O)C3=C(O)c4c(O)cccc4C(C)(O)C3CC12",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00095.png",
+      "truth": "Cc1cc(NS(=O)(=O)c2ccc(N)cc2)no1",
+      "tags": {
+        "heavy_atoms": 17,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O",
+          "S"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "NS(=O)(=O)NC1=CC(=NO)C=C1c1cccc(N)c1",
+        "latency_s": 0.7942476250464097,
+        "tokens_in": 175,
+        "tokens_out": 26,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "NS(=O)(=O)NC1=CC(=NO)C=C1c1cccc(N)c1",
+        "pred_smiles": "NS(=O)(=O)NC1=CC(=NO)C=C1c1cccc(N)c1",
+        "pred_canonical": "Nc1cccc(C2=CC(=NO)C=C2NS(N)(=O)=O)c1",
+        "truth_canonical": "Cc1cc(NS(=O)(=O)c2ccc(N)cc2)no1",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.22807017543859648,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00096.png",
+      "truth": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC",
+      "tags": {
+        "heavy_atoms": 21,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "C[C@@H](O)[C@@H](O)[C@@H](O)[C@H]1C[C@@H](O2)C[C@@H](O)N2C[C@@H]1CN1C=C(C(=O)N1)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)C",
+        "latency_s": 2.5730995000340044,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "C[C@@H](O)[C@@H](O)[C@@H](O)[C@H]1C[C@@H](O2)C[C@@H](O)N2C[C@@H]1CN1C=C(C(=O)N1)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)C",
+        "pred_smiles": "C[C@@H](O)[C@@H](O)[C@@H](O)[C@H]1C[C@@H](O2)C[C@@H](O)N2C[C@@H]1CN1C=C(C(=O)N1)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)CNC(=O)C",
+        "pred_canonical": "CC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCC(=O)NCc1cn(CC2CN3OC(CC2C(O)C(O)C(C)O)CC3O)[nH]c1=O",
+        "truth_canonical": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC",
+        "valid": true,
+        "exact": false,
+        "tanimoto": 0.07526881720430108,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00097.png",
+      "truth": "Cc1ncc([N+](=O)[O-])n1CCO",
+      "tags": {
+        "heavy_atoms": 12,
+        "rings": 1,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 2,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "OCCc1nc2c(n1)nnn2[n+]([O-])c([O-])=O",
+        "latency_s": 0.7949216669658199,
+        "tokens_in": 175,
+        "tokens_out": 27,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OCCc1nc2c(n1)nnn2[n+]([O-])c([O-])=O",
+        "pred_smiles": "OCCc1nc2c(n1)nnn2[n+]([O-])c([O-])=O",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ncc([N+](=O)[O-])n1CCO",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00098.png",
+      "truth": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F",
+      "tags": {
+        "heavy_atoms": 22,
+        "rings": 3,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "F",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": false
+      },
+      "predict": {
+        "smiles": "CC1=C(C=C(C=C1)C2=CC3=C(C2)C=CC=C3C3=CC=C(C=C3)C)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2",
+        "latency_s": 2.4809386249398813,
+        "tokens_in": 175,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "CC1=C(C=C(C=C1)C2=CC3=C(C2)C=CC=C3C3=CC=C(C=C3)C)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2",
+        "pred_smiles": "CC1=C(C=C(C=C1)C2=CC3=C(C2)C=CC=C3C3=CC=C(C=C3)C)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2=CC=C(C=C2)C2",
+        "pred_canonical": null,
+        "truth_canonical": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/384/drugs/00099.png",
+      "truth": "Nc1nc2c(ncn2COCCO)c(=O)[nH]1",
+      "tags": {
+        "heavy_atoms": 16,
+        "rings": 2,
+        "stereocenters": 0,
+        "ez_bonds": 0,
+        "charged_atoms": 0,
+        "elements": [
+          "C",
+          "N",
+          "O"
+        ],
+        "fragments": 1,
+        "bridged": false,
+        "fused": true
+      },
+      "predict": {
+        "smiles": "OCCOCn1ccnc2c1c(=O)n[nH]c2C(=O)O",
+        "latency_s": 0.7483682499732822,
+        "tokens_in": 175,
+        "tokens_out": 27,
+        "attempts": 1,
+        "escalated": false
+      },
+      "match": {
+        "pred_raw": "OCCOCn1ccnc2c1c(=O)n[nH]c2C(=O)O",
+        "pred_smiles": "OCCOCn1ccnc2c1c(=O)n[nH]c2C(=O)O",
+        "pred_canonical": null,
+        "truth_canonical": "Nc1nc2c(ncn2COCCO)c(=O)[nH]1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": false
+      }
+    }
+  ]
+}

@@ -41,3 +41,7 @@ cycle) are logged by their owner below and will show in the next closed hour.
 | 23:30–23:52 | `n2000_r384_lang_e3` LoRA SFT (2,000 × 3 epochs, per-epoch ckpts, val on 200) | Modal 1× L40S | 21.6 min | est 0.70 | 750 steps; val loss 0.224 → 0.169 → 0.164 |
 | 23:32–23:58 | `n2000_r384_merger_e3` ablation (a), LoRA + vision merger | Modal 1× L40S | 23.6 min | est 0.77 | val loss 0.210 → 0.160 → 0.156 |
 | 23:53–00:11 | Session A (`src/eval_session.py`): n2000 ep1-3 on val, untuned + n500 rescored on test, untuned / untuned_thinking on first50, n2000_ep3 on test at 8 and 32 workers | Modal 1× L40S (vLLM, CUDA graphs) | 17.3 min incl. ~6 min cold start + 78 s one-off compile | est 0.56 | app stopped by the script |
+| 2026-11-02 overnight | `n5000_r384_lang_e3` LoRA SFT (5,000 × 3 epochs) | Modal 1× L40S | 49.8 min | est 1.62 | val loss by epoch: 0.179, 0.108, 0.107 |
+| 2026-11-02 overnight | `n2000_r640_lang_e3` ablation (b), 640 px | Modal 1× L40S | 46.4 min | est 1.51 | val loss by epoch: 0.255, 0.170, 0.154 |
+| 2026-11-02 overnight | Session C: merger ablation val + test, n2000 control with tower-LoRA flag | Modal 1× L40S (vLLM) | 11.6 min | est 0.38 | app stopped by `eval_session` |
+| 2026-11-02 overnight | Session B (final): n5000 + 640 px val selection and test; untuned + n5000 on drugs, USPTO, hand-drawn | Modal 1× L40S (vLLM) | 13.0 min | est 0.42 | app stopped by `eval_session` |
