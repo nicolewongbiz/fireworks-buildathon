@@ -18,7 +18,7 @@ Usage (every GPU run needs the user's approval and a cost estimate first, see CL
   # also write a merged bf16 model (fallback serving path, ~19 GB in the volume)
   uv run modal run -m src.modal_train ... --merge-full
 
-Flags (defaults): --n-train 0 (=all; takes the FIRST N rows so subsets are nested), --n-val 128, --epochs 3,
+Flags (defaults): --n-train 0 (=all; takes the FIRST N rows so subsets are nested), --n-val 128 (0=all), --epochs 3,
   --lr 2e-4, --rank 8 (alpha = 2*rank), --lora-dropout 0.05, --batch-size 8, --grad-accum 1,
   --warmup-frac 0.05 (cosine decay to 0), --max-grad-norm 1.0, --eval-every 0 (=auto, ~10 evals per run plus
   one before training and one at the end), --max-steps 0 (=no cap), --seed 0, --gpu L40S|H100,
@@ -470,14 +470,14 @@ def train(train_rows: list[list[str]], val_rows: list[list[str]], cfg: dict) -> 
 _train_fn = train  # main()'s `--train` argument shadows the name inside main
 
 
-def _load_manifest(path: str, n: int) -> list[list[str]]:
+def _load_manifest(path: str, n: int, strict: bool = True) -> list[list[str]]:
     import json
     from pathlib import Path
 
     rows = json.loads(Path(path).read_text())
     if n:
-        if n > len(rows):
-            raise SystemExit(f"--n {n} > {len(rows)} rows in {path}")
+        if n > len(rows) and strict:
+            raise SystemExit(f"asked for {n} rows but {path} has {len(rows)}")
         rows = rows[:n]  # first N, so smaller subsets are nested in larger ones
     for r in rows:
         volume_path(r["image_path"])  # validates the data/ prefix
@@ -526,7 +526,7 @@ def main(
     if gpu not in GPUS:
         raise SystemExit(f"--gpu must be one of {GPUS}")
     train_rows = _load_manifest(train, n_train)
-    val_rows = _load_manifest(val, n_val)
+    val_rows = _load_manifest(val, n_val, strict=False)
     res = _infer_res(train, train_rows)
     run_name = run_name or default_run_name(len(train_rows), res, lora_scope, epochs, max_steps)
     try:
