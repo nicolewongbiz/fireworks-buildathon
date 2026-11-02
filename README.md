@@ -39,8 +39,13 @@ smoke/make_smoke_data.py   50-molecule throwaway set (40 train / 10 test) for th
 src/make_dataset.py        real dataset: ZINC + PubChem drugs, scaffold split, leakage checks, 384/640 px renders
 src/make_real_test.py      real-world test sets: 200 USPTO patent scans + 200 DECIMER hand-drawn, from data/raw
 src/validate.py            RDKit parse, canonicalize, extract SMILES from free text, score one prediction
-src/predict.py             one predict(image_path) per system; OpenAI-compatible chat with image data URI
-src/run_system.py          run a predictor over a test set -> results/<system>.json (metrics + per-item)
+src/predict.py             open-model predictors (untuned, tuned); OpenAI-compatible chat with image data URI
+src/predict_fireworks.py   large serverless baselines on Fireworks (Kimi K3 usable; Qwen3.8-Max, GLM-5.3-Flash not)
+src/predict_molscribe.py   MolScribe specialist OCSR reference; runs in .venv-molscribe on CPU (recipe in docstring)
+src/predict_baselines.py   registry that lets src/run_system.py see the baseline predictors above
+src/run_system.py          run a predictor over a test set -> results/<system>[__<testset>].json (metrics + per-item)
+src/evaluate.py            compare results files: bootstrap CIs, cost per correct answer, headline chart
+src/analyze_errors.py      mistake classes, per-tag accuracy, contact sheets, paired comparison
 src/modal_serve.py         vLLM OpenAI-compatible server for the base model + any LoRA in a Modal volume
 src/modal_train.py         LoRA SFT fallback on Modal (PEFT, language-model layers only, vLLM-loadable)
 data/                      manifests {val,test_synthetic,test_drugs,test_real_uspto,test_handdrawn}_{384,640}.json are
@@ -48,8 +53,8 @@ data/                      manifests {val,test_synthetic,test_drugs,test_real_us
 results/                   results/<system>.json and cost_log.md are committed; results/raw/ logs are not
 ```
 
-Still to come from the baselines/comparison owner: closed-model and MolScribe predictors, `src/evaluate.py`
-(cross-system metrics and the exact-match vs cost chart), and `app.py` (demo UI).
+Still to come: closed-model predictors (OpenAI/Anthropic/Gemini, if used), the routed system, and `app.py`
+(demo UI).
 
 ## Shared contracts
 
