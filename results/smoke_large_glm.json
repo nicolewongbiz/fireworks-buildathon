@@ -1,0 +1,324 @@
+{
+  "summary": {
+    "system": "large_glm",
+    "model": "accounts/fireworks/models/glm-5p3-flash",
+    "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+    "n": 10,
+    "exact_match": 0.0,
+    "exact_match_nostereo": 0.0,
+    "valid_rate": 0.0,
+    "mean_tanimoto": 0.0,
+    "loop_rate": 1.0,
+    "max_tokens": 108,
+    "mean_latency_s": 1.0793488623923622,
+    "median_latency_s": 1.01038949994836,
+    "p95_latency_s": 1.3710110420361161,
+    "mean_tokens_in": 226.0,
+    "mean_tokens_out": 108.0,
+    "total_tokens_in": 2260,
+    "total_tokens_out": 1080,
+    "first_answer_s": 1.1891992080491036,
+    "wall_s": 11.065974583034404,
+    "gpu_hours": 0.0,
+    "gpu_usd_per_hour": 0.0,
+    "usd_per_mtok_in": 0.15,
+    "usd_per_mtok_out": 0.5,
+    "usd": 0.000879,
+    "usd_per_image": 8.79e-05,
+    "retries": 2,
+    "reasoning_leaked": 10,
+    "workers": 1
+  },
+  "items": [
+    {
+      "image_path": "data/images/smoke/test_000.png",
+      "truth": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 0.995625332929194,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 3,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 328
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "CC1(C(=O)NCc2ccccc2)CCC(C(=O)[O-])C1(C)C",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_001.png",
+      "truth": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.1975256669102237,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 339
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "CCOC(=O)CC(C)CNC(=O)N(C)C1CCCC(C)C1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_002.png",
+      "truth": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.3710110420361161,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 362
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "CC(=O)c1ccc(Oc2ccc(C(=O)NCC3CC[NH+](C)C3)cc2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_003.png",
+      "truth": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 0.9371251249685884,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 342
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "COc1cc(OC)c(NC(=O)NC2CCC[NH+](C)C2)cc1F",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_004.png",
+      "truth": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.0089838339481503,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 376
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "CC(CC(=O)c1ccc(F)cc1)NC(=O)C=C1CCSCC1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_005.png",
+      "truth": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.0637667080154642,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 368
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1cccc(C)c1NC(=O)C(C)Sc1nc2ccccc2c(=O)n1Cc1ccco1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_006.png",
+      "truth": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.0117951659485698,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 353
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(S(=O)(=O)C2(C(=O)NC(C)c3ccc4c(c3)OCO4)CCC2)cc1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_007.png",
+      "truth": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 0.9951428330969065,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 358
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "O=C(Cc1ccccc1Cl)NCC[NH+]1CCC(O)(c2ccc(F)cc2)CC1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_008.png",
+      "truth": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.0051667500520125,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 338
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "Cc1ccc(NCCCc2n[nH]c(=O)[nH]2)c([N+](=O)[O-])c1",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    },
+    {
+      "image_path": "data/images/smoke/test_009.png",
+      "truth": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+      "tags": null,
+      "predict": {
+        "smiles": null,
+        "latency_s": 1.2073461660183966,
+        "tokens_in": 226,
+        "tokens_out": 108,
+        "attempts": 1,
+        "escalated": false,
+        "usd": 8.790000000000001e-05,
+        "model": "accounts/fireworks/models/glm-5p3-flash",
+        "thinking_flag": "none (thinking ON; model rejected every thinking-off flag)",
+        "finish_reason": "length",
+        "reasoning_chars": 446
+      },
+      "match": {
+        "pred_raw": "",
+        "pred_smiles": "",
+        "pred_canonical": null,
+        "truth_canonical": "CC(Sc1cccc2cccnc12)C(=O)OC(C)(C)C",
+        "valid": false,
+        "exact": false,
+        "tanimoto": 0.0,
+        "exact_stereo": false,
+        "hit_cap": true
+      }
+    }
+  ]
+}

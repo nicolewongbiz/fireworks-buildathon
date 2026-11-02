@@ -73,13 +73,14 @@ zero. If the rules allow it, serve the 9B systems from Modal and use Fireworks f
 baseline and (once uploads work) for training. If judges expect Fireworks serving, budget about 4 to 6
 H100-hours ($32 to $48) and keep the deployment warm only during eval windows.
 
-## 7b. Large baseline: pick from what is actually on serverless
+## 7b. Large baseline: Kimi K3, with Qwen3.8-Max as the cheap option
 
 Confirmed serverless with image input as of tonight: Kimi K3 ($3 in / $15 out per 1M tokens),
-Qwen3.8-Max ($2 / $6), GLM-5.3-Flash ($0.15 / $0.50). Qwen3-VL-235B, Llama 4 Maverick and Kimi K2.5
-are on-demand only, so the spec's implied "big Qwen VL" baseline would cost another $8/h GPU. Use
-GLM-5.3-Flash as the cheap large baseline and Kimi K3 as the frontier reference on a 200-image subset.
-Details and URLs in `docs/fireworks-notes.md`.
+Qwen3.8-Max ($2 / $6), GLM-5.3-Flash ($0.15 / $0.50). On the 10 smoke images Kimi K3 scored 8/10 exact
+with bare-SMILES output at about $0.0013 per image, so it is the frontier reference. GLM-5.3-Flash is
+thinking-only and cannot answer within a 108-token cap, so it is dropped. Qwen3-VL-235B, Llama 4 Maverick
+and Kimi K2.5 are on-demand only and would cost another $8/h GPU. Details in `docs/fireworks-notes.md`
+and `results/RESULTS.md`.
 
 ## 8. Run the eval concurrently
 

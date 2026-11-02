@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-01 23:05 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-01 23:40 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -103,6 +103,35 @@ What this tells us:
   start for 35 s of inference. Keep the server warm across the whole eval window tomorrow and report
   steady-state cost per image separately from the fixed start-up cost.
 
+## Smoke test: large serverless baselines on the same 10 images
+
+Source: `results/smoke_large_kimi.json`, `results/smoke_large_glm.json`, run with `src/predict_fireworks.py`
+against Fireworks serverless (temperature 0, max_tokens 108, same prompt and image format as the 9B runs).
+
+| Metric | Kimi K3 | GLM-5.3-Flash |
+|---|---|---|
+| Exact match (stereo-aware = agnostic here) | 8 / 10 | 0 / 10 |
+| Valid SMILES | 10 / 10 | 0 / 10 |
+| Mean Tanimoto | 0.97 | – |
+| Median / p95 latency | 1.2 s / 3.5 s | 1.0 s / 1.4 s |
+| Prompt tokens per 384 px image | 241 | 226 |
+| Mean output tokens | 37 | 108 (all reasoning) |
+| Spend for 10 images | $0.0128 | $0.0009 |
+| Thinking-off flag that worked | `reasoning_effort: "none"` | none accepted |
+
+What this tells us:
+
+- **Kimi K3 is the large baseline to beat.** 8/10 on clean renders with bare-SMILES output and no loops,
+  at about $0.0013 per image, so roughly $0.0016 per correct answer on this sample. Both misses were
+  plausible regiochemistry errors, not garbage. This is the bar the tuned 9B has to approach.
+- **GLM-5.3-Flash cannot be used at this token cap.** It is a thinking-only model: every thinking-off
+  flag is rejected, and with an image attached Fireworks reports the rejection as a misleading
+  `400 Invalid image or video input`. With thinking on, all 108 tokens go to reasoning and no answer is
+  produced. It would need a much larger cap and pays for reasoning tokens, so it is dropped. Qwen3.8-Max
+  ($2 / $6 per 1M tokens) is being smoked as the cheaper large baseline instead.
+- **Serverless spend is negligible next to GPU time.** 500 images on Kimi K3 is about $0.65; on the whole
+  synthetic plus real-world sets (about 1,300 images at two sizes) well under $5.
+
 ## Changes after the smoke runs that affect comparability
 
 Commit `57f43b5` and the dataset build changed the scoring and the generation settings. Numbers above were
@@ -142,10 +171,10 @@ produced before these changes; do not compare them directly with later runs.
    Modal is the fallback for training and serving.
 2. **Base model changed** from Qwen3-VL-8B-Instruct (not tunable on Fireworks) to Qwen3.5-9B. The spec
    and pitch should say Qwen3.5-9B.
-3. **Large baseline model: choose between GLM-5.3-Flash (cheap) and Kimi K3 (frontier).** These are the
-   serverless vision models confirmed tonight, with Qwen3.8-Max as a third. Qwen3-VL-235B and Llama 4
-   Maverick are on-demand only. Note Qwen3.5-9B itself is on-demand only on Fireworks, so the untuned 9B
-   baseline needs a dedicated GPU there too (or Modal).
+3. **Large baseline: Kimi K3 (8/10 on the smoke set), with Qwen3.8-Max as the cheaper option.**
+   GLM-5.3-Flash is out (thinking-only). Qwen3-VL-235B and Llama 4 Maverick are on-demand only. Note
+   Qwen3.5-9B itself is on-demand only on Fireworks, so the untuned 9B baseline needs a dedicated GPU
+   there too (or Modal).
 4. **Real dataset built** (see above). Still owed: `src/evaluate.py` and the exact-match vs cost chart,
    closed-model and MolScribe baseline predictors, and `app.py` (Person B).
 5. **Pre-work rules.** Confirm with organizers whether code written tonight is allowed.
