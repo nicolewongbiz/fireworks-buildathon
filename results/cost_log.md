@@ -36,3 +36,6 @@ cycle) are logged by their owner below and will show in the next closed hour.
 | 23:09–23:17 | `n500_r384_lang_e3` LoRA SFT (500 ex × 3 epochs) | Modal 1× L40S | 6.7 min | est 0.22 | 189 steps, ~5.5 ex/s |
 | 23:09–23:17 | `untuned` eval, 500 test images, 8 workers | Modal 1× L40S (vLLM) | ~7.5 min incl. 201 s cold start + ~1.5 min idle | est 0.24 | app stopped manually |
 | 23:17–23:26 | `n500_r384_lang_e3` eval, 500 test images, 8 workers | Modal 1× L40S (vLLM + LoRA) | ~8.5 min incl. 259 s cold start | est 0.28 | app stopped right after |
+| 23:27–23:29 | first `n2000` / `n5000` launches, stopped ~10% in to add per-epoch checkpoints (local client killed; remote apps had to be stopped explicitly) | Modal 2× L40S | ~2 min each | est 0.13 | wasted; lesson: always confirm with `modal app list` |
+| 23:30–23:52 | `n2000_r384_lang_e3` LoRA SFT (2,000 × 3 epochs, per-epoch ckpts, val on 200) | Modal 1× L40S | 21.6 min | est 0.70 | 750 steps; val loss 0.224 → 0.169 → 0.164 |
+| 23:32–23:58 | `n2000_r384_merger_e3` ablation (a), LoRA + vision merger | Modal 1× L40S | 23.6 min | est 0.77 | val loss 0.210 → 0.160 → 0.156 |
