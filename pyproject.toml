@@ -16,6 +16,7 @@ dependencies = [
     "requests>=2.32",
     "gradio>=5.0",
     "modal>=1.6.3",
+    "tokenizers>=0.23.3",
 ]
 
 [tool.uv]
