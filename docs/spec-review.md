@@ -59,11 +59,26 @@ millions of images; 5,000 is a lower bound for showing any signal. Plan for 20,0
 Also batch the training: the smoke trainer uses batch size 1 with gradient accumulation. Padding to batch
 size 8 should cut wall-clock several-fold.
 
-## 7. One deployment can serve both small systems
+## 7. One deployment can serve both small systems, and neither small system is serverless
 
-On Modal, and on a Fireworks on-demand deployment, the base model and its LoRA adapters are served from
-the same GPU. The untuned baseline and the tuned model share one deployment, so the "dedicated GPU" cost
-line is paid once, not twice, and the cost-per-correct-answer comparison between them is clean.
+Qwen3.5-9B is on-demand only on Fireworks (no serverless), so the untuned baseline cannot be run "for
+free" on serverless either; it needs the same dedicated GPU as the tuned model. On Modal the base model and
+its LoRA adapters are served from one GPU (confirmed tonight). On Fireworks an addons-enabled BF16
+deployment with `#`-routing should do the same, but the docs do not state it outright; test it before
+relying on it. Either way the GPU cost line is paid once, and the untuned-vs-tuned comparison is clean.
+
+Cost reality: Fireworks H100/H200 is $8.00/h; Modal L40S is $1.95/h and bills per second with scale to
+zero. If the rules allow it, serve the 9B systems from Modal and use Fireworks for the large serverless
+baseline and (once uploads work) for training. If judges expect Fireworks serving, budget about 4 to 6
+H100-hours ($32 to $48) and keep the deployment warm only during eval windows.
+
+## 7b. Large baseline: pick from what is actually on serverless
+
+Confirmed serverless with image input as of tonight: Kimi K3 ($3 in / $15 out per 1M tokens),
+Qwen3.8-Max ($2 / $6), GLM-5.3-Flash ($0.15 / $0.50). Qwen3-VL-235B, Llama 4 Maverick and Kimi K2.5
+are on-demand only, so the spec's implied "big Qwen VL" baseline would cost another $8/h GPU. Use
+GLM-5.3-Flash as the cheap large baseline and Kimi K3 as the frontier reference on a 200-image subset.
+Details and URLs in `docs/fireworks-notes.md`.
 
 ## 8. Run the eval concurrently
 
@@ -83,5 +98,9 @@ our eval concurrency, and cost at the deployment's measured peak throughput. Say
   window; scale to zero between.
 - Cap `max_tokens` at 150. A 40-heavy-atom SMILES is under 100 tokens; the cap also bounds the degenerate
   repeat case.
+- Via the REST API or SDK an omitted LoRA rank means full-parameter training at double the token price.
+  Always pass `loraRank` explicitly.
+- A scaled-to-zero Fireworks deployment answers 503 `DEPLOYMENT_SCALING_UP` until warm; the predictor's
+  503 retry loop already handles this.
 - Ask the organizers tonight whether pre-written code is allowed. If not, tonight's work is the plan and
   the platform checks, which is what the spec says anyway.

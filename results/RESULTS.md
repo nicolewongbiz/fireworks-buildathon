@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-01 22:30 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-01 22:50 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -105,12 +105,18 @@ What this tells us:
 
 ## Blockers and open items
 
-1. **Fireworks dataset upload disabled** on the account. Support request open. Until it clears, no
-   Fireworks SFT job and no Fireworks-served tuned model. Modal is the fallback for both.
+1. **Fireworks dataset upload disabled** on the account (`FailedPrecondition`). Support request open.
+   The docs do not name this error for uploads; the strongest lead is account gating: training GPU quota
+   is 0 without a payment method, the $1 starter credit suspends the account when spent, and HTTP 412 is
+   "account suspended or account status issue". Before build day: add a payment method, run
+   `firectl quota list`, retry with a fresh dataset ID and a file under 150 MB. Until it clears, Modal
+   is the fallback for training and serving.
 2. **Base model changed** from Qwen3-VL-8B-Instruct (not tunable on Fireworks) to Qwen3.5-9B. The spec
    and pitch should say Qwen3.5-9B.
-3. **Large baseline model not chosen yet.** Needs to be a vision model on Fireworks serverless; pick on
-   build day from the live model list.
+3. **Large baseline model: choose between GLM-5.3-Flash (cheap) and Kimi K3 (frontier).** These are the
+   serverless vision models confirmed tonight, with Qwen3.8-Max as a third. Qwen3-VL-235B and Llama 4
+   Maverick are on-demand only. Note Qwen3.5-9B itself is on-demand only on Fireworks, so the untuned 9B
+   baseline needs a dedicated GPU there too (or Modal).
 4. **Real dataset not built yet.** Tonight used a 50-molecule throwaway set. `src/render.py` and
    `src/build_dataset.py` (scaffold split, leakage check) are still owed by the data/eval owner.
 5. **Pre-work rules.** Confirm with organizers whether code written tonight is allowed.
