@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-02 00:25 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-02 00:45 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -181,6 +181,38 @@ cost per correct answer, and writes `results/comparison.md`, `results/comparison
 chart `results/chart_exact_vs_cost.png` (plus a per-test-set bar chart when more than one set is present).
 `src/analyze_errors.py` produces mistake classes, per-tag accuracy, and contact sheets. Run both after
 every new results file.
+
+## First tuned-vs-untuned number on the 500-image synthetic test set
+
+Sources: `results/untuned__test_synthetic_384.json`, `results/n500_r384_lang_e3__test_synthetic_384.json`
+(LoRA on 500 training images, 3 epochs, language-model layers only, rank 8; run by the other session on
+Modal), and `results/molscribe__test_synthetic_384.json` (specialist reference, laptop CPU). Full table with
+confidence intervals in `results/comparison.md`.
+
+| System | Exact (stereo-aware) | Exact (no stereo) | Valid | Mean Tanimoto | Loop rate | Latency p50 / p95 | Run spend |
+|---|---|---|---|---|---|---|---|
+| Untuned Qwen3.5-9B | 0.0% | 0.0% | 67.0% | 0.11 | 19.2% | 2.2 s / 4.0 s | $0.19 |
+| Tuned on 500 (n500_r384_lang_e3) | 6.8% | 11.4% | 72.0% | 0.42 | 0.0% | 3.4 s / 4.9 s | $0.26 |
+| MolScribe (specialist, CPU) | 93.4% | 95.4% | 99.2% | 0.98 | 0% | 0.9 s / 1.1 s | $0 |
+
+What this tells us:
+
+- **500 training images already move the model off zero.** Exact match went from 0 to 6.8%
+  stereo-aware (11.4% ignoring stereo), looping dropped from 19.2% to 0.0%, and mean
+  Tanimoto rose from 0.11 to 0.42. The validation loss curve on this run bottomed at epoch 2 and rose
+  slightly at epoch 3, so 500 examples are data-limited, not epoch-limited: the next lever is 10k images.
+- **Stereo costs about 5 points at this stage.** The gap between the two exact-match columns is the share
+  of molecules the model gets right except for wedge or double-bond geometry.
+- **The specialist ceiling on these renders is 93.4%.** MolScribe at 95.4% stereo-agnostic shows the renders
+  are readable; the remaining distance is model capacity and data, not label noise.
+
+## MolScribe on the real-world patent set
+
+Source: `results/molscribe__test_real_uspto_384.json` (200 USPTO patent scans, resized to 384 px).
+MolScribe scores 89.0% stereo-aware, 92.0% stereo-agnostic, 96.5% valid, mean Tanimoto 0.95.
+Its published USPTO accuracy is higher at native resolution, so some of the drop is the 384 px downscale
+of scans that are often 800 px wide or more; the 640 px manifests exist for that comparison. The
+hand-drawn result is pending.
 
 ## Changes after the smoke runs that affect comparability
 

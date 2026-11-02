@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-02T07:21:51+00:00",
+  "generated_utc": "2026-11-02T07:27:39+00:00",
   "headline_metric": "exact",
   "bootstrap": {
     "resamples": 1000,
@@ -10,6 +10,159 @@
   "price_in": {},
   "price_out": {},
   "systems": [
+    {
+      "system": "molscribe",
+      "testset": "test_real_uspto_384",
+      "path": "results/molscribe__test_real_uspto_384.json",
+      "n": 200,
+      "exact": 0.89,
+      "exact_ci": [
+        0.845,
+        0.930125
+      ],
+      "exact_n": 178,
+      "exact_nostereo": 0.92,
+      "exact_nostereo_ci": [
+        0.88,
+        0.955
+      ],
+      "exact_nostereo_n": 184,
+      "valid": 0.965,
+      "valid_ci": [
+        0.9398749999999999,
+        0.985
+      ],
+      "mean_tanimoto": 0.9532286023969105,
+      "loop_rate": 0.0,
+      "median_latency_s": 0.9940183330327272,
+      "p95_latency_s": 1.322792417020537,
+      "mean_latency_s": 0.984401083694538,
+      "tokens_in_total": 0,
+      "tokens_out_total": 0,
+      "escalation_rate": 0.0,
+      "usd": 0.0,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 8.853729999973439,
+      "wall_s": 204.65463687491138,
+      "max_tokens": null,
+      "headline_metric": "exact",
+      "headline_rate": 0.89,
+      "headline_n": 178,
+      "cost_per_correct": 0.0,
+      "cost_per_image": 0.0,
+      "notes": [],
+      "headline_ci": [
+        0.845,
+        0.930125
+      ],
+      "metric_key": "exact_stereo",
+      "label": "molscribe \u00b7 test_real_uspto_384"
+    },
+    {
+      "system": "molscribe",
+      "testset": "test_synthetic_384",
+      "path": "results/molscribe__test_synthetic_384.json",
+      "n": 500,
+      "exact": 0.934,
+      "exact_ci": [
+        0.912,
+        0.954
+      ],
+      "exact_n": 467,
+      "exact_nostereo": 0.954,
+      "exact_nostereo_ci": [
+        0.936,
+        0.972
+      ],
+      "exact_nostereo_n": 477,
+      "valid": 0.992,
+      "valid_ci": [
+        0.984,
+        0.998
+      ],
+      "mean_tanimoto": 0.9814202573372967,
+      "loop_rate": 0.0,
+      "median_latency_s": 0.8892027080291882,
+      "p95_latency_s": 1.0861795420059934,
+      "mean_latency_s": 0.898559724919498,
+      "tokens_in_total": 0,
+      "tokens_out_total": 0,
+      "escalation_rate": 0.0,
+      "usd": 0.0,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 7.987471916014329,
+      "wall_s": 457.0285007499624,
+      "max_tokens": null,
+      "headline_metric": "exact",
+      "headline_rate": 0.934,
+      "headline_n": 467,
+      "cost_per_correct": 0.0,
+      "cost_per_image": 0.0,
+      "notes": [],
+      "headline_ci": [
+        0.912,
+        0.954
+      ],
+      "metric_key": "exact_stereo",
+      "label": "molscribe \u00b7 test_synthetic_384"
+    },
+    {
+      "system": "n500_r384_lang_e3",
+      "testset": "test_synthetic_384",
+      "path": "results/n500_r384_lang_e3__test_synthetic_384.json",
+      "n": 500,
+      "exact": 0.068,
+      "exact_ci": [
+        0.046,
+        0.09
+      ],
+      "exact_n": 34,
+      "exact_nostereo": 0.114,
+      "exact_nostereo_ci": [
+        0.088,
+        0.144
+      ],
+      "exact_nostereo_n": 57,
+      "valid": 0.72,
+      "valid_ci": [
+        0.68,
+        0.758
+      ],
+      "mean_tanimoto": 0.41594743254933425,
+      "loop_rate": 0.0,
+      "median_latency_s": 3.3745727914501913,
+      "p95_latency_s": 4.932605166919529,
+      "mean_latency_s": 3.5238770753135906,
+      "tokens_in_total": 87500,
+      "tokens_out_total": 16345,
+      "escalation_rate": 0.0,
+      "usd": 0.259810382789743,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.13323609373832976,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 259.11375733301975,
+      "wall_s": 479.6499374579871,
+      "max_tokens": 108,
+      "headline_metric": "exact",
+      "headline_rate": 0.068,
+      "headline_n": 34,
+      "cost_per_correct": 0.007641481846757147,
+      "cost_per_image": 0.000519620765579486,
+      "notes": [],
+      "headline_ci": [
+        0.046,
+        0.09
+      ],
+      "metric_key": "exact_stereo",
+      "label": "n500_r384_lang_e3 \u00b7 test_synthetic_384"
+    },
     {
       "system": "smoke_large_glm",
       "testset": "smoke",
@@ -388,132 +541,414 @@
   ],
   "by_tag": {
     "heavy_atoms<=20": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        28,
+        31
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        104,
+        110
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        13,
+        110
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         110
       ]
     },
     "heavy_atoms 21-30": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        60,
+        67
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        342,
+        366
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        21,
+        366
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         366
       ]
     },
     "heavy_atoms 31-40": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        74,
+        80
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        21,
+        24
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
+        24
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         24
       ]
     },
+    "heavy_atoms>40": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        16,
+        22
+      ],
+      "molscribe \u00b7 test_synthetic_384": null,
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
+      "untuned \u00b7 test_synthetic_384": null
+    },
+    "rings=0": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        4,
+        5
+      ],
+      "molscribe \u00b7 test_synthetic_384": null,
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
+      "untuned \u00b7 test_synthetic_384": null
+    },
     "rings=1": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        20,
+        22
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        6,
+        6
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
+        6
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         6
       ]
     },
     "rings=2": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        20,
+        23
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        142,
+        152
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        17,
+        152
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         152
       ]
     },
     "rings=3": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        41,
+        54
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        204,
+        216
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        12,
+        216
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         216
       ]
     },
     "rings>=4": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        93,
+        96
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        115,
+        126
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        5,
+        126
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         126
       ]
     },
     "stereocenters=0": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        147,
+        156
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        197,
+        202
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        31,
+        202
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         202
       ]
     },
     "stereocenters 1-2": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        17,
+        21
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        244,
+        262
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        3,
+        262
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         262
       ]
     },
     "stereocenters>=3": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        14,
+        23
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        26,
+        36
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
+        36
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         36
       ]
     },
     "no E/Z bonds": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        161,
+        178
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        447,
+        478
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        33,
+        478
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         478
       ]
     },
     "E/Z bonds": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        17,
+        22
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        20,
+        22
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        1,
+        22
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         22
       ]
     },
     "charged": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        6,
+        6
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        50,
+        61
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        1,
+        61
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         61
       ]
     },
     "neutral": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        172,
+        194
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        417,
+        439
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        33,
+        439
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         439
       ]
     },
     "single fragment": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        177,
+        197
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        447,
+        473
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        34,
+        473
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         473
       ]
     },
     "multi-fragment": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        1,
+        3
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        20,
+        27
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
+        27
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         27
       ]
     },
     "elements: CNO only": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        78,
+        89
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        186,
+        200
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        12,
+        200
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         200
       ]
     },
     "elements: beyond CNO": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        100,
+        111
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        281,
+        300
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        22,
+        300
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         300
       ]
     },
     "not bridged": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        175,
+        197
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        457,
+        481
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        34,
+        481
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         481
       ]
     },
     "bridged": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        3,
+        3
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        10,
+        19
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
+        19
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         19
       ]
     },
     "not fused": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        102,
+        120
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        285,
+        298
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        27,
+        298
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         298
       ]
     },
     "fused": {
+      "molscribe \u00b7 test_real_uspto_384": [
+        76,
+        80
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        182,
+        202
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        7,
+        202
+      ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         202
