@@ -13,6 +13,9 @@ data/*.json
 !data/test_synthetic_*.json
 !data/test_drugs_*.json
 !data/dataset_report.json
+# Real-world evaluation sets (built by src/make_real_test.py from data/raw benchmarks)
+!data/test_real_uspto_*.json
+!data/test_handdrawn_*.json
 results/raw/
 *.png
 !docs/*.png
