@@ -74,7 +74,8 @@ cut that. The adapter was then served and evaluated; see the next section.
 
 Source: `results/smoke_tuned.json`. vLLM loaded the adapter from the volume at startup
 (`Loaded new LoRA adapter: name 'smoke'` in the server log) and served it as model `smoke` next to `base`.
-The server was already warm, so this run's wall time excludes cold start; the untuned run's does not.
+The container cold-started in about 217 s (Modal logs; image already cached); the runner's 35 s wall
+time covers only the request phase, so the two GPU-time rows below are not like for like.
 
 | Metric | Untuned | Tuned (40 images, 3 epochs) |
 |---|---|---|
@@ -85,7 +86,7 @@ The server was already warm, so this run's wall time excludes cold start; the un
 | Outputs hitting the 150-token cap | 3 / 10 | 2 / 10 |
 | Mean output tokens | 81 | 55 |
 | Mean latency per image (warm) | 3.7 s | 3.5 s |
-| GPU time billed for the run | 4.7 min incl. 250 s cold start, $0.15 | 35 s warm, $0.02 |
+| GPU time billed for the run | 4.7 min incl. 250 s cold start, $0.15 | 4.2 min incl. 217 s cold start, $0.14 |
 
 What this tells us:
 
@@ -98,8 +99,9 @@ What this tells us:
 - **Two of ten outputs still loop until the token cap**, now as valid periodic SMILES rather than invalid
   stereo spam. A repetition penalty or a lower cap would bound the cost; more training data should remove
   the behaviour. Track the cap-hit rate as a side metric.
-- **Cost accounting must separate cold start from steady state.** The untuned run paid 250 s of cold start,
-  the tuned run paid none. The runner records time to first answer separately for this reason.
+- **Cost accounting must separate cold start from steady state.** Both runs paid 3.5 to 4 min of cold
+  start for 35 s of inference. Keep the server warm across the whole eval window tomorrow and report
+  steady-state cost per image separately from the fixed start-up cost.
 
 ## Blockers and open items
 
