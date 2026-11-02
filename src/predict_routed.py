@@ -9,9 +9,16 @@
 Registered via src/predict_baselines.py; run with the shared runner, e.g.
   .venv/bin/python -m src.run_system routed data/test_synthetic_384.json \
       --out results/routed__test_synthetic_384.json --gpu-usd-per-hour 1.95 --workers 8
-Env: ROUTE_SAMPLES (default 4), ROUTE_TEMPERATURE (0.7), ROUTE_MIN_AGREE (0.8), TUNED_LORA (see src.predict).
-Per-item extras: candidates, n_valid, agreement, vote, escalated, usd (Kimi spend when escalated).
-Cost note: run_system prices the tuned calls by GPU wall-clock; `usd` here carries only the escalation spend.
+Hyperparameters (pre-registered, fixed in advance on 2026-11-02 before any test run; see results/DECISION_RULES.md):
+ROUTE_SAMPLES = 4, ROUTE_TEMPERATURE = 0.7, ROUTE_MIN_AGREE = 0.8. If any of them is changed, it may be tuned on
+data/val_384.json only, never on a test set, and the chosen values must be written into DECISION_RULES.md and
+the results file name (e.g. routed_a06__test_synthetic_384.json). Env overrides exist for that purpose only.
+
+Accounting: two requests per image (greedy at T=0, then n sampled at T=0.7; they cannot share a request);
+latency_s is the sum of both plus the escalation call, tokens_in/out sum every completion. run_system prices
+the tuned calls by GPU wall-clock and adds per-item `usd` on top, so `usd` here carries only the Kimi spend;
+evaluate.py must not price these tokens again with --price-in/out.
+Per-item extras: candidates, n_valid, agreement, vote, escalated, escalation_model, small_answer.
 """
 from __future__ import annotations
 
