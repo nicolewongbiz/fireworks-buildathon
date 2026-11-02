@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-02T07:48:28+00:00",
+  "generated_utc": "2026-11-02T08:12:55+00:00",
   "headline_metric": "exact",
   "headline_summary_key": "exact_match",
   "bootstrap": {
@@ -11,6 +11,186 @@
   "price_in": {},
   "price_out": {},
   "systems": [
+    {
+      "system": "large_kimi",
+      "testset": "test_drugs_384",
+      "path": "results/large_kimi__test_drugs_384.json",
+      "n": 100,
+      "exact": 0.69,
+      "exact_ci": [
+        0.6,
+        0.78
+      ],
+      "exact_n": 69,
+      "exact_nostereo": 0.8,
+      "exact_nostereo_ci": [
+        0.72,
+        0.8702499999999997
+      ],
+      "exact_nostereo_n": 80,
+      "valid": 0.99,
+      "valid_ci": [
+        0.97,
+        1.0
+      ],
+      "mean_tanimoto": 0.9168676089949342,
+      "loop_rate": 0.0,
+      "median_latency_s": 5.451301208464429,
+      "p95_latency_s": 9.358725000056438,
+      "mean_latency_s": 5.573780458315741,
+      "tokens_in_total": 24100,
+      "tokens_out_total": 3759,
+      "escalation_rate": 0.0,
+      "usd": 0.128685,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.021928804317204696,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 4.88296195899602,
+      "wall_s": 78.9436955419369,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 4.88296195899602,
+      "cold_start_usd": 0.0,
+      "steady_images_per_s": 1.3367407425033069,
+      "steady_usd_per_1k_images": 1.28685,
+      "steady_cost_per_correct": 0.0018650000000000001,
+      "chart_cost": 0.0018650000000000001,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.69,
+      "headline_n": 69,
+      "cost_per_correct": 0.001865,
+      "cost_per_image": 0.00128685,
+      "notes": [],
+      "headline_ci": [
+        0.6,
+        0.78
+      ],
+      "metric_key": "exact_stereo",
+      "label": "large_kimi \u00b7 test_drugs_384"
+    },
+    {
+      "system": "large_kimi",
+      "testset": "test_real_uspto_384",
+      "path": "results/large_kimi__test_real_uspto_384.json",
+      "n": 200,
+      "exact": 0.56,
+      "exact_ci": [
+        0.489875,
+        0.63
+      ],
+      "exact_n": 112,
+      "exact_nostereo": 0.69,
+      "exact_nostereo_ci": [
+        0.63,
+        0.75
+      ],
+      "exact_nostereo_n": 138,
+      "valid": 0.92,
+      "valid_ci": [
+        0.88,
+        0.955
+      ],
+      "mean_tanimoto": 0.8598147276492476,
+      "loop_rate": 0.0,
+      "median_latency_s": 4.73864237498492,
+      "p95_latency_s": 8.642337500001304,
+      "mean_latency_s": 4.724878674772917,
+      "tokens_in_total": 48200,
+      "tokens_out_total": 8887,
+      "escalation_rate": 0.0,
+      "usd": 0.277905,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.03518176100695402,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 7.313750708010048,
+      "wall_s": 126.65433962503448,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 7.313750708010048,
+      "cold_start_usd": 0.0,
+      "steady_images_per_s": 1.6674963799479945,
+      "steady_usd_per_1k_images": 1.389525,
+      "steady_cost_per_correct": 0.0024812946428571427,
+      "chart_cost": 0.0024812946428571427,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.56,
+      "headline_n": 112,
+      "cost_per_correct": 0.002481294642857143,
+      "cost_per_image": 0.001389525,
+      "notes": [],
+      "headline_ci": [
+        0.489875,
+        0.63
+      ],
+      "metric_key": "exact_stereo",
+      "label": "large_kimi \u00b7 test_real_uspto_384"
+    },
+    {
+      "system": "large_kimi",
+      "testset": "test_synthetic_384",
+      "path": "results/large_kimi__test_synthetic_384.json",
+      "n": 500,
+      "exact": 0.426,
+      "exact_ci": [
+        0.38,
+        0.47
+      ],
+      "exact_n": 213,
+      "exact_nostereo": 0.768,
+      "exact_nostereo_ci": [
+        0.73,
+        0.80605
+      ],
+      "exact_nostereo_n": 384,
+      "valid": 0.976,
+      "valid_ci": [
+        0.962,
+        0.988
+      ],
+      "mean_tanimoto": 0.9040902222550821,
+      "loop_rate": 0.0,
+      "median_latency_s": 3.2945528964628465,
+      "p95_latency_s": 7.158695166930556,
+      "mean_latency_s": 3.4024663307324516,
+      "tokens_in_total": 120500,
+      "tokens_out_total": 18350,
+      "escalation_rate": 0.0,
+      "usd": 0.63675,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.06076283024307082,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 3.611717832973227,
+      "wall_s": 218.74618887505494,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 3.611717832973227,
+      "cold_start_usd": 0.0,
+      "steady_images_per_s": 2.3194795217284927,
+      "steady_usd_per_1k_images": 1.2735,
+      "steady_cost_per_correct": 0.0029894366197183104,
+      "chart_cost": 0.0029894366197183104,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.426,
+      "headline_n": 213,
+      "cost_per_correct": 0.00298943661971831,
+      "cost_per_image": 0.0012735000000000001,
+      "notes": [],
+      "headline_ci": [
+        0.38,
+        0.47
+      ],
+      "metric_key": "exact_stereo",
+      "label": "large_kimi \u00b7 test_synthetic_384"
+    },
     {
       "system": "molscribe",
       "testset": "test_handdrawn_384",
@@ -192,61 +372,363 @@
       "label": "molscribe \u00b7 test_synthetic_384"
     },
     {
+      "system": "n2000_r384_lang_e3_ep1",
+      "testset": "val_384",
+      "path": "results/n2000_r384_lang_e3_ep1__val_384.json",
+      "n": 200,
+      "exact": 0.12,
+      "exact_ci": [
+        0.075,
+        0.17
+      ],
+      "exact_n": 24,
+      "exact_nostereo": 0.185,
+      "exact_nostereo_ci": [
+        0.13,
+        0.24
+      ],
+      "exact_nostereo_n": 37,
+      "valid": 0.68,
+      "valid_ci": [
+        0.61,
+        0.74
+      ],
+      "mean_tanimoto": 0.43094310144705544,
+      "loop_rate": 0.0,
+      "median_latency_s": 1.2657382914912887,
+      "p95_latency_s": 2.687109125079587,
+      "mean_latency_s": 1.4157776568777627,
+      "tokens_in_total": 35000,
+      "tokens_out_total": 6499,
+      "escalation_rate": 0.0,
+      "usd": 0.2121584844615912,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.108799222800816,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 356.03258879098576,
+      "wall_s": 391.6772020829376,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 356.03258879098576,
+      "cold_start_usd": 0.1928509855951173,
+      "steady_images_per_s": 5.582891259615154,
+      "steady_usd_per_1k_images": 0.0970226073692156,
+      "steady_cost_per_correct": 0.0008085217280767966,
+      "chart_cost": 0.0008085217280767966,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.12,
+      "headline_n": 24,
+      "cost_per_correct": 0.0088399368525663,
+      "cost_per_image": 0.001060792422307956,
+      "notes": [],
+      "headline_ci": [
+        0.075,
+        0.17
+      ],
+      "metric_key": "exact_stereo",
+      "label": "n2000_r384_lang_e3_ep1 \u00b7 val_384"
+    },
+    {
+      "system": "n2000_r384_lang_e3_ep2",
+      "testset": "val_384",
+      "path": "results/n2000_r384_lang_e3_ep2__val_384.json",
+      "n": 200,
+      "exact": 0.25,
+      "exact_ci": [
+        0.19,
+        0.31
+      ],
+      "exact_n": 50,
+      "exact_nostereo": 0.33,
+      "exact_nostereo_ci": [
+        0.265,
+        0.395
+      ],
+      "exact_nostereo_n": 66,
+      "valid": 0.815,
+      "valid_ci": [
+        0.76,
+        0.865
+      ],
+      "mean_tanimoto": 0.5964844296076399,
+      "loop_rate": 0.0,
+      "median_latency_s": 1.2788004374597222,
+      "p95_latency_s": 1.8404134169686586,
+      "mean_latency_s": 1.308609084826312,
+      "tokens_in_total": 35000,
+      "tokens_out_total": 6607,
+      "escalation_rate": 0.0,
+      "usd": 0.01880951730018326,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.009645906307786289,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 1.5841960000107065,
+      "wall_s": 34.72526270803064,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 1.5841960000107065,
+      "cold_start_usd": 0.0008581061666724661,
+      "steady_images_per_s": 6.0046347256482,
+      "steady_usd_per_1k_images": 0.09020809614829546,
+      "steady_cost_per_correct": 0.00036083238459318185,
+      "chart_cost": 0.00036083238459318185,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.25,
+      "headline_n": 50,
+      "cost_per_correct": 0.0003761903460036652,
+      "cost_per_image": 9.40475865009163e-05,
+      "notes": [],
+      "headline_ci": [
+        0.19,
+        0.31
+      ],
+      "metric_key": "exact_stereo",
+      "label": "n2000_r384_lang_e3_ep2 \u00b7 val_384"
+    },
+    {
+      "system": "n2000_r384_lang_e3_ep3",
+      "testset": "test_synthetic_384",
+      "path": "results/n2000_r384_lang_e3_ep3__test_synthetic_384.json",
+      "n": 500,
+      "exact": 0.254,
+      "exact_ci": [
+        0.21595,
+        0.292
+      ],
+      "exact_n": 127,
+      "exact_nostereo": 0.41,
+      "exact_nostereo_ci": [
+        0.37,
+        0.45404999999999995
+      ],
+      "exact_nostereo_n": 205,
+      "valid": 0.878,
+      "valid_ci": [
+        0.84795,
+        0.906
+      ],
+      "mean_tanimoto": 0.6879724119489388,
+      "loop_rate": 0.0,
+      "median_latency_s": 1.2305157500086352,
+      "p95_latency_s": 1.7802000000374392,
+      "mean_latency_s": 1.2636376442434267,
+      "tokens_in_total": 87500,
+      "tokens_out_total": 16175,
+      "escalation_rate": 0.0,
+      "usd": 0.043900035562507884,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.022512838750004045,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 1.3733724999474362,
+      "wall_s": 81.04621950001456,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 1.3733724999474362,
+      "cold_start_usd": 0.0007439101041381946,
+      "steady_images_per_s": 6.263112450338063,
+      "steady_usd_per_1k_images": 0.0864852213594583,
+      "steady_cost_per_correct": 0.00034049299747818226,
+      "chart_cost": 0.00034049299747818226,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.254,
+      "headline_n": 127,
+      "cost_per_correct": 0.0003456695713583298,
+      "cost_per_image": 8.780007112501577e-05,
+      "notes": [],
+      "headline_ci": [
+        0.21595,
+        0.292
+      ],
+      "metric_key": "exact_stereo",
+      "label": "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384"
+    },
+    {
+      "system": "n2000_r384_lang_e3_ep3",
+      "testset": "val_384",
+      "path": "results/n2000_r384_lang_e3_ep3__val_384.json",
+      "n": 200,
+      "exact": 0.27,
+      "exact_ci": [
+        0.215,
+        0.335
+      ],
+      "exact_n": 54,
+      "exact_nostereo": 0.37,
+      "exact_nostereo_ci": [
+        0.31,
+        0.44
+      ],
+      "exact_nostereo_n": 74,
+      "valid": 0.83,
+      "valid_ci": [
+        0.775,
+        0.88
+      ],
+      "mean_tanimoto": 0.6311933291547359,
+      "loop_rate": 0.0,
+      "median_latency_s": 1.267964270489756,
+      "p95_latency_s": 1.816846999921836,
+      "mean_latency_s": 1.29928051936673,
+      "tokens_in_total": 35000,
+      "tokens_out_total": 6623,
+      "escalation_rate": 0.0,
+      "usd": 0.018775552746747658,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.009628488588075723,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 1.56976708304137,
+      "wall_s": 34.6625589170726,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 1.56976708304137,
+      "cold_start_usd": 0.0008502905033140754,
+      "steady_images_per_s": 6.013394125162834,
+      "steady_usd_per_1k_images": 0.090076694690621,
+      "steady_cost_per_correct": 0.0003336173877430408,
+      "chart_cost": 0.0003336173877430408,
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.27,
+      "headline_n": 54,
+      "cost_per_correct": 0.00034769542123606775,
+      "cost_per_image": 9.387776373373829e-05,
+      "notes": [],
+      "headline_ci": [
+        0.215,
+        0.335
+      ],
+      "metric_key": "exact_stereo",
+      "label": "n2000_r384_lang_e3_ep3 \u00b7 val_384"
+    },
+    {
+      "system": "n2000_r384_lang_e3_ep3_w32",
+      "testset": "test_synthetic_384",
+      "path": "results/n2000_r384_lang_e3_ep3_w32__test_synthetic_384.json",
+      "n": 500,
+      "exact": 0.256,
+      "exact_ci": [
+        0.218,
+        0.2920499999999999
+      ],
+      "exact_n": 128,
+      "exact_nostereo": 0.41,
+      "exact_nostereo_ci": [
+        0.36795,
+        0.454
+      ],
+      "exact_nostereo_n": 205,
+      "valid": 0.876,
+      "valid_ci": [
+        0.848,
+        0.904
+      ],
+      "mean_tanimoto": 0.6838872080603724,
+      "loop_rate": 0.0,
+      "median_latency_s": null,
+      "p95_latency_s": null,
+      "mean_latency_s": null,
+      "tokens_in_total": 87500,
+      "tokens_out_total": 16239,
+      "escalation_rate": 0.0,
+      "usd": 0.01944417847396592,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.009971373576392781,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 1.4403728329343721,
+      "wall_s": 35.896944875014015,
+      "max_tokens": 108,
+      "workers": 32,
+      "cold_start_s": 1.4403728329343721,
+      "cold_start_usd": 0.0007802019511727849,
+      "steady_images_per_s": 14.481997785229556,
+      "steady_usd_per_1k_images": 0.0374027585627117,
+      "steady_cost_per_correct": 0.00014610452563559257,
+      "chart_cost": 0.00014610452563559257,
+      "chart_cost_source": "steady",
+      "throughput_run": true,
+      "headline_metric": "exact",
+      "headline_rate": 0.256,
+      "headline_n": 128,
+      "cost_per_correct": 0.00015190764432785876,
+      "cost_per_image": 3.888835694793184e-05,
+      "notes": [
+        "high-concurrency throughput run (_w32): best-case $/1k only; latency not reported, excluded from paired tests"
+      ],
+      "headline_ci": [
+        0.218,
+        0.2920499999999999
+      ],
+      "metric_key": "exact_stereo",
+      "label": "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384"
+    },
+    {
       "system": "n500_r384_lang_e3",
       "testset": "test_synthetic_384",
       "path": "results/n500_r384_lang_e3__test_synthetic_384.json",
       "n": 500,
-      "exact": 0.068,
+      "exact": 0.072,
       "exact_ci": [
-        0.046,
-        0.09
+        0.04995000000000001,
+        0.094
       ],
-      "exact_n": 34,
-      "exact_nostereo": 0.114,
+      "exact_n": 36,
+      "exact_nostereo": 0.12,
       "exact_nostereo_ci": [
-        0.088,
-        0.144
+        0.092,
+        0.15
       ],
-      "exact_nostereo_n": 57,
-      "valid": 0.72,
+      "exact_nostereo_n": 60,
+      "valid": 0.736,
       "valid_ci": [
-        0.68,
-        0.758
+        0.696,
+        0.774
       ],
-      "mean_tanimoto": 0.41594743254933425,
+      "mean_tanimoto": 0.42299620711805724,
       "loop_rate": 0.0,
-      "median_latency_s": 3.3745727914501913,
-      "p95_latency_s": 4.932605166919529,
-      "mean_latency_s": 3.5238770753135906,
+      "median_latency_s": 1.2609604584868066,
+      "p95_latency_s": 1.8809088340494782,
+      "mean_latency_s": 1.2964111588534433,
       "tokens_in_total": 87500,
-      "tokens_out_total": 16345,
+      "tokens_out_total": 16281,
       "escalation_rate": 0.0,
-      "usd": 0.259810382789743,
+      "usd": 0.04490944432807737,
       "cost_source": "summary.usd",
       "token_usd": null,
-      "gpu_hours": 0.13323609373832976,
+      "gpu_hours": 0.023030484270808907,
       "gpu_usd_per_hour": 1.95,
-      "first_answer_s": 259.11375733301975,
-      "wall_s": 479.6499374579871,
+      "first_answer_s": 1.3058771250071004,
+      "wall_s": 82.90974337491207,
       "max_tokens": 108,
       "workers": 8,
-      "cold_start_s": null,
-      "cold_start_usd": null,
-      "steady_images_per_s": null,
-      "steady_usd_per_1k_images": null,
-      "steady_cost_per_correct": null,
-      "chart_cost": 0.007641481846757147,
-      "chart_cost_source": "whole-run",
+      "cold_start_s": 1.3058771250071004,
+      "cold_start_usd": 0.000707350109378846,
+      "steady_images_per_s": 6.114906351028204,
+      "steady_usd_per_1k_images": 0.08858135113967638,
+      "steady_cost_per_correct": 0.0012302965436066166,
+      "chart_cost": 0.0012302965436066166,
+      "chart_cost_source": "steady",
       "throughput_run": false,
       "headline_metric": "exact",
-      "headline_rate": 0.068,
-      "headline_n": 34,
-      "cost_per_correct": 0.007641481846757147,
-      "cost_per_image": 0.000519620765579486,
+      "headline_rate": 0.072,
+      "headline_n": 36,
+      "cost_per_correct": 0.001247484564668816,
+      "cost_per_image": 8.981888865615474e-05,
       "notes": [],
       "headline_ci": [
-        0.046,
-        0.09
+        0.04995000000000001,
+        0.094
       ],
       "metric_key": "exact_stereo",
       "label": "n500_r384_lang_e3 \u00b7 test_synthetic_384"
@@ -646,41 +1128,41 @@
         0.0
       ],
       "exact_nostereo_n": 0,
-      "valid": 0.67,
+      "valid": 0.664,
       "valid_ci": [
-        0.63,
-        0.714
+        0.622,
+        0.71
       ],
-      "mean_tanimoto": 0.10856687596992542,
-      "loop_rate": 0.192,
-      "median_latency_s": 2.2008465000544675,
-      "p95_latency_s": 4.0002615000121295,
-      "mean_latency_s": 2.4599602120011115,
+      "mean_tanimoto": 0.10666871987476902,
+      "loop_rate": 0.214,
+      "median_latency_s": 1.8239419375313446,
+      "p95_latency_s": 3.3108039170037955,
+      "mean_latency_s": 2.0126870877651966,
       "tokens_in_total": 87500,
-      "tokens_out_total": 31414,
+      "tokens_out_total": 31925,
       "escalation_rate": 0.0,
-      "usd": 0.19243187502932657,
+      "usd": 0.06960230543229166,
       "cost_source": "summary.usd",
       "token_usd": null,
-      "gpu_hours": 0.09868301283555209,
+      "gpu_hours": 0.035693489965277776,
       "gpu_usd_per_hour": 1.95,
-      "first_answer_s": 200.9028797079809,
-      "wall_s": 355.2588462079875,
+      "first_answer_s": 1.5659897910663858,
+      "wall_s": 128.496563875,
       "max_tokens": 108,
       "workers": 8,
-      "cold_start_s": null,
-      "cold_start_usd": null,
-      "steady_images_per_s": null,
-      "steady_usd_per_1k_images": null,
-      "steady_cost_per_correct": null,
+      "cold_start_s": 1.5659897910663858,
+      "cold_start_usd": 0.0008482444701609589,
+      "steady_images_per_s": 3.931282936371447,
+      "steady_usd_per_1k_images": 0.13778368930286714,
+      "steady_cost_per_correct": "inf",
       "chart_cost": "inf",
-      "chart_cost_source": "whole-run",
+      "chart_cost_source": "steady",
       "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.0,
       "headline_n": 0,
       "cost_per_correct": "inf",
-      "cost_per_image": 0.00038486375005865314,
+      "cost_per_image": 0.00013920461086458334,
       "notes": [],
       "headline_ci": [
         0.0,
@@ -688,6 +1170,126 @@
       ],
       "metric_key": "exact_stereo",
       "label": "untuned \u00b7 test_synthetic_384"
+    },
+    {
+      "system": "untuned",
+      "testset": "test_synthetic_384_first50",
+      "path": "results/untuned__test_synthetic_384_first50.json",
+      "n": 50,
+      "exact": 0.0,
+      "exact_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_n": 0,
+      "exact_nostereo": 0.0,
+      "exact_nostereo_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_nostereo_n": 0,
+      "valid": 0.78,
+      "valid_ci": [
+        0.66,
+        0.9
+      ],
+      "mean_tanimoto": 0.15306641030707765,
+      "loop_rate": 0.18,
+      "median_latency_s": 1.9035743129788898,
+      "p95_latency_s": 3.675324250012636,
+      "mean_latency_s": 2.0597104974254035,
+      "tokens_in_total": 8750,
+      "tokens_out_total": 2909,
+      "escalation_rate": 0.0,
+      "usd": 0.008584053404299387,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.00440207866887148,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 1.6182189580285922,
+      "wall_s": 15.84748320793733,
+      "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": 1.6182189580285922,
+      "cold_start_usd": 0.0008765352689321541,
+      "steady_images_per_s": 3.4436074233644423,
+      "steady_usd_per_1k_images": 0.1572962884768823,
+      "steady_cost_per_correct": "inf",
+      "chart_cost": "inf",
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.0,
+      "headline_n": 0,
+      "cost_per_correct": "inf",
+      "cost_per_image": 0.00017168106808598775,
+      "notes": [],
+      "headline_ci": [
+        0.0,
+        0.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "untuned \u00b7 test_synthetic_384_first50"
+    },
+    {
+      "system": "untuned_thinking",
+      "testset": "test_synthetic_384_first50",
+      "path": "results/untuned_thinking__test_synthetic_384_first50.json",
+      "n": 50,
+      "exact": 0.0,
+      "exact_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_n": 0,
+      "exact_nostereo": 0.0,
+      "exact_nostereo_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_nostereo_n": 0,
+      "valid": 0.0,
+      "valid_ci": [
+        0.0,
+        0.0
+      ],
+      "mean_tanimoto": 0.0,
+      "loop_rate": 1.0,
+      "median_latency_s": 26.327040166943334,
+      "p95_latency_s": 26.90727708407212,
+      "mean_latency_s": 26.288102081739343,
+      "tokens_in_total": 8650,
+      "tokens_out_total": 51200,
+      "escalation_rate": 0.0,
+      "usd": 0.11121213325195518,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.057031863206130864,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 23.605929041979834,
+      "wall_s": 205.31470754207112,
+      "max_tokens": 1024,
+      "workers": 8,
+      "cold_start_s": 23.605929041979834,
+      "cold_start_usd": 0.012786544897739076,
+      "steady_images_per_s": 0.26966226070346616,
+      "steady_usd_per_1k_images": 2.008685476616655,
+      "steady_cost_per_correct": "inf",
+      "chart_cost": "inf",
+      "chart_cost_source": "steady",
+      "throughput_run": false,
+      "headline_metric": "exact",
+      "headline_rate": 0.0,
+      "headline_n": 0,
+      "cost_per_correct": "inf",
+      "cost_per_image": 0.0022242426650391036,
+      "notes": [],
+      "headline_ci": [
+        0.0,
+        0.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "untuned_thinking \u00b7 test_synthetic_384_first50"
     }
   ],
   "paired": {
@@ -700,10 +1302,59 @@
       [
         "molscribe",
         "n500_r384_lang_e3"
+      ],
+      [
+        "large_kimi",
+        "n500_r384_lang_e3"
+      ],
+      [
+        "molscribe",
+        "large_kimi"
       ]
     ],
-    "excluded": [],
+    "excluded": [
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384"
+    ],
     "comparisons": [
+      {
+        "testset": "test_real_uspto_384",
+        "a": "molscribe",
+        "b": "large_kimi",
+        "metrics": {
+          "exact": {
+            "n_shared": 200,
+            "both_right": 104,
+            "only_a": 74,
+            "only_b": 8,
+            "both_wrong": 14,
+            "acc_a": 0.89,
+            "acc_b": 0.56,
+            "diff": 0.32999999999999996,
+            "discordant": 82,
+            "mcnemar_p": 1.647020623262653e-14,
+            "diff_ci": [
+              0.255,
+              0.41000000000000003
+            ]
+          },
+          "exact_nostereo": {
+            "n_shared": 200,
+            "both_right": 129,
+            "only_a": 55,
+            "only_b": 9,
+            "both_wrong": 7,
+            "acc_a": 0.92,
+            "acc_b": 0.69,
+            "diff": 0.2300000000000001,
+            "discordant": 64,
+            "mcnemar_p": 3.542223380175076e-09,
+            "diff_ci": [
+              0.16500000000000004,
+              0.30000000000000004
+            ]
+          }
+        }
+      },
       {
         "testset": "test_synthetic_384",
         "a": "n500_r384_lang_e3",
@@ -712,33 +1363,33 @@
           "exact": {
             "n_shared": 500,
             "both_right": 0,
-            "only_a": 34,
+            "only_a": 36,
             "only_b": 0,
-            "both_wrong": 466,
-            "acc_a": 0.068,
+            "both_wrong": 464,
+            "acc_a": 0.072,
             "acc_b": 0.0,
-            "diff": 0.068,
-            "discordant": 34,
-            "mcnemar_p": 1.1641532182693481e-10,
+            "diff": 0.072,
+            "discordant": 36,
+            "mcnemar_p": 2.9103830456733704e-11,
             "diff_ci": [
-              0.046,
-              0.09
+              0.04995000000000001,
+              0.094
             ]
           },
           "exact_nostereo": {
             "n_shared": 500,
             "both_right": 0,
-            "only_a": 57,
+            "only_a": 60,
             "only_b": 0,
-            "both_wrong": 443,
-            "acc_a": 0.114,
+            "both_wrong": 440,
+            "acc_a": 0.12,
             "acc_b": 0.0,
-            "diff": 0.114,
-            "discordant": 57,
-            "mcnemar_p": 1.3877787807814457e-17,
+            "diff": 0.12,
+            "discordant": 60,
+            "mcnemar_p": 1.734723475976807e-18,
             "diff_ci": [
-              0.088,
-              0.144
+              0.092,
+              0.15
             ]
           }
         }
@@ -750,34 +1401,112 @@
         "metrics": {
           "exact": {
             "n_shared": 500,
-            "both_right": 34,
-            "only_a": 433,
+            "both_right": 36,
+            "only_a": 431,
             "only_b": 0,
             "both_wrong": 33,
             "acc_a": 0.934,
-            "acc_b": 0.068,
-            "diff": 0.8660000000000001,
-            "discordant": 433,
-            "mcnemar_p": 9.016580681431383e-131,
+            "acc_b": 0.072,
+            "diff": 0.8620000000000001,
+            "discordant": 431,
+            "mcnemar_p": 3.606632272572553e-130,
             "diff_ci": [
-              0.838,
-              0.8939999999999999
+              0.8339500000000001,
+              0.8919999999999999
             ]
           },
           "exact_nostereo": {
             "n_shared": 500,
-            "both_right": 57,
-            "only_a": 420,
+            "both_right": 60,
+            "only_a": 417,
             "only_b": 0,
             "both_wrong": 23,
             "acc_a": 0.954,
-            "acc_b": 0.114,
-            "diff": 0.84,
-            "discordant": 420,
-            "mcnemar_p": 7.386382894228589e-127,
+            "acc_b": 0.12,
+            "diff": 0.834,
+            "discordant": 417,
+            "mcnemar_p": 5.909106315382871e-126,
             "diff_ci": [
-              0.8099999999999999,
-              0.87
+              0.7999999999999999,
+              0.866
+            ]
+          }
+        }
+      },
+      {
+        "testset": "test_synthetic_384",
+        "a": "large_kimi",
+        "b": "n500_r384_lang_e3",
+        "metrics": {
+          "exact": {
+            "n_shared": 500,
+            "both_right": 30,
+            "only_a": 183,
+            "only_b": 6,
+            "both_wrong": 281,
+            "acc_a": 0.426,
+            "acc_b": 0.072,
+            "diff": 0.354,
+            "discordant": 189,
+            "mcnemar_p": 1.5392403926945124e-46,
+            "diff_ci": [
+              0.30795,
+              0.39999999999999997
+            ]
+          },
+          "exact_nostereo": {
+            "n_shared": 500,
+            "both_right": 55,
+            "only_a": 329,
+            "only_b": 5,
+            "both_wrong": 111,
+            "acc_a": 0.768,
+            "acc_b": 0.12,
+            "diff": 0.648,
+            "discordant": 334,
+            "mcnemar_p": 1.9503422098754595e-90,
+            "diff_ci": [
+              0.606,
+              0.6920000000000001
+            ]
+          }
+        }
+      },
+      {
+        "testset": "test_synthetic_384",
+        "a": "molscribe",
+        "b": "large_kimi",
+        "metrics": {
+          "exact": {
+            "n_shared": 500,
+            "both_right": 207,
+            "only_a": 260,
+            "only_b": 6,
+            "both_wrong": 27,
+            "acc_a": 0.934,
+            "acc_b": 0.426,
+            "diff": 0.508,
+            "discordant": 266,
+            "mcnemar_p": 8.024305667392807e-69,
+            "diff_ci": [
+              0.4600000000000001,
+              0.5540499999999999
+            ]
+          },
+          "exact_nostereo": {
+            "n_shared": 500,
+            "both_right": 371,
+            "only_a": 106,
+            "only_b": 13,
+            "both_wrong": 10,
+            "acc_a": 0.954,
+            "acc_b": 0.768,
+            "diff": 0.18599999999999994,
+            "discordant": 119,
+            "mcnemar_p": 2.6709648488912807e-19,
+            "diff_ci": [
+              0.1459999999999999,
+              0.22399999999999998
             ]
           }
         }
@@ -787,6 +1516,18 @@
   "by_tag_min_n": 100,
   "by_tag": {
     "heavy_atoms<=20": {
+      "large_kimi \u00b7 test_drugs_384": [
+        22,
+        33
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        21,
+        31
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        43,
+        110
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         21,
         183
@@ -799,16 +1540,56 @@
         104,
         110
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        1,
+        36
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        6,
+        36
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        29,
+        110
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        5,
+        36
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        31,
+        110
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        13,
+        14,
         110
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         110
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        13
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        13
       ]
     },
     "heavy_atoms 21-30": {
+      "large_kimi \u00b7 test_drugs_384": [
+        39,
+        52
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        41,
+        67
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        161,
+        366
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         2,
         17
@@ -821,16 +1602,56 @@
         342,
         366
       ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
         21,
+        144
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        39,
+        144
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        97,
+        366
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        42,
+        144
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        96,
+        366
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        22,
         366
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         366
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        35
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        35
       ]
     },
     "heavy_atoms 31-40": {
+      "large_kimi \u00b7 test_drugs_384": [
+        7,
+        14
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        45,
+        80
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        9,
+        24
+      ],
       "molscribe \u00b7 test_handdrawn_384": null,
       "molscribe \u00b7 test_real_uspto_384": [
         74,
@@ -840,6 +1661,26 @@
         21,
         24
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        2,
+        20
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        5,
+        20
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        1,
+        24
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        7,
+        20
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        1,
+        24
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         0,
         24
@@ -847,19 +1688,55 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         24
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        2
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        2
       ]
     },
     "heavy_atoms>40": {
+      "large_kimi \u00b7 test_drugs_384": [
+        1,
+        1
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        5,
+        22
+      ],
+      "large_kimi \u00b7 test_synthetic_384": null,
       "molscribe \u00b7 test_handdrawn_384": null,
       "molscribe \u00b7 test_real_uspto_384": [
         16,
         22
       ],
       "molscribe \u00b7 test_synthetic_384": null,
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": null,
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": null,
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
-      "untuned \u00b7 test_synthetic_384": null
+      "untuned \u00b7 test_synthetic_384": null,
+      "untuned \u00b7 test_synthetic_384_first50": null,
+      "untuned_thinking \u00b7 test_synthetic_384_first50": null
     },
     "stereo: no": {
+      "large_kimi \u00b7 test_drugs_384": [
+        51,
+        62
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        100,
+        139
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        151,
+        189
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         16,
         143
@@ -872,16 +1749,56 @@
         184,
         189
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        20,
+        82
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        34,
+        82
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        91,
+        189
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        40,
+        82
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        89,
+        189
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        30,
+        31,
         189
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         189
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        25
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        25
       ]
     },
     "stereo: yes": {
+      "large_kimi \u00b7 test_drugs_384": [
+        18,
+        38
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        12,
+        61
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        62,
+        311
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         7,
         57
@@ -894,16 +1811,56 @@
         283,
         311
       ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
         4,
+        118
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        16,
+        118
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        36,
+        311
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        14,
+        118
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        39,
+        311
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        5,
         311
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         311
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        25
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        25
       ]
     },
     "stereocenters=0": {
+      "large_kimi \u00b7 test_drugs_384": [
+        52,
+        64
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        103,
+        156
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        153,
+        202
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         17,
         157
@@ -916,6 +1873,26 @@
         197,
         202
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        21,
+        95
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        35,
+        95
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        92,
+        202
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        41,
+        95
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        90,
+        202
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         31,
         202
@@ -923,9 +1900,29 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         202
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        26
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        26
       ]
     },
     "stereocenters 1-2": {
+      "large_kimi \u00b7 test_drugs_384": [
+        8,
+        18
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        7,
+        21
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        59,
+        262
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         5,
         31
@@ -938,16 +1935,56 @@
         244,
         262
       ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
         3,
+        90
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        14,
+        90
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        35,
+        262
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        13,
+        90
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        38,
+        262
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        5,
         262
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         262
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        21
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        21
       ]
     },
     "stereocenters>=3": {
+      "large_kimi \u00b7 test_drugs_384": [
+        9,
+        18
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        2,
+        23
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        1,
+        36
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         1,
         12
@@ -960,6 +1997,26 @@
         26,
         36
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        0,
+        15
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        1,
+        15
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        0,
+        36
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        0,
+        15
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        0,
+        36
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         0,
         36
@@ -967,9 +2024,29 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         36
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        3
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        3
       ]
     },
     "no E/Z bonds": {
+      "large_kimi \u00b7 test_drugs_384": [
+        67,
+        97
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        108,
+        178
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        209,
+        478
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         22,
         183
@@ -982,16 +2059,56 @@
         447,
         478
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        23,
+        185
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        49,
+        185
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        126,
+        478
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        53,
+        185
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        127,
+        478
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        33,
+        36,
         478
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         478
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        49
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        49
       ]
     },
     "E/Z bonds": {
+      "large_kimi \u00b7 test_drugs_384": [
+        2,
+        3
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        4,
+        22
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        4,
+        22
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         1,
         17
@@ -1004,16 +2121,53 @@
         20,
         22
       ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
         1,
+        15
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        1,
+        15
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        1,
+        22
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        1,
+        15
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        1,
+        22
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
         22
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         22
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        1
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        1
       ]
     },
     "rings=0": {
+      "large_kimi \u00b7 test_drugs_384": [
+        0,
+        2
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        1,
+        5
+      ],
+      "large_kimi \u00b7 test_synthetic_384": null,
       "molscribe \u00b7 test_handdrawn_384": [
         6,
         88
@@ -1023,10 +2177,29 @@
         5
       ],
       "molscribe \u00b7 test_synthetic_384": null,
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": null,
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": null,
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
-      "untuned \u00b7 test_synthetic_384": null
+      "untuned \u00b7 test_synthetic_384": null,
+      "untuned \u00b7 test_synthetic_384_first50": null,
+      "untuned_thinking \u00b7 test_synthetic_384_first50": null
     },
     "rings=1": {
+      "large_kimi \u00b7 test_drugs_384": [
+        10,
+        13
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        16,
+        22
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        2,
+        6
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         10,
         61
@@ -1039,6 +2212,17 @@
         6,
         6
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        1,
+        6
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": null,
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        1,
+        6
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         0,
         6
@@ -1046,9 +2230,29 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         6
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        2
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        2
       ]
     },
     "rings=2": {
+      "large_kimi \u00b7 test_drugs_384": [
+        17,
+        22
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        14,
+        23
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        65,
+        152
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         4,
         33
@@ -1061,6 +2265,26 @@
         142,
         152
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        10,
+        59
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        22,
+        59
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        51,
+        152
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        22,
+        59
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        54,
+        152
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         17,
         152
@@ -1068,9 +2292,29 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         152
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        18
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        18
       ]
     },
     "rings=3": {
+      "large_kimi \u00b7 test_drugs_384": [
+        24,
+        31
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        35,
+        54
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        102,
+        216
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         2,
         10
@@ -1083,16 +2327,56 @@
         204,
         216
       ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        7,
+        69
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
         12,
+        69
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        59,
+        216
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        15,
+        69
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        58,
+        216
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        16,
         216
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         216
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        19
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        19
       ]
     },
     "rings>=4": {
+      "large_kimi \u00b7 test_drugs_384": [
+        18,
+        32
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        46,
+        96
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        44,
+        126
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         1,
         8
@@ -1105,16 +2389,56 @@
         115,
         126
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        7,
+        72
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        16,
+        72
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        16,
+        126
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        17,
+        72
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        15,
+        126
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        5,
+        3,
         126
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         126
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        11
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        11
       ]
     },
     "charged": {
+      "large_kimi \u00b7 test_drugs_384": [
+        2,
+        2
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        4,
+        6
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        25,
+        61
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         4,
         26
@@ -1127,16 +2451,56 @@
         50,
         61
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        2,
+        18
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        4,
+        18
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        10,
+        61
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        4,
+        18
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        11,
+        61
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        1,
+        2,
         61
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         61
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        6
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        6
       ]
     },
     "neutral": {
+      "large_kimi \u00b7 test_drugs_384": [
+        67,
+        98
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        108,
+        194
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        188,
+        439
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         19,
         174
@@ -1149,16 +2513,56 @@
         417,
         439
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        22,
+        182
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        46,
+        182
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        117,
+        439
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        50,
+        182
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        117,
+        439
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        33,
+        34,
         439
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         439
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        44
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        44
       ]
     },
     "single fragment": {
+      "large_kimi \u00b7 test_drugs_384": [
+        69,
+        100
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        112,
+        197
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        202,
+        473
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         23,
         200
@@ -1171,16 +2575,53 @@
         447,
         473
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        24,
+        195
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        50,
+        195
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        124,
+        473
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        53,
+        195
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        125,
+        473
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        34,
+        36,
         473
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         473
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        47
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        47
       ]
     },
     "multi-fragment": {
+      "large_kimi \u00b7 test_drugs_384": null,
+      "large_kimi \u00b7 test_real_uspto_384": [
+        0,
+        3
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        11,
+        27
+      ],
       "molscribe \u00b7 test_handdrawn_384": null,
       "molscribe \u00b7 test_real_uspto_384": [
         1,
@@ -1190,6 +2631,26 @@
         20,
         27
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        0,
+        5
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        0,
+        5
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        3,
+        27
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        1,
+        5
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        3,
+        27
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         0,
         27
@@ -1197,9 +2658,29 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         27
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        3
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        3
       ]
     },
     "elements: CNO only": {
+      "large_kimi \u00b7 test_drugs_384": [
+        35,
+        52
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        51,
+        89
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        71,
+        200
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         6,
         47
@@ -1212,16 +2693,56 @@
         186,
         200
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        7,
+        86
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        22,
+        86
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        40,
+        200
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        23,
+        86
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        39,
+        200
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        12,
+        13,
         200
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         200
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        21
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        21
       ]
     },
     "elements: beyond CNO": {
+      "large_kimi \u00b7 test_drugs_384": [
+        34,
+        48
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        61,
+        111
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        142,
+        300
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         17,
         153
@@ -1234,16 +2755,56 @@
         281,
         300
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        17,
+        114
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        28,
+        114
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        87,
+        300
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        31,
+        114
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        89,
+        300
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        22,
+        23,
         300
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         300
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        29
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        29
       ]
     },
     "not bridged": {
+      "large_kimi \u00b7 test_drugs_384": [
+        67,
+        94
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        112,
+        197
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        213,
+        481
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         22,
         191
@@ -1256,16 +2817,56 @@
         457,
         481
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        24,
+        195
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        49,
+        195
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        127,
+        481
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        54,
+        195
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        128,
+        481
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        34,
+        36,
         481
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         481
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        46
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        46
       ]
     },
     "bridged": {
+      "large_kimi \u00b7 test_drugs_384": [
+        2,
+        6
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        0,
+        3
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        0,
+        19
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         1,
         9
@@ -1278,6 +2879,26 @@
         10,
         19
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        0,
+        5
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        1,
+        5
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        0,
+        19
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        0,
+        5
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        0,
+        19
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
         0,
         19
@@ -1285,9 +2906,29 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         19
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        4
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        4
       ]
     },
     "not fused": {
+      "large_kimi \u00b7 test_drugs_384": [
+        32,
+        47
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        81,
+        120
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        140,
+        298
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         20,
         177
@@ -1300,16 +2941,56 @@
         285,
         298
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        19,
+        124
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        38,
+        124
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        90,
+        298
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        42,
+        124
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        92,
+        298
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        27,
+        28,
         298
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         298
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        32
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        32
       ]
     },
     "fused": {
+      "large_kimi \u00b7 test_drugs_384": [
+        37,
+        53
+      ],
+      "large_kimi \u00b7 test_real_uspto_384": [
+        31,
+        80
+      ],
+      "large_kimi \u00b7 test_synthetic_384": [
+        73,
+        202
+      ],
       "molscribe \u00b7 test_handdrawn_384": [
         3,
         23
@@ -1322,13 +3003,41 @@
         182,
         202
       ],
+      "n2000_r384_lang_e3_ep1 \u00b7 val_384": [
+        5,
+        76
+      ],
+      "n2000_r384_lang_e3_ep2 \u00b7 val_384": [
+        12,
+        76
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 test_synthetic_384": [
+        37,
+        202
+      ],
+      "n2000_r384_lang_e3_ep3 \u00b7 val_384": [
+        12,
+        76
+      ],
+      "n2000_r384_lang_e3_ep3_w32 \u00b7 test_synthetic_384": [
+        36,
+        202
+      ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        7,
+        8,
         202
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
         202
+      ],
+      "untuned \u00b7 test_synthetic_384_first50": [
+        0,
+        18
+      ],
+      "untuned_thinking \u00b7 test_synthetic_384_first50": [
+        0,
+        18
       ]
     }
   },

@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-02 01:50 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-02 02:20 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -220,6 +220,30 @@ of scans that are often 800 px wide or more; the 640 px manifests exist for that
 hand-drawn set (`results/molscribe__test_handdrawn_384.json`, 200 DECIMER photos) is much harder even for
 the specialist: 11.5% stereo-aware, 14.5% stereo-agnostic, 76.0% valid, mean Tanimoto 0.33.
 Report hand-drawn as a stretch set only.
+
+## Kimi K3 (open frontier model, Fireworks serverless) on the frozen test sets
+
+Sources: `results/large_kimi__test_synthetic_384.json`, `__test_drugs_384.json`, `__test_real_uspto_384.json`.
+Same prompt, temperature 0, 108-token cap, thinking off, 8 concurrent requests. Spend: $1.04 for 800 images.
+
+| Test set | n | Exact (stereo-aware) | Exact (no stereo) | Valid | Median latency | Spend | Cost per correct |
+|---|---|---|---|---|---|---|---|
+| Synthetic | 500 | 42.6% | 76.8% | 97.6% | 3.3 s | $0.64 | $0.0030 |
+| PubChem drugs | 100 | 69.0% | 80.0% | 99.0% | 5.5 s | $0.13 | $0.0019 |
+| USPTO patent scans | 200 | 56.0% | 69.0% | 92.0% | 4.7 s | $0.28 | $0.0025 |
+
+What this tells us:
+
+- **Stereo is the frontier model's biggest weakness.** On synthetic renders Kimi reads the skeleton right
+  76.8% of the time but the wedge and double-bond geometry only 42.6%: a
+  34-point stereo tax, far larger than the tuned 9B's. The stereo-aware headline is where a tuned
+  model has the most room to win, and the stereo-agnostic number must always be shown beside it.
+- **The bar for the tuned 9B on cost per correct answer is $0.0030** (synthetic, stereo-aware). At about
+  $0.24 per 1k images steady state on an L40S, the 9B beats that from roughly 8% exact match upward.
+- **Real-world drop is moderate for Kimi:** 56.0% on patent scans vs 42.6% synthetic. MolScribe is at 89%
+  on the same scans, so the specialist still leads on real images by a wide margin.
+- **The router's escalation target is now measured.** Images the tuned model is unsure about go to a model
+  that is right 42.6% of the time stereo-aware on this distribution, at $0.0013 per image.
 
 ## Changes after the smoke runs that affect comparability
 

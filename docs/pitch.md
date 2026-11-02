@@ -20,7 +20,7 @@ Rule for the stage: say nothing that is not in a results file or on this page. I
 | `{{CLOSED_MODEL}}` | results/DECISION_RULES.md dated note after the 50-image val pilot (runbook rule 2) |
 | `{{CLOSED_SYN_EXACT}}` / `{{CLOSED_DRUGS_EXACT}}` / `{{CLOSED_USPTO_EXACT}}` | results/closed_opus__test_{synthetic,drugs,real_uspto}_384.json summary.exact_match (rename if the pilot picks another model) |
 | `{{CLOSED_COST_PER_IMAGE}}` / `{{CLOSED_COST_PER_CORRECT}}` / `{{CLOSED_REASONING_USD}}` | comparison.md Cost / image and Cost / correct; sum of items[].predict.reasoning_usd |
-| `{{KIMI_SYN_EXACT}}` / `{{KIMI_USPTO_EXACT}}` / `{{KIMI_COST_PER_CORRECT}}` | results/large_kimi__test_synthetic_384.json, results/large_kimi__test_real_uspto_384.json; comparison.md |
+| `42.6% (76.8% agnostic)` / `56.0% (69.0% agnostic)` / `$0.0030` | results/large_kimi__test_synthetic_384.json, results/large_kimi__test_real_uspto_384.json; comparison.md |
 | `{{UNTUNED_USPTO_SAID}}` / `{{UNTUNED_USPTO_EXACT}}` | results/untuned__test_real_uspto_384.json items[image_path = demo image].match.pred_raw; summary.exact_match |
 | `{{TUNED_STEADY_1K_W8}}` / `{{TUNED_STEADY_1K_W32}}` | results/{{BEST}}__test_synthetic_384.json and results/{{BEST}}_w32__test_synthetic_384.json summary.steady_usd_per_1k_images |
 | `{{TUNED_COLD_START_S}}` | results/{{BEST}}__test_synthetic_384.json summary.cold_start_s |
@@ -73,7 +73,7 @@ On it: `results/chart_exact_vs_cost.png` (x = cost per correct, log scale; y = s
 seven points: untuned 0.0% (cost undefined, plotted as a marker at the top of the x axis), tuned-500 6.8% at $0.0076, tuned-{{BEST}}
 `{{TUNED_10K_EXACT}}` at `{{TUNED_STEADY_COST_PER_CORRECT}}`, tuned+harness `{{HARNESS_EXACT}}` at `{{HARNESS_COST_PER_CORRECT}}`,
 router `{{ROUTED_EXACT}}` at `{{ROUTED_COST_PER_CORRECT}}`, `{{CLOSED_MODEL}}` `{{CLOSED_SYN_EXACT}}` at `{{CLOSED_COST_PER_CORRECT}}`,
-Kimi K3 `{{KIMI_SYN_EXACT}}` at `{{KIMI_COST_PER_CORRECT}}`, and MolScribe 93.4% as a dashed "specialist ceiling" line. Spoken: "Untuned
+Kimi K3 `42.6% (76.8% agnostic)` at `$0.0030`, and MolScribe 93.4% as a dashed "specialist ceiling" line. Spoken: "Untuned
 is zero, so its cost per correct answer is infinite; 500 training images already moved it to 6.8 percent, paired p under 0.001." "The
 tuned model with the chemistry check and router scores `{{ROUTED_EXACT}}`; the closed frontier model scores `{{CLOSED_SYN_EXACT}}`; the
 paired difference is `{{ROUTED_VS_CLOSED_DIFF}}` points, p = `{{ROUTED_VS_CLOSED_P}}`." "Per correct answer that is
