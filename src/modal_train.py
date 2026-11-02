@@ -95,13 +95,14 @@ def volume_path(image_path: str) -> str:
     return f"{DATA_MOUNT}/{image_path.removeprefix('data/')}"
 
 
-def encode_example(processor, image, smiles: str) -> dict:
+def encode_example(processor, image, smiles: str, prompt_text: str | None = None) -> dict:
     """One example -> tensors with a leading batch dim of 1. Same rendering vLLM uses at inference:
     user turn (text then image, as in src/predict.py), generation prompt, thinking disabled; the target is
     the SMILES plus end-of-turn, and only the target is trained on (prompt labels = -100)."""
     import torch
 
-    content = [{"type": "text", "text": PROMPT}, {"type": "image"}]
+    # Per-row prompt (e.g. the stereo fixer's prompt with a skeleton SMILES) must match its predictor exactly.
+    content = [{"type": "text", "text": prompt_text or PROMPT}, {"type": "image"}]
     prompt = processor.apply_chat_template(
         [{"role": "user", "content": content}], add_generation_prompt=True, tokenize=False, enable_thinking=False
     )
@@ -163,10 +164,10 @@ class ManifestDataset:
     def __getitem__(self, i: int) -> dict:
         from PIL import Image
 
-        path, smiles = self.rows[i]
+        path, smiles, prompt_text = (self.rows[i] + [None])[:3]
         with Image.open(volume_path(path)) as im:
             image = im.convert("RGB")
-        return encode_example(self.processor, image, smiles)
+        return encode_example(self.processor, image, smiles, prompt_text)
 
 
 def lora_module_report(model, scope: str, rank: int) -> dict:
@@ -250,7 +251,7 @@ def train(train_rows: list[list[str]], val_rows: list[list[str]], cfg: dict) -> 
 
     # Fail fast on missing images, before paying for the weight load.
     by_dir: dict[str, set[str]] = {}
-    for path, _ in train_rows + val_rows:
+    for path, *_ in train_rows + val_rows:
         d, f = os.path.split(volume_path(path))
         by_dir.setdefault(d, set()).add(f)
     missing = [f"{d}/{f}" for d, fs in by_dir.items() for f in fs - set(os.listdir(d) if os.path.isdir(d) else [])]
@@ -498,7 +499,8 @@ def _load_manifest(path: str, n: int, strict: bool = True) -> list[list[str]]:
         rows = rows[:n]  # first N, so smaller subsets are nested in larger ones
     for r in rows:
         volume_path(r["image_path"])  # validates the data/ prefix
-    return [[r["image_path"], r["smiles"]] for r in rows]
+    # Optional per-row "prompt" (stereo-fixer manifests); rows without it use the fixed PROMPT.
+    return [[r["image_path"], r["smiles"]] + ([r["prompt"]] if r.get("prompt") else []) for r in rows]
 
 
 def _infer_res(train_path: str, rows: list[list[str]]) -> str:
