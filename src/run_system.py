@@ -81,8 +81,11 @@ def main() -> None:
     n = len(rows)
     lat = sorted(r["predict"]["latency_s"] for r in rows)
     gpu_hours = wall_s / 3600
+    # API token cost from the price flags, plus any per-item "usd" a predictor reports itself (e.g. the router's
+    # escalations to a paid API). Optional key; predictors that don't set it are unaffected.
     tok_usd = lambda rs: (sum(r["predict"]["tokens_in"] for r in rs) * args.usd_per_mtok_in  # noqa: E731
-                          + sum(r["predict"]["tokens_out"] for r in rs) * args.usd_per_mtok_out) / 1e6
+                          + sum(r["predict"]["tokens_out"] for r in rs) * args.usd_per_mtok_out) / 1e6 \
+        + sum(r["predict"].get("usd", 0.0) or 0.0 for r in rs)
     # Steady state = everything after the first answer, so cold start is reported once, separately.
     steady_s = wall_s - first_answer_s
     images_per_s = (n - 1) / steady_s if n > 1 and steady_s > 0 else None
