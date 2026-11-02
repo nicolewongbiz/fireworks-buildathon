@@ -115,6 +115,13 @@ Confirmed serverless + image input, with price (model pages, 1 Nov 2026):
 
 ## 7. Image token counting
 
+> **Measured for Qwen3.5-9B (vLLM, 1 Nov 2026):** a 384x384 PNG plus the fixed prompt cost 175 input
+> tokens in both smoke runs (`results/smoke_*.json`, `tokens_in`). The prompt and chat template account
+> for about 31 of those, so the image is **144 tokens at 384 px = (384/32)^2**, i.e. the Qwen3-VL family
+> encoder's 16 px patches with 2x2 spatial merge. Expect **400 image tokens at 640 px** and ~256 at 512 px.
+> Training cost scales the same way: a 10k-image epoch at 384 px is ~1.75M tokens (~$0.90 LoRA SFT on
+> Fireworks at $0.50/M), at 640 px ~4.3M tokens (~$2.15).
+
 Only Qwen2.5-VL is documented (https://docs.fireworks.ai/faq-new/billing-pricing/how-many-tokens-per-image.md): 336x336 -> 144 tokens, 672x672 -> 576, 1024x1024 -> 1,369, 1280x720 -> 1,196, 1920x1080 -> 2,769. Interpolating: ~448x448 -> ~256, ~512x512 -> ~330 (my estimate, not from the page). Method: count image token ID 151655 after running the HF AutoProcessor; a `token_calculator.py` script is on the page. Qwen3-VL / Qwen3.5 counts: **unconfirmed** (not documented; run the HF processor for `Qwen/Qwen3.5-9B` locally). Inference FAQ elsewhere says images typically cost 1,000-2,500 tokens, resolution-dependent.
 
 ## 8. Quotas, credits, and the dataset-upload FailedPrecondition
