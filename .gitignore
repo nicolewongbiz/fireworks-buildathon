@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/images/
+data/*.jsonl
+data/*.json
+!data/README.md
+results/
+*.png
+!docs/*.png
+.DS_Store
