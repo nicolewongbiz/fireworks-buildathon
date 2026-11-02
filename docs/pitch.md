@@ -9,8 +9,8 @@ Rule for the stage: say nothing that is not in a results file or on this page. I
 | Placeholder | Source |
 |---|---|
 | `{{BEST}}` | results/selection.json: the checkpoint chosen on validation for the largest finished train size (e.g. `n10000_r384_lang_e3_ep2`) |
+| `{{TUNED_2K_EXACT}}`, `{{TUNED_5K_EXACT}}` | results/<n2000 or n5000 selected ckpt>__test_synthetic_384.json summary.exact_match (see results/selection.json) |
 | `{{TUNED_10K_EXACT}}` / `{{TUNED_10K_NOSTEREO}}` | results/n10000_r384_lang_e3*__test_synthetic_384.json summary.exact_match / exact_match_nostereo (use the selected `_epK`) |
-| `{{TUNED_20K_EXACT}}` / `{{TUNED_20K_NOSTEREO}}` | results/n20000_r384_lang_e3*__test_synthetic_384.json (needs a 20k train manifest; data/dataset_report.json has 10,000 today) |
 | `{{BEST_DRUGS_EXACT}}` | results/{{BEST}}__test_drugs_384.json summary.exact_match |
 | `{{BEST_USPTO_EXACT}}` / `{{BEST_USPTO_NOSTEREO}}` | results/{{BEST}}__test_real_uspto_384.json summary.exact_match / exact_match_nostereo |
 | `{{BEST_HANDDRAWN_EXACT}}` | results/{{BEST}}__test_handdrawn_384.json summary.exact_match |
@@ -80,9 +80,10 @@ paired difference is `{{ROUTED_VS_CLOSED_DIFF}}` points, p = `{{ROUTED_VS_CLOSED
 `{{ROUTED_COST_PER_CORRECT}}` against `{{CLOSED_COST_PER_CORRECT}}`, with the router escalating `{{ROUTED_ESC_RATE}}` of images."
 
 **Slide 5, 1:40-2:00: "More synthetic data, more accuracy."** Claim: accuracy is data-limited, not epoch-limited. On it:
-`results/learning_curve.png`, x = training images (0, 500, 10k, 20k), y = stereo-aware exact match with Wilson intervals, stereo-agnostic
-as a lighter series. Points: 0.0%, 6.8% (11.4% agnostic), `{{TUNED_10K_EXACT}}` (`{{TUNED_10K_NOSTEREO}}`), `{{TUNED_20K_EXACT}}`
-(`{{TUNED_20K_NOSTEREO}}`). Spoken: "The 500-image run's validation loss bottomed at epoch 2, so we scaled data, not epochs."
+`results/learning_curve.png`, x = training images (0, 500, 2k, 5k, 10k), y = stereo-aware exact match with Wilson intervals,
+stereo-agnostic as a lighter series. Points: 0.0%, 6.8% (11.4% agnostic), `{{TUNED_2K_EXACT}}`, `{{TUNED_5K_EXACT}}`,
+`{{TUNED_10K_EXACT}}` (`{{TUNED_10K_NOSTEREO}}`). Training caps at 10k (all the train images that exist); the 10k run
+itself happens only under the pre-registered go/no-go rule in results/DECISION_RULES.md. Spoken: "The 500-image run's validation loss bottomed at epoch 2, so we scaled data, not epochs."
 "Ten thousand images cost `{{TRAIN_USD_10K}}` and `{{TRAIN_MIN_10K}}` minutes on one L40S." "Each step is a paired test against the
 previous size; the McNemar column in results/LEARNING_CURVE.md says which steps are real."
 
