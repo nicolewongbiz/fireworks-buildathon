@@ -1,0 +1,533 @@
+{
+  "generated_utc": "2026-11-02T07:20:29+00:00",
+  "headline_metric": "exact",
+  "bootstrap": {
+    "resamples": 1000,
+    "seed": 0,
+    "ci": 0.95
+  },
+  "cost_overrides": {},
+  "price_in": {},
+  "price_out": {},
+  "systems": [
+    {
+      "system": "smoke_large_glm",
+      "testset": "smoke",
+      "path": "results/smoke_large_glm.json",
+      "n": 10,
+      "exact": 0.0,
+      "exact_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_n": 0,
+      "exact_nostereo": 0.0,
+      "exact_nostereo_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_nostereo_n": 0,
+      "valid": 0.0,
+      "valid_ci": [
+        0.0,
+        0.0
+      ],
+      "mean_tanimoto": 0.0,
+      "loop_rate": 1.0,
+      "median_latency_s": 1.01038949994836,
+      "p95_latency_s": 1.3710110420361161,
+      "mean_latency_s": 1.0793488623923622,
+      "tokens_in_total": 2260,
+      "tokens_out_total": 1080,
+      "escalation_rate": 0.0,
+      "usd": 0.000879,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 1.1891992080491036,
+      "wall_s": 11.065974583034404,
+      "max_tokens": 108,
+      "headline_metric": "exact",
+      "headline_rate": 0.0,
+      "headline_n": 0,
+      "cost_per_correct": "inf",
+      "cost_per_image": 8.79e-05,
+      "notes": [
+        "items carry no tags"
+      ],
+      "headline_ci": [
+        0.0,
+        0.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "smoke_large_glm \u00b7 smoke"
+    },
+    {
+      "system": "smoke_large_kimi",
+      "testset": "smoke",
+      "path": "results/smoke_large_kimi.json",
+      "n": 10,
+      "exact": 0.8,
+      "exact_ci": [
+        0.6,
+        1.0
+      ],
+      "exact_n": 8,
+      "exact_nostereo": 0.8,
+      "exact_nostereo_ci": [
+        0.6,
+        1.0
+      ],
+      "exact_nostereo_n": 8,
+      "valid": 1.0,
+      "valid_ci": [
+        1.0,
+        1.0
+      ],
+      "mean_tanimoto": 0.967900092506938,
+      "loop_rate": 0.0,
+      "median_latency_s": 1.1926361459773034,
+      "p95_latency_s": 3.458517999970354,
+      "mean_latency_s": 1.428723583300598,
+      "tokens_in_total": 2410,
+      "tokens_out_total": 372,
+      "escalation_rate": 0.0,
+      "usd": 0.01281,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 1.629241041955538,
+      "wall_s": 14.396459667012095,
+      "max_tokens": 108,
+      "headline_metric": "exact",
+      "headline_rate": 0.8,
+      "headline_n": 8,
+      "cost_per_correct": 0.00160125,
+      "cost_per_image": 0.001281,
+      "notes": [
+        "items carry no tags"
+      ],
+      "headline_ci": [
+        0.6,
+        1.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "smoke_large_kimi \u00b7 smoke"
+    },
+    {
+      "system": "smoke_large_qwen",
+      "testset": "smoke",
+      "path": "results/smoke_large_qwen.json",
+      "n": 10,
+      "exact": 0.2,
+      "exact_ci": [
+        0.0,
+        0.5
+      ],
+      "exact_n": 2,
+      "exact_nostereo": 0.2,
+      "exact_nostereo_ci": [
+        0.0,
+        0.5
+      ],
+      "exact_nostereo_n": 2,
+      "valid": 0.8,
+      "valid_ci": [
+        0.5,
+        1.0
+      ],
+      "mean_tanimoto": 0.3876826976229961,
+      "loop_rate": 0.8,
+      "median_latency_s": 1.3075968750054017,
+      "p95_latency_s": 1.6871892919298261,
+      "mean_latency_s": 1.2402604667819106,
+      "tokens_in_total": 1740,
+      "tokens_out_total": 939,
+      "escalation_rate": 0.0,
+      "usd": 0.009114,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 1.4351962079526857,
+      "wall_s": 12.497696375008672,
+      "max_tokens": 108,
+      "headline_metric": "exact",
+      "headline_rate": 0.2,
+      "headline_n": 2,
+      "cost_per_correct": 0.004557,
+      "cost_per_image": 0.0009114,
+      "notes": [
+        "items carry no tags"
+      ],
+      "headline_ci": [
+        0.0,
+        0.5
+      ],
+      "metric_key": "exact_stereo",
+      "label": "smoke_large_qwen \u00b7 smoke"
+    },
+    {
+      "system": "smoke_molscribe",
+      "testset": "smoke",
+      "path": "results/smoke_molscribe.json",
+      "n": 10,
+      "exact": 1.0,
+      "exact_ci": [
+        1.0,
+        1.0
+      ],
+      "exact_n": 10,
+      "exact_nostereo": 1.0,
+      "exact_nostereo_ci": [
+        1.0,
+        1.0
+      ],
+      "exact_nostereo_n": 10,
+      "valid": 1.0,
+      "valid_ci": [
+        1.0,
+        1.0
+      ],
+      "mean_tanimoto": 1.0,
+      "loop_rate": 0.0,
+      "median_latency_s": 0.9408058955450542,
+      "p95_latency_s": 1.0571497079217806,
+      "mean_latency_s": 0.9392105499049649,
+      "tokens_in_total": 0,
+      "tokens_out_total": 0,
+      "escalation_rate": 0.0,
+      "usd": 0.0,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.0,
+      "gpu_usd_per_hour": 0.0,
+      "first_answer_s": 8.38208037498407,
+      "wall_s": 20.07051141699776,
+      "max_tokens": null,
+      "headline_metric": "exact",
+      "headline_rate": 1.0,
+      "headline_n": 10,
+      "cost_per_correct": 0.0,
+      "cost_per_image": 0.0,
+      "notes": [
+        "items carry no tags"
+      ],
+      "headline_ci": [
+        1.0,
+        1.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "smoke_molscribe \u00b7 smoke"
+    },
+    {
+      "system": "smoke_tuned",
+      "testset": "smoke",
+      "path": "results/smoke_tuned.json",
+      "n": 10,
+      "exact": 0.0,
+      "exact_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_n": 0,
+      "exact_nostereo": 0.0,
+      "exact_nostereo_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_nostereo_n": 0,
+      "valid": 0.9,
+      "valid_ci": [
+        0.7,
+        1.0
+      ],
+      "mean_tanimoto": 0.17396687774543915,
+      "loop_rate": null,
+      "median_latency_s": 2.0494645619764924,
+      "p95_latency_s": 8.073661542031914,
+      "mean_latency_s": 3.485683183115907,
+      "tokens_in_total": 1750,
+      "tokens_out_total": 554,
+      "escalation_rate": 0.0,
+      "usd": 0.018987420945981284,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.00973713894665707,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 6.0102370829554275,
+      "wall_s": 35.05370020796545,
+      "max_tokens": null,
+      "headline_metric": "exact",
+      "headline_rate": 0.0,
+      "headline_n": 0,
+      "cost_per_correct": "inf",
+      "cost_per_image": 0.0018987420945981285,
+      "notes": [
+        "match.exact_stereo missing; derived with RDKit from pred_smiles vs truth",
+        "match.hit_cap and summary.max_tokens missing; loop rate is n/a",
+        "items carry no tags",
+        "pre-57f43b5 summary: exact_match there is stereo-agnostic"
+      ],
+      "headline_ci": [
+        0.0,
+        0.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "smoke_tuned \u00b7 smoke"
+    },
+    {
+      "system": "smoke_untuned",
+      "testset": "smoke",
+      "path": "results/smoke_untuned.json",
+      "n": 10,
+      "exact": 0.0,
+      "exact_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_n": 0,
+      "exact_nostereo": 0.0,
+      "exact_nostereo_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_nostereo_n": 0,
+      "valid": 0.7,
+      "valid_ci": [
+        0.4,
+        0.9
+      ],
+      "mean_tanimoto": 0.12241879508712213,
+      "loop_rate": null,
+      "median_latency_s": 2.8726782914600335,
+      "p95_latency_s": 7.55382304196246,
+      "mean_latency_s": 3.694106558384374,
+      "tokens_in_total": 1750,
+      "tokens_out_total": 813,
+      "escalation_rate": 0.0,
+      "usd": 0.15134421412498825,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.07761241749999398,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 249.56756195798516,
+      "wall_s": 279.4047029999783,
+      "max_tokens": null,
+      "headline_metric": "exact",
+      "headline_rate": 0.0,
+      "headline_n": 0,
+      "cost_per_correct": "inf",
+      "cost_per_image": 0.015134421412498825,
+      "notes": [
+        "match.exact_stereo missing; derived with RDKit from pred_smiles vs truth",
+        "match.hit_cap and summary.max_tokens missing; loop rate is n/a",
+        "items carry no tags",
+        "pre-57f43b5 summary: exact_match there is stereo-agnostic"
+      ],
+      "headline_ci": [
+        0.0,
+        0.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "smoke_untuned \u00b7 smoke"
+    },
+    {
+      "system": "untuned_test384",
+      "testset": "384/test",
+      "path": "results/untuned_test384.json",
+      "n": 500,
+      "exact": 0.0,
+      "exact_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_n": 0,
+      "exact_nostereo": 0.0,
+      "exact_nostereo_ci": [
+        0.0,
+        0.0
+      ],
+      "exact_nostereo_n": 0,
+      "valid": 0.67,
+      "valid_ci": [
+        0.63,
+        0.714
+      ],
+      "mean_tanimoto": 0.10856687596992542,
+      "loop_rate": 0.192,
+      "median_latency_s": 2.2008465000544675,
+      "p95_latency_s": 4.0002615000121295,
+      "mean_latency_s": 2.4599602120011115,
+      "tokens_in_total": 87500,
+      "tokens_out_total": 31414,
+      "escalation_rate": 0.0,
+      "usd": 0.19243187502932657,
+      "cost_source": "summary.usd",
+      "token_usd": null,
+      "gpu_hours": 0.09868301283555209,
+      "gpu_usd_per_hour": 1.95,
+      "first_answer_s": 200.9028797079809,
+      "wall_s": 355.2588462079875,
+      "max_tokens": 108,
+      "headline_metric": "exact",
+      "headline_rate": 0.0,
+      "headline_n": 0,
+      "cost_per_correct": "inf",
+      "cost_per_image": 0.00038486375005865314,
+      "notes": [],
+      "headline_ci": [
+        0.0,
+        0.0
+      ],
+      "metric_key": "exact_stereo",
+      "label": "untuned_test384 \u00b7 384/test"
+    }
+  ],
+  "by_tag": {
+    "heavy_atoms<=20": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        110
+      ]
+    },
+    "heavy_atoms 21-30": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        366
+      ]
+    },
+    "heavy_atoms 31-40": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        24
+      ]
+    },
+    "rings=1": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        6
+      ]
+    },
+    "rings=2": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        152
+      ]
+    },
+    "rings=3": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        216
+      ]
+    },
+    "rings>=4": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        126
+      ]
+    },
+    "stereocenters=0": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        202
+      ]
+    },
+    "stereocenters 1-2": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        262
+      ]
+    },
+    "stereocenters>=3": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        36
+      ]
+    },
+    "no E/Z bonds": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        478
+      ]
+    },
+    "E/Z bonds": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        22
+      ]
+    },
+    "charged": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        61
+      ]
+    },
+    "neutral": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        439
+      ]
+    },
+    "single fragment": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        473
+      ]
+    },
+    "multi-fragment": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        27
+      ]
+    },
+    "elements: CNO only": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        200
+      ]
+    },
+    "elements: beyond CNO": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        300
+      ]
+    },
+    "not bridged": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        481
+      ]
+    },
+    "bridged": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        19
+      ]
+    },
+    "not fused": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        298
+      ]
+    },
+    "fused": {
+      "untuned_test384 \u00b7 384/test": [
+        0,
+        202
+      ]
+    }
+  },
+  "charts": [
+    "results/chart_exact_vs_cost.png",
+    "results/chart_exact_vs_cost.svg",
+    "results/chart_exact_vs_cost_dark.png",
+    "results/chart_exact_vs_cost_dark.svg",
+    "results/chart_exact_by_testset.png",
+    "results/chart_exact_by_testset.svg",
+    "results/chart_exact_by_testset_dark.png",
+    "results/chart_exact_by_testset_dark.svg"
+  ]
+}

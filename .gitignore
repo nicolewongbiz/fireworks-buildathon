@@ -19,6 +19,7 @@ data/*.json
 !data/test_handdrawn_*.json
 results/raw/
 results/analysis/
+results/*.svg
 *.png
 !docs/*.png
 .DS_Store

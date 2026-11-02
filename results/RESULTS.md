@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-01 23:55 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-02 00:25 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -157,6 +157,30 @@ VLM should be measured against on synthetic data. The interesting comparison is 
 hand-drawn sets, where MolScribe's published accuracy is around 90% on patents and much lower on hand
 drawings. Run it with `.venv-molscribe/bin/python -m src.predict_molscribe <manifest> --out results/<name>.json`;
 the shared runner lists `molscribe` but can only call it from that interpreter.
+
+## First full-size number: untuned Qwen3.5-9B on the 500-image synthetic test set
+
+Source: `results/untuned_test384.json` (run by the other session on Modal, L40S, max_tokens 108).
+
+| Metric | Untuned 9B, 500 images at 384 px |
+|---|---|
+| Exact match, stereo-aware and agnostic | 0.0% [0.0, 0.0] |
+| Valid SMILES | 67.0% [63.0, 71.4] |
+| Mean Tanimoto | 0.11 |
+| Loop rate (hit the 108 cap) | 19.2% |
+| Latency p50 / p95 | 2.2 s / 4.0 s |
+| GPU spend for the run | $0.19 |
+
+The "before" number is settled: zero. Everything the tuned model gets right is gain. For the pitch, the
+untuned model's cost per correct answer is undefined, which is itself the point.
+
+## Comparison tooling
+
+`src/evaluate.py` recomputes every metric from per-item records, adds bootstrap 95% intervals, computes
+cost per correct answer, and writes `results/comparison.md`, `results/comparison.json`, and the headline
+chart `results/chart_exact_vs_cost.png` (plus a per-test-set bar chart when more than one set is present).
+`src/analyze_errors.py` produces mistake classes, per-tag accuracy, and contact sheets. Run both after
+every new results file.
 
 ## Changes after the smoke runs that affect comparability
 
