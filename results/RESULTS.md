@@ -105,12 +105,15 @@ What this tells us:
 
 ## Blockers and open items
 
-1. **Fireworks dataset upload disabled** on the account (`FailedPrecondition`). Support request open.
-   The docs do not name this error for uploads; the strongest lead is account gating: training GPU quota
-   is 0 without a payment method, the $1 starter credit suspends the account when spent, and HTTP 412 is
-   "account suspended or account status issue". Before build day: add a payment method, run
-   `firectl quota list`, retry with a fresh dataset ID and a file under 150 MB. Until it clears, Modal
-   is the fallback for training and serving.
+1. **Fireworks dataset upload disabled** on the account. Exact error, from the dataset upload-endpoint
+   call: gRPC `FailedPrecondition: dataset uploads are temporarily disabled, please contact Fireworks AI
+   to get access`. It is not account gating: a payment method is on file ($5 paid, upload still failed
+   afterwards at 22:04 PT), training quota is 32 H200/B200/B300, account state is READY and unsuspended,
+   and the file was 750 KB. The one flag that stands out is `accountVerification: NOT_VERIFIED` on an
+   account created at 20:57 PT tonight. Support request open; also ask the Fireworks staff on site first
+   thing. A fresh dataset ID is a cheap retry but the error fires before the ID or file matter. Agents
+   cannot run mutating `firectl` commands on this account, so the user runs the retry. Until it clears,
+   Modal is the fallback for training and serving.
 2. **Base model changed** from Qwen3-VL-8B-Instruct (not tunable on Fireworks) to Qwen3.5-9B. The spec
    and pitch should say Qwen3.5-9B.
 3. **Large baseline model: choose between GLM-5.3-Flash (cheap) and Kimi K3 (frontier).** These are the

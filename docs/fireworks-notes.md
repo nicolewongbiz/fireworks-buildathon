@@ -119,6 +119,14 @@ Only Qwen2.5-VL is documented (https://docs.fireworks.ai/faq-new/billing-pricing
 
 ## 8. Quotas, credits, and the dataset-upload FailedPrecondition
 
+> **Correction (22:55 PT, from live API reads on the team account):** the gating hypothesis below does
+> not fit. Payment method on file and $5 paid; `GET /v1/accounts/{id}/quotas` shows training-h200/b200/b300
+> = 32, job-submission-count 8, monthly-spend-usd 25; `GET /v1/accounts/{id}` shows state READY,
+> suspendState UNSUSPENDED, ratelimitTier 1, `accountVerification: NOT_VERIFIED`, created 2026-11-01
+> 20:57 PT. The error is gRPC `FailedPrecondition: "dataset uploads are temporarily disabled, please
+> contact Fireworks AI to get access"`, returned by the get-upload-endpoint step on a 750 KB file. Best
+> remaining lead: NOT_VERIFIED on an hours-old account; resolution is through Fireworks support or staff.
+
 - Default on-demand GPU quota (GLOBAL multi-region, new account): H100 16, H200 16, B200 16, B300 16, GB300 0, A100 0, AMD 0; on-demand LoRAs 100. All single regions/US/EU start at 0. **Training GPU quota: 0 without a payment method; 32 each of H200/B200/B300 with one.** Without a payment method training jobs can be rejected with 403 `quota_exceeded` / `tier_required`. Check with `firectl quota list`. https://docs.fireworks.ai/guides/quotas_usage/account-quotas.md ; https://docs.fireworks.ai/deployments/regions.md
 - Credits: $1 starter credit; prepaid; without a payment method the account is **suspended** once the $1 is used; usage pauses at zero balance unless Auto Reload. https://docs.fireworks.ai/faq-new/billing-pricing/what-happens-when-i-finish-my-1-dollar-credit.md ; https://docs.fireworks.ai/faq-new/billing-pricing/how-does-billing-and-credit-usage-work.md
 - **FailedPrecondition on dataset upload:** no doc mentions it. Closest: HTTP 412 Precondition Failed = "Account is suspended or there's an issue with account status" (https://docs.fireworks.ai/guides/inference-error-codes.md), and the payment-method gating above. Most plausible causes (unconfirmed): no payment method / suspended after the $1 credit; dataset not in `UPLOADING`/expected state (e.g. re-uploading to an existing dataset); file >150 MB on the single-request path. Try: add a payment method, `firectl quota list`, create a fresh dataset ID, keep file <150 MB or use `:getUploadEndpoint` + `:validateUpload`, or `--external-url gs://...`.
