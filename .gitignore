@@ -7,7 +7,7 @@ data/images/
 data/*.jsonl
 data/*.json
 !data/README.md
-results/
+results/raw/
 *.png
 !docs/*.png
 .DS_Store

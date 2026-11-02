@@ -11,6 +11,13 @@ Two people (and their agents) work on this repo at the same time. Every agent, i
 - Keep commits focused with clear messages so the other person can follow along.
 - Never commit secrets (`.env`) or large generated data (`data/raw/`, `data/images/`, `results/` are gitignored — keep it that way). Commit the scripts that regenerate them instead.
 
+## Ownership (two-person plan)
+
+- **Person A — platform and training (nicolewongbiz):** Fireworks account, tuning jobs, deployments, Modal serving, cost log. Owns `src/predict.py`, `src/run_system.py`, `src/modal_serve.py`, `smoke/`, `results/`.
+- **Person B — data and eval:** owns `data/`, `src/render.py`, `src/build_dataset.py`, `src/validate.py`, `src/evaluate.py`, `app.py`.
+- Message the owner before changing their files. Only Person A creates or deletes Fireworks deployments or Modal GPU apps.
+- Shared contracts (don't change without telling the other person): `data/train.jsonl` (Fireworks VLM SFT format), `data/test_*.json` (`[{"image_path", "smiles"}]`), `predict(image_path) -> {smiles, latency_s, tokens_in, tokens_out, attempts, escalated}`, and `results/<system>.json` (`{"summary": {...}, "items": [...]}`).
+
 ## Compute: prefer the local Mac when it's cheap and safe
 
 Budget matters. Machine: Apple M5, 10 cores, 24 GB unified memory. Use local compute instead of Fireworks when it is possible, efficient, and won't overload the laptop.
