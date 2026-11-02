@@ -99,6 +99,11 @@ What this tells us:
 - **Two of ten outputs still loop until the token cap**, now as valid periodic SMILES rather than invalid
   stereo spam. A repetition penalty or a lower cap would bound the cost; more training data should remove
   the behaviour. Track the cap-hit rate as a side metric.
+- **Error analysis** (`src/analyze_errors.py`, outputs in `results/analysis/`): the tuned model's
+  dominant mistake class is wrong heavy-atom count, usually too many (extra carbons or an extra ring),
+  on 6/10 images; its two cap-hits are valid but runaway chains. Tanimoto improved on 7/10 images and
+  regressed on 3 after tuning. A repetition penalty or tighter cap converts the runaways into ordinary
+  wrong answers; only more training data fixes the counting.
 - **Cost accounting must separate cold start from steady state.** Both runs paid 3.5 to 4 min of cold
   start for 35 s of inference. Keep the server warm across the whole eval window tomorrow and report
   steady-state cost per image separately from the fixed start-up cost.
