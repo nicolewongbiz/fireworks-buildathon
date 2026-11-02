@@ -13,7 +13,15 @@ Actual costs from `modal billing report --show-resources` and Fireworks billing,
 
 Running total: est ~$0.40 incl. the baseline's idle tail (replace with billed numbers after 23:00 PT). `chemvision-vllm` stopped at 22:18 PT; redeploy with `uv run modal deploy src/modal_serve.py`.
 
-Billing check 22:15 PT (`modal billing report --start 2026-11-01 --resolution h --show-resources --tz local`):
-only the 21:00 hour bucket has closed; it shows $0.017 total (CPU/memory/egress for the two download apps).
-GPU charges land in the 22:00 bucket, which is not reported until the hour closes. Re-run the report after
-23:00 PT to replace the estimates above. `modal app list` shows no running containers as of 22:15 PT.
+Billing actuals for the 21:00 and 22:00 PT hours (closed), from
+`modal billing report --start 2026-11-01 --resolution h --show-resources --tz local` at 23:04 PT:
+
+| App | L40S | CPU + memory + egress | Total |
+|---|---|---|---|
+| chemvision-vllm (untuned eval, idle tail, tuned eval; one deployed app) | 0.464 | 0.015 | 0.478 |
+| chemvision-train (`smoke` LoRA SFT) | 0.074 | 0.004 | 0.078 |
+| chemvision-vllm download runs and other CPU-only apps | — | 0.027 | 0.027 |
+| **Through 23:00 PT** | **0.537** | **0.046** | **0.583** |
+
+Estimates in the rows above were within a few cents of these actuals. Runs after 23:00 PT (the n=500
+cycle) are logged by their owner below and will show in the next closed hour.
