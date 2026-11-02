@@ -5,7 +5,9 @@
 
 `--workers` runs requests concurrently (default 1). Per-item latency is still measured per request.
 
-Cost is GPU wall-clock for the run times the hourly rate; cold start is recorded separately
+Systems come from src/predict.py (open models, Person A) plus the optional src/predict_baselines.py
+(closed models / MolScribe, Person B). Cost is GPU wall-clock times the hourly rate plus API tokens times
+--usd-per-mtok-in/out; cold start is recorded separately
 (time to the first answer) so it can be added or excluded explicitly.
 """
 from __future__ import annotations
@@ -20,6 +22,14 @@ from dataclasses import asdict
 from pathlib import Path
 
 from src.predict import MAX_TOKENS, SYSTEMS
+
+try:  # Person B's closed-model / MolScribe predictors, same predict() contract
+    from src.predict_baselines import SYSTEMS as BASELINE_SYSTEMS
+
+    SYSTEMS = SYSTEMS | BASELINE_SYSTEMS
+except ModuleNotFoundError as e:
+    if e.name != "src.predict_baselines":
+        raise  # a missing package inside predict_baselines.py should fail loudly, not hide its systems
 from src.validate import canonicalize, score
 
 
@@ -28,7 +38,9 @@ def main() -> None:
     ap.add_argument("system", choices=SYSTEMS)
     ap.add_argument("test_set")
     ap.add_argument("--out", required=True)
-    ap.add_argument("--gpu-usd-per-hour", type=float, required=True)
+    ap.add_argument("--gpu-usd-per-hour", type=float, required=True, help="0 for API models")
+    ap.add_argument("--usd-per-mtok-in", type=float, default=0.0, help="API input price per 1M tokens")
+    ap.add_argument("--usd-per-mtok-out", type=float, default=0.0, help="API output price per 1M tokens (incl. reasoning)")
     ap.add_argument("--workers", type=int, default=1, help="concurrent requests (default 1)")
     args = ap.parse_args()
 
@@ -79,7 +91,9 @@ def main() -> None:
         "first_answer_s": first_answer_s,
         "wall_s": wall_s,
         "gpu_hours": gpu_hours,
-        "usd": gpu_hours * args.gpu_usd_per_hour,
+        "usd": gpu_hours * args.gpu_usd_per_hour
+        + (sum(r["predict"]["tokens_in"] for r in rows) * args.usd_per_mtok_in
+           + sum(r["predict"]["tokens_out"] for r in rows) * args.usd_per_mtok_out) / 1e6,
         "gpu_usd_per_hour": args.gpu_usd_per_hour,
         "workers": args.workers,
     }

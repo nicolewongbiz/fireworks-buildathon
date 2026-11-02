@@ -1,0 +1,2244 @@
+[
+ {
+  "image_path": "data/images/384/drugs/00000.png",
+  "smiles": "CC(C)OC(=O)[C@H](C)N[P@](=O)(OC[C@H]1O[C@@H](n2ccc(=O)[nH]c2=O)[C@](C)(F)[C@@H]1O)Oc1ccccc1",
+  "smiles_nostereo": "CC(C)OC(=O)C(C)NP(=O)(OCC1OC(n2ccc(=O)[nH]c2=O)C(C)(F)C1O)Oc1ccccc1",
+  "tags": {
+   "heavy_atoms": 36,
+   "rings": 3,
+   "stereocenters": 6,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "P"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "sofosbuvir",
+  "pubchem_cid": "45375808"
+ },
+ {
+  "image_path": "data/images/384/drugs/00001.png",
+  "smiles": "O=P1(N(CCCl)CCCl)NCCCO1",
+  "smiles_nostereo": "O=P1(N(CCCl)CCCl)NCCCO1",
+  "tags": {
+   "heavy_atoms": 14,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "P"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "cyclophosphamide",
+  "pubchem_cid": "2907"
+ },
+ {
+  "image_path": "data/images/384/drugs/00002.png",
+  "smiles": "NCCCC(O)(P(=O)(O)O)P(=O)(O)O",
+  "smiles_nostereo": "NCCCC(O)(P(=O)(O)O)P(=O)(O)O",
+  "tags": {
+   "heavy_atoms": 14,
+   "rings": 0,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "P"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "alendronic acid",
+  "pubchem_cid": "2088"
+ },
+ {
+  "image_path": "data/images/384/drugs/00003.png",
+  "smiles": "CC(C)OC(=O)OCOP(=O)(CO[C@H](C)Cn1cnc2c(N)ncnc21)OCOC(=O)OC(C)C",
+  "smiles_nostereo": "CC(C)OC(=O)OCOP(=O)(COC(C)Cn1cnc2c(N)ncnc21)OCOC(=O)OC(C)C",
+  "tags": {
+   "heavy_atoms": 35,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "P"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "tenofovir disoproxil",
+  "pubchem_cid": "5481350"
+ },
+ {
+  "image_path": "data/images/384/drugs/00004.png",
+  "smiles": "O=P1(NCCCl)OCCCN1CCCl",
+  "smiles_nostereo": "O=P1(NCCCl)OCCCN1CCCl",
+  "tags": {
+   "heavy_atoms": 14,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "P"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "ifosfamide",
+  "pubchem_cid": "3690"
+ },
+ {
+  "image_path": "data/images/384/drugs/00005.png",
+  "smiles": "CCC(=O)O[C@@H](O[P@](=O)(CCCCc1ccccc1)CC(=O)N1C[C@H](C2CCCCC2)C[C@H]1C(=O)O)C(C)C",
+  "smiles_nostereo": "CCC(=O)OC(OP(=O)(CCCCc1ccccc1)CC(=O)N1CC(C2CCCCC2)CC1C(=O)O)C(C)C",
+  "tags": {
+   "heavy_atoms": 39,
+   "rings": 3,
+   "stereocenters": 4,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "P"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "fosinopril",
+  "pubchem_cid": "9601226"
+ },
+ {
+  "image_path": "data/images/384/drugs/00006.png",
+  "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+  "smiles_nostereo": "CC(=O)Oc1ccccc1C(=O)O",
+  "tags": {
+   "heavy_atoms": 13,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "aspirin",
+  "pubchem_cid": "2244"
+ },
+ {
+  "image_path": "data/images/384/drugs/00007.png",
+  "smiles": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+  "smiles_nostereo": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+  "tags": {
+   "heavy_atoms": 15,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "ibuprofen",
+  "pubchem_cid": "3672"
+ },
+ {
+  "image_path": "data/images/384/drugs/00008.png",
+  "smiles": "CC(=O)Nc1ccc(O)cc1",
+  "smiles_nostereo": "CC(=O)Nc1ccc(O)cc1",
+  "tags": {
+   "heavy_atoms": 11,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "acetaminophen",
+  "pubchem_cid": "1983"
+ },
+ {
+  "image_path": "data/images/384/drugs/00009.png",
+  "smiles": "COc1ccc2cc([C@H](C)C(=O)O)ccc2c1",
+  "smiles_nostereo": "COc1ccc2cc(C(C)C(=O)O)ccc2c1",
+  "tags": {
+   "heavy_atoms": 17,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "naproxen",
+  "pubchem_cid": "156391"
+ },
+ {
+  "image_path": "data/images/384/drugs/00010.png",
+  "smiles": "O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
+  "smiles_nostereo": "O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "diclofenac",
+  "pubchem_cid": "3033"
+ },
+ {
+  "image_path": "data/images/384/drugs/00011.png",
+  "smiles": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+  "smiles_nostereo": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "celecoxib",
+  "pubchem_cid": "2662"
+ },
+ {
+  "image_path": "data/images/384/drugs/00012.png",
+  "smiles": "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)O",
+  "smiles_nostereo": "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC(O)CC(O)CC(=O)O",
+  "tags": {
+   "heavy_atoms": 41,
+   "rings": 4,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "atorvastatin",
+  "pubchem_cid": "60823"
+ },
+ {
+  "image_path": "data/images/384/drugs/00013.png",
+  "smiles": "CCC(C)(C)C(=O)O[C@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CC[C@@H]3C[C@@H](O)CC(=O)O3)[C@H]21",
+  "smiles_nostereo": "CCC(C)(C)C(=O)OC1CC(C)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21",
+  "tags": {
+   "heavy_atoms": 30,
+   "rings": 3,
+   "stereocenters": 7,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "simvastatin",
+  "pubchem_cid": "54454"
+ },
+ {
+  "image_path": "data/images/384/drugs/00014.png",
+  "smiles": "CC(C)c1nc(N(C)S(C)(=O)=O)nc(-c2ccc(F)cc2)c1/C=C/[C@@H](O)C[C@@H](O)CC(=O)O",
+  "smiles_nostereo": "CC(C)c1nc(N(C)S(C)(=O)=O)nc(-c2ccc(F)cc2)c1C=CC(O)CC(O)CC(=O)O",
+  "tags": {
+   "heavy_atoms": 33,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 1,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "rosuvastatin",
+  "pubchem_cid": "446157"
+ },
+ {
+  "image_path": "data/images/384/drugs/00015.png",
+  "smiles": "NCCCC[C@H](N[C@@H](CCc1ccccc1)C(=O)O)C(=O)N1CCC[C@H]1C(=O)O",
+  "smiles_nostereo": "NCCCCC(NC(CCc1ccccc1)C(=O)O)C(=O)N1CCCC1C(=O)O",
+  "tags": {
+   "heavy_atoms": 29,
+   "rings": 2,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "lisinopril",
+  "pubchem_cid": "5362119"
+ },
+ {
+  "image_path": "data/images/384/drugs/00016.png",
+  "smiles": "CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1CCC[C@H]1C(=O)O",
+  "smiles_nostereo": "CCOC(=O)C(CCc1ccccc1)NC(C)C(=O)N1CCCC1C(=O)O",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 2,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "enalapril",
+  "pubchem_cid": "5388962"
+ },
+ {
+  "image_path": "data/images/384/drugs/00017.png",
+  "smiles": "CCCCc1nc(Cl)c(CO)n1Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1",
+  "smiles_nostereo": "CCCCc1nc(Cl)c(CO)n1Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1",
+  "tags": {
+   "heavy_atoms": 30,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "losartan",
+  "pubchem_cid": "3961"
+ },
+ {
+  "image_path": "data/images/384/drugs/00018.png",
+  "smiles": "CCCCC(=O)N(Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1)[C@H](C(=O)O)C(C)C",
+  "smiles_nostereo": "CCCCC(=O)N(Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1)C(C(=O)O)C(C)C",
+  "tags": {
+   "heavy_atoms": 32,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "valsartan",
+  "pubchem_cid": "60846"
+ },
+ {
+  "image_path": "data/images/384/drugs/00019.png",
+  "smiles": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OC)C1c1ccccc1Cl",
+  "smiles_nostereo": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OC)C1c1ccccc1Cl",
+  "tags": {
+   "heavy_atoms": 28,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "amlodipine",
+  "pubchem_cid": "2162"
+ },
+ {
+  "image_path": "data/images/384/drugs/00020.png",
+  "smiles": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]",
+  "smiles_nostereo": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "nifedipine",
+  "pubchem_cid": "4485"
+ },
+ {
+  "image_path": "data/images/384/drugs/00021.png",
+  "smiles": "COCCc1ccc(OCC(O)CNC(C)C)cc1",
+  "smiles_nostereo": "COCCc1ccc(OCC(O)CNC(C)C)cc1",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "metoprolol",
+  "pubchem_cid": "4171"
+ },
+ {
+  "image_path": "data/images/384/drugs/00022.png",
+  "smiles": "CC(C)NCC(O)COc1cccc2ccccc12",
+  "smiles_nostereo": "CC(C)NCC(O)COc1cccc2ccccc12",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "propranolol",
+  "pubchem_cid": "4946"
+ },
+ {
+  "image_path": "data/images/384/drugs/00023.png",
+  "smiles": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+  "smiles_nostereo": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "atenolol",
+  "pubchem_cid": "2249"
+ },
+ {
+  "image_path": "data/images/384/drugs/00024.png",
+  "smiles": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12",
+  "smiles_nostereo": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12",
+  "tags": {
+   "heavy_atoms": 30,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "carvedilol",
+  "pubchem_cid": "2585"
+ },
+ {
+  "image_path": "data/images/384/drugs/00025.png",
+  "smiles": "CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O",
+  "smiles_nostereo": "CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "warfarin",
+  "pubchem_cid": "54678486"
+ },
+ {
+  "image_path": "data/images/384/drugs/00026.png",
+  "smiles": "COC(=O)[C@H](c1ccccc1Cl)N1CCc2sccc2C1",
+  "smiles_nostereo": "COC(=O)C(c1ccccc1Cl)N1CCc2sccc2C1",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "clopidogrel",
+  "pubchem_cid": "60606"
+ },
+ {
+  "image_path": "data/images/384/drugs/00027.png",
+  "smiles": "COc1ccc(-n2nc(C(N)=O)c3c2C(=O)N(c2ccc(N4CCCCC4=O)cc2)CC3)cc1",
+  "smiles_nostereo": "COc1ccc(-n2nc(C(N)=O)c3c2C(=O)N(c2ccc(N4CCCCC4=O)cc2)CC3)cc1",
+  "tags": {
+   "heavy_atoms": 34,
+   "rings": 5,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "apixaban",
+  "pubchem_cid": "10182969"
+ },
+ {
+  "image_path": "data/images/384/drugs/00028.png",
+  "smiles": "O=C(NC[C@H]1CN(c2ccc(N3CCOCC3=O)cc2)C(=O)O1)c1ccc(Cl)s1",
+  "smiles_nostereo": "O=C(NCC1CN(c2ccc(N3CCOCC3=O)cc2)C(=O)O1)c1ccc(Cl)s1",
+  "tags": {
+   "heavy_atoms": 29,
+   "rings": 4,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "rivaroxaban",
+  "pubchem_cid": "9875401"
+ },
+ {
+  "image_path": "data/images/384/drugs/00029.png",
+  "smiles": "COc1ccc2nc(S(=O)Cc3ncc(C)c(OC)c3C)[nH]c2c1",
+  "smiles_nostereo": "COc1ccc2nc(S(=O)Cc3ncc(C)c(OC)c3C)[nH]c2c1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "omeprazole",
+  "pubchem_cid": "4594"
+ },
+ {
+  "image_path": "data/images/384/drugs/00030.png",
+  "smiles": "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1",
+  "smiles_nostereo": "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "lansoprazole",
+  "pubchem_cid": "3883"
+ },
+ {
+  "image_path": "data/images/384/drugs/00031.png",
+  "smiles": "NC(N)=Nc1nc(CSCC/C(N)=N/S(N)(=O)=O)cs1",
+  "smiles_nostereo": "NC(N)=Nc1nc(CSCCC(N)=NS(N)(=O)=O)cs1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 1,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "famotidine",
+  "pubchem_cid": "5702160"
+ },
+ {
+  "image_path": "data/images/384/drugs/00032.png",
+  "smiles": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+  "smiles_nostereo": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "loratadine",
+  "pubchem_cid": "3957"
+ },
+ {
+  "image_path": "data/images/384/drugs/00033.png",
+  "smiles": "O=C(O)COCCN1CCN(C(c2ccccc2)c2ccc(Cl)cc2)CC1",
+  "smiles_nostereo": "O=C(O)COCCN1CCN(C(c2ccccc2)c2ccc(Cl)cc2)CC1",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "cetirizine",
+  "pubchem_cid": "2678"
+ },
+ {
+  "image_path": "data/images/384/drugs/00034.png",
+  "smiles": "CC(C)(C(=O)O)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c3ccccc3)CC2)cc1",
+  "smiles_nostereo": "CC(C)(C(=O)O)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c3ccccc3)CC2)cc1",
+  "tags": {
+   "heavy_atoms": 37,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "fexofenadine",
+  "pubchem_cid": "3348"
+ },
+ {
+  "image_path": "data/images/384/drugs/00035.png",
+  "smiles": "CN(C)CCOC(c1ccccc1)c1ccccc1",
+  "smiles_nostereo": "CN(C)CCOC(c1ccccc1)c1ccccc1",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "diphenhydramine",
+  "pubchem_cid": "3100"
+ },
+ {
+  "image_path": "data/images/384/drugs/00036.png",
+  "smiles": "CN[C@H]1CC[C@@H](c2ccc(Cl)c(Cl)c2)c2ccccc21",
+  "smiles_nostereo": "CNC1CCC(c2ccc(Cl)c(Cl)c2)c2ccccc21",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 3,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "sertraline",
+  "pubchem_cid": "68617"
+ },
+ {
+  "image_path": "data/images/384/drugs/00037.png",
+  "smiles": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+  "smiles_nostereo": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "fluoxetine",
+  "pubchem_cid": "3386"
+ },
+ {
+  "image_path": "data/images/384/drugs/00038.png",
+  "smiles": "Fc1ccc([C@@H]2CCNC[C@H]2COc2ccc3c(c2)OCO3)cc1",
+  "smiles_nostereo": "Fc1ccc(C2CCNCC2COc2ccc3c(c2)OCO3)cc1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 4,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "paroxetine",
+  "pubchem_cid": "43815"
+ },
+ {
+  "image_path": "data/images/384/drugs/00039.png",
+  "smiles": "CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21",
+  "smiles_nostereo": "CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "citalopram",
+  "pubchem_cid": "2771"
+ },
+ {
+  "image_path": "data/images/384/drugs/00040.png",
+  "smiles": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1",
+  "smiles_nostereo": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "venlafaxine",
+  "pubchem_cid": "5656"
+ },
+ {
+  "image_path": "data/images/384/drugs/00041.png",
+  "smiles": "CNCC[C@H](Oc1cccc2ccccc12)c1cccs1",
+  "smiles_nostereo": "CNCCC(Oc1cccc2ccccc12)c1cccs1",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "duloxetine",
+  "pubchem_cid": "60835"
+ },
+ {
+  "image_path": "data/images/384/drugs/00042.png",
+  "smiles": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+  "smiles_nostereo": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+  "tags": {
+   "heavy_atoms": 16,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "bupropion",
+  "pubchem_cid": "444"
+ },
+ {
+  "image_path": "data/images/384/drugs/00043.png",
+  "smiles": "CN1CCN2c3ncccc3Cc3ccccc3C2C1",
+  "smiles_nostereo": "CN1CCN2c3ncccc3Cc3ccccc3C2C1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "mirtazapine",
+  "pubchem_cid": "4205"
+ },
+ {
+  "image_path": "data/images/384/drugs/00044.png",
+  "smiles": "O=c1n(CCCN2CCN(c3cccc(Cl)c3)CC2)nc2ccccn12",
+  "smiles_nostereo": "O=c1n(CCCN2CCN(c3cccc(Cl)c3)CC2)nc2ccccn12",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "trazodone",
+  "pubchem_cid": "5533"
+ },
+ {
+  "image_path": "data/images/384/drugs/00045.png",
+  "smiles": "CN(C)CCC=C1c2ccccc2CCc2ccccc21",
+  "smiles_nostereo": "CN(C)CCC=C1c2ccccc2CCc2ccccc21",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "amitriptyline",
+  "pubchem_cid": "2160"
+ },
+ {
+  "image_path": "data/images/384/drugs/00046.png",
+  "smiles": "CN1C(=O)CN=C(c2ccccc2)c2cc(Cl)ccc21",
+  "smiles_nostereo": "CN1C(=O)CN=C(c2ccccc2)c2cc(Cl)ccc21",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "diazepam",
+  "pubchem_cid": "3016"
+ },
+ {
+  "image_path": "data/images/384/drugs/00047.png",
+  "smiles": "Cc1nnc2n1-c1ccc(Cl)cc1C(c1ccccc1)=NC2",
+  "smiles_nostereo": "Cc1nnc2n1-c1ccc(Cl)cc1C(c1ccccc1)=NC2",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "alprazolam",
+  "pubchem_cid": "2118"
+ },
+ {
+  "image_path": "data/images/384/drugs/00048.png",
+  "smiles": "O=C1Nc2ccc(Cl)cc2C(c2ccccc2Cl)=NC1O",
+  "smiles_nostereo": "O=C1Nc2ccc(Cl)cc2C(c2ccccc2Cl)=NC1O",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "lorazepam",
+  "pubchem_cid": "3958"
+ },
+ {
+  "image_path": "data/images/384/drugs/00049.png",
+  "smiles": "Cc1ccc(-c2nc3ccc(C)cn3c2CC(=O)N(C)C)cc1",
+  "smiles_nostereo": "Cc1ccc(-c2nc3ccc(C)cn3c2CC(=O)N(C)C)cc1",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "zolpidem",
+  "pubchem_cid": "5732"
+ },
+ {
+  "image_path": "data/images/384/drugs/00050.png",
+  "smiles": "OCCOCCN1CCN(C2=Nc3ccccc3Sc3ccccc32)CC1",
+  "smiles_nostereo": "OCCOCCN1CCN(C2=Nc3ccccc3Sc3ccccc32)CC1",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "quetiapine",
+  "pubchem_cid": "5002"
+ },
+ {
+  "image_path": "data/images/384/drugs/00051.png",
+  "smiles": "Cc1cc2c(s1)Nc1ccccc1N=C2N1CCN(C)CC1",
+  "smiles_nostereo": "Cc1cc2c(s1)Nc1ccccc1N=C2N1CCN(C)CC1",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "olanzapine",
+  "pubchem_cid": "135398745"
+ },
+ {
+  "image_path": "data/images/384/drugs/00052.png",
+  "smiles": "Cc1nc2n(c(=O)c1CCN1CCC(c3noc4cc(F)ccc34)CC1)CCCC2",
+  "smiles_nostereo": "Cc1nc2n(c(=O)c1CCN1CCC(c3noc4cc(F)ccc34)CC1)CCCC2",
+  "tags": {
+   "heavy_atoms": 30,
+   "rings": 5,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "risperidone",
+  "pubchem_cid": "5073"
+ },
+ {
+  "image_path": "data/images/384/drugs/00053.png",
+  "smiles": "O=C1CCc2ccc(OCCCCN3CCN(c4cccc(Cl)c4Cl)CC3)cc2N1",
+  "smiles_nostereo": "O=C1CCc2ccc(OCCCCN3CCN(c4cccc(Cl)c4Cl)CC3)cc2N1",
+  "tags": {
+   "heavy_atoms": 30,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "aripiprazole",
+  "pubchem_cid": "60795"
+ },
+ {
+  "image_path": "data/images/384/drugs/00054.png",
+  "smiles": "O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1",
+  "smiles_nostereo": "O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "haloperidol",
+  "pubchem_cid": "3559"
+ },
+ {
+  "image_path": "data/images/384/drugs/00055.png",
+  "smiles": "CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1",
+  "smiles_nostereo": "CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "clozapine",
+  "pubchem_cid": "135398737"
+ },
+ {
+  "image_path": "data/images/384/drugs/00056.png",
+  "smiles": "Nc1nnc(-c2cccc(Cl)c2Cl)c(N)n1",
+  "smiles_nostereo": "Nc1nnc(-c2cccc(Cl)c2Cl)c(N)n1",
+  "tags": {
+   "heavy_atoms": 16,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "lamotrigine",
+  "pubchem_cid": "3878"
+ },
+ {
+  "image_path": "data/images/384/drugs/00057.png",
+  "smiles": "NC(=O)N1c2ccccc2C=Cc2ccccc21",
+  "smiles_nostereo": "NC(=O)N1c2ccccc2C=Cc2ccccc21",
+  "tags": {
+   "heavy_atoms": 18,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "carbamazepine",
+  "pubchem_cid": "2554"
+ },
+ {
+  "image_path": "data/images/384/drugs/00058.png",
+  "smiles": "CC[C@@H](C(N)=O)N1CCCC1=O",
+  "smiles_nostereo": "CCC(C(N)=O)N1CCCC1=O",
+  "tags": {
+   "heavy_atoms": 12,
+   "rings": 1,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "levetiracetam",
+  "pubchem_cid": "5284583"
+ },
+ {
+  "image_path": "data/images/384/drugs/00059.png",
+  "smiles": "NCC1(CC(=O)O)CCCCC1",
+  "smiles_nostereo": "NCC1(CC(=O)O)CCCCC1",
+  "tags": {
+   "heavy_atoms": 12,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "gabapentin",
+  "pubchem_cid": "3446"
+ },
+ {
+  "image_path": "data/images/384/drugs/00060.png",
+  "smiles": "CC(C)C[C@H](CN)CC(=O)O",
+  "smiles_nostereo": "CC(C)CC(CN)CC(=O)O",
+  "tags": {
+   "heavy_atoms": 11,
+   "rings": 0,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "pregabalin",
+  "pubchem_cid": "5486971"
+ },
+ {
+  "image_path": "data/images/384/drugs/00061.png",
+  "smiles": "CC1(C)O[C@@H]2[C@@H](CO[C@@]3(COS(N)(=O)=O)OC(C)(C)O[C@@H]23)O1",
+  "smiles_nostereo": "CC1(C)OC2COC3(COS(N)(=O)=O)OC(C)(C)OC3C2O1",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 3,
+   "stereocenters": 4,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "topiramate",
+  "pubchem_cid": "5284627"
+ },
+ {
+  "image_path": "data/images/384/drugs/00062.png",
+  "smiles": "O=C1NC(=O)C(c2ccccc2)(c2ccccc2)N1",
+  "smiles_nostereo": "O=C1NC(=O)C(c2ccccc2)(c2ccccc2)N1",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "phenytoin",
+  "pubchem_cid": "1775"
+ },
+ {
+  "image_path": "data/images/384/drugs/00063.png",
+  "smiles": "COc1cc2c(cc1OC)C(=O)C(CC1CCN(Cc3ccccc3)CC1)C2",
+  "smiles_nostereo": "COc1cc2c(cc1OC)C(=O)C(CC1CCN(Cc3ccccc3)CC1)C2",
+  "tags": {
+   "heavy_atoms": 28,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "donepezil",
+  "pubchem_cid": "3152"
+ },
+ {
+  "image_path": "data/images/384/drugs/00064.png",
+  "smiles": "CC12CC3CC(C)(C1)CC(N)(C3)C2",
+  "smiles_nostereo": "CC12CC3CC(C)(C1)CC(N)(C3)C2",
+  "tags": {
+   "heavy_atoms": 13,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  },
+  "name": "memantine",
+  "pubchem_cid": "4054"
+ },
+ {
+  "image_path": "data/images/384/drugs/00065.png",
+  "smiles": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O",
+  "smiles_nostereo": "NC(Cc1ccc(O)c(O)c1)C(=O)O",
+  "tags": {
+   "heavy_atoms": 14,
+   "rings": 1,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "levodopa",
+  "pubchem_cid": "6047"
+ },
+ {
+  "image_path": "data/images/384/drugs/00066.png",
+  "smiles": "CNS(=O)(=O)Cc1ccc2[nH]cc(CCN(C)C)c2c1",
+  "smiles_nostereo": "CNS(=O)(=O)Cc1ccc2[nH]cc(CCN(C)C)c2c1",
+  "tags": {
+   "heavy_atoms": 20,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "sumatriptan",
+  "pubchem_cid": "5358"
+ },
+ {
+  "image_path": "data/images/384/drugs/00067.png",
+  "smiles": "CN1CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5",
+  "smiles_nostereo": "CN1CCC23c4c5ccc(O)c4OC2C(O)C=CC3C1C5",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 5,
+   "stereocenters": 5,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  },
+  "name": "morphine",
+  "pubchem_cid": "5288826"
+ },
+ {
+  "image_path": "data/images/384/drugs/00068.png",
+  "smiles": "COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341",
+  "smiles_nostereo": "COc1ccc2c3c1OC1C(O)C=CC4C(C2)N(C)CCC341",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 5,
+   "stereocenters": 5,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  },
+  "name": "codeine",
+  "pubchem_cid": "5284371"
+ },
+ {
+  "image_path": "data/images/384/drugs/00069.png",
+  "smiles": "COc1ccc2c3c1O[C@H]1C(=O)CC[C@@]4(O)[C@@H](C2)N(C)CC[C@]314",
+  "smiles_nostereo": "COc1ccc2c3c1OC1C(=O)CCC4(O)C(C2)N(C)CCC314",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 5,
+   "stereocenters": 4,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  },
+  "name": "oxycodone",
+  "pubchem_cid": "5284603"
+ },
+ {
+  "image_path": "data/images/384/drugs/00070.png",
+  "smiles": "COc1cccc([C@@]2(O)CCCC[C@@H]2CN(C)C)c1",
+  "smiles_nostereo": "COc1cccc(C2(O)CCCCC2CN(C)C)c1",
+  "tags": {
+   "heavy_atoms": 19,
+   "rings": 2,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "tramadol",
+  "pubchem_cid": "33741"
+ },
+ {
+  "image_path": "data/images/384/drugs/00071.png",
+  "smiles": "CCC(=O)N(c1ccccc1)C1CCN(CCc2ccccc2)CC1",
+  "smiles_nostereo": "CCC(=O)N(c1ccccc1)C1CCN(CCc2ccccc2)CC1",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "fentanyl",
+  "pubchem_cid": "3345"
+ },
+ {
+  "image_path": "data/images/384/drugs/00072.png",
+  "smiles": "C=CCN1CC[C@]23c4c5ccc(O)c4O[C@H]2C(=O)CC[C@@]3(O)[C@H]1C5",
+  "smiles_nostereo": "C=CCN1CCC23c4c5ccc(O)c4OC2C(=O)CCC3(O)C1C5",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 5,
+   "stereocenters": 4,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  },
+  "name": "naloxone",
+  "pubchem_cid": "5284596"
+ },
+ {
+  "image_path": "data/images/384/drugs/00073.png",
+  "smiles": "CO[C@]12CC[C@@]3(C[C@@H]1[C@](C)(O)C(C)(C)C)[C@H]1Cc4ccc(O)c5c4[C@@]3(CCN1CC1CC1)[C@H]2O5",
+  "smiles_nostereo": "COC12CCC3(CC1C(C)(O)C(C)(C)C)C1Cc4ccc(O)c5c4C3(CCN1CC1CC1)C2O5",
+  "tags": {
+   "heavy_atoms": 34,
+   "rings": 8,
+   "stereocenters": 7,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": true,
+   "fused": true
+  },
+  "name": "buprenorphine",
+  "pubchem_cid": "644073"
+ },
+ {
+  "image_path": "data/images/384/drugs/00074.png",
+  "smiles": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+  "smiles_nostereo": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "methadone",
+  "pubchem_cid": "4095"
+ },
+ {
+  "image_path": "data/images/384/drugs/00075.png",
+  "smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+  "smiles_nostereo": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+  "tags": {
+   "heavy_atoms": 14,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "caffeine",
+  "pubchem_cid": "2519"
+ },
+ {
+  "image_path": "data/images/384/drugs/00076.png",
+  "smiles": "CN1CCC[C@H]1c1cccnc1",
+  "smiles_nostereo": "CN1CCCC1c1cccnc1",
+  "tags": {
+   "heavy_atoms": 12,
+   "rings": 2,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "nicotine",
+  "pubchem_cid": "89594"
+ },
+ {
+  "image_path": "data/images/384/drugs/00077.png",
+  "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+  "smiles_nostereo": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+  "tags": {
+   "heavy_atoms": 33,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "sildenafil",
+  "pubchem_cid": "135398744"
+ },
+ {
+  "image_path": "data/images/384/drugs/00078.png",
+  "smiles": "CN1CC(=O)N2[C@H](c3ccc4c(c3)OCO4)c3[nH]c4ccccc4c3C[C@@H]2C1=O",
+  "smiles_nostereo": "CN1CC(=O)N2C(Cc3c([nH]c4ccccc34)C2c2ccc3c(c2)OCO3)C1=O",
+  "tags": {
+   "heavy_atoms": 29,
+   "rings": 6,
+   "stereocenters": 2,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "tadalafil",
+  "pubchem_cid": "110635"
+ },
+ {
+  "image_path": "data/images/384/drugs/00079.png",
+  "smiles": "CC(C)(C)NC(=O)[C@H]1CC[C@H]2[C@@H]3CC[C@H]4NC(=O)C=C[C@]4(C)[C@H]3CC[C@]12C",
+  "smiles_nostereo": "CC(C)(C)NC(=O)C1CCC2C3CCC4NC(=O)C=CC4(C)C3CCC12C",
+  "tags": {
+   "heavy_atoms": 27,
+   "rings": 4,
+   "stereocenters": 7,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "finasteride",
+  "pubchem_cid": "57363"
+ },
+ {
+  "image_path": "data/images/384/drugs/00080.png",
+  "smiles": "CC/C(=C(\\c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
+  "smiles_nostereo": "CCC(=C(c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
+  "tags": {
+   "heavy_atoms": 28,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 1,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "tamoxifen",
+  "pubchem_cid": "2733526"
+ },
+ {
+  "image_path": "data/images/384/drugs/00081.png",
+  "smiles": "N#Cc1ccc(C(c2ccc(C#N)cc2)n2cncn2)cc1",
+  "smiles_nostereo": "N#Cc1ccc(C(c2ccc(C#N)cc2)n2cncn2)cc1",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "letrozole",
+  "pubchem_cid": "3902"
+ },
+ {
+  "image_path": "data/images/384/drugs/00082.png",
+  "smiles": "CC(C)(C#N)c1cc(Cn2cncn2)cc(C(C)(C)C#N)c1",
+  "smiles_nostereo": "CC(C)(C#N)c1cc(Cn2cncn2)cc(C(C)(C)C#N)c1",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "anastrozole",
+  "pubchem_cid": "2187"
+ },
+ {
+  "image_path": "data/images/384/drugs/00083.png",
+  "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+  "smiles_nostereo": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+  "tags": {
+   "heavy_atoms": 37,
+   "rings": 5,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "imatinib",
+  "pubchem_cid": "5291"
+ },
+ {
+  "image_path": "data/images/384/drugs/00084.png",
+  "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "smiles_nostereo": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "tags": {
+   "heavy_atoms": 31,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "Cl",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "gefitinib",
+  "pubchem_cid": "123631"
+ },
+ {
+  "image_path": "data/images/384/drugs/00085.png",
+  "smiles": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+  "smiles_nostereo": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+  "tags": {
+   "heavy_atoms": 29,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "erlotinib",
+  "pubchem_cid": "176870"
+ },
+ {
+  "image_path": "data/images/384/drugs/00086.png",
+  "smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)N[C@@H](CCC(=O)O)C(=O)O)cc1",
+  "smiles_nostereo": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)NC(CCC(=O)O)C(=O)O)cc1",
+  "tags": {
+   "heavy_atoms": 33,
+   "rings": 3,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "methotrexate",
+  "pubchem_cid": "126941"
+ },
+ {
+  "image_path": "data/images/384/drugs/00087.png",
+  "smiles": "O=C(O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
+  "smiles_nostereo": "O=C(O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 4,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "ciprofloxacin",
+  "pubchem_cid": "2764"
+ },
+ {
+  "image_path": "data/images/384/drugs/00088.png",
+  "smiles": "C[C@H]1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23",
+  "smiles_nostereo": "CC1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23",
+  "tags": {
+   "heavy_atoms": 26,
+   "rings": 4,
+   "stereocenters": 1,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "levofloxacin",
+  "pubchem_cid": "149096"
+ },
+ {
+  "image_path": "data/images/384/drugs/00089.png",
+  "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(=O)O",
+  "smiles_nostereo": "CC1(C)SC2C(NC(=O)C(N)c3ccc(O)cc3)C(=O)N2C1C(=O)O",
+  "tags": {
+   "heavy_atoms": 25,
+   "rings": 3,
+   "stereocenters": 4,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "amoxicillin",
+  "pubchem_cid": "33613"
+ },
+ {
+  "image_path": "data/images/384/drugs/00090.png",
+  "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](N)c3ccccc3)C(=O)N2[C@H]1C(=O)O",
+  "smiles_nostereo": "CC1(C)SC2C(NC(=O)C(N)c3ccccc3)C(=O)N2C1C(=O)O",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 4,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "ampicillin",
+  "pubchem_cid": "6249"
+ },
+ {
+  "image_path": "data/images/384/drugs/00091.png",
+  "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)Cc3ccccc3)C(=O)N2[C@H]1C(=O)O",
+  "smiles_nostereo": "CC1(C)SC2C(NC(=O)Cc3ccccc3)C(=O)N2C1C(=O)O",
+  "tags": {
+   "heavy_atoms": 23,
+   "rings": 3,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "benzylpenicillin",
+  "pubchem_cid": "5904"
+ },
+ {
+  "image_path": "data/images/384/drugs/00092.png",
+  "smiles": "CC1=C(C(=O)O)N2C(=O)[C@@H](NC(=O)[C@H](N)c3ccccc3)[C@H]2SC1",
+  "smiles_nostereo": "CC1=C(C(=O)O)N2C(=O)C(NC(=O)C(N)c3ccccc3)C2SC1",
+  "tags": {
+   "heavy_atoms": 24,
+   "rings": 3,
+   "stereocenters": 3,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "cephalexin",
+  "pubchem_cid": "27447"
+ },
+ {
+  "image_path": "data/images/384/drugs/00093.png",
+  "smiles": "C[C@H]1c2cccc(O)c2C(O)=C2C(=O)[C@]3(O)C(O)=C(C(N)=O)C(=O)[C@@H](N(C)C)[C@@H]3[C@@H](O)[C@@H]21",
+  "smiles_nostereo": "CC1c2cccc(O)c2C(O)=C2C(=O)C3(O)C(O)=C(C(N)=O)C(=O)C(N(C)C)C3C(O)C21",
+  "tags": {
+   "heavy_atoms": 32,
+   "rings": 4,
+   "stereocenters": 6,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "doxycycline",
+  "pubchem_cid": "54671203"
+ },
+ {
+  "image_path": "data/images/384/drugs/00094.png",
+  "smiles": "CN(C)[C@@H]1C(=O)C(C(N)=O)=C(O)[C@@]2(O)C(=O)C3=C(O)c4c(O)cccc4[C@@](C)(O)[C@H]3C[C@@H]12",
+  "smiles_nostereo": "CN(C)C1C(=O)C(C(N)=O)=C(O)C2(O)C(=O)C3=C(O)c4c(O)cccc4C(C)(O)C3CC12",
+  "tags": {
+   "heavy_atoms": 32,
+   "rings": 4,
+   "stereocenters": 5,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "tetracycline",
+  "pubchem_cid": "54675776"
+ },
+ {
+  "image_path": "data/images/384/drugs/00095.png",
+  "smiles": "Cc1cc(NS(=O)(=O)c2ccc(N)cc2)no1",
+  "smiles_nostereo": "Cc1cc(NS(=O)(=O)c2ccc(N)cc2)no1",
+  "tags": {
+   "heavy_atoms": 17,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O",
+    "S"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "sulfamethoxazole",
+  "pubchem_cid": "5329"
+ },
+ {
+  "image_path": "data/images/384/drugs/00096.png",
+  "smiles": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC",
+  "smiles_nostereo": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC",
+  "tags": {
+   "heavy_atoms": 21,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "trimethoprim",
+  "pubchem_cid": "5578"
+ },
+ {
+  "image_path": "data/images/384/drugs/00097.png",
+  "smiles": "Cc1ncc([N+](=O)[O-])n1CCO",
+  "smiles_nostereo": "Cc1ncc([N+](=O)[O-])n1CCO",
+  "tags": {
+   "heavy_atoms": 12,
+   "rings": 1,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 2,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "metronidazole",
+  "pubchem_cid": "4173"
+ },
+ {
+  "image_path": "data/images/384/drugs/00098.png",
+  "smiles": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F",
+  "smiles_nostereo": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F",
+  "tags": {
+   "heavy_atoms": 22,
+   "rings": 3,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "F",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": false
+  },
+  "name": "fluconazole",
+  "pubchem_cid": "3365"
+ },
+ {
+  "image_path": "data/images/384/drugs/00099.png",
+  "smiles": "Nc1nc2c(ncn2COCCO)c(=O)[nH]1",
+  "smiles_nostereo": "Nc1nc2c(ncn2COCCO)c(=O)[nH]1",
+  "tags": {
+   "heavy_atoms": 16,
+   "rings": 2,
+   "stereocenters": 0,
+   "ez_bonds": 0,
+   "charged_atoms": 0,
+   "elements": [
+    "C",
+    "N",
+    "O"
+   ],
+   "fragments": 1,
+   "bridged": false,
+   "fused": true
+  },
+  "name": "acyclovir",
+  "pubchem_cid": "135398513"
+ }
+]

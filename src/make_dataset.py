@@ -48,6 +48,8 @@ rdDepictor.SetPreferCoordGen(True)
 
 ROOT = Path(__file__).resolve().parents[1]
 ZINC = ROOT / "data/raw/zinc250k/250k_rndm_zinc_drugs_clean_3.csv"
+ZINC_URL = "https://raw.githubusercontent.com/aspuru-guzik-group/chemical_vae/master/models/zinc_properties/250k_rndm_zinc_drugs_clean_3.csv"
+ZINC_SHA256 = "35e3f1a52b1badc0697e373d73a18ad773f415936ff992f4c6baa2e067b3e6ae"
 DRUG_DIR = ROOT / "data/raw/pubchem_drugs"
 PROMPT = "Extract the chemical structure from this image and output ONLY the canonical SMILES string."  # = src.predict.PROMPT
 RESOLUTIONS = (384, 640)
@@ -169,6 +171,21 @@ def render_job(job: tuple[str, str, int, str]) -> None:
     render(smiles, ROOT / rel_path, res, style_for(style_key))  # always overwrite: ids can map to new molecules
 
 
+def ensure_zinc() -> None:
+    """Download ZINC250k if missing and check it is the exact file the frozen sets were built from."""
+    import hashlib
+
+    import requests
+
+    if not ZINC.exists():
+        print("downloading ZINC250k (22 MB) ...")
+        ZINC.parent.mkdir(parents=True, exist_ok=True)
+        ZINC.write_bytes(requests.get(ZINC_URL, timeout=120).content)
+    digest = hashlib.sha256(ZINC.read_bytes()).hexdigest()
+    if digest != ZINC_SHA256:
+        sys.exit(f"ZINC250k checksum mismatch ({digest}); the frozen sets would not reproduce")
+
+
 # ---------- drugs ----------
 
 def fetch_drugs() -> list[dict]:
@@ -212,6 +229,7 @@ def main() -> None:
     rng = random.Random(SEED)
 
     # 1. Pool: random ZINC rows plus every P-containing and bridged molecule (rare features).
+    ensure_zinc()
     zinc = [r["smiles"].strip() for r in csv.DictReader(ZINC.open())]
     order = list(range(len(zinc)))
     rng.shuffle(order)

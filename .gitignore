@@ -2,11 +2,17 @@
 __pycache__/
 *.pyc
 .env
-data/raw/
+data/raw/*
+!data/raw/pubchem_drugs/
 data/images/
 data/*.jsonl
 data/*.json
 !data/README.md
+# Frozen evaluation sets (Person A); never edit, see START_HERE_PERSON_B.md
+!data/val_*.json
+!data/test_synthetic_*.json
+!data/test_drugs_*.json
+!data/dataset_report.json
 results/raw/
 *.png
 !docs/*.png

@@ -1,0 +1,82 @@
+{
+  "seed": 20261102,
+  "sizes": {
+    "train": 10000,
+    "val": 200,
+    "test": 500,
+    "drugs": 100
+  },
+  "scaffolds": {
+    "train": 7869,
+    "val": 176,
+    "test": 412
+  },
+  "features": {
+    "train": {
+      "stereo": 6281,
+      "charged": 1357,
+      "multi_fragment": 423,
+      "bridged": 226,
+      "fused": 3321,
+      "P": 24,
+      "S": 3521,
+      "halogen": 3854
+    },
+    "val": {
+      "stereo": 118,
+      "charged": 18,
+      "multi_fragment": 5,
+      "bridged": 5,
+      "fused": 76,
+      "P": 0,
+      "S": 80,
+      "halogen": 66
+    },
+    "test": {
+      "stereo": 311,
+      "charged": 61,
+      "multi_fragment": 27,
+      "bridged": 19,
+      "fused": 202,
+      "P": 0,
+      "S": 187,
+      "halogen": 176
+    },
+    "drugs": {
+      "stereo": 38,
+      "charged": 2,
+      "multi_fragment": 0,
+      "bridged": 6,
+      "fused": 53,
+      "P": 6,
+      "S": 18,
+      "halogen": 32
+    }
+  },
+  "leakage_checks": "passed: zero shared canonical SMILES (with and without stereo) across train/val/test/drugs; zero shared scaffolds across train/val/test",
+  "label_tokens": {
+    "train": {
+      "max": 72,
+      "mean": 29.9
+    },
+    "val": {
+      "max": 55,
+      "mean": 31.4
+    },
+    "test": {
+      "max": 69,
+      "mean": 30.6
+    },
+    "drugs": {
+      "max": 68,
+      "mean": 30.6
+    }
+  },
+  "longest_label": {
+    "tokens": 72,
+    "smiles": "C[C@@H]1C[C@@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@H](O)C[C@]2(C)[C@@]1(O)C(=O)COP(=O)(O)O"
+  },
+  "max_tokens_cap": 108,
+  "drugs_skipped_or_missing": 25,
+  "build_seconds": 119
+}

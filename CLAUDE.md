@@ -17,6 +17,8 @@ Two people (and their agents) work on this repo at the same time. Every agent, i
 
 ## Ownership (two-person plan)
 
+Person B onboarding (setup, frozen-file check, how to add systems, scoring, cost logging): `START_HERE_PERSON_B.md`.
+
 - **Person A — data and training (nicolewongbiz):** Modal GPUs (auto-stop), Fireworks account/deployment, dataset (`src/make_dataset.py`, `data/`), training (`src/modal_train.py`), serving (`src/modal_serve.py`), open-model predictors in `src/predict.py`, `src/run_system.py`, `smoke/`, learning curve, ablations, repetition-loop fix.
 - **Person B — baselines and comparison (friend):** closed-model API keys and spend, closed-model and MolScribe predictors, `src/evaluate.py`, charts, `app.py`, real-world test set, FINAL_COMPARISON.
 - Message the owner before changing their files. Paid resources have one owner: A owns Modal GPUs and any Fireworks deployment; B owns closed-model API spend.
