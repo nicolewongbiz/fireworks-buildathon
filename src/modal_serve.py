@@ -74,11 +74,20 @@ class Server:
             "--api-key", os.environ["MODAL_VLLM_API_KEY"],
             "--max-model-len", "4096",
             "--limit-mm-per-prompt", '{"image": 1, "video": 0}',
-            "--enforce-eager",  # faster cold start; throughput doesn't matter for small eval runs
+            # CUDA graphs on (no --enforce-eager): eager mode cost ~1 s/request with a LoRA. Compile
+            # artifacts are cached in the vllm-cache volume, so only the first cold start pays for it.
         ]
         if loras:
-            cmd += ["--enable-lora", "--max-lora-rank", "64", "--lora-modules"]
+            import json
+
+            cfgs = [json.loads((p / "adapter_config.json").read_text()) for p in loras]
+            # Kernels are sized by --max-lora-rank, so use the smallest vLLM-allowed rank that fits.
+            max_r = max(c["r"] for c in cfgs)
+            rank = next(r for r in (8, 16, 32, 64, 128, 256) if r >= max_r)
+            cmd += ["--enable-lora", "--max-lora-rank", str(rank), "--lora-modules"]
             cmd += [f"{p.name}={p}" for p in loras]
+            if any("visual" in str(c.get("target_modules")) for c in cfgs):
+                cmd += ["--enable-tower-connector-lora"]  # otherwise vLLM silently drops visual.* LoRA weights
         print("LoRAs:", [p.name for p in loras])
         print(*cmd[:8], "...")
         self.process = subprocess.Popen(cmd)
