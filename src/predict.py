@@ -46,7 +46,14 @@ def _chat(client: OpenAI, model: str, image_path: str, escalated: bool = False) 
     for _ in range(90):
         try:
             t0 = time.perf_counter()
-            resp = client.chat.completions.create(model=model, messages=messages, temperature=0, max_tokens=MAX_TOKENS)
+            resp = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=0,
+                max_tokens=MAX_TOKENS,
+                # Qwen3.5 thinks by default; we want a bare SMILES.
+                extra_body={"chat_template_kwargs": {"enable_thinking": False}},
+            )
             latency = time.perf_counter() - t0
             break
         except APIStatusError as e:

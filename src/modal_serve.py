@@ -1,4 +1,4 @@
-"""OpenAI-compatible vLLM server on Modal for Qwen3-VL-8B, plus any LoRAs in the `chemvision-loras` volume.
+"""OpenAI-compatible vLLM server on Modal for Qwen3.5-9B, plus any LoRAs in the `chemvision-loras` volume.
 
 Person A owns this. Usage:
   uv run modal run src/modal_serve.py::download_model   # one-time, CPU only, caches weights
@@ -11,8 +11,8 @@ Model names: "base" for the untuned model, and each LoRA's directory name in the
 """
 import modal
 
-MODEL_NAME = "Qwen/Qwen3-VL-8B-Instruct"
-MODEL_REVISION = "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+MODEL_NAME = "Qwen/Qwen3.5-9B"  # Fireworks `qwen3p5-9b`; Qwen3-VL-8B is not trainable on Fireworks
+MODEL_REVISION = "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
 GPU = "L40S"
 VLLM_PORT = 8000
 MINUTES = 60

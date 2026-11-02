@@ -2,6 +2,10 @@
 
 Project: ChemVision-Tuned — fine-tune a small VLM for molecule image → SMILES, benchmark on Fireworks.
 
+Base model: **Qwen3.5-9B** (Fireworks `accounts/fireworks/models/qwen3p5-9b`, HF `Qwen/Qwen3.5-9B`). Not Qwen3-VL-8B: Fireworks lists it "Training: Not supported" (`useTrainingV2: false`) and rejects SFT jobs. Qwen3.5 thinks by default — send `chat_template_kwargs: {"enable_thinking": false}` (vLLM) to get a bare answer.
+
+As of 2026-11-01, Fireworks dataset uploads are disabled on the account (`FailedPrecondition`); waiting on Fireworks support. Until then no managed SFT job can start.
+
 ## Collaboration: push to GitHub often
 
 Two people (and their agents) work on this repo at the same time. Every agent, including subagents:
