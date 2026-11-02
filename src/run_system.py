@@ -12,13 +12,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
+import statistics
 import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from pathlib import Path
 
-from src.predict import SYSTEMS
-from src.validate import score
+from src.predict import MAX_TOKENS, SYSTEMS
+from src.validate import canonicalize, score
 
 
 def main() -> None:
@@ -42,8 +44,11 @@ def main() -> None:
         if first_answer_s is None:
             first_answer_s = time.perf_counter() - t_start
         m = score(out["smiles"] or "", it["smiles"])
+        # score() compares stereo-stripped forms; labels now carry stereo, so also check the isomeric form.
+        exact_stereo = m.valid and canonicalize(m.pred_smiles, strip_stereo=False) == canonicalize(it["smiles"], strip_stereo=False)
         print(f"{'OK ' if m.exact else 'BAD'} valid={m.valid} {out['latency_s']:.2f}s {out['smiles']!r}")
-        return {"image_path": it["image_path"], "truth": it["smiles"], "predict": out, "match": asdict(m)}
+        return {"image_path": it["image_path"], "truth": it["smiles"], "tags": it.get("tags"), "predict": out,
+                "match": asdict(m) | {"exact_stereo": exact_stereo, "hit_cap": out["tokens_out"] >= MAX_TOKENS}}
 
     if args.workers > 1:
         # Warm the server with one request first so the cold start is not counted against every worker.
@@ -55,13 +60,20 @@ def main() -> None:
     wall_s = time.perf_counter() - t_start
 
     n = len(rows)
+    lat = sorted(r["predict"]["latency_s"] for r in rows)
     gpu_hours = wall_s / 3600
     summary = {
         "system": args.system,
         "n": n,
-        "exact_match": sum(r["match"]["exact"] for r in rows) / n,
+        "exact_match": sum(r["match"]["exact_stereo"] for r in rows) / n,  # stereo-aware (headline)
+        "exact_match_nostereo": sum(r["match"]["exact"] for r in rows) / n,  # stereo-agnostic
         "valid_rate": sum(r["match"]["valid"] for r in rows) / n,
+        "mean_tanimoto": sum(r["match"]["tanimoto"] for r in rows) / n,
+        "loop_rate": sum(r["match"]["hit_cap"] for r in rows) / n,  # outputs that hit max_tokens
+        "max_tokens": MAX_TOKENS,
         "mean_latency_s": sum(r["predict"]["latency_s"] for r in rows) / n,
+        "median_latency_s": statistics.median(lat),
+        "p95_latency_s": lat[min(n - 1, math.ceil(0.95 * n) - 1)],
         "mean_tokens_in": sum(r["predict"]["tokens_in"] for r in rows) / n,
         "mean_tokens_out": sum(r["predict"]["tokens_out"] for r in rows) / n,
         "first_answer_s": first_answer_s,

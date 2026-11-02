@@ -18,7 +18,7 @@ from openai import APIStatusError, OpenAI
 load_dotenv()
 
 PROMPT = "Extract the chemical structure from this image and output ONLY the canonical SMILES string."
-MAX_TOKENS = 150
+MAX_TOKENS = 108  # 1.5x the longest label (72 Qwen3.5 tokens, data/dataset_report.json); smoke runs used 150
 
 
 @cache
