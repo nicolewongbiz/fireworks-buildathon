@@ -1,6 +1,6 @@
 # Results so far
 
-Last updated 2026-11-02 01:00 PT. Smoke-test scale only: nothing here is a headline number. The point of
+Last updated 2026-11-02 01:50 PT. Smoke-test scale only: nothing here is a headline number. The point of
 tonight was to retire platform risk by running upload, train, serve, and query end to end once.
 
 ## Smoke test: untuned Qwen3.5-9B on 10 synthetic images
@@ -197,6 +197,11 @@ confidence intervals in `results/comparison.md`.
 
 What this tells us:
 
+- **Paired test, same 500 images** (`results/paired.md`): tuned minus untuned is +6.8 points
+  [+4.6, +9.0] stereo-aware, McNemar p < 0.001 (34 discordant images, all in the tuned model's favour).
+  MolScribe minus tuned is +86.6 points [+83.8, +89.4]; MolScribe is right on every molecule the tuned
+  model gets right plus 433 more. All systems share images, so paired intervals are what we report;
+  unpaired binomial half-widths at n=500 are about ±2.2 at 7% and ±4.4 at 50%.
 - **500 training images already move the model off zero.** Exact match went from 0 to 6.8%
   stereo-aware (11.4% ignoring stereo), looping dropped from 19.2% to 0.0%, and mean
   Tanimoto rose from 0.11 to 0.42. The validation loss curve on this run bottomed at epoch 2 and rose

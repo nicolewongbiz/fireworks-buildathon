@@ -1,6 +1,7 @@
 {
-  "generated_utc": "2026-11-02T07:34:35+00:00",
+  "generated_utc": "2026-11-02T07:48:28+00:00",
   "headline_metric": "exact",
+  "headline_summary_key": "exact_match",
   "bootstrap": {
     "resamples": 1000,
     "seed": 0,
@@ -48,6 +49,15 @@
       "first_answer_s": 8.825970666017383,
       "wall_s": 425.4213862500619,
       "max_tokens": null,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.0,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.115,
       "headline_n": 23,
@@ -99,6 +109,15 @@
       "first_answer_s": 8.853729999973439,
       "wall_s": 204.65463687491138,
       "max_tokens": null,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.0,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.89,
       "headline_n": 178,
@@ -150,6 +169,15 @@
       "first_answer_s": 7.987471916014329,
       "wall_s": 457.0285007499624,
       "max_tokens": null,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.0,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.934,
       "headline_n": 467,
@@ -201,6 +229,15 @@
       "first_answer_s": 259.11375733301975,
       "wall_s": 479.6499374579871,
       "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.007641481846757147,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.068,
       "headline_n": 34,
@@ -252,6 +289,15 @@
       "first_answer_s": 1.1891992080491036,
       "wall_s": 11.065974583034404,
       "max_tokens": 108,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": "inf",
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.0,
       "headline_n": 0,
@@ -305,6 +351,15 @@
       "first_answer_s": 1.629241041955538,
       "wall_s": 14.396459667012095,
       "max_tokens": 108,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.00160125,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.8,
       "headline_n": 8,
@@ -358,6 +413,15 @@
       "first_answer_s": 1.4351962079526857,
       "wall_s": 12.497696375008672,
       "max_tokens": 108,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.004557,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.2,
       "headline_n": 2,
@@ -411,6 +475,15 @@
       "first_answer_s": 8.38208037498407,
       "wall_s": 20.07051141699776,
       "max_tokens": null,
+      "workers": 1,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": 0.0,
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 1.0,
       "headline_n": 10,
@@ -464,6 +537,15 @@
       "first_answer_s": 6.0102370829554275,
       "wall_s": 35.05370020796545,
       "max_tokens": null,
+      "workers": null,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": "inf",
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.0,
       "headline_n": 0,
@@ -520,6 +602,15 @@
       "first_answer_s": 249.56756195798516,
       "wall_s": 279.4047029999783,
       "max_tokens": null,
+      "workers": null,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": "inf",
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.0,
       "headline_n": 0,
@@ -576,6 +667,15 @@
       "first_answer_s": 200.9028797079809,
       "wall_s": 355.2588462079875,
       "max_tokens": 108,
+      "workers": 8,
+      "cold_start_s": null,
+      "cold_start_usd": null,
+      "steady_images_per_s": null,
+      "steady_usd_per_1k_images": null,
+      "steady_cost_per_correct": null,
+      "chart_cost": "inf",
+      "chart_cost_source": "whole-run",
+      "throughput_run": false,
       "headline_metric": "exact",
       "headline_rate": 0.0,
       "headline_n": 0,
@@ -590,6 +690,101 @@
       "label": "untuned \u00b7 test_synthetic_384"
     }
   ],
+  "paired": {
+    "method": "items matched on image_path; diff = acc(a) - acc(b); mcnemar_p = exact two-sided binomial test of only_a vs only_b; diff_ci = paired percentile bootstrap 95% over shared images",
+    "pairs_requested": [
+      [
+        "n500_r384_lang_e3",
+        "untuned"
+      ],
+      [
+        "molscribe",
+        "n500_r384_lang_e3"
+      ]
+    ],
+    "excluded": [],
+    "comparisons": [
+      {
+        "testset": "test_synthetic_384",
+        "a": "n500_r384_lang_e3",
+        "b": "untuned",
+        "metrics": {
+          "exact": {
+            "n_shared": 500,
+            "both_right": 0,
+            "only_a": 34,
+            "only_b": 0,
+            "both_wrong": 466,
+            "acc_a": 0.068,
+            "acc_b": 0.0,
+            "diff": 0.068,
+            "discordant": 34,
+            "mcnemar_p": 1.1641532182693481e-10,
+            "diff_ci": [
+              0.046,
+              0.09
+            ]
+          },
+          "exact_nostereo": {
+            "n_shared": 500,
+            "both_right": 0,
+            "only_a": 57,
+            "only_b": 0,
+            "both_wrong": 443,
+            "acc_a": 0.114,
+            "acc_b": 0.0,
+            "diff": 0.114,
+            "discordant": 57,
+            "mcnemar_p": 1.3877787807814457e-17,
+            "diff_ci": [
+              0.088,
+              0.144
+            ]
+          }
+        }
+      },
+      {
+        "testset": "test_synthetic_384",
+        "a": "molscribe",
+        "b": "n500_r384_lang_e3",
+        "metrics": {
+          "exact": {
+            "n_shared": 500,
+            "both_right": 34,
+            "only_a": 433,
+            "only_b": 0,
+            "both_wrong": 33,
+            "acc_a": 0.934,
+            "acc_b": 0.068,
+            "diff": 0.8660000000000001,
+            "discordant": 433,
+            "mcnemar_p": 9.016580681431383e-131,
+            "diff_ci": [
+              0.838,
+              0.8939999999999999
+            ]
+          },
+          "exact_nostereo": {
+            "n_shared": 500,
+            "both_right": 57,
+            "only_a": 420,
+            "only_b": 0,
+            "both_wrong": 23,
+            "acc_a": 0.954,
+            "acc_b": 0.114,
+            "diff": 0.84,
+            "discordant": 420,
+            "mcnemar_p": 7.386382894228589e-127,
+            "diff_ci": [
+              0.8099999999999999,
+              0.87
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "by_tag_min_n": 100,
   "by_tag": {
     "heavy_atoms<=20": {
       "molscribe \u00b7 test_handdrawn_384": [
@@ -664,105 +859,48 @@
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
       "untuned \u00b7 test_synthetic_384": null
     },
-    "rings=0": {
+    "stereo: no": {
       "molscribe \u00b7 test_handdrawn_384": [
-        6,
-        88
+        16,
+        143
       ],
       "molscribe \u00b7 test_real_uspto_384": [
-        4,
-        5
+        131,
+        139
       ],
-      "molscribe \u00b7 test_synthetic_384": null,
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
-      "untuned \u00b7 test_synthetic_384": null
+      "molscribe \u00b7 test_synthetic_384": [
+        184,
+        189
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        30,
+        189
+      ],
+      "untuned \u00b7 test_synthetic_384": [
+        0,
+        189
+      ]
     },
-    "rings=1": {
+    "stereo: yes": {
       "molscribe \u00b7 test_handdrawn_384": [
-        10,
+        7,
+        57
+      ],
+      "molscribe \u00b7 test_real_uspto_384": [
+        47,
         61
       ],
-      "molscribe \u00b7 test_real_uspto_384": [
-        20,
-        22
-      ],
       "molscribe \u00b7 test_synthetic_384": [
-        6,
-        6
+        283,
+        311
       ],
       "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        0,
-        6
-      ],
-      "untuned \u00b7 test_synthetic_384": [
-        0,
-        6
-      ]
-    },
-    "rings=2": {
-      "molscribe \u00b7 test_handdrawn_384": [
         4,
-        33
-      ],
-      "molscribe \u00b7 test_real_uspto_384": [
-        20,
-        23
-      ],
-      "molscribe \u00b7 test_synthetic_384": [
-        142,
-        152
-      ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        17,
-        152
+        311
       ],
       "untuned \u00b7 test_synthetic_384": [
         0,
-        152
-      ]
-    },
-    "rings=3": {
-      "molscribe \u00b7 test_handdrawn_384": [
-        2,
-        10
-      ],
-      "molscribe \u00b7 test_real_uspto_384": [
-        41,
-        54
-      ],
-      "molscribe \u00b7 test_synthetic_384": [
-        204,
-        216
-      ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        12,
-        216
-      ],
-      "untuned \u00b7 test_synthetic_384": [
-        0,
-        216
-      ]
-    },
-    "rings>=4": {
-      "molscribe \u00b7 test_handdrawn_384": [
-        1,
-        8
-      ],
-      "molscribe \u00b7 test_real_uspto_384": [
-        93,
-        96
-      ],
-      "molscribe \u00b7 test_synthetic_384": [
-        115,
-        126
-      ],
-      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
-        5,
-        126
-      ],
-      "untuned \u00b7 test_synthetic_384": [
-        0,
-        126
+        311
       ]
     },
     "stereocenters=0": {
@@ -873,6 +1011,107 @@
       "untuned \u00b7 test_synthetic_384": [
         0,
         22
+      ]
+    },
+    "rings=0": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        6,
+        88
+      ],
+      "molscribe \u00b7 test_real_uspto_384": [
+        4,
+        5
+      ],
+      "molscribe \u00b7 test_synthetic_384": null,
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": null,
+      "untuned \u00b7 test_synthetic_384": null
+    },
+    "rings=1": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        10,
+        61
+      ],
+      "molscribe \u00b7 test_real_uspto_384": [
+        20,
+        22
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        6,
+        6
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        0,
+        6
+      ],
+      "untuned \u00b7 test_synthetic_384": [
+        0,
+        6
+      ]
+    },
+    "rings=2": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        4,
+        33
+      ],
+      "molscribe \u00b7 test_real_uspto_384": [
+        20,
+        23
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        142,
+        152
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        17,
+        152
+      ],
+      "untuned \u00b7 test_synthetic_384": [
+        0,
+        152
+      ]
+    },
+    "rings=3": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        2,
+        10
+      ],
+      "molscribe \u00b7 test_real_uspto_384": [
+        41,
+        54
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        204,
+        216
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        12,
+        216
+      ],
+      "untuned \u00b7 test_synthetic_384": [
+        0,
+        216
+      ]
+    },
+    "rings>=4": {
+      "molscribe \u00b7 test_handdrawn_384": [
+        1,
+        8
+      ],
+      "molscribe \u00b7 test_real_uspto_384": [
+        93,
+        96
+      ],
+      "molscribe \u00b7 test_synthetic_384": [
+        115,
+        126
+      ],
+      "n500_r384_lang_e3 \u00b7 test_synthetic_384": [
+        5,
+        126
+      ],
+      "untuned \u00b7 test_synthetic_384": [
+        0,
+        126
       ]
     },
     "charged": {

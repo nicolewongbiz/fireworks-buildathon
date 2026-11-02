@@ -5,6 +5,7 @@ Usage
     .venv/bin/python -m src.evaluate results/tuned.json results/large.json
     .venv/bin/python -m src.evaluate --cost large=4.20 --price-in large=0.15 --price-out large=0.60
     .venv/bin/python -m src.evaluate --out-dir /tmp/cmp --metric exact_nostereo --no-charts
+    .venv/bin/python -m src.evaluate --pairs n500_r384_lang_e3:untuned,molscribe:n500_r384_lang_e3
     .venv/bin/python -m src.evaluate --help
 
 Inputs are `results/<name>.json` files shaped `{"summary": {...}, "items": [...]}` as written by
@@ -31,6 +32,24 @@ Metrics per system (all from items; missing keys become None, never a crash)
     latency      p50 / p95 of predict.latency_s (p95 uses the same index rule as run_system.py)
     Bootstrap 95% CIs (percentile, --bootstrap resamples, fixed --seed) for exact, exact_nostereo, valid.
 
+Paired comparisons (systems scored on the same test set share the same images)
+    For every pair of systems on one test set (all pairs by default; `--pairs A:B,C:D` restricts to the
+    named pairs, the difference is A minus B) items are matched on `image_path` and compared on both the
+    headline stereo-aware metric (match.exact_stereo, falling back to match.exact or the RDKit-derived
+    value when a file lacks it) and the stereo-agnostic metric (match.exact):
+    n shared, both right, only A right, only B right, both wrong, accuracy difference, an exact McNemar
+    test (two-sided binomial test of only-A vs only-B among the discordant pairs; scipy.stats.binomtest
+    when scipy is installed, otherwise an exact math.comb implementation) and a paired bootstrap 95%
+    interval of the difference (--bootstrap resamples over the shared images, fixed --seed).
+    The paired interval is much narrower than the gap between two independent CIs because the two
+    systems see the same molecules, so it is the number to quote when ranking systems.
+
+Difficulty breakdown (per-tag table)
+    Heavy-atom bands and stereo yes/no are the primary bins; the other make_dataset.py attributes are
+    secondary. A bin is reported only when it holds more than --min-tag-n items (default 100) on that
+    test set; the bin's n is always printed with the cell; smaller bins are listed once in a footnote as
+    "not reported (n=...)". comparison.json keeps every bin under `by_tag` with its n.
+
 Cost
     usd            = --cost <system>=<usd> if given, else summary.usd (GPU wall-clock x hourly rate as
                      recorded by run_system.py), plus token_usd when --price-in/--price-out are given.
@@ -39,12 +58,22 @@ Cost
                      includes tokens (run_system.py --usd-per-mtok-*), or they are counted twice.
     cost_per_correct = usd / (number of headline exact matches); inf when there are zero matches.
     cost_per_image   = usd / n.
+    steady_usd_per_1k_images, cold_start_usd, cold_start_s, steady_images_per_s, workers are copied from
+                     the summary when present (run_system.py >= cecfa18; blank otherwise). Steady state
+                     excludes cold start: GPU rate / throughput + API token cost per image, at the stated
+                     concurrency (`workers`).
+    steady_cost_per_correct = steady_usd_per_1k_images / 1000 / headline exact match. The headline chart's
+                     x axis uses it whenever the key is present and falls back to cost_per_correct
+                     (whole run / correct answers) otherwise; the subtitle says which.
+    Systems whose name ends in `_w32` are high-concurrency throughput runs: they are kept for the best-case
+    steady $/1k only (marked in the table), and excluded from latency columns, paired tests and charts.
 
 Outputs (in --out-dir, default results/)
-    comparison.md, comparison.json
+    comparison.md, comparison.json   (comparison.json carries the paired results under `paired`)
+    paired.md                        one paired-comparison table per test set
     chart_exact_vs_cost.{png,svg} and chart_exact_vs_cost_dark.{png,svg}   headline chart
     chart_exact_by_testset.{png,svg} and _dark variants                     only if >1 test set seen
-Only the standard library plus numpy, pandas and matplotlib are required; RDKit is optional.
+Only the standard library plus numpy, pandas and matplotlib are required; RDKit and scipy are optional.
 """
 from __future__ import annotations
 
@@ -55,6 +84,7 @@ import os
 import re
 import sys
 from collections import OrderedDict
+from itertools import combinations
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -63,8 +93,14 @@ import numpy as np
 import pandas as pd
 
 HEADLINE_LABEL = {"exact": "stereo-aware", "exact_nostereo": "stereo-agnostic"}
+SUMMARY_KEY = {"exact": "exact_match", "exact_nostereo": "exact_match_nostereo"}  # run_system.py summary field per variant
 KNOWN_ORDER = ["untuned", "tuned", "large", "routed"]  # fixed hue slots so colors follow the entity
 N_COLOR_SLOTS = 3  # validated all-pairs cap for a scatter (dataviz palette.md); systems beyond use neutral gray
+MIN_TAG_N_DEFAULT = 100  # a difficulty bin is reported only when it holds more than this many items
+# Binomial 95% half-widths at n=500, quoted in the report so readers do not over-read small gaps.
+HALF_WIDTH_NOTE = ("Rule of thumb for a single system at n=500: the binomial 95% half-width is about ±2.2 points at 7%, "
+                   "±3.1 at 15% and ±4.4 at 50%. The paired test below is sharper than comparing two such intervals "
+                   "because the systems share images, so quote the paired interval and McNemar p-value when ranking systems.")
 
 # ---------------------------------------------------------------------------------------------------
 # Loading
@@ -282,6 +318,19 @@ def evaluate_run(run: dict, args: argparse.Namespace, canonicalize) -> dict:
     cost_per_correct = None if usd is None else (usd / headline_n if headline_n else math.inf)
     cost_per_image = None if usd is None or n == 0 else usd / n
 
+    # steady-state cost (excludes cold start) when run_system.py recorded it; whole-run cost otherwise
+    steady_1k = _get(summary, "steady_usd_per_1k_images")
+    steady_1k = float(steady_1k) if isinstance(steady_1k, (int, float)) else None
+    if steady_1k is not None:
+        steady_cpc = (steady_1k / 1000 / headline_rate) if headline_rate else (None if headline_rate is None else math.inf)
+        chart_cost, chart_cost_source = steady_cpc, "steady"
+    else:
+        steady_cpc, chart_cost, chart_cost_source = None, cost_per_correct, "whole-run"
+    throughput_run = system.endswith("_w32")
+    if throughput_run:
+        notes.append("high-concurrency throughput run (_w32): best-case $/1k only; latency not reported, excluded from paired tests")
+        metrics["median_latency_s"] = metrics["p95_latency_s"] = metrics["mean_latency_s"] = None
+
     # ---- compare with the stored summary ----------------------------------------------------------
     for key, mine in (("exact_match", metrics["exact"]), ("exact_match_nostereo", metrics["exact_nostereo"]),
                       ("valid_rate", metrics["valid"]), ("mean_tanimoto", metrics["mean_tanimoto"]),
@@ -298,10 +347,17 @@ def evaluate_run(run: dict, args: argparse.Namespace, canonicalize) -> dict:
         "usd": usd, "cost_source": cost_source, "token_usd": token_usd,
         "gpu_hours": _get(summary, "gpu_hours"), "gpu_usd_per_hour": _get(summary, "gpu_usd_per_hour"),
         "first_answer_s": _get(summary, "first_answer_s"), "wall_s": _get(summary, "wall_s"),
-        "max_tokens": max_tokens,
+        "max_tokens": max_tokens, "workers": _get(summary, "workers"),
+        "cold_start_s": _get(summary, "cold_start_s"), "cold_start_usd": _get(summary, "cold_start_usd"),
+        "steady_images_per_s": _get(summary, "steady_images_per_s"), "steady_usd_per_1k_images": steady_1k,
+        "steady_cost_per_correct": steady_cpc, "chart_cost": chart_cost, "chart_cost_source": chart_cost_source,
+        "throughput_run": throughput_run,
         "headline_metric": headline_used, "headline_rate": headline_rate, "headline_n": headline_n,
         "cost_per_correct": cost_per_correct, "cost_per_image": cost_per_image,
         "notes": notes,
+        # per-item outcome vectors (aligned with items) for the paired analysis; `_` keys are not written to JSON
+        "_image_paths": [str(_get(it, "image_path") or "") for it in items],
+        "_exact_st": exact_st, "_exact_ns": exact_ns,
     }
 
 
@@ -353,10 +409,13 @@ def tag_labels(tags: Any) -> list[str]:
             out.append(f"{key}={v}")
         else:
             out.append(f"{key}={v}")
+    if "stereocenters" in tags or "ez_bonds" in tags:  # primary yes/no bin next to the heavy-atom bands
+        has_stereo = int(tags.get("stereocenters") or 0) > 0 or int(tags.get("ez_bonds") or 0) > 0
+        out.append("stereo: yes" if has_stereo else "stereo: no")
     return out
 
 
-_TAG_FAMILIES = ["heavy_atoms", "rings", "stereocenters", "E/Z", "charged", "neutral", "fragment", "elements", "bridged", "fused"]
+_TAG_FAMILIES = ["heavy_atoms", "stereo:", "stereocenters", "E/Z", "rings", "charged", "neutral", "fragment", "elements", "bridged", "fused"]
 _HEAVY_ORDER = ["heavy_atoms<=20", "heavy_atoms 21-30", "heavy_atoms 31-40", "heavy_atoms>40"]
 
 
@@ -366,7 +425,7 @@ def _tag_sort_key(label: str) -> tuple:
     if label in _HEAVY_ORDER:
         return (fam, _HEAVY_ORDER.index(label), label)
     m = re.search(r"(\d+)", label)
-    negative = label.startswith(("no ", "not ")) or label == "neutral" or label == "single fragment"
+    negative = label.startswith(("no ", "not ")) or label in ("neutral", "single fragment", "stereo: no")
     return (fam, int(m.group(1)) if m else (-1 if negative else 0), label)
 
 
@@ -398,6 +457,164 @@ def per_tag_table(runs: list[dict], results: list[dict]) -> pd.DataFrame | None:
         for col, hc in d.items():
             df.at[lab, col] = hc
     return df
+
+
+# ---------------------------------------------------------------------------------------------------
+# Paired comparisons (same test set => same images; match on image_path)
+# ---------------------------------------------------------------------------------------------------
+
+PAIRED_METRICS = OrderedDict([("exact", "stereo-aware"), ("exact_nostereo", "stereo-agnostic")])
+
+
+def binom_two_sided_p(k: int, n: int) -> float:
+    """Exact two-sided binomial test of k successes in n trials at p=0.5 (the McNemar exact test).
+
+    Uses scipy.stats.binomtest when scipy is importable; otherwise the same definition in integers with
+    math.comb: the p-value is the total probability of every outcome at most as likely as the observed one.
+    """
+    if n <= 0:
+        return 1.0
+    try:
+        from scipy.stats import binomtest  # noqa: WPS433
+
+        return float(binomtest(int(k), int(n), 0.5, alternative="two-sided").pvalue)
+    except Exception:  # noqa: BLE001  (scipy missing)
+        pass
+    pk = math.comb(n, k)
+    mass = sum(math.comb(n, i) for i in range(n + 1) if math.comb(n, i) <= pk)
+    return min(1.0, mass / 2 ** n)
+
+
+def _outcomes(res: dict, metric: str) -> dict[str, bool]:
+    """image_path -> hit for one system; headline falls back per item to match.exact when exact_stereo is missing."""
+    st, ns = res["_exact_st"], res["_exact_ns"]
+    out: dict[str, bool] = {}
+    for path, a, b in zip(res["_image_paths"], st, ns):
+        v = (a if a is not None else b) if metric == "exact" else b
+        if path and v is not None:
+            out[path] = bool(v)
+    return out
+
+
+def paired_compare(ra: dict, rb: dict, metric: str, n_boot: int, seed: int) -> dict | None:
+    """2x2 agreement table, difference A-B, exact McNemar p and a paired bootstrap 95% CI on shared images."""
+    oa, ob = _outcomes(ra, metric), _outcomes(rb, metric)
+    shared = sorted(set(oa) & set(ob))
+    n = len(shared)
+    if n == 0:
+        return None
+    a = np.array([oa[p] for p in shared], dtype=bool)
+    b = np.array([ob[p] for p in shared], dtype=bool)
+    only_a, only_b = int((a & ~b).sum()), int((~a & b).sum())
+    rec = {
+        "n_shared": n, "both_right": int((a & b).sum()), "only_a": only_a, "only_b": only_b,
+        "both_wrong": int((~a & ~b).sum()), "acc_a": float(a.mean()), "acc_b": float(b.mean()),
+        "diff": float(a.mean() - b.mean()), "discordant": only_a + only_b,
+        "mcnemar_p": binom_two_sided_p(only_a, only_a + only_b),
+        "diff_ci": (None, None),
+    }
+    if n_boot > 0:
+        rng = np.random.default_rng(seed)
+        idx = rng.integers(0, n, size=(n_boot, n))
+        d = a[idx].mean(axis=1) - b[idx].mean(axis=1)
+        rec["diff_ci"] = (float(np.percentile(d, 2.5)), float(np.percentile(d, 97.5)))
+    return rec
+
+
+def paired_analyses(results: list[dict], args: argparse.Namespace) -> list[dict]:
+    """All pairs of systems per test set (or only --pairs A:B, difference A minus B) on both exact-match variants.
+
+    Throughput runs (`_w32`) and systems with no exact-match values are skipped.
+    """
+    eligible = [r for r in results if not r["throughput_run"] and (r["exact"] is not None or r["exact_nostereo"] is not None)]
+    by_ts: "OrderedDict[str, list[dict]]" = OrderedDict()
+    for r in eligible:
+        by_ts.setdefault(r["testset"], []).append(r)
+    out: list[dict] = []
+    for ts, rs in by_ts.items():
+        if len(rs) < 2:
+            continue
+        if args.pairs:
+            by_sys = {}
+            for r in rs:
+                by_sys.setdefault(r["system"], r)
+            pairs = [(by_sys[a], by_sys[b]) for a, b in args.pairs if a in by_sys and b in by_sys and a != b]
+        else:
+            pairs = list(combinations(rs, 2))
+        for ra, rb in pairs:
+            rec = {"testset": ts, "a": ra["system"], "b": rb["system"], "metrics": {}}
+            for metric in PAIRED_METRICS:
+                cmp = paired_compare(ra, rb, metric, args.bootstrap, args.seed)
+                if cmp is not None:
+                    rec["metrics"][metric] = cmp
+            if rec["metrics"]:
+                out.append(rec)
+    return out
+
+
+def fmt_p(p: float | None) -> str:
+    if p is None:
+        return "n/a"
+    return "< 0.001" if p < 0.001 else f"{p:.3f}"
+
+
+def fmt_pts(v: float | None) -> str:
+    return "n/a" if v is None else f"{100 * v:+.1f}"
+
+
+def fmt_diff_ci(cmp: dict) -> str:
+    lo, hi = cmp["diff_ci"]
+    core = f"{fmt_pts(cmp['diff'])} pts"
+    return core if lo is None else f"{core} [{100 * lo:+.1f}, {100 * hi:+.1f}]"
+
+
+def paired_sentence(rec: dict) -> str:
+    """One line per pair: difference with paired 95% interval and McNemar p for both exact-match variants."""
+    parts = []
+    for metric, label in PAIRED_METRICS.items():
+        cmp = rec["metrics"].get(metric)
+        if cmp is None:
+            continue
+        parts.append(f"{label} {fmt_diff_ci(cmp)}, McNemar p {fmt_p(cmp['mcnemar_p'])} "
+                     f"({cmp['only_a']} vs {cmp['only_b']} discordant of {cmp['n_shared']})")
+    return f"`{rec['a']}` − `{rec['b']}` ({rec['testset']}): " + "; ".join(parts)
+
+
+def write_paired_md(paired: list[dict], out: Path, args: argparse.Namespace) -> None:
+    lines = [
+        "# Paired comparisons",
+        "",
+        f"Generated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} by `src/evaluate.py`. Systems scored on the "
+        "same test set saw the same images (matched on `image_path`), so each pair is compared item by item. "
+        "Difference is A − B in percentage points. The 95% interval is a paired bootstrap of the difference "
+        f"({args.bootstrap} resamples over the shared images, seed {args.seed}). McNemar p is the exact two-sided "
+        "binomial test of only-A vs only-B among the discordant pairs. Headline metric is stereo-aware exact match "
+        "(`match.exact_stereo`, falling back to `match.exact`); the stereo-agnostic row (`match.exact`) follows it.",
+        "",
+        HALF_WIDTH_NOTE,
+        "",
+    ]
+    if args.pairs:
+        lines += ["Restricted to `--pairs " + ",".join(f"{a}:{b}" for a, b in args.pairs) + "`.", ""]
+    if not paired:
+        lines += ["No two eligible systems share a test set; nothing to pair.", ""]
+    by_ts: "OrderedDict[str, list[dict]]" = OrderedDict()
+    for rec in paired:
+        by_ts.setdefault(rec["testset"], []).append(rec)
+    for ts, recs in by_ts.items():
+        lines += [f"## {ts}", "",
+                  "| A | B | Metric | n shared | Both right | Only A | Only B | Both wrong | A | B | A − B [paired 95%] | McNemar p |",
+                  "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|---:|"]
+        for rec in recs:
+            for metric, label in PAIRED_METRICS.items():
+                cmp = rec["metrics"].get(metric)
+                if cmp is None:
+                    continue
+                lines.append(f"| {rec['a']} | {rec['b']} | {label} | {cmp['n_shared']} | {cmp['both_right']} | {cmp['only_a']} | "
+                             f"{cmp['only_b']} | {cmp['both_wrong']} | {pct(cmp['acc_a'])} | {pct(cmp['acc_b'])} | "
+                             f"{fmt_diff_ci(cmp)} | {fmt_p(cmp['mcnemar_p'])} |")
+        lines.append("")
+    out.write_text("\n".join(lines))
 
 
 # ---------------------------------------------------------------------------------------------------
@@ -434,7 +651,15 @@ def num(v: float | None, nd: int = 3) -> str:
     return "n/a" if v is None else f"{v:.{nd}f}"
 
 
-def write_markdown(results: list[dict], tags: pd.DataFrame | None, out: Path, args: argparse.Namespace,
+def _steady_cell(r: dict) -> str:
+    v = r.get("steady_usd_per_1k_images")
+    if v is None:
+        return ""
+    w = r.get("workers")
+    return usd(v) + (f" (w{int(w)})" if isinstance(w, (int, float)) else "")
+
+
+def write_markdown(results: list[dict], tags: pd.DataFrame | None, paired: list[dict], out: Path, args: argparse.Namespace,
                    chart_files: list[Path], multi_testset: bool) -> None:
     hl = HEADLINE_LABEL[args.metric]
     lines = [
@@ -443,20 +668,37 @@ def write_markdown(results: list[dict], tags: pd.DataFrame | None, out: Path, ar
         f"Generated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} by `src/evaluate.py` from "
         f"{len(results)} results file(s). All metrics recomputed from per-item records; "
         f"brackets are bootstrap 95% CIs ({args.bootstrap} resamples, seed {args.seed}). "
-        f"Headline exact match is {hl}; cost per correct uses it.",
+        f"Headline exact match is {hl} (`summary.{SUMMARY_KEY[args.metric]}`), shown with the other variant next to it; cost per correct uses the headline. "
+        "USD is the whole run including cold start; Steady $/1k images excludes cold start and is quoted at the measured "
+        "concurrency (w = workers); Cold start $ is the one-off container start. Blank = not recorded by this run.",
         "",
-        "| System | Test set | n | Exact (stereo) | Exact (no stereo) | Valid | Mean Tanimoto | Loop rate | Latency p50 / p95 | USD | Cost / correct | Cost / image |",
-        "|---|---|---:|---|---|---|---:|---:|---|---:|---:|---:|",
+        "| System | Test set | n | Exact (stereo) | Exact (no stereo) | Valid | Mean Tanimoto | Loop rate | Latency p50 / p95 | USD | Steady $/1k images | Cold start $ | Cost / correct | Cost / image |",
+        "|---|---|---:|---|---|---|---:|---:|---|---:|---:|---:|---:|---:|",
     ]
     for r in results:
-        flag = "" if not r["notes"] else " *"
+        flag = ("" if not r["notes"] else " *") + (" ‡" if r["throughput_run"] else "")
+        lat = "" if r["throughput_run"] else f"{secs(r['median_latency_s'])} / {secs(r['p95_latency_s'])}"
         lines.append(
             f"| {r['system']}{flag} | {r['testset']} | {r['n']} | {pct_ci(r['exact'], r['exact_ci'])} | "
             f"{pct_ci(r['exact_nostereo'], r['exact_nostereo_ci'])} | {pct_ci(r['valid'], r['valid_ci'])} | "
-            f"{num(r['mean_tanimoto'])} | {pct(r['loop_rate'])} | {secs(r['median_latency_s'])} / {secs(r['p95_latency_s'])} | "
-            f"{usd(r['usd'])} | {usd(r['cost_per_correct'])} | {usd(r['cost_per_image'])} |"
+            f"{num(r['mean_tanimoto'])} | {pct(r['loop_rate'])} | {lat} | "
+            f"{usd(r['usd'])} | {_steady_cell(r)} | {'' if r['cold_start_usd'] is None else usd(r['cold_start_usd'])} | "
+            f"{usd(r['cost_per_correct'])} | {usd(r['cost_per_image'])} |"
         )
     lines += ["", "Cost source per system: " + "; ".join(f"{r['label']}: {r['cost_source']}" for r in results) + ".", ""]
+    if any(r["throughput_run"] for r in results):
+        lines += ["‡ High-concurrency throughput run (32 workers): use only for the best-case steady $/1k; "
+                  "latency is not reported for it, and paired tests and charts skip it.", ""]
+    # ---- paired comparisons -------------------------------------------------------------------------
+    lines += ["## Paired comparisons", "",
+              "Full 2x2 tables per test set: [paired.md](paired.md). Each line: difference A − B in points with its paired "
+              f"bootstrap 95% interval ({args.bootstrap} resamples, seed {args.seed}) and the exact McNemar p-value, "
+              "for the headline stereo-aware metric and then the stereo-agnostic one.", ""]
+    if paired:
+        lines += [f"- {paired_sentence(rec)}" for rec in paired]
+    else:
+        lines.append("- No two eligible systems share a test set; nothing to pair.")
+    lines += ["", HALF_WIDTH_NOTE, ""]
     noted = [r for r in results if r["notes"]]
     if noted:
         lines += ["## Notes (* in the table)", ""]
@@ -473,16 +715,32 @@ def write_markdown(results: list[dict], tags: pd.DataFrame | None, out: Path, ar
     if not multi_testset:
         lines += ["Per-test-set chart skipped: all runs are on one test set.", ""]
     if tags is not None:
-        lines += [f"## Exact match ({hl}) by tag", "",
-                  "Tags from the test manifest (`make_dataset.py` difficulty attributes are bucketed; list tags used as is). Cell = exact % (hits/n).", "",
-                  "| Tag | " + " | ".join(tags.columns) + " |", "|---|" + "---|" * len(tags.columns)]
+        ts_of = {r["label"]: r["testset"] for r in results}
+        min_n = args.min_tag_n
+        lines += [f"## Exact match ({hl}) by difficulty bin", "",
+                  "Primary bins: heavy-atom bands and stereo yes/no (any stereocentre or E/Z bond); the other "
+                  "`make_dataset.py` attributes are secondary (list tags used as is). Cell = exact % (hits/n). "
+                  f"A bin is reported only where it holds more than {min_n} test molecules on that test set; "
+                  "smaller bins are listed in the footnote with their counts and no claims are made about them.", "",
+                  "| Bin | " + " | ".join(tags.columns) + " |", "|---|" + "---|" * len(tags.columns)]
+        small: "OrderedDict[tuple[str, str], int]" = OrderedDict()
         for lab, row in tags.iterrows():
-            cells = []
+            cells, any_reported = [], False
             for col in tags.columns:
                 hc = row[col]
-                cells.append("–" if not isinstance(hc, tuple) else f"{100 * hc[0] / hc[1]:.1f}% ({hc[0]}/{hc[1]})")
-            lines.append(f"| {lab} | " + " | ".join(cells) + " |")
+                if not isinstance(hc, tuple):
+                    cells.append("–")
+                elif hc[1] > min_n:
+                    cells.append(f"{100 * hc[0] / hc[1]:.1f}% ({hc[0]}/{hc[1]})")
+                    any_reported = True
+                else:
+                    cells.append("–")
+                    small[(str(lab), ts_of.get(col, col))] = hc[1]
+            if any_reported:
+                lines.append(f"| {lab} | " + " | ".join(cells) + " |")
         lines.append("")
+        if small:
+            lines += [f"Not reported (n ≤ {min_n}): " + "; ".join(f"`{lab}` on {ts}: not reported (n={n})" for (lab, ts), n in small.items()) + ".", ""]
     out.write_text("\n".join(lines))
 
 
@@ -583,14 +841,15 @@ def chart_exact_vs_cost(results: list[dict], out_dir: Path, args: argparse.Names
     import matplotlib.pyplot as plt
     from matplotlib.ticker import FuncFormatter, LogLocator, NullFormatter
 
-    pts = [r for r in results if r["headline_rate"] is not None]
+    pts = [r for r in results if r["headline_rate"] is not None and not r["throughput_run"]]
+    omitted = [r["label"] for r in results if r["throughput_run"]]  # _w32 runs: table-only best-case $/1k
     if not pts:
         print("chart_exact_vs_cost: no system has an exact-match value; skipped", file=sys.stderr)
         return []
     slots = assign_slots(list(OrderedDict.fromkeys(r["system"] for r in results)))
-    finite = [r["cost_per_correct"] for r in pts if r["cost_per_correct"] is not None and math.isfinite(r["cost_per_correct"]) and r["cost_per_correct"] > 0]
-    has_zero = any(r["cost_per_correct"] == 0 for r in pts)
-    unknown = [r for r in pts if r["cost_per_correct"] is None]
+    finite = [r["chart_cost"] for r in pts if r["chart_cost"] is not None and math.isfinite(r["chart_cost"]) and r["chart_cost"] > 0]
+    has_zero = any(r["chart_cost"] == 0 for r in pts)
+    unknown = [r for r in pts if r["chart_cost"] is None]
     log = bool(finite) and (max(finite) / min(finite) > 10)
     if finite:
         lo, hi = min(finite), max(finite)
@@ -598,7 +857,8 @@ def chart_exact_vs_cost(results: list[dict], out_dir: Path, args: argparse.Names
         xlim = (lo / 3, x_inf * 1.8) if log else (-0.05 * x_inf * 1.12, x_inf * 1.12)
     else:
         x_inf, xlim = 1.0, (-0.065, 1.3)
-    has_inf = any(r["cost_per_correct"] is None or math.isinf(r["cost_per_correct"]) for r in pts)
+    has_inf = any(r["chart_cost"] is None or math.isinf(r["chart_cost"]) for r in pts)
+    srcs_all = {r["chart_cost_source"] for r in pts}
 
     files: list[Path] = []
     for theme_name, theme in THEMES.items():
@@ -624,7 +884,7 @@ def chart_exact_vs_cost(results: list[dict], out_dir: Path, args: argparse.Names
         for r in ordered:
             slot = slots[r["system"]]
             color = _series_color(theme, slot)
-            cpc = r["cost_per_correct"]
+            cpc = r["chart_cost"]
             at_inf = cpc is None or math.isinf(cpc)
             at_zero = cpc == 0
             x = x_inf if at_inf else (xlim[0] * 1.6 if at_zero and log else cpc)  # $0 cannot sit on a log axis
@@ -638,6 +898,8 @@ def chart_exact_vs_cost(results: list[dict], out_dir: Path, args: argparse.Names
             label = r["label"] if multi_testset else r["system"]
             if r["headline_metric"] != args.metric:
                 label += " \u2020"
+            if len(srcs_all) > 1 and r["chart_cost_source"] == "whole-run":
+                label += " §"
             if at_inf:
                 inf_names.append(label + (" (cost unknown)" if cpc is None else ""))
                 continue
@@ -663,17 +925,27 @@ def chart_exact_vs_cost(results: list[dict], out_dir: Path, args: argparse.Names
                             fontsize=13, color=theme["ink"], zorder=5)
 
         hl = HEADLINE_LABEL[args.metric]
-        ax.set_xlabel("Cost per correct answer (USD" + (", log scale)" if log else ")") + ("" if finite else " \u2014 undefined, no system answered correctly"))
+        srcs = {r["chart_cost_source"] for r in pts}
+        x_kind = "steady state" if srcs == {"steady"} else ("whole run" if srcs == {"whole-run"} else "steady state or whole run")
+        ax.set_xlabel(f"Cost per correct answer (USD, {x_kind}" + (", log scale)" if log else ")") + ("" if finite else " \u2014 undefined, no system answered correctly"))
         ax.set_ylabel(f"Exact match ({hl})")
         ax.set_title(args.title or "Accuracy vs cost per correct answer", loc="left", pad=28, fontweight="bold")
         n_desc = ", ".join(f"{r['system']} n={r['n']}" for r in pts) if len(pts) <= 4 else f"{len(pts)} systems"
-        sub = f"Error bars: bootstrap 95% CI ({args.bootstrap} resamples). {n_desc}."
+        if srcs == {"steady"}:
+            cost_desc = "x: steady-state $/1k images ÷ 1000 ÷ exact match (cold start excluded)."
+        elif srcs == {"whole-run"}:
+            cost_desc = "x: whole-run USD ÷ correct answers (cold start included; no steady-state cost recorded)."
+        else:
+            cost_desc = "x: steady-state $/1k ÷ 1000 ÷ exact match where recorded, otherwise § whole-run USD ÷ correct answers."
+        sub = f"Error bars: bootstrap 95% CI ({args.bootstrap} resamples). {cost_desc} {n_desc}."
         if has_zero and log:
             sub += " Zero-cost systems sit at the left edge."
         if has_inf:
             sub += " Open markers on the \u221e line: no correct answers."
         if any(r["headline_metric"] != args.metric for r in pts):
             sub += f" † {HEADLINE_LABEL['exact_nostereo' if args.metric == 'exact' else 'exact']} (stereo variant unavailable)."
+        if omitted:
+            sub += " Throughput runs omitted (table only): " + ", ".join(omitted) + "."
         ax.text(0, 1.02, sub, transform=ax.transAxes, fontsize=11.5, color=theme["ink2"], va="bottom")
         for sp in ("left", "bottom"):
             ax.spines[sp].set_color(theme["axis"])
@@ -689,6 +961,7 @@ def chart_by_testset(results: list[dict], out_dir: Path, args: argparse.Namespac
     import matplotlib.pyplot as plt
     from matplotlib.ticker import FuncFormatter
 
+    results = [r for r in results if not r["throughput_run"]]  # _w32 runs duplicate their base system's accuracy
     systems = list(OrderedDict.fromkeys(r["system"] for r in results))
     testsets = list(OrderedDict.fromkeys(r["testset"] for r in results))
     slots = assign_slots(systems)
@@ -771,12 +1044,27 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
                     help="headline exact-match variant for chart and cost per correct (default exact = stereo-aware)")
     ap.add_argument("--bootstrap", type=int, default=1000, help="bootstrap resamples (default 1000)")
     ap.add_argument("--seed", type=int, default=0, help="bootstrap RNG seed (default 0)")
+    ap.add_argument("--pairs", action="append", metavar="A:B[,C:D]",
+                    help="restrict paired comparisons to these system pairs (difference A minus B; repeatable). Default: every pair per test set")
+    ap.add_argument("--min-tag-n", type=int, default=MIN_TAG_N_DEFAULT,
+                    help=f"report a difficulty bin only when it holds more than this many items (default {MIN_TAG_N_DEFAULT})")
     ap.add_argument("--no-charts", action="store_true", help="write tables only")
     ap.add_argument("--title", default=None, help="headline chart title")
     args = ap.parse_args(argv)
     args.cost = _kv_float(args.cost, "--cost")
     args.price_in = _kv_float(args.price_in, "--price-in")
     args.price_out = _kv_float(args.price_out, "--price-out")
+    pairs: list[tuple[str, str]] = []
+    for spec in args.pairs or []:
+        for part in spec.split(","):
+            part = part.strip()
+            if not part:
+                continue
+            if part.count(":") != 1 or not all(part.split(":")):
+                raise SystemExit(f"--pairs expects A:B[,C:D], got {part!r}")
+            a, b = part.split(":")
+            pairs.append((a.strip(), b.strip()))
+    args.pairs = pairs
     return args
 
 
@@ -812,6 +1100,9 @@ def main(argv: list[str] | None = None) -> int:
         print("warning: duplicate system/test-set labels: " + ", ".join(r["label"] for r, d in zip(results, dup) if d), file=sys.stderr)
 
     tags = per_tag_table(runs, results)
+    paired = paired_analyses(results, args)
+    if args.pairs and not paired:
+        print("warning: --pairs matched no two systems on a common test set", file=sys.stderr)
 
     chart_files: list[Path] = []
     if not args.no_charts:
@@ -819,13 +1110,23 @@ def main(argv: list[str] | None = None) -> int:
         if multi_testset:
             chart_files += chart_by_testset(results, out_dir, args)
 
-    write_markdown(results, tags, out_dir / "comparison.md", args, chart_files, multi_testset)
+    write_markdown(results, tags, paired, out_dir / "comparison.md", args, chart_files, multi_testset)
+    write_paired_md(paired, out_dir / "paired.md", args)
     payload = {
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "headline_metric": args.metric,
+        "headline_summary_key": SUMMARY_KEY[args.metric],  # default exact_match (stereo-aware); the other variant is always reported next to it
         "bootstrap": {"resamples": args.bootstrap, "seed": args.seed, "ci": 0.95},
         "cost_overrides": args.cost, "price_in": args.price_in, "price_out": args.price_out,
-        "systems": [_jsonable({k: v for k, v in r.items()}) for r in results],
+        "systems": [_jsonable({k: v for k, v in r.items() if not k.startswith("_")}) for r in results],
+        "paired": {
+            "method": "items matched on image_path; diff = acc(a) - acc(b); mcnemar_p = exact two-sided binomial test of "
+                      "only_a vs only_b; diff_ci = paired percentile bootstrap 95% over shared images",
+            "pairs_requested": [list(p) for p in args.pairs] or None,
+            "excluded": [r["label"] for r in results if r["throughput_run"]],
+            "comparisons": _jsonable(paired),
+        },
+        "by_tag_min_n": args.min_tag_n,
         "by_tag": None if tags is None else {lab: {col: (list(hc) if isinstance(hc, tuple) else None) for col, hc in row.items()}
                                               for lab, row in tags.iterrows()},
         "charts": [str(f) for f in chart_files],
@@ -833,11 +1134,16 @@ def main(argv: list[str] | None = None) -> int:
     (out_dir / "comparison.json").write_text(json.dumps(payload, indent=2))
 
     # console summary
-    cols = ["system", "testset", "n", "exact", "exact_nostereo", "valid", "mean_tanimoto", "loop_rate", "median_latency_s", "usd", "cost_per_correct"]
+    cols = ["system", "testset", "n", "exact", "exact_nostereo", "valid", "mean_tanimoto", "loop_rate", "median_latency_s", "usd",
+            "steady_usd_per_1k_images", "cold_start_usd", "cost_per_correct"]
     df = pd.DataFrame([{c: r[c] for c in cols} for r in results])
-    with pd.option_context("display.width", 200, "display.max_columns", 20, "display.float_format", lambda v: f"{v:.4g}"):
+    with pd.option_context("display.width", 250, "display.max_columns", 20, "display.float_format", lambda v: f"{v:.4g}"):
         print(df.to_string(index=False))
-    print(f"\nwrote {out_dir / 'comparison.md'}, {out_dir / 'comparison.json'}" + (f", {len(chart_files)} chart files" if chart_files else ""))
+    if paired:
+        print("\npaired (A − B, paired 95% interval, exact McNemar p):")
+        for rec in paired:
+            print("  " + paired_sentence(rec).replace("`", ""))
+    print(f"\nwrote {out_dir / 'comparison.md'}, {out_dir / 'comparison.json'}, {out_dir / 'paired.md'}" + (f", {len(chart_files)} chart files" if chart_files else ""))
     for r in results:
         for note in r["notes"]:
             print(f"note [{r['system']}]: {note}")
