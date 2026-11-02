@@ -7,6 +7,12 @@ Actual costs from `modal billing report --show-resources` and Fireworks billing,
 | 2026-11-01 21:55 | Qwen3-VL-8B weight download (abandoned model) | Modal CPU | — | 0.016 | 71 s download |
 | 2026-11-01 22:00 | Qwen3.5-9B weight download | Modal CPU | — | 0.010 | |
 | 2026-11-01 22:01–22:06 | `smoke_untuned` baseline, 10 images | Modal 1× L40S ($1.95/hr) | ~4.4 min billed so far | 0.144 GPU + 0.006 CPU/mem (partial hour) | cold start 250 s (image build + load + profiling); plus up to 5 min idle before scale-down, est +0.16 |
+| 2026-11-01 22:09–22:12 | `smoke` LoRA SFT, 40 images, 3 epochs | Modal 1× L40S ($1.95/hr) | 2.4 min | est 0.08 GPU | train 99 s; adapter saved to `chemvision-loras:/smoke`; container exited, no idle |
 | 2026-11-01 | Fireworks dataset upload / SFT | Fireworks | — | 0.00 | blocked: dataset uploads disabled on account |
 
-Running total: ~$0.18 billed so far (est ≤ $0.35 once idle scale-down is billed).
+Running total: ~$0.26 billed or accrued so far (est ≤ $0.45 once vLLM idle scale-down is billed).
+
+Billing check 22:15 PT (`modal billing report --start 2026-11-01 --resolution h --show-resources --tz local`):
+only the 21:00 hour bucket has closed; it shows $0.017 total (CPU/memory/egress for the two download apps).
+GPU charges land in the 22:00 bucket, which is not reported until the hour closes. Re-run the report after
+23:00 PT to replace the estimates above. `modal app list` shows no running containers as of 22:15 PT.
